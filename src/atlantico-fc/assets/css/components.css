@@ -507,12 +507,13 @@
     align-items: flex-end;
     color: var(--color-white);
     overflow: hidden;
+    isolation: isolate;
 }
 
 .matchday-hero__bg {
     position: absolute;
     inset: 0;
-    z-index: var(--z-below);
+    z-index: 0;
 }
 
 .matchday-hero__bg img {
@@ -525,6 +526,7 @@
 .matchday-hero__overlay {
     position: absolute;
     inset: 0;
+    z-index: 1;
     background: linear-gradient(180deg,
             rgba(9, 21, 37, 0.3) 0%,
             rgba(9, 21, 37, 0.1) 30%,
@@ -534,7 +536,7 @@
 
 .matchday-hero__content {
     position: relative;
-    z-index: var(--z-above);
+    z-index: 2;
     padding-bottom: var(--space-16);
     padding-top: calc(var(--header-height) + var(--space-16));
     width: 100%;
