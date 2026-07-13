@@ -131,18 +131,16 @@
     .template-preview {
       position: relative;
       overflow: hidden;
-      display: grid;
-      align-items: end;
-      background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.38), transparent 30%),
-        linear-gradient(135deg, #d8cec2 0%, #c3b2a2 45%, #a98a72 100%);
+      background: #d8cec2;
     }
 
-    .template-preview img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .template-preview iframe {
+      width: 1440px;
+      height: 900px;
+      border: 0;
+      transform: scale(0.36);
+      transform-origin: top left;
+      pointer-events: none;
     }
 
     .template-preview::after {
@@ -150,48 +148,6 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, transparent 50%, rgba(25, 21, 18, 0.62) 100%);
-    }
-
-    .template-fallback-art {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      align-content: end;
-      gap: 10px;
-      padding: 24px;
-      color: #fffaf3;
-      z-index: 0;
-      background:
-        radial-gradient(circle at 85% 18%, rgba(255, 245, 232, 0.18), transparent 20%),
-        linear-gradient(160deg, rgba(59, 38, 24, 0.18), rgba(28, 20, 15, 0.42));
-    }
-
-    .template-fallback-art strong {
-      max-width: 12ch;
-      font-family: var(--font-display);
-      font-size: 2rem;
-      line-height: 0.95;
-      font-weight: 600;
-    }
-
-    .template-fallback-art small {
-      max-width: 34ch;
-      font-size: 0.92rem;
-      line-height: 1.5;
-      color: rgba(255, 250, 243, 0.84);
-    }
-
-    .template-fallback-pill {
-      width: fit-content;
-      padding: 7px 12px;
-      border: 1px solid rgba(255, 250, 243, 0.28);
-      border-radius: 999px;
-      background: rgba(255, 250, 243, 0.12);
-      backdrop-filter: blur(10px);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
     }
 
     .template-preview-overlay {
@@ -214,6 +170,10 @@
       justify-content: space-between;
       gap: 20px;
       padding: 22px;
+    }
+
+    .template-meta-link {
+      display: block;
     }
 
     .template-kicker {
@@ -278,6 +238,10 @@
         grid-template-rows: 250px auto;
       }
 
+      .template-preview iframe {
+        transform: scale(0.28);
+      }
+
       .template-body {
         flex-direction: column;
       }
@@ -301,39 +265,31 @@
     </section>
     <section class="templates-grid">
       <article class="template-card">
-        <a class="template-preview" href="./templates/aurea-stay">
-          <div class="template-fallback-art" aria-hidden="true">
-            <span class="template-fallback-pill">aurea-stay</span>
-            <strong>Auréa Stay</strong>
-            <small>Experimente uma estadia lenta no Douro. O Auréa Stay combina arquitetura contemporânea em pedra, vinhas infinitas e gastronomia local de autor num refúgio exclusivo.</small>
-          </div>
-          <span class="template-preview-overlay">Entrar no template</span>
+        <a class="template-preview" href="./src/aurea-stay/index.html">
+          <iframe src="./src/aurea-stay/index.html" title="Preview de Auréa Stay" loading="lazy"></iframe>
+          <span class="template-preview-overlay">Abrir template</span>
         </a>
         <div class="template-body">
-          <div>
+          <a class="template-meta-link" href="./src/aurea-stay/index.html">
             <p class="template-kicker">aurea-stay</p>
             <h2>Auréa Stay</h2>
             <p class="template-copy">Experimente uma estadia lenta no Douro. O Auréa Stay combina arquitetura contemporânea em pedra, vinhas infinitas e gastronomia local de autor num refúgio exclusivo.</p>
-          </div>
-          <a class="template-link" href="./templates/aurea-stay">Ver layout</a>
+          </a>
+          <a class="template-link" href="./templates/aurea-stay">Preview parcial</a>
         </div>
       </article>
       <article class="template-card">
-        <a class="template-preview" href="./templates/forma-norte">
-          <div class="template-fallback-art" aria-hidden="true">
-            <span class="template-fallback-pill">forma-norte</span>
-            <strong>Forma Norte</strong>
-            <small>Forma Norte — Atelier de arquitetura, construção premium e remodelação contemporânea no Norte de Portugal. Projetamos espaços pensados para durar.</small>
-          </div>
-          <span class="template-preview-overlay">Entrar no template</span>
+        <a class="template-preview" href="./src/forma-norte/index.html">
+          <iframe src="./src/forma-norte/index.html" title="Preview de Forma Norte" loading="lazy"></iframe>
+          <span class="template-preview-overlay">Abrir template</span>
         </a>
         <div class="template-body">
-          <div>
+          <a class="template-meta-link" href="./src/forma-norte/index.html">
             <p class="template-kicker">forma-norte</p>
             <h2>Forma Norte</h2>
             <p class="template-copy">Forma Norte — Atelier de arquitetura, construção premium e remodelação contemporânea no Norte de Portugal. Projetamos espaços pensados para durar.</p>
-          </div>
-          <a class="template-link" href="./templates/forma-norte">Ver layout</a>
+          </a>
+          <a class="template-link" href="./templates/forma-norte">Preview parcial</a>
         </div>
       </article>
     </section>

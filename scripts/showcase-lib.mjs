@@ -131,26 +131,19 @@ export function renderShowcasePage(templates) {
       const description = template.description
         ? `<p class="template-copy">${escapeHtml(template.description)}</p>`
         : "";
-      const previewContent = template.previewHref
-        ? `<img src="${escapeHtml(template.previewHref)}" alt="Preview de ${escapeHtml(template.name)}" loading="lazy">`
-        : `<div class="template-fallback-art" aria-hidden="true">
-            <span class="template-fallback-pill">${escapeHtml(template.slug)}</span>
-            <strong>${escapeHtml(template.name)}</strong>
-            <small>${escapeHtml(template.description || "Template pronto para navegar na montra.")}</small>
-          </div>`;
 
       return `      <article class="template-card">
-        <a class="template-preview" href="${escapeHtml(template.viewerHref)}">
-          ${previewContent}
-          <span class="template-preview-overlay">Entrar no template</span>
+        <a class="template-preview" href="${escapeHtml(template.href)}">
+          <iframe src="${escapeHtml(template.href)}" title="Preview de ${escapeHtml(template.name)}" loading="lazy"></iframe>
+          <span class="template-preview-overlay">Abrir template</span>
         </a>
         <div class="template-body">
-          <div>
+          <a class="template-meta-link" href="${escapeHtml(template.href)}">
             <p class="template-kicker">${escapeHtml(template.slug)}</p>
             <h2>${escapeHtml(template.name)}</h2>
             ${description}
-          </div>
-          <a class="template-link" href="${escapeHtml(template.viewerHref)}">Ver layout</a>
+          </a>
+          <a class="template-link" href="${escapeHtml(template.viewerHref)}">Preview parcial</a>
         </div>
       </article>`;
     })
@@ -289,18 +282,16 @@ export function renderShowcasePage(templates) {
     .template-preview {
       position: relative;
       overflow: hidden;
-      display: grid;
-      align-items: end;
-      background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.38), transparent 30%),
-        linear-gradient(135deg, #d8cec2 0%, #c3b2a2 45%, #a98a72 100%);
+      background: #d8cec2;
     }
 
-    .template-preview img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .template-preview iframe {
+      width: 1440px;
+      height: 900px;
+      border: 0;
+      transform: scale(0.36);
+      transform-origin: top left;
+      pointer-events: none;
     }
 
     .template-preview::after {
@@ -308,48 +299,6 @@ export function renderShowcasePage(templates) {
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, transparent 50%, rgba(25, 21, 18, 0.62) 100%);
-    }
-
-    .template-fallback-art {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      align-content: end;
-      gap: 10px;
-      padding: 24px;
-      color: #fffaf3;
-      z-index: 0;
-      background:
-        radial-gradient(circle at 85% 18%, rgba(255, 245, 232, 0.18), transparent 20%),
-        linear-gradient(160deg, rgba(59, 38, 24, 0.18), rgba(28, 20, 15, 0.42));
-    }
-
-    .template-fallback-art strong {
-      max-width: 12ch;
-      font-family: var(--font-display);
-      font-size: 2rem;
-      line-height: 0.95;
-      font-weight: 600;
-    }
-
-    .template-fallback-art small {
-      max-width: 34ch;
-      font-size: 0.92rem;
-      line-height: 1.5;
-      color: rgba(255, 250, 243, 0.84);
-    }
-
-    .template-fallback-pill {
-      width: fit-content;
-      padding: 7px 12px;
-      border: 1px solid rgba(255, 250, 243, 0.28);
-      border-radius: 999px;
-      background: rgba(255, 250, 243, 0.12);
-      backdrop-filter: blur(10px);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
     }
 
     .template-preview-overlay {
@@ -372,6 +321,10 @@ export function renderShowcasePage(templates) {
       justify-content: space-between;
       gap: 20px;
       padding: 22px;
+    }
+
+    .template-meta-link {
+      display: block;
     }
 
     .template-kicker {
@@ -434,6 +387,10 @@ export function renderShowcasePage(templates) {
 
       .template-card {
         grid-template-rows: 250px auto;
+      }
+
+      .template-preview iframe {
+        transform: scale(0.28);
       }
 
       .template-body {
