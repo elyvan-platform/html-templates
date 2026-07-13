@@ -1,8 +1,13 @@
 {
   "name": "html-templates",
   "private": true,
+  "packageManager": "pnpm@10.20.0",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "dev": "node scripts/showcase-server.mjs",
+    "build": "node --check scripts/showcase-lib.mjs && node --check scripts/showcase-server.mjs && node scripts/generate-showcase.mjs",
+    "dev": "HOST=127.0.0.1 PORT=4321 node scripts/showcase-server.mjs",
     "start": "node scripts/showcase-server.mjs",
     "showcase:generate": "node scripts/generate-showcase.mjs",
     "showcase:watch": "node scripts/generate-showcase.mjs --watch"
