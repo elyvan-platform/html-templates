@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ser Sócio — Atlântico FC</title>
+    <meta name="description"
+        content="Torne-se sócio do Atlântico FC. 5 modalidades, descontos exclusivos e acesso prioritário a bilhetes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+    <header class="site-header is-solid" id="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="emblem header-brand" aria-label="Atlântico FC — Página inicial">
+                    <svg viewBox="0 0 48 58" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" aria-hidden="true">
+                        <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="#091525" />
+                        <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="none" stroke="#2563b0"
+                            stroke-width="1.5" />
+                        <path d="M2 29C7 25 14 31 24 27C34 23 41 29 46 25V33C41 37 34 31 24 35C14 39 7 33 2 37Z"
+                            fill="#e63946" />
+                        <text x="24" y="20" text-anchor="middle" fill="white" font-family="Barlow Condensed,sans-serif"
+                            font-weight="800" font-size="11" letter-spacing="2">AFC</text>
+                        <text x="24" y="50" text-anchor="middle" fill="#8baad4"
+                            font-family="Barlow Condensed,sans-serif" font-weight="600" font-size="5.5"
+                            letter-spacing="1.5">1937</text>
+                    </svg>
+                    <span class="emblem-text">
+                        <span class="emblem-name">Atlântico FC</span>
+                        <span class="emblem-since">Desde 1937</span>
+                    </span>
+                </a>
+                <nav class="site-nav" aria-label="Navegação principal">
+                    <ul class="nav-list" role="list">
+                        <li><a href="club.html" class="nav-link">Clube</a></li>
+                        <li><a href="matches.html" class="nav-link">Jogos</a></li>
+                        <li><a href="squad.html" class="nav-link">Equipa</a></li>
+                        <li><a href="news.html" class="nav-link">Notícias</a></li>
+                        <li><a href="academy.html" class="nav-link">Formação</a></li>
+                        <li><a href="tickets.html" class="nav-link">Bilhetes</a></li>
+                        <li><a href="membership.html" class="nav-link" aria-current="page">Sócios</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="lang-selector">
+                        <button class="lang-btn is-active" aria-pressed="true">PT</button>
+                        <button class="lang-btn" aria-pressed="false">EN</button>
+                    </div>
+                    <a href="membership.html" class="btn btn-ghost btn-sm">Ser Sócio</a>
+                    <a href="tickets.html" class="btn btn-accent btn-sm">Bilhetes</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <span class="hamburger-line"></span><span class="hamburger-line"></span><span
+                        class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu de navegação">
+        <nav>
+            <ul class="mobile-nav-list" role="list">
+                <li><a href="club.html" class="mobile-nav-link">Clube</a></li>
+                <li><a href="matches.html" class="mobile-nav-link">Jogos</a></li>
+                <li><a href="squad.html" class="mobile-nav-link">Equipa</a></li>
+                <li><a href="news.html" class="mobile-nav-link">Notícias</a></li>
+                <li><a href="academy.html" class="mobile-nav-link">Formação</a></li>
+                <li><a href="tickets.html" class="mobile-nav-link">Bilhetes</a></li>
+                <li><a href="membership.html" class="mobile-nav-link" aria-current="page">Sócios</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="membership.html" class="btn btn-outline">Ser Sócio</a>
+            <a href="tickets.html" class="btn btn-accent">Comprar Bilhetes</a>
+        </div>
+    </div>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <div
+            style="background:var(--color-navy);padding-top:calc(var(--header-height)+var(--space-16));padding-bottom:var(--space-16);position:relative;overflow:hidden;">
+            <div style="position:absolute;inset:0;font-family:var(--font-display);font-size:280px;font-weight:900;color:rgba(255,255,255,0.02);line-height:1;display:flex;align-items:center;justify-content:center;letter-spacing:-0.06em;pointer-events:none;user-select:none;"
+                aria-hidden="true">SÓCIO</div>
+            <div class="container" style="position:relative;z-index:1;">
+                <div style="max-width:700px;">
+                    <p
+                        style="display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-weight:600;letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-4);">
+                        <span style="display:block;width:24px;height:2px;background:var(--color-accent);"></span> 12 400
+                        sócios</p>
+                    <h1
+                        style="font-family:var(--font-display);font-size:var(--display-lg);font-weight:900;line-height:var(--lh-tight);letter-spacing:var(--ls-tight);color:var(--color-white);margin-bottom:var(--space-5);">
+                        Junte-se à família azul.</h1>
+                    <p
+                        style="color:var(--color-text-dim);font-size:var(--text-xl);max-width:55ch;line-height:var(--lh-relaxed);">
+                        Ser sócio do Atlântico FC é muito mais do que apoiar a equipa. É fazer parte de uma comunidade
+                        de 88 anos de história, paixão e pertença.</p>
+                    <a href="#inscricao" class="btn btn-accent btn-xl" style="margin-top:var(--space-8);">Inscreva-se
+                        agora</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div style="background:var(--color-surface);padding-block:var(--space-8);">
+            <div class="container">
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);">
+                    <div
+                        style="text-align:center;padding:var(--space-4);border-right:1px solid rgba(255,255,255,0.06);">
+                        <p
+                            style="font-family:var(--font-display);font-size:var(--display-sm);font-weight:900;color:var(--color-white);line-height:1;">
+                            12 400</p>
+                        <p
+                            style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-2);text-transform:uppercase;letter-spacing:var(--ls-wider);font-weight:600;">
+                            Sócios ativos</p>
+                    </div>
+                    <div
+                        style="text-align:center;padding:var(--space-4);border-right:1px solid rgba(255,255,255,0.06);">
+                        <p
+                            style="font-family:var(--font-display);font-size:var(--display-sm);font-weight:900;color:var(--color-accent);line-height:1;">
+                            30%</p>
+                        <p
+                            style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-2);text-transform:uppercase;letter-spacing:var(--ls-wider);font-weight:600;">
+                            Desconto em bilhetes</p>
+                    </div>
+                    <div
+                        style="text-align:center;padding:var(--space-4);border-right:1px solid rgba(255,255,255,0.06);">
+                        <p
+                            style="font-family:var(--font-display);font-size:var(--display-sm);font-weight:900;color:var(--color-white);line-height:1;">
+                            5</p>
+                        <p
+                            style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-2);text-transform:uppercase;letter-spacing:var(--ls-wider);font-weight:600;">
+                            Modalidades</p>
+                    </div>
+                    <div style="text-align:center;padding:var(--space-4);">
+                        <p
+                            style="font-family:var(--font-display);font-size:var(--display-sm);font-weight:900;color:var(--color-white);line-height:1;">
+                            88</p>
+                        <p
+                            style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-2);text-transform:uppercase;letter-spacing:var(--ls-wider);font-weight:600;">
+                            Anos de história</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plans -->
+        <section class="section" aria-labelledby="plans-heading">
+            <div class="container">
+                <div style="text-align:center;margin-bottom:var(--space-10);">
+                    <p class="section-label" style="justify-content:center;">Modalidades</p>
+                    <h2 class="section-title" id="plans-heading">Escolha a sua modalidade</h2>
+                    <p class="section-subtitle" style="margin-inline:auto;">Todas as modalidades incluem cartão de
+                        sócio, acesso prioritário a bilhetes e desconto em produtos oficiais.</p>
+                </div>
+                <div class="membership-plans-grid">
+                    <div class="membership-plan reveal">
+                        <div class="membership-plan__name">Sócio Jovem</div>
+                        <div class="membership-plan__price">
+                            <span class="membership-plan__amount">49€</span>
+                            <span class="membership-plan__period">/ ano</span>
+                        </div>
+                        <p style="font-size:var(--text-xs);color:var(--color-muted);">Para atletas até 18 anos</p>
+                        <ul class="membership-plan__features">
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Cartão de sócio oficial</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>20% de desconto em bilhetes</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Desconto em produtos da loja</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Acesso a conteúdos exclusivos</li>
+                        </ul>
+                        <a href="#inscricao" class="btn btn-outline-ocean"
+                            style="width:100%;justify-content:center;">Inscrever</a>
+                    </div>
+
+                    <div class="membership-plan membership-plan--featured reveal reveal-delay-1">
+                        <div class="membership-plan__badge"><span class="badge badge-accent">Mais popular</span></div>
+                        <div class="membership-plan__name" style="color:var(--color-white);">Sócio Adulto</div>
+                        <div class="membership-plan__price">
+                            <span class="membership-plan__amount">89€</span>
+                            <span class="membership-plan__period">/ ano</span>
+                        </div>
+                        <p style="font-size:var(--text-xs);color:var(--color-text-faint);">Para maiores de 18 anos</p>
+                        <ul class="membership-plan__features">
+                            <li class="membership-plan__feature" style="color:var(--color-text-dim);"><span
+                                    class="membership-plan__feature-check">✓</span>Cartão de sócio oficial</li>
+                            <li class="membership-plan__feature" style="color:var(--color-text-dim);"><span
+                                    class="membership-plan__feature-check">✓</span>30% de desconto em bilhetes</li>
+                            <li class="membership-plan__feature" style="color:var(--color-text-dim);"><span
+                                    class="membership-plan__feature-check">✓</span>Prioridade na compra de bilhetes</li>
+                            <li class="membership-plan__feature" style="color:var(--color-text-dim);"><span
+                                    class="membership-plan__feature-check">✓</span>Desconto em produtos da loja</li>
+                            <li class="membership-plan__feature" style="color:var(--color-text-dim);"><span
+                                    class="membership-plan__feature-check">✓</span>Convite para eventos exclusivos</li>
+                            <li class="membership-plan__feature" style="color:var(--color-text-dim);"><span
+                                    class="membership-plan__feature-check">✓</span>Direito de voto em Assembleia</li>
+                        </ul>
+                        <a href="#inscricao" class="btn btn-accent btn-lg"
+                            style="width:100%;justify-content:center;">Inscrever</a>
+                    </div>
+
+                    <div class="membership-plan reveal reveal-delay-2">
+                        <div class="membership-plan__name">Sócio Família</div>
+                        <div class="membership-plan__price">
+                            <span class="membership-plan__amount">149€</span>
+                            <span class="membership-plan__period">/ ano</span>
+                        </div>
+                        <p style="font-size:var(--text-xs);color:var(--color-muted);">Até 4 membros do agregado</p>
+                        <ul class="membership-plan__features">
+                            <li class="membership-plan__feature"><span class="membership-plan__feature-check">✓</span>4
+                                cartões de sócio</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>30% de desconto em bilhetes</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Reserva na Zona Família</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Crianças até 10 anos: bilhetes grátis
+                            </li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Convite para atividades de formação
+                            </li>
+                        </ul>
+                        <a href="#inscricao" class="btn btn-outline-navy"
+                            style="width:100%;justify-content:center;">Inscrever</a>
+                    </div>
+
+                    <div class="membership-plan reveal reveal-delay-3">
+                        <div class="membership-plan__name">Sócio Emigrante</div>
+                        <div class="membership-plan__price">
+                            <span class="membership-plan__amount">39€</span>
+                            <span class="membership-plan__period">/ ano</span>
+                        </div>
+                        <p style="font-size:var(--text-xs);color:var(--color-muted);">Para residentes fora de Portugal
+                        </p>
+                        <ul class="membership-plan__features">
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Cartão de sócio digital</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Conteúdos exclusivos online</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Newsletter premium</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Desconto em visitas ao estádio</li>
+                        </ul>
+                        <a href="#inscricao" class="btn btn-outline-navy"
+                            style="width:100%;justify-content:center;">Inscrever</a>
+                    </div>
+
+                    <div class="membership-plan reveal">
+                        <div class="membership-plan__name">Sócio Empresa</div>
+                        <div class="membership-plan__price">
+                            <span class="membership-plan__amount">490€</span>
+                            <span class="membership-plan__period">/ ano</span>
+                        </div>
+                        <p style="font-size:var(--text-xs);color:var(--color-muted);">Para empresas e marcas parceiras
+                        </p>
+                        <ul class="membership-plan__features">
+                            <li class="membership-plan__feature"><span class="membership-plan__feature-check">✓</span>5
+                                cartões de sócio</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Camarote corporativo disponível</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Visibilidade no programa de jogo</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Acesso à Área Premium</li>
+                            <li class="membership-plan__feature"><span
+                                    class="membership-plan__feature-check">✓</span>Reunião com direção anual</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-navy"
+                            style="width:100%;justify-content:center;">Contactar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="section section--dark" aria-label="Testemunho de sócio">
+            <div class="container">
+                <div class="testimonial-block">
+                    <div style="font-family:var(--font-display);font-size:var(--display-sm);font-weight:900;color:rgba(255,255,255,0.06);line-height:1;margin-bottom:var(--space-6);"
+                        aria-hidden="true">"</div>
+                    <blockquote class="testimonial-quote">
+                        «Sou sócio do Atlântico FC desde os 8 anos. O meu pai levou-me ao primeiro jogo e desde esse
+                        dia, o azul-marinho é a cor que me define. Não é um clube — é família.»
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" aria-hidden="true">RC</div>
+                        <div>
+                            <p class="testimonial-name">Rui Carvalho</p>
+                            <p class="testimonial-role">Sócio n.º 847 · Sócio desde 1994</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enrolment Form -->
+        <section class="section section--light" id="inscricao" aria-labelledby="enrol-heading">
+            <div class="container container--narrow">
+                <div style="text-align:center;margin-bottom:var(--space-10);">
+                    <p class="section-label" style="justify-content:center;">Inscrição</p>
+                    <h2 class="section-title" id="enrol-heading">Formulário de Adesão</h2>
+                    <p class="section-subtitle" style="margin-inline:auto;">Preencha o formulário abaixo para iniciar o
+                        processo de associação. Entraremos em contacto em 24 horas.</p>
+                </div>
+
+                <form data-validate-form action="#" novalidate
+                    style="background:var(--color-white);border-radius:var(--radius-xl);padding:var(--space-10);box-shadow:var(--shadow-lg);">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="socio-nome">Nome completo *</label>
+                            <input type="text" id="socio-nome" name="nome" required placeholder="O seu nome">
+                            <span class="form-error" style="display:none;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="socio-nasc">Data de nascimento *</label>
+                            <input type="date" id="socio-nasc" name="nascimento" required>
+                            <span class="form-error" style="display:none;"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="socio-email">Email *</label>
+                            <input type="email" id="socio-email" name="email" required placeholder="email@exemplo.pt">
+                            <span class="form-error" style="display:none;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="socio-tel">Telefone *</label>
+                            <input type="tel" id="socio-tel" name="telefone" required placeholder="+351 9XX XXX XXX">
+                            <span class="form-error" style="display:none;"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="socio-morada">Morada *</label>
+                        <input type="text" id="socio-morada" name="morada" required
+                            placeholder="Rua, número, código postal, localidade">
+                        <span class="form-error" style="display:none;"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="socio-modalidade">Modalidade *</label>
+                        <select id="socio-modalidade" name="modalidade" required>
+                            <option value="">Selecione uma modalidade</option>
+                            <option>Sócio Jovem — 49€/ano</option>
+                            <option>Sócio Adulto — 89€/ano</option>
+                            <option>Sócio Família — 149€/ano</option>
+                            <option>Sócio Emigrante — 39€/ano</option>
+                            <option>Sócio Empresa — 490€/ano</option>
+                        </select>
+                        <span class="form-error" style="display:none;"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="consent-rgpd" name="rgpd" required>
+                            <label for="consent-rgpd">Aceito a <a href="#" style="color:var(--color-ocean);">política de
+                                    privacidade</a> e consinto o tratamento dos meus dados pessoais para efeitos de
+                                associação. *</label>
+                        </div>
+                        <span class="form-error" style="display:none;"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="consent-comm" name="comunicacoes">
+                            <label for="consent-comm">Aceito receber comunicações do Atlântico FC (novidades,
+                                informações de jogo e ofertas).</label>
+                        </div>
+                    </div>
+
+                    <div class="form-message form-message--success">✓ Pedido recebido! Entraremos em contacto em 24
+                        horas úteis para concluir a sua inscrição.</div>
+                    <div class="form-message form-message--error">Ocorreu um erro. Por favor verifique os dados e tente
+                        novamente.</div>
+
+                    <button type="submit" class="btn btn-accent btn-xl"
+                        style="width:100%;justify-content:center;margin-top:var(--space-2);">Submeter Pedido de
+                        Adesão</button>
+                    <p
+                        style="text-align:center;font-size:var(--text-xs);color:var(--color-muted);margin-top:var(--space-4);">
+                        Após a submissão, o pagamento será processado por transferência bancária ou referência MB,
+                        conforme indicado no email de confirmação.</p>
+                </form>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" aria-labelledby="socio-faq-heading">
+            <div class="container container--narrow">
+                <h2 class="section-title" id="socio-faq-heading"
+                    style="text-align:center;margin-bottom:var(--space-8);">Perguntas Frequentes</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" aria-controls="sfaq-1"
+                            id="sfaq-1-t">Quando começa a vigorar a quota anual? <span class="accordion-icon"
+                                aria-hidden="true"></span></button>
+                        <div class="accordion-panel" id="sfaq-1" role="region" aria-labelledby="sfaq-1-t">
+                            <div class="accordion-body">A quota é válida por 12 meses a partir da data de ativação do
+                                cartão de sócio. O cartão é enviado por correio no prazo de 10 dias úteis após a
+                                confirmação do pagamento.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" aria-controls="sfaq-2"
+                            id="sfaq-2-t">Como funciona a prioridade de compra de bilhetes? <span class="accordion-icon"
+                                aria-hidden="true"></span></button>
+                        <div class="accordion-panel" id="sfaq-2" role="region" aria-labelledby="sfaq-2-t">
+                            <div class="accordion-body">Os sócios têm acesso à bilheteira online com 48 horas de
+                                antecedência relativamente à abertura ao público geral. Em jogos de grande procura, esta
+                                vantagem garante o lugar pretendido.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" aria-controls="sfaq-3"
+                            id="sfaq-3-t">Posso alterar a modalidade durante o ano? <span class="accordion-icon"
+                                aria-hidden="true"></span></button>
+                        <div class="accordion-panel" id="sfaq-3" role="region" aria-labelledby="sfaq-3-t">
+                            <div class="accordion-body">Sim, é possível fazer upgrade de modalidade a qualquer momento,
+                                pagando apenas a diferença proporcional ao período restante. O downgrade só pode ser
+                                feito na renovação anual.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" aria-controls="sfaq-4" id="sfaq-4-t">Os
+                            filhos da modalidade Família têm cartão individual? <span class="accordion-icon"
+                                aria-hidden="true"></span></button>
+                        <div class="accordion-panel" id="sfaq-4" role="region" aria-labelledby="sfaq-4-t">
+                            <div class="accordion-body">Sim, a modalidade Família inclui quatro cartões individuais com
+                                nome e número de sócio, para até quatro membros do mesmo agregado familiar.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="emblem" aria-label="Atlântico FC"><svg viewBox="0 0 48 58"
+                                style="width:32px;" aria-hidden="true">
+                                <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="#091525" />
+                                <path d="M2 29C7 25 14 31 24 27C34 23 41 29 46 25V33C41 37 34 31 24 35C14 39 7 33 2 37Z"
+                                    fill="#e63946" /><text x="24" y="22" text-anchor="middle" fill="white"
+                                    font-family="Barlow Condensed,sans-serif" font-weight="800"
+                                    font-size="12">AFC</text>
+                            </svg><span class="emblem-text"><span class="emblem-name">Atlântico FC</span></span></a>
+                        <p class="footer-tagline">Do mar nasce a nossa força.</p>
+                    </div>
+                    <nav aria-labelledby="fn10-clube">
+                        <h3 class="footer-nav-title" id="fn10-clube">Clube</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="club.html" class="footer-nav-link">História</a></li>
+                            <li><a href="squad.html" class="footer-nav-link">Equipa</a></li>
+                            <li><a href="contact.html" class="footer-nav-link">Contactos</a></li>
+                        </ul>
+                    </nav>
+                    <nav aria-labelledby="fn10-jogos">
+                        <h3 class="footer-nav-title" id="fn10-jogos">Jogos</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="matches.html" class="footer-nav-link">Calendário</a></li>
+                            <li><a href="news.html" class="footer-nav-link">Notícias</a></li>
+                        </ul>
+                    </nav>
+                    <nav aria-labelledby="fn10-adept">
+                        <h3 class="footer-nav-title" id="fn10-adept">Adeptos</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="tickets.html" class="footer-nav-link">Bilhetes</a></li>
+                            <li><a href="membership.html" class="footer-nav-link">Sócios</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer-contact">
+                        <h3 class="footer-nav-title">Contacto Sócios</h3>
+                        <address>
+                            <p>Av. Marginal, 1200</p>
+                            <p><a href="tel:+351220000003">+351 220 000 003</a></p>
+                            <p><a href="mailto:socios@atlanticofc.pt">socios@atlanticofc.pt</a></p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 Atlântico FC. Todos os direitos reservados.</p>
+                <nav class="footer-legal" aria-label="Links legais"><a href="#">Privacidade</a><a href="#">Termos</a><a
+                        href="#">Acessibilidade</a></nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

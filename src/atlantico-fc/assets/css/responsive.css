@@ -1,0 +1,632 @@
+/* ============================================================
+   ATLÂNTICO FC — RESPONSIVE
+   Breakpoints: 1200px, 1024px, 768px, 640px, 480px, 375px
+   ============================================================ */
+
+/* ─── 1200px ─────────────────────────────────────────────── */
+
+@media (max-width: 1200px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--space-10);
+    }
+
+    .footer-brand {
+        grid-column: span 3;
+    }
+
+    .player-stats-season {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .identity-section__content {
+        gap: var(--space-10);
+    }
+}
+
+/* ─── 1024px ─────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+
+    /* Header */
+    .site-nav,
+    .header-actions {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    /* Homepage */
+    .player-showcase {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .identity-section__content {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+    }
+
+    /* Matches */
+    .matches-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .matches-sidebar {
+        position: static;
+    }
+
+    /* Match detail */
+    .match-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* News */
+    .news-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Article */
+    .article-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Club */
+    .palmarés-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Ticket */
+    .ticket-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ticket-selector {
+        position: static;
+    }
+
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Newsletter */
+    .newsletter {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        padding: var(--space-8);
+    }
+
+    /* Player hero */
+    .player-hero__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .player-hero__number {
+        display: none;
+    }
+}
+
+/* ─── 900px ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+
+    /* Score panel */
+    .score-panel {
+        max-width: 100%;
+    }
+
+    .score-panel__team-name {
+        font-size: var(--text-xl);
+    }
+
+    /* Formation */
+    .formation-player__num {
+        width: 28px;
+        height: 28px;
+        font-size: 9px;
+    }
+
+    /* Match scoreboard */
+    .match-hero__scoreboard {
+        gap: var(--space-4);
+    }
+
+    .match-team__emblem {
+        width: 56px;
+        height: 56px;
+    }
+
+    .match-team__name {
+        font-size: var(--text-2xl);
+    }
+
+    .match-score-display {
+        font-size: var(--text-5xl);
+    }
+}
+
+/* ─── 768px ──────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+    /* Fixture item */
+    .fixture-item {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: auto auto;
+        gap: var(--space-2) var(--space-3);
+    }
+
+    .fixture-item__date {
+        grid-row: span 2;
+    }
+
+    .fixture-item__teams {
+        grid-column: 2;
+        justify-content: flex-start;
+        gap: var(--space-3);
+    }
+
+    .fixture-item__score,
+    .fixture-item__time {
+        font-size: var(--text-base);
+        min-width: 48px;
+    }
+
+    .fixture-item__stadium {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    /* Player card grid */
+    .player-showcase {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Squad grid */
+    .squad-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    /* News main grid */
+    .news-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-main-grid .news-card:first-child {
+        grid-column: span 1;
+    }
+
+    /* Newsletter form */
+    .newsletter__form {
+        flex-direction: column;
+    }
+
+    /* Footer grid */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    .footer-contact {
+        grid-column: span 2;
+    }
+
+    /* Footer bottom */
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+
+    /* Stats grid */
+    .player-stats-season {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Form rows */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    /* Age groups */
+    .age-groups-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Stadium sectors */
+    .stadium-sectors {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Upcoming fixtures */
+    .upcoming-fixture-item {
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: auto auto;
+        gap: var(--space-2) var(--space-3);
+    }
+
+    .ufi-actions {
+        grid-column: 2;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    /* Hero */
+    .matchday-hero__actions {
+        gap: var(--space-3);
+    }
+
+    .score-panel {
+        grid-template-columns: 1fr auto 1fr;
+        gap: var(--space-3);
+    }
+
+    .score-panel__emblem {
+        width: 44px;
+        height: 44px;
+    }
+
+    /* Identity section stats */
+    .identity-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ─── 640px ──────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+
+    /* Player showcase */
+    .player-showcase {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Score panel simplified */
+    .score-panel__team-name {
+        font-size: var(--text-lg);
+    }
+
+    .score-panel__emblem {
+        width: 36px;
+        height: 36px;
+        font-size: var(--text-base);
+    }
+
+    /* Matchday hero info */
+    .matchday-hero__info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+
+    .matchday-hero__info .matchday-hero__divider {
+        display: none;
+    }
+
+    /* Match scoreboard */
+    .match-hero__scoreboard {
+        grid-template-columns: 1fr 80px 1fr;
+        gap: var(--space-3);
+    }
+
+    .match-team__emblem {
+        width: 44px;
+        height: 44px;
+        font-size: var(--text-base);
+    }
+
+    .match-team__name {
+        font-size: var(--text-xl);
+    }
+
+    .match-score-display {
+        font-size: var(--text-5xl);
+    }
+
+    /* Stats */
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Standings sidebar */
+    .sidebar-standings-row {
+        grid-template-columns: 20px 1fr 28px;
+    }
+
+    .sidebar-standings-gd {
+        display: none;
+    }
+
+    /* Timeline */
+    .timeline {
+        padding-left: var(--space-6);
+    }
+
+    .timeline-year {
+        font-size: var(--text-2xl);
+    }
+
+    /* Article nav */
+    .article-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .article-nav-link--next {
+        text-align: left;
+        flex-direction: row;
+        margin-left: 0;
+    }
+
+    /* Palmarés */
+    .palmarés-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Membership */
+    .membership-plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Squad grid */
+    .squad-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Player stat boxes */
+    .player-stats-season {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand,
+    .footer-contact {
+        grid-column: span 1;
+    }
+
+    /* Page hero */
+    .page-hero__title {
+        font-size: var(--text-4xl);
+    }
+
+    /* Ticket prices table */
+    .ticket-prices-table {
+        font-size: var(--text-xs);
+    }
+
+    .ticket-prices-table td {
+        padding: var(--space-2);
+    }
+
+    /* Filter tabs */
+    .filter-tabs {
+        gap: var(--space-2);
+    }
+
+    .filter-tab {
+        padding: var(--space-2) var(--space-3);
+        font-size: 0.65rem;
+    }
+
+    /* Stat bar center label */
+    .stat-bar {
+        grid-template-columns: 50px 1fr 50px;
+    }
+}
+
+/* ─── 480px ──────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+
+    /* Container */
+    :root {
+        --container-padding: 1rem;
+    }
+
+    /* Hero font */
+    .matchday-hero__content {
+        padding-bottom: var(--space-10);
+    }
+
+    /* Score panel stack on very small */
+    .score-panel {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        text-align: center;
+        gap: var(--space-3);
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .score-panel__team,
+    .score-panel__team--away {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* CTA buttons */
+    .matchday-hero__actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+
+    .matchday-hero__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Player showcase */
+    .player-showcase {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* News feature title */
+    .news-feature__title {
+        font-size: var(--text-2xl);
+    }
+
+    .news-feature__body {
+        padding: var(--space-5);
+    }
+
+    /* Age groups */
+    .age-groups-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Stadium sectors */
+    .stadium-sectors {
+        grid-template-columns: 1fr;
+    }
+
+    /* Match info bar */
+    .match-info-bar {
+        gap: var(--space-3);
+    }
+
+    .match-info-dot {
+        display: none;
+    }
+
+    /* Contact dept */
+    .contact-dept-item {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-dept-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Testimonial */
+    .testimonial-block {
+        padding: var(--space-6);
+    }
+
+    .testimonial-quote {
+        font-size: var(--text-2xl);
+    }
+
+    /* Player nav */
+    .player-nav {
+        flex-direction: column;
+    }
+
+    .player-nav-link--next {
+        margin-left: 0;
+        max-width: none;
+    }
+
+    .player-nav-link {
+        max-width: none;
+    }
+}
+
+/* ─── 375px ──────────────────────────────────────────────── */
+
+@media (max-width: 375px) {
+    :root {
+        --header-height: 60px;
+        --header-height-scrolled: 48px;
+    }
+
+    /* Squad single column */
+    .squad-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .age-groups-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Extra compact */
+    .badge {
+        padding: 2px 6px;
+        font-size: 0.6rem;
+    }
+
+    .fixture-item {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    /* Form */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Buttons */
+    .btn-xl {
+        padding: var(--space-4) var(--space-6);
+        font-size: var(--text-base);
+    }
+}
+
+/* ─── WIDE SCREENS ───────────────────────────────────────── */
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: var(--container-2xl);
+    }
+
+    .player-showcase {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* ─── PRINT ──────────────────────────────────────────────── */
+
+@media print {
+
+    .site-header,
+    .mobile-menu,
+    .site-footer,
+    .matchday-hero__actions,
+    .btn,
+    .newsletter {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .standings-table,
+    .fixture-list {
+        page-break-inside: avoid;
+    }
+}
+
+/* ─── HOVER — touch devices ─────────────────────────────── */
+
+@media (hover: none) {
+
+    .news-card:hover,
+    .player-card:hover,
+    .news-feature:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .news-card:hover .news-card__img,
+    .player-card:hover .player-card__img,
+    .news-feature:hover .news-feature__img {
+        transform: none;
+    }
+}

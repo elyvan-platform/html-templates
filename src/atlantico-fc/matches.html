@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos e Resultados — Atlântico FC</title>
+    <meta name="description"
+        content="Calendário, resultados e classificação do Atlântico FC na Liga Atlântica e Taça Nacional 2024/25.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+    <header class="site-header is-solid" id="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="emblem header-brand" aria-label="Atlântico FC — Página inicial">
+                    <svg viewBox="0 0 48 58" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" aria-hidden="true">
+                        <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="#091525" />
+                        <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="none" stroke="#2563b0"
+                            stroke-width="1.5" />
+                        <path d="M2 29C7 25 14 31 24 27C34 23 41 29 46 25V33C41 37 34 31 24 35C14 39 7 33 2 37Z"
+                            fill="#e63946" />
+                        <path d="M2 34C7 30 14 36 24 32C34 28 41 34 46 30V37C41 41 34 35 24 39C14 43 7 37 2 41Z"
+                            fill="#1a4b8c" opacity="0.7" />
+                        <text x="24" y="20" text-anchor="middle" fill="white" font-family="Barlow Condensed,sans-serif"
+                            font-weight="800" font-size="11" letter-spacing="2">AFC</text>
+                        <text x="24" y="50" text-anchor="middle" fill="#8baad4"
+                            font-family="Barlow Condensed,sans-serif" font-weight="600" font-size="5.5"
+                            letter-spacing="1.5">1937</text>
+                    </svg>
+                    <span class="emblem-text">
+                        <span class="emblem-name">Atlântico FC</span>
+                        <span class="emblem-since">Desde 1937</span>
+                    </span>
+                </a>
+                <nav class="site-nav" aria-label="Navegação principal">
+                    <ul class="nav-list" role="list">
+                        <li><a href="club.html" class="nav-link">Clube</a></li>
+                        <li><a href="matches.html" class="nav-link" aria-current="page">Jogos</a></li>
+                        <li><a href="squad.html" class="nav-link">Equipa</a></li>
+                        <li><a href="news.html" class="nav-link">Notícias</a></li>
+                        <li><a href="academy.html" class="nav-link">Formação</a></li>
+                        <li><a href="tickets.html" class="nav-link">Bilhetes</a></li>
+                        <li><a href="membership.html" class="nav-link">Sócios</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="lang-selector">
+                        <button class="lang-btn is-active" aria-pressed="true">PT</button>
+                        <button class="lang-btn" aria-pressed="false">EN</button>
+                    </div>
+                    <a href="membership.html" class="btn btn-ghost btn-sm">Ser Sócio</a>
+                    <a href="tickets.html" class="btn btn-accent btn-sm">Bilhetes</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu de navegação">
+        <nav aria-label="Menu móvel">
+            <ul class="mobile-nav-list" role="list">
+                <li><a href="club.html" class="mobile-nav-link">Clube</a></li>
+                <li><a href="matches.html" class="mobile-nav-link" aria-current="page">Jogos</a></li>
+                <li><a href="squad.html" class="mobile-nav-link">Equipa</a></li>
+                <li><a href="news.html" class="mobile-nav-link">Notícias</a></li>
+                <li><a href="academy.html" class="mobile-nav-link">Formação</a></li>
+                <li><a href="tickets.html" class="mobile-nav-link">Bilhetes</a></li>
+                <li><a href="membership.html" class="mobile-nav-link">Sócios</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="membership.html" class="btn btn-outline">Ser Sócio</a>
+            <a href="tickets.html" class="btn btn-accent">Comprar Bilhetes</a>
+        </div>
+    </div>
+
+    <main id="main-content">
+
+        <!-- Page Hero -->
+        <div class="page-hero">
+            <div class="page-hero__bg">
+                <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?auto=format&fit=crop&w=1440&q=80"
+                    alt="" width="1440" height="600" loading="lazy">
+            </div>
+            <div class="page-hero__overlay" aria-hidden="true"></div>
+            <div class="container">
+                <div class="page-hero__content">
+                    <p class="page-hero__label">Calendário 2024/25</p>
+                    <h1 class="page-hero__title">Jogos &amp;<br>Resultados</h1>
+                    <p class="page-hero__subtitle">Liga Atlântica · Taça Nacional · Pré-época</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Match Feature -->
+        <section style="background:var(--color-surface);padding-block:var(--space-10);"
+            aria-label="Próximo jogo em destaque">
+            <div class="container">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8);align-items:center;">
+                    <div>
+                        <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-5);">
+                            <span class="badge badge-live">Próximo Jogo</span>
+                            <span
+                                style="font-size:var(--text-xs);color:var(--color-text-faint);font-weight:600;letter-spacing:var(--ls-widest);text-transform:uppercase;">Liga
+                                Atlântica · Jornada 25</span>
+                        </div>
+                        <div class="score-panel" style="max-width:100%;">
+                            <div class="score-panel__team">
+                                <div class="score-panel__emblem" style="background:var(--color-ocean);">
+                                    <svg viewBox="0 0 48 58" xmlns="http://www.w3.org/2000/svg" width="24"
+                                        aria-hidden="true">
+                                        <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="#091525" />
+                                        <path
+                                            d="M2 29C7 25 14 31 24 27C34 23 41 29 46 25V33C41 37 34 31 24 35C14 39 7 33 2 37Z"
+                                            fill="#e63946" />
+                                        <text x="24" y="22" text-anchor="middle" fill="white"
+                                            font-family="Barlow Condensed,sans-serif" font-weight="800"
+                                            font-size="12">AFC</text>
+                                    </svg>
+                                </div>
+                                <span class="score-panel__team-name">Atlântico FC</span>
+                            </div>
+                            <span class="score-panel__vs">vs</span>
+                            <div class="score-panel__team score-panel__team--away">
+                                <div class="score-panel__emblem" style="background:rgba(255,255,255,0.06);">US</div>
+                                <span class="score-panel__team-name">União Serrana</span>
+                            </div>
+                        </div>
+                        <div
+                            style="display:flex;gap:var(--space-5);margin-top:var(--space-5);color:var(--color-text-dim);font-size:var(--text-sm);">
+                            <span>🗓 Sáb, 18 Abr 2025</span>
+                            <span>🕒 20h30</span>
+                            <span>📍 Estádio da Marina</span>
+                        </div>
+                        <div style="display:flex;gap:var(--space-4);margin-top:var(--space-6);">
+                            <a href="tickets.html" class="btn btn-accent">Comprar Bilhetes</a>
+                            <a href="match-detail.html" class="btn btn-outline btn-sm">Antevisão</a>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);">
+                        <div
+                            style="background:rgba(255,255,255,0.04);border-radius:var(--radius-lg);padding:var(--space-5);border:1px solid rgba(255,255,255,0.06);">
+                            <p
+                                style="font-size:var(--text-xs);font-weight:600;letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-3);">
+                                Últimos 5 jogos (AFC)</p>
+                            <div style="display:flex;gap:var(--space-2);">
+                                <span class="badge badge-success" style="font-size:11px;">V</span>
+                                <span class="badge badge-success" style="font-size:11px;">V</span>
+                                <span class="badge badge-light" style="font-size:11px;">E</span>
+                                <span class="badge badge-success" style="font-size:11px;">V</span>
+                                <span class="badge badge-success" style="font-size:11px;">V</span>
+                            </div>
+                        </div>
+                        <div
+                            style="background:rgba(255,255,255,0.04);border-radius:var(--radius-lg);padding:var(--space-5);border:1px solid rgba(255,255,255,0.06);">
+                            <p
+                                style="font-size:var(--text-xs);font-weight:600;letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-3);">
+                                Últimos 5 jogos (US)</p>
+                            <div style="display:flex;gap:var(--space-2);">
+                                <span class="badge badge-success" style="font-size:11px;">V</span>
+                                <span class="badge badge-accent" style="font-size:11px;">D</span>
+                                <span class="badge badge-success" style="font-size:11px;">V</span>
+                                <span class="badge badge-light" style="font-size:11px;">E</span>
+                                <span class="badge badge-success" style="font-size:11px;">V</span>
+                            </div>
+                        </div>
+                        <div
+                            style="grid-column:span 2;background:rgba(255,255,255,0.04);border-radius:var(--radius-lg);padding:var(--space-5);border:1px solid rgba(255,255,255,0.06);">
+                            <p
+                                style="font-size:var(--text-xs);font-weight:600;letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-3);">
+                                Confronto Direto Recente</p>
+                            <div
+                                style="display:flex;flex-direction:column;gap:var(--space-2);font-size:var(--text-sm);color:var(--color-text-dim);">
+                                <div style="display:flex;justify-content:space-between;"><span>Atlântico FC 2–1 União
+                                        Serrana</span><span style="color:var(--color-text-faint);">Nov 2024</span></div>
+                                <div style="display:flex;justify-content:space-between;"><span>União Serrana 0–0
+                                        Atlântico FC</span><span style="color:var(--color-text-faint);">Mar 2024</span>
+                                </div>
+                                <div style="display:flex;justify-content:space-between;"><span>Atlântico FC 3–0 União
+                                        Serrana</span><span style="color:var(--color-text-faint);">Nov 2023</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters + Full Calendar -->
+        <section class="section" id="calendario" aria-labelledby="calendar-heading">
+            <div class="container">
+                <div class="matches-layout">
+                    <div>
+                        <h2 class="section-title" id="calendar-heading" style="margin-bottom:var(--space-8);">Calendário
+                            Completo</h2>
+
+                        <!-- Filter Tabs -->
+                        <div class="filter-tabs" role="tablist" aria-label="Filtrar jogos por tipo" data-match-filters>
+                            <button class="filter-tab is-active" role="tab" data-filter="all"
+                                aria-selected="true">Todos</button>
+                            <button class="filter-tab" role="tab" data-filter="casa" aria-selected="false">Casa</button>
+                            <button class="filter-tab" role="tab" data-filter="fora" aria-selected="false">Fora</button>
+                            <button class="filter-tab" role="tab" data-filter="liga" aria-selected="false">Liga
+                                Atlântica</button>
+                            <button class="filter-tab" role="tab" data-filter="taca" aria-selected="false">Taça
+                                Nacional</button>
+                        </div>
+
+                        <!-- Upcoming -->
+                        <h3
+                            style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--color-muted);letter-spacing:var(--ls-wider);text-transform:uppercase;font-size:var(--text-sm);margin-bottom:var(--space-4);">
+                            Próximos Jogos</h3>
+                        <div class="fixture-list" style="margin-bottom:var(--space-8);" role="list">
+                            <a href="match-detail.html" class="fixture-item fixture-item--upcoming"
+                                data-match-filter="casa liga" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>18 Abr</strong>
+                                    Sáb · 20h30
+                                </div>
+                                <div>
+                                    <span class="badge badge-ocean" style="margin-bottom:var(--space-2);">Liga Atlântica
+                                        · J25</span>
+                                    <div class="fixture-item__competition">Casa · Estádio da Marina</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home">Atlântico FC</span>
+                                    <span class="fixture-item__time">vs</span>
+                                    <span class="fixture-item__team fixture-item__team--away">União Serrana</span>
+                                </div>
+                                <div class="fixture-item__stadium">
+                                    <a href="tickets.html" class="btn btn-accent btn-sm"
+                                        onclick="event.stopPropagation()">Bilhetes</a>
+                                </div>
+                            </a>
+
+                            <a href="matches.html" class="fixture-item fixture-item--upcoming"
+                                data-match-filter="casa taca" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>23 Abr</strong>
+                                    Qua · 20h00
+                                </div>
+                                <div>
+                                    <span class="badge badge-accent" style="margin-bottom:var(--space-2);">Taça Nacional
+                                        · MF</span>
+                                    <div class="fixture-item__competition">Casa · Estádio da Marina</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home">Atlântico FC</span>
+                                    <span class="fixture-item__time">vs</span>
+                                    <span class="fixture-item__team fixture-item__team--away">Real Ribeirense</span>
+                                </div>
+                                <div class="fixture-item__stadium">
+                                    <a href="tickets.html" class="btn btn-accent btn-sm"
+                                        onclick="event.stopPropagation()">Bilhetes</a>
+                                </div>
+                            </a>
+
+                            <a href="matches.html" class="fixture-item fixture-item--upcoming"
+                                data-match-filter="fora liga" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>26 Abr</strong>
+                                    Sáb · 17h00
+                                </div>
+                                <div>
+                                    <span class="badge badge-ocean" style="margin-bottom:var(--space-2);">Liga Atlântica
+                                        · J26</span>
+                                    <div class="fixture-item__competition">Fora · Estádio do Vale</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home">Académico Central</span>
+                                    <span class="fixture-item__time">vs</span>
+                                    <span class="fixture-item__team fixture-item__team--away">Atlântico FC</span>
+                                </div>
+                                <div class="fixture-item__stadium"
+                                    style="text-align:right;font-size:var(--text-xs);color:var(--color-muted);">Fora
+                                </div>
+                            </a>
+
+                            <a href="matches.html" class="fixture-item fixture-item--upcoming"
+                                data-match-filter="casa liga" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>3 Mai</strong>
+                                    Sáb · 20h30
+                                </div>
+                                <div>
+                                    <span class="badge badge-ocean" style="margin-bottom:var(--space-2);">Liga Atlântica
+                                        · J27</span>
+                                    <div class="fixture-item__competition">Casa · Estádio da Marina</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home">Atlântico FC</span>
+                                    <span class="fixture-item__time">vs</span>
+                                    <span class="fixture-item__team fixture-item__team--away">Vitória da Costa</span>
+                                </div>
+                                <div class="fixture-item__stadium">
+                                    <a href="tickets.html" class="btn btn-accent btn-sm"
+                                        onclick="event.stopPropagation()">Bilhetes</a>
+                                </div>
+                            </a>
+
+                            <a href="matches.html" class="fixture-item fixture-item--upcoming"
+                                data-match-filter="fora liga" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>10 Mai</strong>
+                                    Sáb · 18h00
+                                </div>
+                                <div>
+                                    <span class="badge badge-ocean" style="margin-bottom:var(--space-2);">Liga Atlântica
+                                        · J28</span>
+                                    <div class="fixture-item__competition">Fora · Estádio da Serra</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home">Sporting da Vila</span>
+                                    <span class="fixture-item__time">vs</span>
+                                    <span class="fixture-item__team fixture-item__team--away">Atlântico FC</span>
+                                </div>
+                                <div class="fixture-item__stadium"
+                                    style="text-align:right;font-size:var(--text-xs);color:var(--color-muted);">Fora
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Results -->
+                        <h3
+                            style="font-size:var(--text-sm);font-weight:600;letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--color-muted);margin-bottom:var(--space-4);">
+                            Resultados Recentes</h3>
+                        <div class="fixture-list" role="list">
+                            <a href="match-detail.html" class="fixture-item fixture-item--result"
+                                data-match-filter="fora liga" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>29 Mar</strong>
+                                    <span style="color:var(--color-muted);">J24</span>
+                                </div>
+                                <div>
+                                    <span class="badge badge-light" style="margin-bottom:var(--space-1);">Liga Atlântica
+                                        · J24</span>
+                                    <div class="fixture-item__competition">Fora · Estádio do Norte</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home">Desportivo do Norte</span>
+                                    <span class="fixture-item__score">1–3</span>
+                                    <span class="fixture-item__team fixture-item__team--away"
+                                        style="font-weight:700;color:var(--color-ocean);">Atlântico FC</span>
+                                </div>
+                                <div class="fixture-item__stadium" style="text-align:right;">
+                                    <span class="badge badge-success">V</span>
+                                </div>
+                            </a>
+
+                            <a href="matches.html" class="fixture-item fixture-item--result"
+                                data-match-filter="casa liga" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>15 Mar</strong>
+                                    <span style="color:var(--color-muted);">J23</span>
+                                </div>
+                                <div>
+                                    <span class="badge badge-light" style="margin-bottom:var(--space-1);">Liga Atlântica
+                                        · J23</span>
+                                    <div class="fixture-item__competition">Casa · Estádio da Marina</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home"
+                                        style="font-weight:700;color:var(--color-ocean);">Atlântico FC</span>
+                                    <span class="fixture-item__score">2–0</span>
+                                    <span class="fixture-item__team fixture-item__team--away">Real Ribeirense</span>
+                                </div>
+                                <div class="fixture-item__stadium" style="text-align:right;">
+                                    <span class="badge badge-success">V</span>
+                                </div>
+                            </a>
+
+                            <a href="matches.html" class="fixture-item fixture-item--result"
+                                data-match-filter="fora liga" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>8 Mar</strong>
+                                    <span style="color:var(--color-muted);">J22</span>
+                                </div>
+                                <div>
+                                    <span class="badge badge-light" style="margin-bottom:var(--space-1);">Liga Atlântica
+                                        · J22</span>
+                                    <div class="fixture-item__competition">Fora · Estádio Operário</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home">Operário Portuense</span>
+                                    <span class="fixture-item__score">1–1</span>
+                                    <span class="fixture-item__team fixture-item__team--away">Atlântico FC</span>
+                                </div>
+                                <div class="fixture-item__stadium" style="text-align:right;">
+                                    <span class="badge badge-warning"
+                                        style="background:rgba(217,119,6,0.1);color:var(--color-warning);">E</span>
+                                </div>
+                            </a>
+
+                            <a href="matches.html" class="fixture-item fixture-item--result"
+                                data-match-filter="casa liga" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>1 Mar</strong>
+                                    <span style="color:var(--color-muted);">J21</span>
+                                </div>
+                                <div>
+                                    <span class="badge badge-light" style="margin-bottom:var(--space-1);">Liga Atlântica
+                                        · J21</span>
+                                    <div class="fixture-item__competition">Casa · Estádio da Marina</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home"
+                                        style="font-weight:700;color:var(--color-ocean);">Atlântico FC</span>
+                                    <span class="fixture-item__score">3–1</span>
+                                    <span class="fixture-item__team fixture-item__team--away">Clube do Vale</span>
+                                </div>
+                                <div class="fixture-item__stadium" style="text-align:right;">
+                                    <span class="badge badge-success">V</span>
+                                </div>
+                            </a>
+
+                            <a href="matches.html" class="fixture-item fixture-item--result"
+                                data-match-filter="fora liga" role="listitem">
+                                <div class="fixture-item__date">
+                                    <strong>22 Fev</strong>
+                                    <span style="color:var(--color-muted);">J20</span>
+                                </div>
+                                <div>
+                                    <span class="badge badge-light" style="margin-bottom:var(--space-1);">Liga Atlântica
+                                        · J20</span>
+                                    <div class="fixture-item__competition">Fora · Estádio da Estrela</div>
+                                </div>
+                                <div class="fixture-item__teams">
+                                    <span class="fixture-item__team fixture-item__team--home">Estrela do Minho</span>
+                                    <span class="fixture-item__score">0–2</span>
+                                    <span class="fixture-item__team fixture-item__team--away"
+                                        style="font-weight:700;color:var(--color-ocean);">Atlântico FC</span>
+                                </div>
+                                <div class="fixture-item__stadium" style="text-align:right;">
+                                    <span class="badge badge-success">V</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar: Standings -->
+                    <aside class="matches-sidebar" aria-labelledby="sidebar-standings-heading">
+                        <div class="sidebar-card">
+                            <div class="sidebar-card__header">
+                                <h2 class="sidebar-card__title" id="sidebar-standings-heading">Liga Atlântica</h2>
+                                <p
+                                    style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-1);">
+                                    Classificação · Após J24</p>
+                            </div>
+                            <div role="table" aria-label="Classificação da Liga Atlântica">
+                                <div class="sidebar-standings-row"
+                                    style="background:var(--color-light);font-size:var(--text-xs);font-weight:600;letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--color-muted);"
+                                    role="row">
+                                    <span role="columnheader">#</span>
+                                    <span role="columnheader">Clube</span>
+                                    <span role="columnheader" style="text-align:right">J</span>
+                                    <span role="columnheader" style="text-align:right">Pts</span>
+                                </div>
+                                <div class="sidebar-standings-row is-highlighted" role="row">
+                                    <span class="sidebar-standings-pos">1</span>
+                                    <span class="sidebar-standings-club"
+                                        style="font-weight:700;color:var(--color-ocean);">Atlântico FC</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">55</span>
+                                </div>
+                                <div class="sidebar-standings-row" role="row">
+                                    <span class="sidebar-standings-pos">2</span>
+                                    <span class="sidebar-standings-club">União Serrana</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">51</span>
+                                </div>
+                                <div class="sidebar-standings-row" role="row">
+                                    <span class="sidebar-standings-pos">3</span>
+                                    <span class="sidebar-standings-club">Desp. do Norte</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">44</span>
+                                </div>
+                                <div class="sidebar-standings-row" role="row">
+                                    <span class="sidebar-standings-pos">4</span>
+                                    <span class="sidebar-standings-club">Real Ribeirense</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">42</span>
+                                </div>
+                                <div class="sidebar-standings-row" role="row">
+                                    <span class="sidebar-standings-pos">5</span>
+                                    <span class="sidebar-standings-club">Vitória da Costa</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">38</span>
+                                </div>
+                                <div class="sidebar-standings-row" role="row">
+                                    <span class="sidebar-standings-pos">6</span>
+                                    <span class="sidebar-standings-club">Académico Central</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">35</span>
+                                </div>
+                                <div class="sidebar-standings-row" role="row">
+                                    <span class="sidebar-standings-pos">7</span>
+                                    <span class="sidebar-standings-club">Sporting da Vila</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">32</span>
+                                </div>
+                                <div class="sidebar-standings-row" role="row">
+                                    <span class="sidebar-standings-pos">8</span>
+                                    <span class="sidebar-standings-club">Estrela do Minho</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">28</span>
+                                </div>
+                                <div class="sidebar-standings-row" role="row">
+                                    <span class="sidebar-standings-pos">9</span>
+                                    <span class="sidebar-standings-club">Clube do Vale</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">25</span>
+                                </div>
+                                <div class="sidebar-standings-row" role="row">
+                                    <span class="sidebar-standings-pos">10</span>
+                                    <span class="sidebar-standings-club">Op. Portuense</span>
+                                    <span class="sidebar-standings-gd">24</span>
+                                    <span class="sidebar-standings-pts">21</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Competition info -->
+                        <div class="sidebar-card" style="margin-top:var(--space-5);">
+                            <div class="sidebar-card__header">
+                                <h3 class="sidebar-card__title">Competições</h3>
+                            </div>
+                            <div style="padding:var(--space-4);">
+                                <div style="padding:var(--space-4);border-bottom:1px solid var(--color-border);">
+                                    <p style="font-weight:700;font-size:var(--text-sm);margin-bottom:var(--space-1);">
+                                        Liga Atlântica</p>
+                                    <p style="font-size:var(--text-xs);color:var(--color-muted);">1.ª Divisão · 10
+                                        clubes · Jornada 24/36</p>
+                                </div>
+                                <div style="padding:var(--space-4);">
+                                    <p style="font-weight:700;font-size:var(--text-sm);margin-bottom:var(--space-1);">
+                                        Taça Nacional</p>
+                                    <p style="font-size:var(--text-xs);color:var(--color-muted);">Meia-finais ·
+                                        Atlântico FC apurado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="emblem" aria-label="Atlântico FC">
+                            <svg viewBox="0 0 48 58" xmlns="http://www.w3.org/2000/svg" style="width:32px;"
+                                aria-hidden="true">
+                                <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="#091525" />
+                                <path d="M2 29C7 25 14 31 24 27C34 23 41 29 46 25V33C41 37 34 31 24 35C14 39 7 33 2 37Z"
+                                    fill="#e63946" />
+                                <text x="24" y="22" text-anchor="middle" fill="white"
+                                    font-family="Barlow Condensed,sans-serif" font-weight="800"
+                                    font-size="12">AFC</text>
+                            </svg>
+                            <span class="emblem-text"><span class="emblem-name">Atlântico FC</span></span>
+                        </a>
+                        <p class="footer-tagline">Do mar nasce a nossa força.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                            <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                            <a href="#" class="social-link" aria-label="Twitter/X">X</a>
+                        </div>
+                    </div>
+                    <nav aria-labelledby="fn-clube">
+                        <h3 class="footer-nav-title" id="fn-clube">Clube</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="club.html" class="footer-nav-link">História</a></li>
+                            <li><a href="squad.html" class="footer-nav-link">Equipa</a></li>
+                            <li><a href="academy.html" class="footer-nav-link">Academia</a></li>
+                            <li><a href="contact.html" class="footer-nav-link">Contactos</a></li>
+                        </ul>
+                    </nav>
+                    <nav aria-labelledby="fn-jogos">
+                        <h3 class="footer-nav-title" id="fn-jogos">Jogos</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="matches.html" class="footer-nav-link">Calendário</a></li>
+                            <li><a href="matches.html" class="footer-nav-link">Classificação</a></li>
+                            <li><a href="news.html" class="footer-nav-link">Notícias</a></li>
+                        </ul>
+                    </nav>
+                    <nav aria-labelledby="fn-adeptos">
+                        <h3 class="footer-nav-title" id="fn-adeptos">Adeptos</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="tickets.html" class="footer-nav-link">Bilhetes</a></li>
+                            <li><a href="membership.html" class="footer-nav-link">Sócios</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer-contact">
+                        <h3 class="footer-nav-title">Contacto</h3>
+                        <address>
+                            <p>Av. Marginal, 1200, Porto Norte</p>
+                            <p><a href="tel:+351220000000">+351 220 000 000</a></p>
+                            <p><a href="mailto:geral@atlanticofc.pt">geral@atlanticofc.pt</a></p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 Atlântico FC. Todos os direitos reservados.</p>
+                <nav class="footer-legal" aria-label="Links legais">
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos</a>
+                    <a href="#">Acessibilidade</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

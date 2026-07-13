@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel Neves — Número 10 — Atlântico FC</title>
+    <meta name="description"
+        content="Perfil de Miguel Neves, número 10 e capitão do Atlântico FC. Estatísticas, carreira e últimos jogos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+    <header class="site-header is-solid" id="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="emblem header-brand" aria-label="Atlântico FC — Página inicial">
+                    <svg viewBox="0 0 48 58" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" aria-hidden="true">
+                        <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="#091525" />
+                        <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="none" stroke="#2563b0"
+                            stroke-width="1.5" />
+                        <path d="M2 29C7 25 14 31 24 27C34 23 41 29 46 25V33C41 37 34 31 24 35C14 39 7 33 2 37Z"
+                            fill="#e63946" />
+                        <text x="24" y="20" text-anchor="middle" fill="white" font-family="Barlow Condensed,sans-serif"
+                            font-weight="800" font-size="11" letter-spacing="2">AFC</text>
+                        <text x="24" y="50" text-anchor="middle" fill="#8baad4"
+                            font-family="Barlow Condensed,sans-serif" font-weight="600" font-size="5.5"
+                            letter-spacing="1.5">1937</text>
+                    </svg>
+                    <span class="emblem-text">
+                        <span class="emblem-name">Atlântico FC</span>
+                        <span class="emblem-since">Desde 1937</span>
+                    </span>
+                </a>
+                <nav class="site-nav" aria-label="Navegação principal">
+                    <ul class="nav-list" role="list">
+                        <li><a href="club.html" class="nav-link">Clube</a></li>
+                        <li><a href="matches.html" class="nav-link">Jogos</a></li>
+                        <li><a href="squad.html" class="nav-link" aria-current="page">Equipa</a></li>
+                        <li><a href="news.html" class="nav-link">Notícias</a></li>
+                        <li><a href="academy.html" class="nav-link">Formação</a></li>
+                        <li><a href="tickets.html" class="nav-link">Bilhetes</a></li>
+                        <li><a href="membership.html" class="nav-link">Sócios</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="lang-selector">
+                        <button class="lang-btn is-active" aria-pressed="true">PT</button>
+                        <button class="lang-btn" aria-pressed="false">EN</button>
+                    </div>
+                    <a href="membership.html" class="btn btn-ghost btn-sm">Ser Sócio</a>
+                    <a href="tickets.html" class="btn btn-accent btn-sm">Bilhetes</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <span class="hamburger-line"></span><span class="hamburger-line"></span><span
+                        class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu de navegação">
+        <nav>
+            <ul class="mobile-nav-list" role="list">
+                <li><a href="club.html" class="mobile-nav-link">Clube</a></li>
+                <li><a href="matches.html" class="mobile-nav-link">Jogos</a></li>
+                <li><a href="squad.html" class="mobile-nav-link" aria-current="page">Equipa</a></li>
+                <li><a href="news.html" class="mobile-nav-link">Notícias</a></li>
+                <li><a href="academy.html" class="mobile-nav-link">Formação</a></li>
+                <li><a href="tickets.html" class="mobile-nav-link">Bilhetes</a></li>
+                <li><a href="membership.html" class="mobile-nav-link">Sócios</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="membership.html" class="btn btn-outline">Ser Sócio</a>
+            <a href="tickets.html" class="btn btn-accent">Comprar Bilhetes</a>
+        </div>
+    </div>
+
+    <main id="main-content">
+
+        <!-- Player Hero -->
+        <section class="player-hero" aria-label="Perfil de Miguel Neves">
+            <div class="player-hero__bg">
+                <img src="https://images.unsplash.com/photo-1540747913346-19212a4cf528?auto=format&fit=crop&w=1440&q=80"
+                    alt="Miguel Neves em ação no Estádio da Marina" width="1440" height="900" fetchpriority="high">
+            </div>
+            <div class="player-hero__gradient" aria-hidden="true"></div>
+
+            <div class="player-hero__content">
+                <div class="container">
+                    <a href="squad.html"
+                        style="display:inline-flex;align-items:center;gap:var(--space-2);color:var(--color-text-faint);font-size:var(--text-sm);margin-bottom:var(--space-8);text-decoration:none;"
+                        aria-label="Voltar ao plantel">
+                        ← Plantel
+                    </a>
+                    <div class="player-hero__inner">
+                        <div class="player-hero__number" aria-hidden="true">10</div>
+                        <div class="player-hero__info">
+                            <div style="display:flex;align-items:center;gap:var(--space-3);">
+                                <p class="player-hero__position">Médio Criativo</p>
+                                <span class="badge badge-accent">Capitão</span>
+                            </div>
+                            <h1 class="player-hero__name">Miguel<br>Neves</h1>
+                            <div class="player-hero__meta" role="list">
+                                <div class="player-hero__meta-item" role="listitem">
+                                    <span class="player-hero__meta-label">Nacionalidade</span>
+                                    <span class="player-hero__meta-value">🇵🇹 Portugal</span>
+                                </div>
+                                <div class="player-hero__meta-item" role="listitem">
+                                    <span class="player-hero__meta-label">Data de nascimento</span>
+                                    <span class="player-hero__meta-value">14 Mar 1996</span>
+                                </div>
+                                <div class="player-hero__meta-item" role="listitem">
+                                    <span class="player-hero__meta-label">Altura</span>
+                                    <span class="player-hero__meta-value">179 cm</span>
+                                </div>
+                                <div class="player-hero__meta-item" role="listitem">
+                                    <span class="player-hero__meta-label">Pé preferencial</span>
+                                    <span class="player-hero__meta-value">Direito</span>
+                                </div>
+                                <div class="player-hero__meta-item" role="listitem">
+                                    <span class="player-hero__meta-label">No clube desde</span>
+                                    <span class="player-hero__meta-value">2019</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Season Stats -->
+        <section class="section--sm section--dark" aria-labelledby="stats-heading">
+            <div class="container">
+                <p class="section-label">Temporada 2024/25</p>
+                <h2 class="section-title" id="stats-heading" style="margin-bottom:var(--space-8);">Estatísticas</h2>
+                <div class="player-stats-season" role="list"
+                    aria-label="Estatísticas de Miguel Neves na temporada 2024/25">
+                    <div class="player-stat-box" style="background:var(--color-surface);" role="listitem">
+                        <div class="player-stat-box__value" style="color:var(--color-white);">23</div>
+                        <div class="player-stat-box__label" style="color:var(--color-text-faint);">Jogos</div>
+                    </div>
+                    <div class="player-stat-box" style="background:var(--color-surface);" role="listitem">
+                        <div class="player-stat-box__value" style="color:var(--color-white);">1 890</div>
+                        <div class="player-stat-box__label" style="color:var(--color-text-faint);">Minutos</div>
+                    </div>
+                    <div class="player-stat-box" style="background:var(--color-surface);" role="listitem">
+                        <div class="player-stat-box__value" style="color:var(--color-accent);">8</div>
+                        <div class="player-stat-box__label" style="color:var(--color-text-faint);">Golos</div>
+                    </div>
+                    <div class="player-stat-box" style="background:var(--color-surface);" role="listitem">
+                        <div class="player-stat-box__value" style="color:var(--color-ocean-pale);">6</div>
+                        <div class="player-stat-box__label" style="color:var(--color-text-faint);">Assistências</div>
+                    </div>
+                    <div class="player-stat-box" style="background:var(--color-surface);" role="listitem">
+                        <div class="player-stat-box__value" style="color:var(--color-white);">2</div>
+                        <div class="player-stat-box__label" style="color:var(--color-text-faint);">Amarelos</div>
+                    </div>
+                    <div class="player-stat-box" style="background:var(--color-surface);" role="listitem">
+                        <div class="player-stat-box__value" style="color:var(--color-white);">0</div>
+                        <div class="player-stat-box__label" style="color:var(--color-text-faint);">Vermelhos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Biography & Details -->
+        <section class="section" aria-labelledby="bio-heading">
+            <div class="container">
+                <div style="display:grid;grid-template-columns:1fr 340px;gap:var(--space-10);align-items:start;">
+                    <div>
+                        <p class="section-label">Perfil</p>
+                        <h2 style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:700;letter-spacing:var(--ls-tight);margin-bottom:var(--space-6);"
+                            id="bio-heading">O Capitão</h2>
+                        <div
+                            style="font-size:var(--text-base);line-height:var(--lh-loose);color:var(--color-muted);display:flex;flex-direction:column;gap:var(--space-5);">
+                            <p style="max-width:none;">
+                                Miguel Neves chegou ao Atlântico FC em 2019, proveniente do Vitória da Costa, e
+                                rapidamente se tornou a figura central do meio-campo azul. A sua capacidade de leitura
+                                do jogo, a qualidade técnica e a liderança natural valeram-lhe a braçadeira de capitão
+                                em 2021.
+                            </p>
+                            <p style="max-width:none;">
+                                Natural de Braga, o médio de 29 anos formou-se no Académico Central, onde foi
+                                considerado o melhor jogador jovem da Liga Atlântica na temporada 2016/17. Depois de uma
+                                passagem pelo Desportivo do Norte e pelo Vitória da Costa, encontrou no Atlântico FC o
+                                clube da sua vida.
+                            </p>
+                            <p style="max-width:none;">
+                                Nas seis temporadas no clube, acumula 167 jogos, 42 golos e 38 assistências, tornando-se
+                                um dos jogadores mais influentes da história recente do Atlântico FC. A sua visão de
+                                jogo e a capacidade de finalização a partir da segunda linha fazem dele um dos médios
+                                mais completos da Liga Atlântica.
+                            </p>
+                        </div>
+
+                        <blockquote style="margin-top:var(--space-8);">
+                            «Quando visto a camisola azul, sinto o mar nas costas. Este clube é a minha casa.»
+                        </blockquote>
+
+                        <!-- Last 5 Games -->
+                        <div style="margin-top:var(--space-10);">
+                            <p class="section-label">Últimos Jogos</p>
+                            <h3
+                                style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;letter-spacing:var(--ls-snug);margin-bottom:var(--space-5);">
+                                Desempenho Recente</h3>
+                            <div
+                                style="display:flex;flex-direction:column;gap:1px;background:var(--color-border);border-radius:var(--radius-lg);overflow:hidden;">
+                                <div
+                                    style="display:grid;grid-template-columns:80px 1fr 80px 80px 80px;gap:var(--space-3);padding:var(--space-3) var(--space-5);background:var(--color-light);font-size:var(--text-xs);font-weight:600;letter-spacing:var(--ls-wider);text-transform:uppercase;color:var(--color-muted);">
+                                    <span>Jogo</span><span>Adversário</span><span
+                                        style="text-align:center">Min.</span><span
+                                        style="text-align:center">G</span><span style="text-align:center">A</span>
+                                </div>
+                                <div
+                                    style="display:grid;grid-template-columns:80px 1fr 80px 80px 80px;gap:var(--space-3);padding:var(--space-4) var(--space-5);background:white;align-items:center;font-size:var(--text-sm);">
+                                    <span class="badge badge-success">V 1–3</span>
+                                    <span style="font-weight:600;">Desportivo do Norte</span>
+                                    <span style="text-align:center">85'</span>
+                                    <span style="text-align:center;font-weight:700;color:var(--color-accent);">1</span>
+                                    <span style="text-align:center">0</span>
+                                </div>
+                                <div
+                                    style="display:grid;grid-template-columns:80px 1fr 80px 80px 80px;gap:var(--space-3);padding:var(--space-4) var(--space-5);background:white;align-items:center;font-size:var(--text-sm);">
+                                    <span class="badge badge-success">V 2–0</span>
+                                    <span style="font-weight:600;">Real Ribeirense</span>
+                                    <span style="text-align:center">90'</span>
+                                    <span style="text-align:center;font-weight:700;color:var(--color-accent);">1</span>
+                                    <span style="text-align:center;font-weight:700;color:var(--color-ocean);">1</span>
+                                </div>
+                                <div
+                                    style="display:grid;grid-template-columns:80px 1fr 80px 80px 80px;gap:var(--space-3);padding:var(--space-4) var(--space-5);background:white;align-items:center;font-size:var(--text-sm);">
+                                    <span class="badge badge-warning"
+                                        style="background:rgba(217,119,6,0.1);color:var(--color-warning);">E 1–1</span>
+                                    <span style="font-weight:600;">Operário Portuense</span>
+                                    <span style="text-align:center">76'</span>
+                                    <span style="text-align:center">0</span>
+                                    <span style="text-align:center;font-weight:700;color:var(--color-ocean);">1</span>
+                                </div>
+                                <div
+                                    style="display:grid;grid-template-columns:80px 1fr 80px 80px 80px;gap:var(--space-3);padding:var(--space-4) var(--space-5);background:white;align-items:center;font-size:var(--text-sm);">
+                                    <span class="badge badge-success">V 3–1</span>
+                                    <span style="font-weight:600;">Clube do Vale</span>
+                                    <span style="text-align:center">90'</span>
+                                    <span style="text-align:center;font-weight:700;color:var(--color-accent);">2</span>
+                                    <span style="text-align:center">0</span>
+                                </div>
+                                <div
+                                    style="display:grid;grid-template-columns:80px 1fr 80px 80px 80px;gap:var(--space-3);padding:var(--space-4) var(--space-5);background:white;align-items:center;font-size:var(--text-sm);">
+                                    <span class="badge badge-success">V 0–2</span>
+                                    <span style="font-weight:600;">Estrela do Minho</span>
+                                    <span style="text-align:center">83'</span>
+                                    <span style="text-align:center;font-weight:700;color:var(--color-accent);">1</span>
+                                    <span style="text-align:center">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar: Key Stats -->
+                    <aside aria-label="Estatísticas e informação do jogador">
+                        <div
+                            style="background:var(--color-navy);border-radius:var(--radius-xl);padding:var(--space-6);color:var(--color-white);margin-bottom:var(--space-5);">
+                            <p
+                                style="font-size:var(--text-xs);font-weight:600;letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-5);">
+                                No Atlântico FC</p>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+                                <div
+                                    style="text-align:center;padding:var(--space-4);background:rgba(255,255,255,0.04);border-radius:var(--radius-lg);">
+                                    <p
+                                        style="font-family:var(--font-display);font-size:var(--display-sm);font-weight:900;color:var(--color-white);line-height:1;">
+                                        167</p>
+                                    <p
+                                        style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-2);">
+                                        Jogos totais</p>
+                                </div>
+                                <div
+                                    style="text-align:center;padding:var(--space-4);background:rgba(255,255,255,0.04);border-radius:var(--radius-lg);">
+                                    <p
+                                        style="font-family:var(--font-display);font-size:var(--display-sm);font-weight:900;color:var(--color-accent);line-height:1;">
+                                        42</p>
+                                    <p
+                                        style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-2);">
+                                        Golos marcados</p>
+                                </div>
+                                <div
+                                    style="text-align:center;padding:var(--space-4);background:rgba(255,255,255,0.04);border-radius:var(--radius-lg);">
+                                    <p
+                                        style="font-family:var(--font-display);font-size:var(--display-sm);font-weight:900;color:var(--color-ocean-pale);line-height:1;">
+                                        38</p>
+                                    <p
+                                        style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-2);">
+                                        Assistências</p>
+                                </div>
+                                <div
+                                    style="text-align:center;padding:var(--space-4);background:rgba(255,255,255,0.04);border-radius:var(--radius-lg);">
+                                    <p
+                                        style="font-family:var(--font-display);font-size:var(--display-sm);font-weight:900;color:var(--color-white);line-height:1;">
+                                        6</p>
+                                    <p
+                                        style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-2);">
+                                        Temporadas</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="background:var(--color-light);border-radius:var(--radius-xl);padding:var(--space-6);border:1px solid var(--color-border);">
+                            <p
+                                style="font-size:var(--text-xs);font-weight:600;letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--color-muted);margin-bottom:var(--space-5);">
+                                Dados Pessoais</p>
+                            <div style="display:flex;flex-direction:column;gap:var(--space-4);">
+                                <div
+                                    style="display:flex;justify-content:space-between;font-size:var(--text-sm);padding-bottom:var(--space-3);border-bottom:1px solid var(--color-border);">
+                                    <span style="color:var(--color-muted);">Data de nascimento</span>
+                                    <span style="font-weight:600;">14 Mar 1996</span>
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;font-size:var(--text-sm);padding-bottom:var(--space-3);border-bottom:1px solid var(--color-border);">
+                                    <span style="color:var(--color-muted);">Naturalidade</span>
+                                    <span style="font-weight:600;">Braga, Portugal</span>
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;font-size:var(--text-sm);padding-bottom:var(--space-3);border-bottom:1px solid var(--color-border);">
+                                    <span style="color:var(--color-muted);">Altura</span>
+                                    <span style="font-weight:600;">1,79 m</span>
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;font-size:var(--text-sm);padding-bottom:var(--space-3);border-bottom:1px solid var(--color-border);">
+                                    <span style="color:var(--color-muted);">Pé preferencial</span>
+                                    <span style="font-weight:600;">Direito</span>
+                                </div>
+                                <div style="display:flex;justify-content:space-between;font-size:var(--text-sm);">
+                                    <span style="color:var(--color-muted);">Contrato</span>
+                                    <span style="font-weight:600;">Junho 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Player Navigation -->
+                <div class="player-nav" aria-label="Navegar entre jogadores">
+                    <a href="squad.html" class="player-nav-link" aria-label="Jogador anterior: Rui Baptista">
+                        <div>
+                            <p class="player-nav-link__label">← Anterior</p>
+                            <p class="player-nav-link__name">Rui Baptista</p>
+                        </div>
+                    </a>
+                    <a href="squad.html" class="player-nav-link player-nav-link--next"
+                        aria-label="Próximo jogador: Marco Oliveira">
+                        <div>
+                            <p class="player-nav-link__label">Próximo →</p>
+                            <p class="player-nav-link__name">Marco Oliveira</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="emblem" aria-label="Atlântico FC"><svg viewBox="0 0 48 58"
+                                style="width:32px;" aria-hidden="true">
+                                <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="#091525" />
+                                <path d="M2 29C7 25 14 31 24 27C34 23 41 29 46 25V33C41 37 34 31 24 35C14 39 7 33 2 37Z"
+                                    fill="#e63946" /><text x="24" y="22" text-anchor="middle" fill="white"
+                                    font-family="Barlow Condensed,sans-serif" font-weight="800"
+                                    font-size="12">AFC</text>
+                            </svg><span class="emblem-text"><span class="emblem-name">Atlântico FC</span></span></a>
+                        <p class="footer-tagline">Do mar nasce a nossa força.</p>
+                    </div>
+                    <nav aria-labelledby="fn4-clube">
+                        <h3 class="footer-nav-title" id="fn4-clube">Clube</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="club.html" class="footer-nav-link">História</a></li>
+                            <li><a href="squad.html" class="footer-nav-link">Equipa</a></li>
+                            <li><a href="contact.html" class="footer-nav-link">Contactos</a></li>
+                        </ul>
+                    </nav>
+                    <nav aria-labelledby="fn4-jogos">
+                        <h3 class="footer-nav-title" id="fn4-jogos">Jogos</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="matches.html" class="footer-nav-link">Calendário</a></li>
+                            <li><a href="news.html" class="footer-nav-link">Notícias</a></li>
+                        </ul>
+                    </nav>
+                    <nav aria-labelledby="fn4-adept">
+                        <h3 class="footer-nav-title" id="fn4-adept">Adeptos</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="tickets.html" class="footer-nav-link">Bilhetes</a></li>
+                            <li><a href="membership.html" class="footer-nav-link">Sócios</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer-contact">
+                        <h3 class="footer-nav-title">Contacto</h3>
+                        <address>
+                            <p>Av. Marginal, 1200</p>
+                            <p><a href="tel:+351220000000">+351 220 000 000</a></p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 Atlântico FC.</p>
+                <nav class="footer-legal" aria-label="Links legais"><a href="#">Privacidade</a><a href="#">Termos</a><a
+                        href="#">Acessibilidade</a></nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+/* ============================================================
+   ATLÂNTICO FC — DESIGN TOKENS
+   CSS custom properties — single source of truth
+   ============================================================ */
+
+:root {
+
+    /* ─── COLORS ────────────────────────────────────────────── */
+
+    /* Brand blues */
+    --color-navy: #091525;
+    --color-navy-light: #0f2040;
+    --color-surface: #0c1d39;
+    --color-surface-mid: #122446;
+    --color-surface-light: #172d52;
+    --color-ocean: #1a4b8c;
+    --color-ocean-mid: #1e5ca8;
+    --color-ocean-light: #2563b0;
+    --color-ocean-pale: #3b82c4;
+    --color-blue-mist: #8baad4;
+    --color-blue-fog: #c1d5ea;
+
+    /* Neutrals */
+    --color-white: #ffffff;
+    --color-light: #f3f6fa;
+    --color-silver: #e4eaf3;
+    --color-mist: #c7d2e0;
+    --color-border: #dde3ed;
+    --color-muted: #6b7889;
+    --color-subtle: #94a3b8;
+    --color-text: #1c2331;
+    --color-dark: #0a0f1a;
+
+    /* Accent — coral/red */
+    --color-accent: #e63946;
+    --color-accent-dark: #c62532;
+    --color-accent-light: #f0626e;
+    --color-accent-pale: #fde8ea;
+
+    /* Semantic */
+    --color-success: #16a34a;
+    --color-warning: #d97706;
+    --color-info: #0369a1;
+    --color-error: #dc2626;
+
+    /* On-dark */
+    --color-text-inverse: #ffffff;
+    --color-text-dim: rgba(255, 255, 255, 0.72);
+    --color-text-faint: rgba(255, 255, 255, 0.45);
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+
+    --font-display: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+    --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+    /* Weights */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+    --fw-black: 900;
+
+    /* Fluid font scale */
+    --text-xs: clamp(0.6875rem, 0.65rem + 0.1875vw, 0.75rem);
+    --text-sm: clamp(0.8125rem, 0.775rem + 0.1875vw, 0.875rem);
+    --text-base: clamp(1rem, 0.975rem + 0.125vw, 1.0625rem);
+    --text-lg: clamp(1.125rem, 1.075rem + 0.25vw, 1.25rem);
+    --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.875rem);
+    --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);
+    --text-5xl: clamp(3rem, 2rem + 5vw, 6rem);
+    --text-6xl: clamp(4rem, 2.5rem + 7.5vw, 8rem);
+
+    /* Display scale (Barlow Condensed) */
+    --display-sm: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+    --display-md: clamp(3rem, 2rem + 5vw, 6rem);
+    --display-lg: clamp(4rem, 2.5rem + 7.5vw, 9rem);
+    --display-xl: clamp(5.5rem, 3rem + 12.5vw, 12rem);
+
+    /* Line heights */
+    --lh-tight: 1.05;
+    --lh-snug: 1.2;
+    --lh-normal: 1.5;
+    --lh-relaxed: 1.65;
+    --lh-loose: 1.8;
+
+    /* Letter spacing */
+    --ls-tight: -0.03em;
+    --ls-snug: -0.01em;
+    --ls-normal: 0;
+    --ls-wide: 0.04em;
+    --ls-wider: 0.08em;
+    --ls-widest: 0.16em;
+
+    /* ─── SPACING ───────────────────────────────────────────── */
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.75rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-14: 3.5rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-28: 7rem;
+    --space-32: 8rem;
+
+    /* Fluid section spacing */
+    --section-gap: clamp(4rem, 2rem + 8vw, 8rem);
+    --section-gap-sm: clamp(2.5rem, 1.25rem + 5vw, 5rem);
+    --section-gap-xs: clamp(1.5rem, 0.75rem + 3vw, 3rem);
+
+    /* ─── CONTAINERS ─────────────────────────────────────────── */
+
+    --container-xs: 480px;
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1440px;
+    --container-max: 1600px;
+    --container-padding: clamp(1rem, 4vw, 2rem);
+
+    /* ─── BORDERS ───────────────────────────────────────────── */
+
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 10px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* ─── SHADOWS ───────────────────────────────────────────── */
+
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.10);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.16), 0 3px 8px rgba(0, 0, 0, 0.10);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.20), 0 6px 16px rgba(0, 0, 0, 0.12);
+    --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.45);
+    --shadow-inset: inset 0 1px 3px rgba(0, 0, 0, 0.10);
+
+    /* ─── EASING ─────────────────────────────────────────────── */
+
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --transition-fast: 150ms var(--ease-in-out);
+    --transition-base: 250ms var(--ease-in-out);
+    --transition-slow: 400ms var(--ease-out);
+    --transition-spring: 350ms var(--ease-spring);
+
+    /* Animation durations */
+    --dur-fast: 150ms;
+    --dur-base: 300ms;
+    --dur-slow: 600ms;
+    --dur-reveal: 800ms;
+    --dur-long: 1100ms;
+
+    /* ─── Z-INDEX ─────────────────────────────────────────────── */
+
+    --z-below: -1;
+    --z-base: 0;
+    --z-above: 10;
+    --z-floating: 50;
+    --z-overlay: 100;
+    --z-modal: 200;
+    --z-header: 300;
+    --z-toast: 400;
+
+    /* ─── IMAGE RATIOS ───────────────────────────────────────── */
+
+    --ratio-square: 1 / 1;
+    --ratio-portrait: 3 / 4;
+    --ratio-landscape: 4 / 3;
+    --ratio-video: 16 / 9;
+    --ratio-wide: 21 / 9;
+    --ratio-card: 3 / 2;
+    --ratio-player: 2 / 3;
+    --ratio-hero: 8 / 3;
+
+    /* ─── LAYOUT ─────────────────────────────────────────────── */
+
+    --header-height: 72px;
+    --header-height-scrolled: 56px;
+    --grid-gap: clamp(1rem, 2vw, 1.5rem);
+}

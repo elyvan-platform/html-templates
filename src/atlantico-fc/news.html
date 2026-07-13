@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias — Atlântico FC</title>
+    <meta name="description" content="Todas as notícias do Atlântico FC: equipa, jogos, clube, formação e comunidade.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+    <header class="site-header is-solid" id="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="emblem header-brand" aria-label="Atlântico FC — Página inicial">
+                    <svg viewBox="0 0 48 58" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" aria-hidden="true">
+                        <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="#091525" />
+                        <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="none" stroke="#2563b0"
+                            stroke-width="1.5" />
+                        <path d="M2 29C7 25 14 31 24 27C34 23 41 29 46 25V33C41 37 34 31 24 35C14 39 7 33 2 37Z"
+                            fill="#e63946" />
+                        <text x="24" y="20" text-anchor="middle" fill="white" font-family="Barlow Condensed,sans-serif"
+                            font-weight="800" font-size="11" letter-spacing="2">AFC</text>
+                        <text x="24" y="50" text-anchor="middle" fill="#8baad4"
+                            font-family="Barlow Condensed,sans-serif" font-weight="600" font-size="5.5"
+                            letter-spacing="1.5">1937</text>
+                    </svg>
+                    <span class="emblem-text">
+                        <span class="emblem-name">Atlântico FC</span>
+                        <span class="emblem-since">Desde 1937</span>
+                    </span>
+                </a>
+                <nav class="site-nav" aria-label="Navegação principal">
+                    <ul class="nav-list" role="list">
+                        <li><a href="club.html" class="nav-link">Clube</a></li>
+                        <li><a href="matches.html" class="nav-link">Jogos</a></li>
+                        <li><a href="squad.html" class="nav-link">Equipa</a></li>
+                        <li><a href="news.html" class="nav-link" aria-current="page">Notícias</a></li>
+                        <li><a href="academy.html" class="nav-link">Formação</a></li>
+                        <li><a href="tickets.html" class="nav-link">Bilhetes</a></li>
+                        <li><a href="membership.html" class="nav-link">Sócios</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="lang-selector">
+                        <button class="lang-btn is-active" aria-pressed="true">PT</button>
+                        <button class="lang-btn" aria-pressed="false">EN</button>
+                    </div>
+                    <a href="membership.html" class="btn btn-ghost btn-sm">Ser Sócio</a>
+                    <a href="tickets.html" class="btn btn-accent btn-sm">Bilhetes</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <span class="hamburger-line"></span><span class="hamburger-line"></span><span
+                        class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu de navegação">
+        <nav>
+            <ul class="mobile-nav-list" role="list">
+                <li><a href="club.html" class="mobile-nav-link">Clube</a></li>
+                <li><a href="matches.html" class="mobile-nav-link">Jogos</a></li>
+                <li><a href="squad.html" class="mobile-nav-link">Equipa</a></li>
+                <li><a href="news.html" class="mobile-nav-link" aria-current="page">Notícias</a></li>
+                <li><a href="academy.html" class="mobile-nav-link">Formação</a></li>
+                <li><a href="tickets.html" class="mobile-nav-link">Bilhetes</a></li>
+                <li><a href="membership.html" class="mobile-nav-link">Sócios</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-footer">
+            <a href="membership.html" class="btn btn-outline">Ser Sócio</a>
+            <a href="tickets.html" class="btn btn-accent">Comprar Bilhetes</a>
+        </div>
+    </div>
+
+    <main id="main-content">
+
+        <!-- Page Hero -->
+        <div class="page-hero">
+            <div class="page-hero__bg">
+                <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?auto=format&fit=crop&w=1440&q=80"
+                    alt="" width="1440" height="600" loading="lazy">
+            </div>
+            <div class="page-hero__overlay" aria-hidden="true"></div>
+            <div class="container">
+                <div class="page-hero__content">
+                    <p class="page-hero__label">Atualidade</p>
+                    <h1 class="page-hero__title">Notícias</h1>
+                    <p class="page-hero__subtitle">Equipa · Clube · Formação · Comunidade</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- News Section -->
+        <section class="section" aria-labelledby="news-main-heading">
+            <div class="container">
+                <div class="news-layout">
+                    <!-- Main content -->
+                    <div>
+                        <!-- Search + Filters -->
+                        <div
+                            style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-5);margin-bottom:var(--space-8);flex-wrap:wrap;">
+                            <div class="filter-tabs" role="group" aria-label="Filtrar notícias por categoria"
+                                data-news-filters>
+                                <button class="filter-tab is-active" data-filter="all">Todas</button>
+                                <button class="filter-tab" data-filter="equipa principal">Equipa</button>
+                                <button class="filter-tab" data-filter="jogos">Jogos</button>
+                                <button class="filter-tab" data-filter="clube">Clube</button>
+                                <button class="filter-tab" data-filter="formação">Formação</button>
+                                <button class="filter-tab" data-filter="comunidade">Comunidade</button>
+                            </div>
+                            <div class="search-box">
+                                <span class="search-box__icon" aria-hidden="true">🔍</span>
+                                <input type="search" class="search-box__input" placeholder="Pesquisar notícias…"
+                                    aria-label="Pesquisar notícias" data-news-search>
+                            </div>
+                        </div>
+
+                        <!-- Featured Article -->
+                        <a href="news-detail.html" class="news-feature reveal" data-news-item
+                            data-news-title="Atlântico FC prepara receção à União Serrana"
+                            data-news-category="antevisão"
+                            data-news-excerpt="O líder Atlântico FC recebe o vice-líder União Serrana num duelo decisivo."
+                            style="margin-bottom:var(--space-6);display:block;">
+                            <img class="news-feature__img"
+                                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80"
+                                alt="Adeptos do Atlântico FC no Estádio da Marina" width="1200" height="675"
+                                loading="lazy">
+                            <div class="news-feature__overlay" aria-hidden="true"></div>
+                            <div class="news-feature__body">
+                                <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-4);">
+                                    <span class="badge badge-accent">Antevisão</span>
+                                    <span style="font-size:var(--text-xs);color:var(--color-text-faint);">15 Abril
+                                        2025</span>
+                                </div>
+                                <h2 class="news-feature__title" id="news-main-heading">Atlântico FC prepara receção à
+                                    União Serrana com ambição de liderança</h2>
+                                <p
+                                    style="color:var(--color-text-dim);font-size:var(--text-base);margin-top:var(--space-4);max-width:65ch;line-height:var(--lh-relaxed);">
+                                    O líder da Liga Atlântica recebe o vice-líder no Estádio da Marina num jogo que pode
+                                    definir o rumo do campeonato.
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- News Grid -->
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);margin-bottom:var(--space-6);"
+                            role="list">
+                            <a href="news.html" class="news-card reveal" role="listitem" data-news-item
+                                data-news-title="Miguel Neves Somos os melhores quando jogamos juntos"
+                                data-news-category="entrevista"
+                                data-news-excerpt="O capitão azul fala sobre a temporada e os objetivos do clube.">
+                                <div class="news-card__img-wrap">
+                                    <img class="news-card__img"
+                                        src="https://images.unsplash.com/photo-1540747913346-19212a4cf528?auto=format&fit=crop&w=600&q=80"
+                                        alt="Miguel Neves em treino" width="600" height="400" loading="lazy">
+                                </div>
+                                <div class="news-card__body">
+                                    <div class="news-card__meta"><span
+                                            class="news-card__category">Entrevista</span><span
+                                            class="news-card__date">12 Abr 2025</span></div>
+                                    <h3 class="news-card__title">Miguel Neves: «Somos os melhores quando jogamos juntos»
+                                    </h3>
+                                    <p class="news-card__excerpt">O capitão azul fala sobre a temporada, os objetivos do
+                                        clube e o próximo jogo com a União Serrana.</p>
+                                </div>
+                            </a>
+
+                            <a href="news.html" class="news-card reveal reveal-delay-1" role="listitem" data-news-item
+                                data-news-title="André Silva renova contrato até 2027" data-news-category="clube"
+                                data-news-excerpt="O médio de 25 anos assina novo contrato até junho de 2027.">
+                                <div class="news-card__img-wrap">
+                                    <img class="news-card__img"
+                                        src="https://images.unsplash.com/photo-1551958219-acbc595d9de3?auto=format&fit=crop&w=600&q=80"
+                                        alt="Estádio da Marina" width="600" height="400" loading="lazy">
+                                </div>
+                                <div class="news-card__body">
+                                    <div class="news-card__meta"><span class="news-card__category">Clube</span><span
+                                            class="news-card__date">10 Abr 2025</span></div>
+                                    <h3 class="news-card__title">André Silva renova contrato com o Atlântico FC até 2027
+                                    </h3>
+                                    <p class="news-card__excerpt">O médio de 25 anos prolonga a ligação ao clube após
+                                        uma época de grande nível e dez golos marcados.</p>
+                                </div>
+                            </a>
+
+                            <a href="news.html" class="news-card reveal reveal-delay-2" role="listitem" data-news-item
+                                data-news-title="Sub-17 vence torneio nacional em Braga" data-news-category="formação"
+                                data-news-excerpt="Academia conquista torneio com quatro vitórias consecutivas.">
+                                <div class="news-card__img-wrap">
+                                    <img class="news-card__img"
+                                        src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=600&q=80"
+                                        alt="Sub-17 do Atlântico FC" width="600" height="400" loading="lazy">
+                                </div>
+                                <div class="news-card__body">
+                                    <div class="news-card__meta"><span class="news-card__category">Formação</span><span
+                                            class="news-card__date">8 Abr 2025</span></div>
+                                    <h3 class="news-card__title">Sub-17 vence torneio nacional e reforça prestígio da
+                                        Academia</h3>
+                                    <p class="news-card__excerpt">A equipa de sub-17 conquistou o Torneio Nacional de
+                                        Braga com quatro vitórias consecutivas.</p>
+                                </div>
+                            </a>
+
+                            <a href="news.html" class="news-card reveal reveal-delay-3" role="listitem" data-news-item
+                                data-news-title="Escola de Verão inscrições abertas" data-news-category="comunidade"
+                                data-news-excerpt="Projeto comunitário abre inscrições para 200 crianças dos 6 aos 14 anos.">
+                                <div class="news-card__img-wrap">
+                                    <img class="news-card__img"
+                                        src="https://images.unsplash.com/photo-1529251333259-d36cccaf22ea?auto=format&fit=crop&w=600&q=80"
+                                        alt="Crianças em atividade desportiva" width="600" height="400" loading="lazy">
+                                </div>
+                                <div class="news-card__body">
+                                    <div class="news-card__meta"><span
+                                            class="news-card__category">Comunidade</span><span class="news-card__date">5
+                                            Abr 2025</span></div>
+                                    <h3 class="news-card__title">Escola de Verão abre inscrições para 200 crianças</h3>
+                                    <p class="news-card__excerpt">O projeto comunitário do Atlântico FC envolve crianças
+                                        dos 6 aos 14 anos em atividades desportivas.</p>
+                                </div>
+                            </a>
+
+                            <a href="news.html" class="news-card reveal" role="listitem" data-news-item
+                                data-news-title="Informação adeptos normas jogo sábado" data-news-category="jogos"
+                                data-news-excerpt="Tudo o que precisa saber para o jogo com a União Serrana.">
+                                <div class="news-card__img-wrap">
+                                    <img class="news-card__img"
+                                        src="https://images.unsplash.com/photo-1508098682722-e99c643e7f76?auto=format&fit=crop&w=600&q=80"
+                                        alt="Exterior do Estádio da Marina" width="600" height="400" loading="lazy">
+                                </div>
+                                <div class="news-card__body">
+                                    <div class="news-card__meta"><span class="news-card__category">Adeptos</span><span
+                                            class="news-card__date">14 Abr 2025</span></div>
+                                    <h3 class="news-card__title">Informação para adeptos: acessos e normas para o jogo
+                                        de sábado</h3>
+                                    <p class="news-card__excerpt">Tudo o que precisa de saber para a deslocação ao
+                                        Estádio da Marina no jogo com a União Serrana.</p>
+                                </div>
+                            </a>
+
+                            <a href="news.html" class="news-card reveal reveal-delay-1" role="listitem" data-news-item
+                                data-news-title="Desportivo do Norte 1-3 Atlântico FC crónica"
+                                data-news-category="jogos"
+                                data-news-excerpt="Atlântico FC vence fora com grande exibição coletiva.">
+                                <div class="news-card__img-wrap">
+                                    <img class="news-card__img"
+                                        src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80"
+                                        alt="Jogadores em celebração após golo" width="600" height="400" loading="lazy">
+                                </div>
+                                <div class="news-card__body">
+                                    <div class="news-card__meta"><span class="news-card__category">Jogos</span><span
+                                            class="news-card__date">29 Mar 2025</span></div>
+                                    <h3 class="news-card__title">Crónica: Atlântico FC vence no Norte e consolida
+                                        liderança</h3>
+                                    <p class="news-card__excerpt">Com golos de Oliveira, Neves e Cardoso, o Atlântico FC
+                                        somou três pontos importantes fora de casa.</p>
+                                </div>
+                            </a>
+
+                            <a href="news.html" class="news-card reveal reveal-delay-2" role="listitem" data-news-item
+                                data-news-title="Tomás Guedes sub-21 chamado seleção"
+                                data-news-category="equipa principal"
+                                data-news-excerpt="Médio jovem convocado pela Seleção Sub-21 de Portugal.">
+                                <div class="news-card__img-wrap">
+                                    <img class="news-card__img"
+                                        src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=600&q=80"
+                                        alt="Treino da equipa" width="600" height="400" loading="lazy">
+                                </div>
+                                <div class="news-card__body">
+                                    <div class="news-card__meta"><span class="news-card__category">Equipa
+                                            Principal</span><span class="news-card__date">25 Mar 2025</span></div>
+                                    <h3 class="news-card__title">Tomás Guedes convocado para a Seleção Sub-21</h3>
+                                    <p class="news-card__excerpt">O jovem médio de 21 anos recebe a primeira chamada à
+                                        seleção nacional de sub-21.</p>
+                                </div>
+                            </a>
+
+                            <a href="news.html" class="news-card reveal reveal-delay-3" role="listitem" data-news-item
+                                data-news-title="Futebol feminino academia criação novo escalão"
+                                data-news-category="formação" data-news-excerpt="Academia cria equipa feminina sub-15.">
+                                <div class="news-card__img-wrap">
+                                    <img class="news-card__img"
+                                        src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=600&q=80"
+                                        alt="Formação feminina" width="600" height="400" loading="lazy">
+                                </div>
+                                <div class="news-card__body">
+                                    <div class="news-card__meta"><span class="news-card__category">Formação</span><span
+                                            class="news-card__date">20 Mar 2025</span></div>
+                                    <h3 class="news-card__title">Academia cria novo escalão de futebol feminino Sub-15
+                                    </h3>
+                                    <p class="news-card__excerpt">O Atlântico FC reforça o seu compromisso com o futebol
+                                        feminino com a criação de um novo escalão.</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- No results message -->
+                        <div data-news-no-results
+                            style="display:none;text-align:center;padding:var(--space-10);color:var(--color-muted);">
+                            <p
+                                style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:700;margin-bottom:var(--space-3);">
+                                Sem resultados</p>
+                            <p>Não foram encontradas notícias para a pesquisa efectuada.</p>
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav class="pagination" aria-label="Paginação das notícias">
+                            <span class="page-link is-active" aria-current="page" aria-label="Página 1">1</span>
+                            <a href="#" class="page-link" aria-label="Página 2">2</a>
+                            <a href="#" class="page-link" aria-label="Página 3">3</a>
+                            <span style="padding:0 var(--space-2);color:var(--color-muted);">…</span>
+                            <a href="#" class="page-link" aria-label="Página 8">8</a>
+                            <a href="#" class="page-link" aria-label="Próxima página">→</a>
+                        </nav>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside aria-label="Categorias e destaques">
+                        <div class="sidebar-card" style="margin-bottom:var(--space-5);">
+                            <div class="sidebar-card__header">
+                                <h2 class="sidebar-card__title">Categorias</h2>
+                            </div>
+                            <div style="padding:var(--space-4);">
+                                <div
+                                    style="display:flex;flex-direction:column;gap:1px;background:var(--color-border);border-radius:var(--radius-md);overflow:hidden;">
+                                    <button class="filter-tab" data-filter="equipa principal"
+                                        style="text-align:left;padding:var(--space-3) var(--space-4);border-radius:0;display:flex;justify-content:space-between;font-size:var(--text-sm);">Equipa
+                                        Principal <span class="badge badge-light">14</span></button>
+                                    <button class="filter-tab" data-filter="jogos"
+                                        style="text-align:left;padding:var(--space-3) var(--space-4);border-radius:0;display:flex;justify-content:space-between;font-size:var(--text-sm);">Jogos
+                                        <span class="badge badge-light">22</span></button>
+                                    <button class="filter-tab" data-filter="clube"
+                                        style="text-align:left;padding:var(--space-3) var(--space-4);border-radius:0;display:flex;justify-content:space-between;font-size:var(--text-sm);">Clube
+                                        <span class="badge badge-light">8</span></button>
+                                    <button class="filter-tab" data-filter="formação"
+                                        style="text-align:left;padding:var(--space-3) var(--space-4);border-radius:0;display:flex;justify-content:space-between;font-size:var(--text-sm);">Formação
+                                        <span class="badge badge-light">11</span></button>
+                                    <button class="filter-tab" data-filter="comunidade"
+                                        style="text-align:left;padding:var(--space-3) var(--space-4);border-radius:0;display:flex;justify-content:space-between;font-size:var(--text-sm);">Comunidade
+                                        <span class="badge badge-light">6</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card">
+                            <div class="sidebar-card__header">
+                                <h3 class="sidebar-card__title">Próximo Jogo</h3>
+                            </div>
+                            <div style="padding:var(--space-5);">
+                                <p
+                                    style="font-size:var(--text-xs);text-transform:uppercase;letter-spacing:var(--ls-wider);color:var(--color-muted);font-weight:600;margin-bottom:var(--space-3);">
+                                    Liga Atlântica · J25</p>
+                                <div
+                                    style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-4);">
+                                    <span style="font-weight:700;font-size:var(--text-sm);">Atlântico FC</span>
+                                    <span
+                                        style="font-family:var(--font-display);font-weight:700;color:var(--color-muted);">vs</span>
+                                    <span style="font-weight:700;font-size:var(--text-sm);">União Serrana</span>
+                                </div>
+                                <p
+                                    style="font-size:var(--text-xs);color:var(--color-muted);margin-bottom:var(--space-4);">
+                                    Sáb, 18 Abr · 20h30 · Estádio da Marina</p>
+                                <a href="match-detail.html" class="btn btn-ocean btn-sm"
+                                    style="width:100%;justify-content:center;">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="emblem" aria-label="Atlântico FC"><svg viewBox="0 0 48 58"
+                                style="width:32px;" aria-hidden="true">
+                                <path d="M24 2L46 12V33C46 50 24 56 24 56S2 50 2 33V12Z" fill="#091525" />
+                                <path d="M2 29C7 25 14 31 24 27C34 23 41 29 46 25V33C41 37 34 31 24 35C14 39 7 33 2 37Z"
+                                    fill="#e63946" /><text x="24" y="22" text-anchor="middle" fill="white"
+                                    font-family="Barlow Condensed,sans-serif" font-weight="800"
+                                    font-size="12">AFC</text>
+                            </svg><span class="emblem-text"><span class="emblem-name">Atlântico FC</span></span></a>
+                        <p class="footer-tagline">Do mar nasce a nossa força.</p>
+                    </div>
+                    <nav aria-labelledby="fn5-clube">
+                        <h3 class="footer-nav-title" id="fn5-clube">Clube</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="club.html" class="footer-nav-link">História</a></li>
+                            <li><a href="squad.html" class="footer-nav-link">Equipa</a></li>
+                            <li><a href="contact.html" class="footer-nav-link">Contactos</a></li>
+                        </ul>
+                    </nav>
+                    <nav aria-labelledby="fn5-jogos">
+                        <h3 class="footer-nav-title" id="fn5-jogos">Jogos</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="matches.html" class="footer-nav-link">Calendário</a></li>
+                            <li><a href="news.html" class="footer-nav-link">Notícias</a></li>
+                        </ul>
+                    </nav>
+                    <nav aria-labelledby="fn5-adept">
+                        <h3 class="footer-nav-title" id="fn5-adept">Adeptos</h3>
+                        <ul class="footer-nav-list">
+                            <li><a href="tickets.html" class="footer-nav-link">Bilhetes</a></li>
+                            <li><a href="membership.html" class="footer-nav-link">Sócios</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer-contact">
+                        <h3 class="footer-nav-title">Contacto</h3>
+                        <address>
+                            <p>Av. Marginal, 1200</p>
+                            <p><a href="tel:+351220000000">+351 220 000 000</a></p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 Atlântico FC.</p>
+                <nav class="footer-legal" aria-label="Links legais"><a href="#">Privacidade</a><a href="#">Termos</a><a
+                        href="#">Acessibilidade</a></nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
