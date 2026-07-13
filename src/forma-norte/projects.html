@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore o portfólio da Forma Norte. Projetos de moradias contemporâneas, reabilitações premium e design de interiores no Norte de Portugal.">
+  <title>Forma Norte — Portfólio de Projetos</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Forma Norte</span>
+      </a>
+      <nav class="nav-desktop">
+        <a href="index.html">Início</a>
+        <a href="services.html">Serviços</a>
+        <a href="projects.html" class="active">Projetos</a>
+        <a href="about.html">Atelier</a>
+        <a href="contact.html">Contactos</a>
+      </nav>
+      <div class="header-actions">
+        <a href="contact.html" class="btn-cta-header">Falar sobre o projeto</a>
+      </div>
+      <button class="btn-menu-mobile" id="btn-menu-mobile" aria-label="Abrir Menu" aria-expanded="false">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-mobile-overlay" id="nav-mobile-overlay">
+    <nav class="nav-mobile-list">
+      <a href="index.html">Início</a>
+      <a href="services.html">Serviços</a>
+      <a href="projects.html" class="active">Projetos</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html">Contactos</a>
+    </nav>
+    <div class="nav-mobile-footer">
+      <p>Forma Norte — Porto</p>
+      <a href="tel:+351912345678" class="contact-info-link">+351 912 345 678</a>
+      <a href="mailto:geral@formanorte.pt" class="contact-info-link">geral@formanorte.pt</a>
+    </div>
+  </div>
+
+  <main>
+    
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container page-hero-container reveal-item">
+        <span class="editorial-num">Portfólio / Identidade</span>
+        <h1 class="page-hero-title">Obras de autor e rigor de execução.</h1>
+        <p class="page-hero-desc">Consulte a nossa seleção de projetos residenciais, corporativos e remodelações de grande escala. Cada obra espelha a nossa dedicação à integridade dos materiais e à integração delicada na topografia e na paisagem local.</p>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="portfolio-filter-section">
+      <div class="container">
+        <div class="portfolio-filters" id="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">Todos os Projetos</button>
+          <button class="filter-btn" data-filter="arquitetura">Arquitetura</button>
+          <button class="filter-btn" data-filter="construcao">Construção</button>
+          <button class="filter-btn" data-filter="remodelacao">Remodelação</button>
+          <button class="filter-btn" data-filter="interiores">Interiores</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Editorial Grid -->
+    <section style="padding-bottom: var(--space-2xl); background-color: var(--color-bg-primary);">
+      <div class="container">
+        <div class="portfolio-grid" id="portfolio-grid">
+          
+          <!-- Project 1: Casa do Vale -->
+          <article class="project-card reveal-item" data-category="construcao">
+            <a href="project-detail.html">
+              <div class="project-card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" alt="Casa do Vale em Amarante" class="project-card-image" loading="lazy" width="800" height="500">
+              </div>
+              <div class="project-card-info">
+                <div class="project-card-header">
+                  <h3 class="project-card-title">Casa do Vale</h3>
+                  <span class="project-card-meta">2025</span>
+                </div>
+                <div class="project-card-header">
+                  <span class="project-card-location">Amarante</span>
+                  <span class="project-card-meta">Construção de Raiz</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 2: Apartamento Foz -->
+          <article class="project-card reveal-item delay-100" data-category="remodelacao">
+            <a href="project-detail.html">
+              <div class="project-card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Apartamento Foz no Porto" class="project-card-image" loading="lazy" width="600" height="800">
+              </div>
+              <div class="project-card-info">
+                <div class="project-card-header">
+                  <h3 class="project-card-title">Apartamento Foz</h3>
+                  <span class="project-card-meta">2024</span>
+                </div>
+                <div class="project-card-header">
+                  <span class="project-card-location">Porto</span>
+                  <span class="project-card-meta">Remodelação & Interiores</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 3: Moradia da Costa -->
+          <article class="project-card reveal-item" data-category="construcao">
+            <a href="project-detail.html">
+              <div class="project-card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Moradia da Costa em Esposende" class="project-card-image" loading="lazy" width="600" height="800">
+              </div>
+              <div class="project-card-info">
+                <div class="project-card-header">
+                  <h3 class="project-card-title">Moradia da Costa</h3>
+                  <span class="project-card-meta">2025</span>
+                </div>
+                <div class="project-card-header">
+                  <span class="project-card-location">Esposende</span>
+                  <span class="project-card-meta">Construção de Raiz</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 4: Pavilhão do Lago -->
+          <article class="project-card reveal-item delay-100" data-category="arquitetura">
+            <a href="project-detail.html">
+              <div class="project-card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80" alt="Pavilhão do Lago em Braga" class="project-card-image" loading="lazy" width="800" height="500">
+              </div>
+              <div class="project-card-info">
+                <div class="project-card-header">
+                  <h3 class="project-card-title">Pavilhão do Lago</h3>
+                  <span class="project-card-meta">2023</span>
+                </div>
+                <div class="project-card-header">
+                  <span class="project-card-location">Braga</span>
+                  <span class="project-card-meta">Arquitetura</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 5: Escritório Monolítico -->
+          <article class="project-card reveal-item" data-category="arquitetura">
+            <a href="project-detail.html">
+              <div class="project-card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Escritório Monolítico em Guimarães" class="project-card-image" loading="lazy" width="800" height="500">
+              </div>
+              <div class="project-card-info">
+                <div class="project-card-header">
+                  <h3 class="project-card-title">Escritório Monolítico</h3>
+                  <span class="project-card-meta">2024</span>
+                </div>
+                <div class="project-card-header">
+                  <span class="project-card-location">Guimarães</span>
+                  <span class="project-card-meta">Arquitetura</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 6: Renovação de Celeiro -->
+          <article class="project-card reveal-item delay-100" data-category="remodelacao">
+            <a href="project-detail.html">
+              <div class="project-card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Celeiro Ponte de Lima" class="project-card-image" loading="lazy" width="600" height="800">
+              </div>
+              <div class="project-card-info">
+                <div class="project-card-header">
+                  <h3 class="project-card-title">Celeiro Ponte de Lima</h3>
+                  <span class="project-card-meta">2023</span>
+                </div>
+                <div class="project-card-header">
+                  <span class="project-card-location">Ponte de Lima</span>
+                  <span class="project-card-meta">Remodelação</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 7: Casa de Xisto -->
+          <article class="project-card reveal-item" data-category="interiores">
+            <a href="project-detail.html">
+              <div class="project-card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Casa de Xisto em Arouca" class="project-card-image" loading="lazy" width="600" height="800">
+              </div>
+              <div class="project-card-info">
+                <div class="project-card-header">
+                  <h3 class="project-card-title">Casa de Xisto</h3>
+                  <span class="project-card-meta">2025</span>
+                </div>
+                <div class="project-card-header">
+                  <span class="project-card-location">Arouca</span>
+                  <span class="project-card-meta">Design de Interiores</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 8: Moradia da Rocha -->
+          <article class="project-card reveal-item delay-100" data-category="construcao">
+            <a href="project-detail.html">
+              <div class="project-card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80" alt="Moradia sobre a Rocha em Viana do Castelo" class="project-card-image" loading="lazy" width="800" height="500">
+              </div>
+              <div class="project-card-info">
+                <div class="project-card-header">
+                  <h3 class="project-card-title">Moradia da Rocha</h3>
+                  <span class="project-card-meta">2024</span>
+                </div>
+                <div class="project-card-header">
+                  <span class="project-card-location">Viana do Castelo</span>
+                  <span class="project-card-meta">Construção</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA (Dark Theme) -->
+    <section class="final-cta" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80')">
+      <div class="container final-cta-content reveal-item">
+        <span class="editorial-num" style="color: var(--color-accent-light)">Projetar</span>
+        <h2 class="final-cta-title">Quer iniciar o planeamento da sua moradia?</h2>
+        <p class="final-cta-desc">Agende uma análise prévia e estudo de viabilidade técnica connosco.</p>
+        <a href="contact.html" class="btn btn-primary-light">Falar com a Equipa <svg class="btn-arrow-icon" viewBox="0 0 12 12"><path d="M6 2L5.3 2.7L8.1 5.5H2V6.5H8.1L5.3 9.3L6 10L10 6L6 2Z"/></svg></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Forma Norte</div>
+          <p>Criamos espaços contemporâneos, funcionais e pensados para durar. Arquitetura e construção de excelência no Norte de Portugal.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="services.html">Serviços</a></li>
+            <li><a href="projects.html" class="active">Projetos</a></li>
+            <li><a href="about.html">Atelier</a></li>
+            <li><a href="contact.html">Contactos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Serviços</h4>
+          <ul class="footer-links">
+            <li><a href="service-detail.html">Construção de Moradias</a></li>
+            <li><a href="services.html#arquitetura">Projetos de Arquitetura</a></li>
+            <li><a href="services.html#remodelacao">Remodelação Premium</a></li>
+            <li><a href="services.html#interiores">Design de Interiores</a></li>
+            <li><a href="services.html#gestao">Acompanhamento de Obra</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Contactos</h4>
+          <div class="footer-contact-item">
+            Rua de Santa Catarina, 1024<br>
+            4000-447 Porto, Portugal
+          </div>
+          <div class="footer-contact-item">
+            <a href="tel:+351912345678">+351 912 345 678</a><br>
+            <a href="mailto:geral@formanorte.pt">geral@formanorte.pt</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Forma Norte. Todos os direitos reservados. Projeto Premium.</p>
+        <div class="footer-legal-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Utilização</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

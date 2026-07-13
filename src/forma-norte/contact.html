@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contacto com a Forma Norte. Agende uma reunião presencial no Porto ou peça uma análise preliminar de viabilidade para o seu projeto.">
+  <title>Forma Norte — Contactos & Reuniões</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span class="logo-text">Forma Norte</span>
+      </a>
+      <nav class="nav-desktop">
+        <a href="index.html">Início</a>
+        <a href="services.html">Serviços</a>
+        <a href="projects.html">Projetos</a>
+        <a href="about.html">Atelier</a>
+        <a href="contact.html" class="active">Contactos</a>
+      </nav>
+      <div class="header-actions">
+        <a href="contact.html" class="btn-cta-header">Falar sobre o projeto</a>
+      </div>
+      <button class="btn-menu-mobile" id="btn-menu-mobile" aria-label="Abrir Menu" aria-expanded="false">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-mobile-overlay" id="nav-mobile-overlay">
+    <nav class="nav-mobile-list">
+      <a href="index.html">Início</a>
+      <a href="services.html">Serviços</a>
+      <a href="projects.html">Projetos</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html" class="active">Contactos</a>
+    </nav>
+    <div class="nav-mobile-footer">
+      <p>Forma Norte — Porto</p>
+      <a href="tel:+351912345678" class="contact-info-link">+351 912 345 678</a>
+      <a href="mailto:geral@formanorte.pt" class="contact-info-link">geral@formanorte.pt</a>
+    </div>
+  </div>
+
+  <main>
+    
+    <!-- Page Hero -->
+    <section class="contact-section">
+      <div class="container contact-layout-grid">
+        
+        <!-- Formulário de Contacto (Esquerda) -->
+        <div class="reveal-item">
+          <span class="editorial-num">Consulta / Reunião</span>
+          <h1 style="font-family: var(--font-serif); font-size: var(--text-xl); margin-top: var(--space-2xs); margin-bottom: var(--space-m);">Fale connosco sobre a sua ideia.</h1>
+          
+          <form class="form-container" id="contact-form" novalidate>
+            <div class="form-grid form-grid-2">
+              
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Nome Completo *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Ex: Maria Vasconcelos" required>
+                <span class="form-error-msg">Por favor, insira o seu nome completo (mínimo 3 letras).</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Endereço de Email *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="Ex: maria@exemplo.pt" required>
+                <span class="form-error-msg">Por favor, insira um email válido.</span>
+              </div>
+
+            </div>
+
+            <div class="form-grid form-grid-2">
+              
+              <div class="form-group">
+                <label for="contact-phone" class="form-label">Telemóvel (Opcional)</label>
+                <input type="tel" id="contact-phone" class="form-input" placeholder="Ex: 912345678">
+                <span class="form-error-msg">Insira um número de telemóvel português válido (9 dígitos).</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-service" class="form-label">Tipo de Projeto *</label>
+                <select id="contact-service" class="form-select" required>
+                  <option value="" disabled selected>Selecione uma opção</option>
+                  <option value="arquitetura">Arquitetura de Raiz</option>
+                  <option value="construcao">Construção de Moradia</option>
+                  <option value="remodelacao">Remodelação Premium</option>
+                  <option value="interiores">Design de Interiores</option>
+                  <option value="fiscalizacao">Gestão / Acompanhamento de Obra</option>
+                </select>
+                <span class="form-error-msg">Por favor, selecione uma área de projeto.</span>
+              </div>
+
+            </div>
+
+            <div class="form-grid form-grid-2">
+              
+              <div class="form-group">
+                <label for="contact-location" class="form-label">Localização da Obra *</label>
+                <input type="text" id="contact-location" class="form-input" placeholder="Ex: Amarante, Porto, Braga" required>
+                <span class="form-error-msg">Por favor, indique a localização pretendida para a obra.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-budget" class="form-label">Orçamento Estimado *</label>
+                <select id="contact-budget" class="form-select" required>
+                  <option value="" disabled selected>Selecione um intervalo</option>
+                  <option value="50-150k">50.000 € a 150.000 €</option>
+                  <option value="150-300k">150.000 € a 300.000 €</option>
+                  <option value="300-600k">300.000 € a 600.000 €</option>
+                  <option value="600k+">Mais de 600.000 €</option>
+                </select>
+                <span class="form-error-msg">Por favor, selecione um orçamento estimado.</span>
+              </div>
+
+            </div>
+
+            <div class="form-group" style="margin-bottom: var(--space-m);">
+              <label for="contact-message" class="form-label">Descrição do Projeto *</label>
+              <textarea id="contact-message" class="form-textarea" placeholder="Descreva sucintamente as suas ideias, número de quartos pretendidos, características do terreno ou estado atual do imóvel..." required></textarea>
+              <span class="form-error-msg">A sua descrição deve ter pelo menos 10 caracteres.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar Mensagem <svg class="btn-arrow-icon" viewBox="0 0 12 12"><path d="M6 2L5.3 2.7L8.1 5.5H2V6.5H8.1L5.3 9.3L6 10L10 6L6 2Z"/></svg></button>
+          </form>
+
+          <!-- Mensagem de Sucesso (JS Toggled) -->
+          <div class="form-success-feedback" id="contact-success-feedback" tabindex="-1">
+            <h3 class="form-success-title">Mensagem enviada com sucesso.</h3>
+            <p class="form-success-desc">Agradecemos o seu contacto. A nossa equipa técnica irá analisar a informação partilhada e responderemos no prazo máximo de 48 horas úteis para agendar a sua reunião de diagnóstico.</p>
+          </div>
+        </div>
+
+        <!-- Dados de Escritório & Mapa (Direita) -->
+        <div class="contact-info-col reveal-item delay-200">
+          
+          <div class="contact-info-block">
+            <h3 class="contact-info-title">Atelier Porto</h3>
+            <div class="contact-info-text">
+              Rua de Santa Catarina, 1024<br>
+              4000-447 Porto, Portugal
+            </div>
+          </div>
+
+          <div class="contact-info-block">
+            <h3 class="contact-info-title">Canais Diretos</h3>
+            <div class="contact-info-text">
+              Telefone: <a href="tel:+351912345678">+351 912 345 678</a><br>
+              Geral: <a href="mailto:geral@formanorte.pt">geral@formanorte.pt</a><br>
+              Carreiras: <a href="mailto:carreiras@formanorte.pt">carreiras@formanorte.pt</a>
+            </div>
+          </div>
+
+          <div class="contact-info-block">
+            <h3 class="contact-info-title">Horário de Funcionamento</h3>
+            <div class="contact-info-text">
+              Segunda a Sexta-feira<br>
+              09:00h às 13:00h | 14:30h às 18:30h
+            </div>
+          </div>
+
+          <!-- Mapa Grayscale -->
+          <div class="contact-map-wrapper">
+            <iframe class="contact-map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3004.5670876127116!2d-8.60803482352824!3d41.15794380998634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2464e26cb3b9a5%3A0x6a10058b73fdfc7a!2sRua%20de%20Santa%20Catarina%2C%20Porto!5e0!3m2!1spt!2spt!4v1700000000000!5m2!1spt!2spt" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização do Atelier Forma Norte no Porto"></iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Forma Norte</div>
+          <p>Criamos espaços contemporâneos, funcionais e pensados para durar. Arquitetura e construção de excelência no Norte de Portugal.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="services.html">Serviços</a></li>
+            <li><a href="projects.html">Projetos</a></li>
+            <li><a href="about.html">Atelier</a></li>
+            <li><a href="contact.html" class="active">Contactos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Serviços</h4>
+          <ul class="footer-links">
+            <li><a href="service-detail.html">Construção de Moradias</a></li>
+            <li><a href="services.html#arquitetura">Projetos de Arquitetura</a></li>
+            <li><a href="services.html#remodelacao">Remodelação Premium</a></li>
+            <li><a href="services.html#interiores">Design de Interiores</a></li>
+            <li><a href="services.html#gestao">Acompanhamento de Obra</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-title">Contactos</h4>
+          <div class="footer-contact-item">
+            Rua de Santa Catarina, 1024<br>
+            4000-447 Porto, Portugal
+          </div>
+          <div class="footer-contact-item">
+            <a href="tel:+351912345678">+351 912 345 678</a><br>
+            <a href="mailto:geral@formanorte.pt">geral@formanorte.pt</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Forma Norte. Todos os direitos reservados. Projeto Premium.</p>
+        <div class="footer-legal-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Utilização</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

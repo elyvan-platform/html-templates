@@ -1,0 +1,64 @@
+/* tokens.css - Design System Tokens */
+
+:root {
+  /* Paleta de Cores (Inspirada em materiais naturais - betão, pedra, madeira, terra) */
+  --color-bg-primary: #F5F2EB;      /* Areia quente / Papel editorial */
+  --color-bg-secondary: #E5E0D5;    /* Pedra suave */
+  --color-bg-dark: #141414;         /* Preto carbono */
+  --color-bg-dark-hover: #222222;
+  
+  --color-text-primary: #141414;     /* Preto carbono */
+  --color-text-secondary: #555048;   /* Cinza terroso escuro */
+  --color-text-muted: #8C867A;       /* Cinza terroso claro */
+  
+  --color-text-light: #F5F2EB;       /* Areia quente sobre fundo escuro */
+  --color-text-light-secondary: #D5CEBF;
+  --color-text-light-muted: #A59E90;
+  
+  --color-accent: #8C7D70;           /* Bronze / Madeira seca */
+  --color-accent-hover: #73665B;     /* Bronze escuro */
+  --color-accent-light: #C8BAAC;     /* Bronze suave */
+  
+  --color-border: #D4CEB8;           /* Linha fina editorial clara */
+  --color-border-dark: #2C2B29;      /* Linha fina editorial escura */
+  
+  --color-white: #FFFFFF;
+  
+  /* Tipografia */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Escala Tipográfica Fluida (clamp(min, val, max)) */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.4vw, 1.15rem);
+  --text-md: clamp(1.15rem, 1.1rem + 0.6vw, 1.45rem);
+  --text-lg: clamp(1.45rem, 1.35rem + 1vw, 2rem);
+  --text-xl: clamp(2rem, 1.8rem + 1.8vw, 3.25rem);
+  --text-2xl: clamp(3rem, 2.5rem + 3.2vw, 5.5rem);
+  --text-3xl: clamp(4.5rem, 3.8rem + 5.5vw, 8.5rem);
+  
+  /* Escala de Espaçamento Fluida */
+  --space-3xs: clamp(0.25rem, 0.2rem + 0.2vw, 0.375rem);
+  --space-2xs: clamp(0.5rem, 0.4rem + 0.4vw, 0.75rem);
+  --space-xs: clamp(0.75rem, 0.6rem + 0.6vw, 1.125rem);
+  --space-s: clamp(1.125rem, 1rem + 1vw, 1.75rem);
+  --space-m: clamp(1.75rem, 1.5rem + 1.8vw, 2.75rem);
+  --space-l: clamp(2.75rem, 2.2rem + 2.8vw, 4.5rem);
+  --space-xl: clamp(4.5rem, 3.5rem + 4.5vw, 7.25rem);
+  --space-2xl: clamp(7.25rem, 6rem + 7.5vw, 11rem);
+  --space-3xl: clamp(11rem, 9rem + 11vw, 17rem);
+  
+  /* Grelha e Containers */
+  --container-max-width: 1560px;
+  --container-padding: clamp(1.25rem, 4vw, 4.5rem);
+  --grid-gutter: clamp(1rem, 3vw, 3rem);
+  
+  /* Transições e Efeitos */
+  --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Altura do Header */
+  --header-height: clamp(5rem, 6vw, 7.5rem);
+}

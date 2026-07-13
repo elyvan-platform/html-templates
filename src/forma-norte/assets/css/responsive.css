@@ -1,0 +1,98 @@
+/* responsive.css - Responsive Adjustments and Fine-Tuning */
+
+/* ==========================================================================
+   1. ADJUSTMENTS FOR VERY SMALL SCREENS (<= 375px)
+   ========================================================================== */
+@media (max-width: 375px) {
+  :root {
+    --container-padding: 1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2xs);
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ==========================================================================
+   2. TABLET ADJUSTMENTS (768px to 1023px)
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-header {
+    height: calc(var(--header-height) * 0.9);
+  }
+  
+  .service-row-editorial {
+    grid-template-columns: 50px 1.5fr 2fr;
+    gap: var(--space-xs);
+  }
+  
+  .service-row-editorial .service-link-col {
+    display: none; /* Ocultar seta redundante em tablet vertical */
+  }
+}
+
+
+/* ==========================================================================
+   3. CONTAINER QUERIES FOR REUSABLE CARDS
+   ========================================================================== */
+/* Permite que cards se adaptem independentemente de onde são colocados */
+.project-card {
+  container-type: inline-size;
+}
+
+@container (max-width: 350px) {
+  .project-card-header {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .project-card-meta {
+    order: 3;
+  }
+}
+
+
+/* ==========================================================================
+   4. LARGE SCREENS CAP (Avoids text spreading too much on 4K displays)
+   ========================================================================== */
+@media (min-width: 1920px) {
+  :root {
+    /* Limita o crescimento fluido no topo da escala */
+    --text-2xl: 4.85rem;
+    --text-3xl: 6.85rem;
+  }
+  
+  p {
+    max-width: 75ch; /* Limita largura de leitura */
+  }
+}
+
+
+/* ==========================================================================
+   5. SUPPORT FOR TOUCH INTERACTION (Hover States Disable on Mobile)
+   ========================================================================== */
+@media (hover: none) {
+  /* Evita estados de hover que ficam presos ao tocar no telemóvel */
+  .service-row-editorial:hover {
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .project-card:hover .project-card-image {
+    transform: none;
+  }
+  
+  .btn-secondary::after,
+  .nav-desktop a::after {
+    transition: none;
+  }
+}
