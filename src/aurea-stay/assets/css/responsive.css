@@ -1,0 +1,272 @@
+/* responsive.css - Responsive Media Queries */
+
+/* ==========================================================================
+   1. LAPTOPS & TABLETS (under 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Navigation */
+  .nav-menu {
+    display: none; /* Hide desktop nav */
+  }
+
+  .mobile-menu-btn {
+    display: block; /* Show hamburger button */
+  }
+
+  .header-actions .btn {
+    display: none; /* Hide CTA button in header for tablets */
+  }
+
+  /* Grid Restructuring */
+  .editorial-intro-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .editorial-intro-text {
+    padding-right: 0;
+  }
+
+  .room-showcase-item,
+  .room-showcase-item:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .room-showcase-item:nth-child(even) .room-showcase-img-wrapper {
+    order: 0;
+  }
+
+  .room-showcase-item:nth-child(even) .room-showcase-content {
+    order: 0;
+    padding-right: 0;
+  }
+
+  .room-showcase-content {
+    padding-left: 0;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .experience-card:last-child {
+    grid-column: span 2;
+  }
+  .experience-card:last-child .experience-card-img-wrapper {
+    padding-bottom: 50%;
+  }
+
+  .gastronomy-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .gastronomy-content {
+    order: 2;
+  }
+
+  .practical-info-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .site-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .site-footer-grid > :first-child {
+    grid-column: span 2;
+  }
+
+  /* Room Detail Page */
+  .room-detail-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .booking-panel {
+    position: static;
+    margin-top: var(--space-md);
+  }
+
+  .room-detail-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .detail-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .detail-gallery-item:last-child {
+    grid-column: span 2;
+    padding-bottom: 50%;
+  }
+
+  /* Experiences List */
+  .experience-list-item,
+  .experience-list-item:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .experience-list-item:nth-child(even) .experience-list-img-wrapper {
+    order: 0;
+  }
+
+  .experience-list-item:nth-child(even) .experience-list-content {
+    order: 0;
+    padding-right: 0;
+  }
+
+  .experience-list-content {
+    padding-left: 0;
+  }
+
+  /* Gastronomy Page */
+  .gastronomy-chef-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gastronomy-wine-highlight {
+    grid-template-columns: 1fr;
+  }
+
+  /* About Page */
+  .about-concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sustainability-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Contact Page */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .directions-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  /* Gallery Page */
+  .gallery-grid {
+    columns: 2;
+  }
+}
+
+/* ==========================================================================
+   2. MOBILE PHONES (under 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Navigation */
+  .mobile-menu {
+    max-width: 100%;
+  }
+
+  /* Info Girds */
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .experience-card:last-child {
+    grid-column: auto;
+  }
+  .experience-card:last-child .experience-card-img-wrapper {
+    padding-bottom: 125%;
+  }
+
+  .room-list-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .room-list-card-img-wrapper {
+    padding-bottom: 75%;
+  }
+
+  /* Footer */
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .site-footer-grid > :first-child {
+    grid-column: auto;
+  }
+
+  .site-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  /* Gallery Page */
+  .gallery-grid {
+    columns: 1;
+  }
+
+  /* Lightbox Controls */
+  .lightbox-nav svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+
+  .lightbox-close {
+    top: 20px;
+    right: 20px;
+  }
+
+  .lightbox-content {
+    max-width: 95%;
+  }
+}
+
+/* ==========================================================================
+   3. SMALL MOBILE PHONES (under 375px)
+   ========================================================================== */
+@media (max-width: 375px) {
+  .logo {
+    font-size: var(--font-size-base);
+  }
+
+  .room-showcase-specs,
+  .room-list-card-specs,
+  .room-detail-specs-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .room-detail-specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-gallery-item:last-child {
+    grid-column: auto;
+    padding-bottom: 75%;
+  }
+}

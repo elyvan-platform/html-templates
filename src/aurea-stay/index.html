@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auréa Stay | Boutique Hotel no Douro | Slow Living</title>
+  <meta name="description" content="Experimente uma estadia lenta no Douro. O Auréa Stay combina arquitetura contemporânea em pedra, vinhas infinitas e gastronomia local de autor num refúgio exclusivo.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <!-- JS Script (deferred for non-blocking performance) -->
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Skip to Content for Accessibility -->
+  <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a href="index.html" class="logo" aria-label="Auréa Stay - Início">
+        Auréa
+        <span>Stay</span>
+      </a>
+      
+      <nav class="nav-menu" aria-label="Navegação Principal">
+        <a href="index.html" class="nav-link active" aria-current="page">Início</a>
+        <a href="rooms.html" class="nav-link">Quartos</a>
+        <a href="experiences.html" class="nav-link">Experiências</a>
+        <a href="gastronomy.html" class="nav-link">Gastronomia</a>
+        <a href="gallery.html" class="nav-link">Galeria</a>
+        <a href="about.html" class="nav-link">O Hotel</a>
+        <a href="contact.html" class="nav-link">Contacto</a>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="lang-selector" aria-label="Seletor de Idioma">
+          <button class="lang-btn active" aria-label="Alterar idioma para Português" aria-pressed="true">PT</button>
+          <span style="opacity:0.3" aria-hidden="true">|</span>
+          <button class="lang-btn" aria-label="Change language to English" aria-pressed="false">EN</button>
+        </div>
+        <a href="rooms.html" class="btn btn-outline-light">Reservar</a>
+        <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay & Menu -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+  <div class="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu móvel">
+    <button class="mobile-menu-close" aria-label="Fechar menu de navegação">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <nav class="mobile-nav" aria-label="Navegação móvel">
+      <a href="index.html" class="mobile-nav-link active" aria-current="page">Início</a>
+      <a href="rooms.html" class="mobile-nav-link">Quartos</a>
+      <a href="experiences.html" class="mobile-nav-link">Experiências</a>
+      <a href="gastronomy.html" class="mobile-nav-link">Gastronomia</a>
+      <a href="gallery.html" class="mobile-nav-link">Galeria</a>
+      <a href="about.html" class="mobile-nav-link">O Hotel</a>
+      <a href="contact.html" class="mobile-nav-link">Contacto</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <p>Auréa Stay</p>
+      <p>Douro, Portugal</p>
+      <p style="margin-top: var(--space-xs);">geral@aureastay.com</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    
+    <!-- Hero Imersivo -->
+    <section class="immersive-hero" aria-label="Introdução visual do hotel">
+      <div class="immersive-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1920&q=85');"></div>
+      <div class="container immersive-hero-content">
+        <div class="immersive-hero-meta">Douro, Portugal</div>
+        <h1 class="immersive-hero-title">Onde o silêncio ganha forma e o <span class="italic">tempo corre devagar</span></h1>
+        <p class="immersive-hero-desc">Um retiro contemporâneo erguido em pedra sobre as margens do rio. Desenhado para quem procura desligar do mundo e reconectar com a paisagem.</p>
+        <div class="immersive-hero-actions">
+          <a href="rooms.html" class="btn btn-primary">Explorar Quartos</a>
+          <a href="about.html" class="btn btn-outline-light">Conhecer o Conceito</a>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">Deslizar para explorar</div>
+    </section>
+
+    <!-- Introdução ao Hotel (Editorial Composition) -->
+    <section class="section container reveal">
+      <div class="editorial-intro-grid">
+        <div class="editorial-intro-text">
+          <div class="editorial-heading">
+            <span class="subtitle">Hospitalidade Lenta</span>
+            <h2 class="title">Uma estadia desenhada no espaço, no <span class="serif-italic">silêncio</span> e no cuidado do detalhe.</h2>
+          </div>
+          <p class="lead">Aninhado nas encostas esculpidas do Douro Vinhateiro, o Auréa Stay é um refúgio exclusivo de apenas dez habitações.</p>
+          <p>A nossa filosofia assenta na desaceleração. Recuperámos as antigas ruínas de xisto e granito da propriedade, integrando-as numa arquitetura contemporânea e minimalista que respeita a escala das vinhas e a luz do rio.</p>
+          <p>Aqui, o luxo não se traduz em ornamentos, mas sim na generosidade do espaço, no silêncio que nos rodeia e no serviço discreto mas profundamente atento.</p>
+          
+          <div class="signature-block">
+            <!-- Inline elegant signature mockup SVG -->
+            <svg class="signature-svg" viewBox="0 0 150 60" aria-label="Assinatura da direção">
+              <path d="M15,35 Q35,15 65,30 T115,20 C135,15 130,45 105,40 Q90,35 125,25" />
+            </svg>
+            <span class="signature-label">Direção Auréa Stay</span>
+          </div>
+        </div>
+        <div class="editorial-intro-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=80" alt="Fachada em pedra restaurada integrada com design moderno e vinhas" class="editorial-intro-image" loading="lazy" width="600" height="720">
+        </div>
+      </div>
+    </section>
+
+    <!-- Quartos e Suites (Alternating Editorial Presentation) -->
+    <section class="section section-dark reveal">
+      <div class="container">
+        <div class="editorial-heading">
+          <span class="subtitle" style="color: var(--color-text-muted-light);">Alojamento</span>
+          <h2 class="title">Espaços de recolhimento e <span class="serif-italic">contemplação</span></h2>
+        </div>
+        
+        <div class="homepage-rooms-container">
+          <!-- Room 1: Suite Rio -->
+          <div class="room-showcase-item">
+            <div class="room-showcase-img-wrapper ratio-vertical">
+              <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80" alt="Suite Rio - Vista panorâmica sobre as águas do Douro" class="room-showcase-img" loading="lazy" width="650" height="715">
+            </div>
+            <div class="room-showcase-content">
+              <span class="room-showcase-meta">Vista Rio — Suite Principal</span>
+              <h3 class="room-showcase-title">Suite Rio</h3>
+              <p class="room-showcase-desc">Suspensa sobre a encosta, oferece uma vista panorâmica ininterrupta sobre a curva do rio Douro. Apresenta uma sala de estar integrada, lareira e um terraço privado em madeira.</p>
+              <div class="room-showcase-specs">
+                <span>Até 2 Hóspedes</span>
+                <span>•</span>
+                <span>65 m²</span>
+                <span>•</span>
+                <span>Cama King Size</span>
+              </div>
+              <div class="room-showcase-price">A partir de €320 <span>/ noite</span></div>
+              <a href="room-detail.html" class="btn btn-outline-light">Ver Detalhes</a>
+            </div>
+          </div>
+
+          <!-- Room 2: Quarto Vinha -->
+          <div class="room-showcase-item">
+            <div class="room-showcase-img-wrapper ratio-horizontal">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Quarto Vinha - Decoração em tons terra e janela virada para os socalcos" class="room-showcase-img" loading="lazy" width="650" height="488">
+            </div>
+            <div class="room-showcase-content">
+              <span class="room-showcase-meta">Vista Vinha — Intimidade e Luz</span>
+              <h3 class="room-showcase-title">Quarto Vinha</h3>
+              <p class="room-showcase-desc">Imerso no coração das videiras antigas da propriedade. Decorado com madeiras escuras locais e texturas de linho cru, proporciona uma ligação tátil direta com a terra.</p>
+              <div class="room-showcase-specs">
+                <span>Até 2 Hóspedes</span>
+                <span>•</span>
+                <span>40 m²</span>
+                <span>•</span>
+                <span>Cama King Size</span>
+              </div>
+              <div class="room-showcase-price">A partir de €240 <span>/ noite</span></div>
+              <a href="rooms.html" class="btn btn-outline-light">Ver Detalhes</a>
+            </div>
+          </div>
+
+          <!-- Room 3: Suite Pátio -->
+          <div class="room-showcase-item">
+            <div class="room-showcase-img-wrapper ratio-vertical">
+              <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80" alt="Suite Pátio - Quarto amplo integrado com pátio privado em xisto" class="room-showcase-img" loading="lazy" width="650" height="715">
+            </div>
+            <div class="room-showcase-content">
+              <span class="room-showcase-meta">Pátio Privado — Calma Interior</span>
+              <h3 class="room-showcase-title">Suite Pátio</h3>
+              <p class="room-showcase-desc">Onde o xisto exterior penetra nas paredes interiores. Possui um pátio privativo abrigado, com oliveiras centenárias e uma banheira exterior de imersão esculpida em pedra natural.</p>
+              <div class="room-showcase-specs">
+                <span>Até 2 Hóspedes</span>
+                <span>•</span>
+                <span>55 m²</span>
+                <span>•</span>
+                <span>Cama King Size</span>
+              </div>
+              <div class="room-showcase-price">A partir de €280 <span>/ noite</span></div>
+              <a href="rooms.html" class="btn btn-outline-light">Ver Detalhes</a>
+            </div>
+          </div>
+
+          <!-- Room 4: Casa da Pedra -->
+          <div class="room-showcase-item">
+            <div class="room-showcase-img-wrapper ratio-horizontal">
+              <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" alt="Casa da Pedra - Chalé independente em pedra de xisto tradicional" class="room-showcase-img" loading="lazy" width="650" height="488">
+            </div>
+            <div class="room-showcase-content">
+              <span class="room-showcase-meta">Casa Independente — Exclusividade Total</span>
+              <h3 class="room-showcase-title">Casa da Pedra</h3>
+              <p class="room-showcase-desc">Uma estrutura independente, totalmente edificada com o xisto original da quinta. Conta com dois pisos, uma pequena cozinha artesanal, lareira suspensa e piscina de transbordo privada.</p>
+              <div class="room-showcase-specs">
+                <span>Até 4 Hóspedes</span>
+                <span>•</span>
+                <span>110 m²</span>
+                <span>•</span>
+                <span>2 Camas Super King</span>
+              </div>
+              <div class="room-showcase-price">A partir de €490 <span>/ noite</span></div>
+              <a href="rooms.html" class="btn btn-outline-light">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiências (Visual Showcase) -->
+    <section class="section container reveal">
+      <div class="editorial-heading">
+        <span class="subtitle">A Nossa Vivência</span>
+        <h2 class="title">Roteiros pensados para <span class="serif-italic">sentir</span> o território</h2>
+      </div>
+      <p class="experience-intro">A estadia no Auréa Stay estende-se para além dos quartos. Criámos um conjunto de experiências desenhadas para revelar a alma autêntica do Douro, ao ritmo da natureza e longe das multidões.</p>
+      
+      <div class="experience-grid">
+        <!-- Exp 1 -->
+        <a href="experiences.html" class="experience-card" aria-label="Experiência: Provas Privadas de Vinho. Ver detalhes.">
+          <div class="experience-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80" alt="Copos e garrafa de vinho do Porto numa prova privada ao pôr do sol" class="experience-card-img" loading="lazy" width="380" height="475">
+          </div>
+          <h3 class="experience-card-title">Provas Privadas nas Vinhas Velhas</h3>
+          <span class="experience-card-meta">Duração: 2h30 • Sob Consulta</span>
+        </a>
+        <!-- Exp 2 -->
+        <a href="experiences.html" class="experience-card" aria-label="Experiência: Passeio de Barco no Douro. Ver detalhes.">
+          <div class="experience-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80" alt="Pequeno barco a navegar nas águas calmas do rio Douro ladeado por encostas" class="experience-card-img" loading="lazy" width="380" height="475">
+          </div>
+          <h3 class="experience-card-title">Navegação Exclusiva pelo Rio</h3>
+          <span class="experience-card-meta">Duração: Meio Dia • A partir de €180</span>
+        </a>
+        <!-- Exp 3 -->
+        <a href="experiences.html" class="experience-card" aria-label="Experiência: Piquenique Gourmet. Ver detalhes.">
+          <div class="experience-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1526244433293-179424fc8ee0?auto=format&fit=crop&w=1200&q=80" alt="Cesto de piquenique com pão fresco e fruta montado entre as vinhas" class="experience-card-img" loading="lazy" width="380" height="475">
+          </div>
+          <h3 class="experience-card-title">Piquenique de Autor entre Videiras</h3>
+          <span class="experience-card-meta">Duração: Livre • A partir de €75</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Gastronomia Section (Cinematic Split/Overlay) -->
+    <section class="gastronomy-hero-section">
+      <div class="gastronomy-bg-img" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80');" aria-hidden="true"></div>
+      <div class="container gastronomy-inner">
+        <div></div> <!-- Empty column for asymmetry spacing -->
+        <div class="gastronomy-content reveal">
+          <div class="editorial-heading">
+            <span class="subtitle" style="color: var(--color-text-muted-light);">Mesa e Cozinha</span>
+            <h3 class="title">Restaurante Origem: <span class="serif-italic">Farm-to-Table</span> no Douro</h3>
+          </div>
+          <p class="gastronomy-desc">Comandada pela nossa equipa de cozinha, a mesa do Auréa Stay celebra a riqueza gastronómica da região. Trabalhamos exclusivamente com produtores locais num raio de 15 quilómetros, colhendo vegetais e ervas aromáticas diariamente na nossa horta biológica.</p>
+          <p class="gastronomy-desc">Cada prato harmoniza com uma seleção criteriosa de vinhos de pequenos viticultores independentes do Douro e vinhos do Porto raros.</p>
+          <a href="gastronomy.html" class="btn btn-outline-light">Conhecer o Menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto / Filosofia (Large typography, emotive text) -->
+    <section class="manifesto-section" aria-label="Filosofia da marca">
+      <div class="container reveal">
+        <p class="manifesto-text">"Acreditamos que o verdadeiro luxo contemporâneo se encontra no <span class="serif-italic">silêncio</span>, no respeito pelo território e no tempo que nos permitimos perder a observar a neblina a erguer-se do rio."</p>
+        <div class="manifesto-author">A Nossa Filosofia de Slow Living</div>
+      </div>
+    </section>
+
+    <!-- Testemunhos (Manual slider) -->
+    <section class="section container reveal" aria-label="Testemunhos de clientes">
+      <div class="testimonials-wrapper">
+        <!-- Slide 1 -->
+        <div class="testimonial-slide active" aria-hidden="false">
+          <blockquote class="testimonial-quote">"O silêncio deste lugar é quase palpável. Acordar com a neblina sobre o rio e tomar o pequeno-almoço entre as oliveiras foi uma das experiências mais bonitas das nossas vidas. Uma arquitetura notável."</blockquote>
+          <cite class="testimonial-author">Claire &amp; Antoine, França</cite>
+        </div>
+        <!-- Slide 2 -->
+        <div class="testimonial-slide" aria-hidden="true">
+          <blockquote class="testimonial-quote">"Um hotel que não se impõe na paisagem, integra-se nela. O cuidado estético nos pormenores, o linho das camas, a simpatia honesta e o jantar de autor sob as estrelas tornam tudo inesquecível."</blockquote>
+          <cite class="testimonial-author">Mariana Silveira, Portugal</cite>
+        </div>
+        <!-- Slide 3 -->
+        <div class="testimonial-slide" aria-hidden="true">
+          <blockquote class="testimonial-quote">"O Auréa Stay redefiniu o que considero um retiro de luxo. A exclusividade de ter o Douro só para nós, as provas privadas nas vinhas velhas e a piscina esculpida em pedra natural são mágicas."</blockquote>
+          <cite class="testimonial-author">Johnathan K., Reino Unido</cite>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="testimonials-nav">
+          <button class="testimonial-nav-btn testimonial-prev" aria-label="Testemunho anterior">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          <button class="testimonial-nav-btn testimonial-next" aria-label="Próximo testemunho">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Informação Prática (Accessible Accordion) -->
+    <section class="section container reveal">
+      <div class="practical-info-grid">
+        <div class="practical-info-intro">
+          <div class="editorial-heading">
+            <span class="subtitle">Guia Prático</span>
+            <h2 class="title">Detalhes da <span class="serif-italic">estadia</span></h2>
+          </div>
+          <p>Preparámos algumas notas essenciais para garantir que a sua chegada e permanência decorrem com total tranquilidade.</p>
+        </div>
+        
+        <div class="faq-accordion" role="presentation">
+          <!-- Accordion Item 1 -->
+          <div class="faq-item">
+            <h3>
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-content-1">
+                Localização e Distâncias
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div id="faq-content-1" class="faq-content" role="region">
+              <p>O Auréa Stay está situado no coração do Douro Vinhateiro, a aproximadamente 1 hora e 20 minutos de carro da cidade do Porto e do Aeroporto Francisco Sá Carneiro (OPO). Oferecemos um serviço de transfer privado de ida e volta, mediante reserva prévia.</p>
+            </div>
+          </div>
+          <!-- Accordion Item 2 -->
+          <div class="faq-item">
+            <h3>
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-content-2">
+                Check-in, Check-out e Silêncio
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div id="faq-content-2" class="faq-content" role="region">
+              <p>O check-in realiza-se a partir das 15:00 e o check-out até às 12:00. De forma a preservar a calma e a tranquilidade que caracterizam a nossa estadia lenta, solicitamos aos hóspedes que evitem ruídos elevados em áreas comuns após as 22:00.</p>
+            </div>
+          </div>
+          <!-- Accordion Item 3 -->
+          <div class="faq-item">
+            <h3>
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-content-3">
+                Crianças, Acessibilidade e Animais
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div id="faq-content-3" class="faq-content" role="region">
+              <p>Para manter o ambiente de tranquilidade e devido à topografia acentuada do terreno, o hotel acolhe crianças apenas a partir dos 12 anos. Dispomos de um quarto totalmente adaptado a pessoas com mobilidade condicionada. Não são permitidos animais de estimação na propriedade.</p>
+            </div>
+          </div>
+          <!-- Accordion Item 4 -->
+          <div class="faq-item">
+            <h3>
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-content-4">
+                Estacionamento e Carregamento Elétrico
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div id="faq-content-4" class="faq-content" role="region">
+              <p>A quinta dispõe de estacionamento privado e gratuito para todos os hóspedes, sem necessidade de reserva. Contamos também com postos de carregamento rápido para veículos elétricos (Tesla Supercharger e universal).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final-section reveal">
+      <div class="container">
+        <h2 class="cta-final-title">Comece a sua jornada no vale do Douro</h2>
+        <p class="cta-final-desc">Permita-se viver ao ritmo da terra. Reserve a sua suite e garanta uma estadia inesquecível de repouso e conexão.</p>
+        <a href="rooms.html" class="btn btn-primary">Ver Disponibilidade</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container site-footer-grid">
+      <div class="footer-col-info">
+        <span class="footer-logo">Auréa Stay</span>
+        <p>Um pequeno boutique hotel premium no Douro. Silêncio, espaço e exclusividade desenhados em pedra.</p>
+        <p class="italic text-muted">Douro, Portugal</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <nav class="footer-links" aria-label="Navegação secundária no rodapé">
+          <a href="index.html" class="footer-link">Início</a>
+          <a href="rooms.html" class="footer-link">Quartos e Suites</a>
+          <a href="experiences.html" class="footer-link">Experiências</a>
+          <a href="gastronomy.html" class="footer-link">Gastronomia</a>
+          <a href="gallery.html" class="footer-link">Galeria Visual</a>
+          <a href="about.html" class="footer-link">O Hotel e História</a>
+          <a href="contact.html" class="footer-link">Localização e Contacto</a>
+        </nav>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Redes Sociais</h4>
+        <nav class="footer-links" aria-label="Links para redes sociais">
+          <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://facebook.com" class="footer-link" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://pinterest.com" class="footer-link" target="_blank" rel="noopener">Pinterest</a>
+        </nav>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p style="color: var(--color-text-muted-light); margin-bottom: var(--space-sm);">Subscreva para receber crónicas do Douro e convites exclusivos.</p>
+        <form class="newsletter-form" action="#" method="POST" aria-label="Subscrição de Newsletter">
+          <input type="email" placeholder="O seu email" required class="newsletter-input" aria-label="Endereço de Email para Newsletter">
+          <button type="submit" class="newsletter-btn">Subscrever</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="container site-footer-bottom">
+      <p>&copy; 2026 Auréa Stay. Todos os direitos reservados.</p>
+      <div class="footer-meta-links">
+        <a href="#" class="footer-link">Política de Privacidade</a>
+        <span aria-hidden="true" style="opacity: 0.2;">|</span>
+        <a href="#" class="footer-link">Termos e Condições</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quartos e Suites | Auréa Stay Boutique Hotel</title>
+  <meta name="description" content="Descubra os nossos quartos e suites concebidos para o máximo repouso. Vista para o rio Douro, terraços privados, lareiras e arquitetura contemporânea em xisto.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <!-- JS Script -->
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <!-- Header (using light-init styling since this page has a light background) -->
+  <header class="site-header header-light-init">
+    <div class="container site-header-inner">
+      <a href="index.html" class="logo" aria-label="Auréa Stay - Início">
+        Auréa
+        <span>Stay</span>
+      </a>
+      
+      <nav class="nav-menu" aria-label="Navegação Principal">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="rooms.html" class="nav-link active" aria-current="page">Quartos</a>
+        <a href="experiences.html" class="nav-link">Experiências</a>
+        <a href="gastronomy.html" class="nav-link">Gastronomia</a>
+        <a href="gallery.html" class="nav-link">Galeria</a>
+        <a href="about.html" class="nav-link">O Hotel</a>
+        <a href="contact.html" class="nav-link">Contacto</a>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="lang-selector" aria-label="Seletor de Idioma">
+          <button class="lang-btn active" aria-label="Alterar idioma para Português" aria-pressed="true">PT</button>
+          <span style="opacity:0.3" aria-hidden="true">|</span>
+          <button class="lang-btn" aria-label="Change language to English" aria-pressed="false">EN</button>
+        </div>
+        <a href="contact.html" class="btn btn-outline-light">Reservar</a>
+        <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay & Menu -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+  <div class="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu móvel">
+    <button class="mobile-menu-close" aria-label="Fechar menu de navegação">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <nav class="mobile-nav" aria-label="Navegação móvel">
+      <a href="index.html" class="mobile-nav-link">Início</a>
+      <a href="rooms.html" class="mobile-nav-link active" aria-current="page">Quartos</a>
+      <a href="experiences.html" class="mobile-nav-link">Experiências</a>
+      <a href="gastronomy.html" class="mobile-nav-link">Gastronomia</a>
+      <a href="gallery.html" class="mobile-nav-link">Galeria</a>
+      <a href="about.html" class="mobile-nav-link">O Hotel</a>
+      <a href="contact.html" class="mobile-nav-link">Contacto</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <p>Auréa Stay</p>
+      <p>Douro, Portugal</p>
+      <p style="margin-top: var(--space-xs);">geral@aureastay.com</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Editorial Header (Inner Page Hero) -->
+    <section class="inner-page-hero">
+      <div class="container">
+        <div class="editorial-heading">
+          <span class="subtitle">Alojamento Singular</span>
+          <h1 class="inner-page-hero-title">Espaços de silêncio e recolhimento</h1>
+        </div>
+        <p class="inner-page-hero-desc">Concebidos em diálogo estreito com a natureza envolvente do Douro. Cada habitação funde materiais nobres locais com linhas contemporâneas, privilegiando a luz e a vista panorâmica sobre o vale.</p>
+      </div>
+    </section>
+
+    <!-- Filters and Listing -->
+    <section class="section container">
+      <!-- Dynamic Filter Buttons Row -->
+      <div class="filters-wrapper">
+        <div class="filter-btn-group" role="group" aria-label="Filtrar habitações">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">Todos os Alojamentos</button>
+          <button class="filter-btn" data-filter="suite" aria-pressed="false">Suites</button>
+          <button class="filter-btn" data-filter="room" aria-pressed="false">Quartos</button>
+          <button class="filter-btn" data-filter="independent" aria-pressed="false">Estruturas Independentes</button>
+        </div>
+      </div>
+
+      <!-- Rooms Grid List -->
+      <div class="rooms-list-grid">
+        
+        <!-- Card 1: Suite Rio -->
+        <article class="room-list-card reveal" data-category="suite rio">
+          <div class="room-list-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80" alt="Suite Rio - Quarto luminoso com grandes portadas de vidro viradas para o rio" class="room-list-card-img" width="600" height="390">
+          </div>
+          <div class="room-list-card-content">
+            <h2 class="room-list-card-title">Suite Rio</h2>
+            <p class="room-list-card-desc">Instalada no ponto mais elevado do hotel, esta suite sobressai pelas portadas em vidro que se abrem sobre o rio Douro. Equipada com lareira central a bioetanol, sala de estar independente e terraço panorâmico em deck de madeira.</p>
+            <div class="room-list-card-specs">
+              <span>2 Hóspedes</span>
+              <span>•</span>
+              <span>65 m²</span>
+              <span>•</span>
+              <span>Cama King Size</span>
+              <span>•</span>
+              <span>Terraço Privativo</span>
+            </div>
+            <div class="room-showcase-price">A partir de €320 <span>/ noite</span></div>
+            <div style="display: flex; gap: var(--space-sm);">
+              <a href="room-detail.html" class="btn btn-secondary">Ver Detalhes</a>
+              <a href="room-detail.html#bookingForm" class="btn btn-primary">Reservar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Quarto Vinha -->
+        <article class="room-list-card reveal" data-category="room vinha">
+          <div class="room-list-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Quarto Vinha - Mobiliário contemporâneo em carvalho com janela sobre os vinhedos" class="room-list-card-img" loading="lazy" width="600" height="390">
+          </div>
+          <div class="room-list-card-content">
+            <h2 class="room-list-card-title">Quarto Vinha</h2>
+            <p class="room-list-card-desc">Entre as videiras e oliveiras da propriedade, este quarto é um tributo ao Douro Vinhateiro. Decorado em tons neutros e terra, possui uma poltrona de leitura estrategicamente posicionada frente à grande janela sobre os socalcos.</p>
+            <div class="room-list-card-specs">
+              <span>2 Hóspedes</span>
+              <span>•</span>
+              <span>40 m²</span>
+              <span>•</span>
+              <span>Cama King Size</span>
+              <span>•</span>
+              <span>Vista Vinhas</span>
+            </div>
+            <div class="room-showcase-price">A partir de €240 <span>/ noite</span></div>
+            <div style="display: flex; gap: var(--space-sm);">
+              <a href="room-detail.html" class="btn btn-secondary">Ver Detalhes</a>
+              <a href="room-detail.html#bookingForm" class="btn btn-primary">Reservar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Suite Pátio -->
+        <article class="room-list-card reveal" data-category="suite patio">
+          <div class="room-list-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80" alt="Suite Pátio - Quarto integrado com um pátio interior privativo com oliveira" class="room-list-card-img" loading="lazy" width="600" height="390">
+          </div>
+          <div class="room-list-card-content">
+            <h2 class="room-list-card-title">Suite Pátio</h2>
+            <p class="room-list-card-desc">Focada no recolhimento interior, esta suite desenha-se em redor de um pátio privado murado a xisto. Destaca-se pela banheira de imersão exterior em pedra vulcânica e chuveiro de efeito chuva duplo.</p>
+            <div class="room-list-card-specs">
+              <span>2 Hóspedes</span>
+              <span>•</span>
+              <span>55 m²</span>
+              <span>•</span>
+              <span>Cama King Size</span>
+              <span>•</span>
+              <span>Pátio de Pedra</span>
+            </div>
+            <div class="room-showcase-price">A partir de €280 <span>/ noite</span></div>
+            <div style="display: flex; gap: var(--space-sm);">
+              <a href="room-detail.html" class="btn btn-secondary">Ver Detalhes</a>
+              <a href="room-detail.html#bookingForm" class="btn btn-primary">Reservar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Casa da Pedra -->
+        <article class="room-list-card reveal" data-category="independent independent-structure">
+          <div class="room-list-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" alt="Casa da Pedra - Moradia independente com piscina e paredes de pedra tradicionais" class="room-list-card-img" loading="lazy" width="600" height="390">
+          </div>
+          <div class="room-list-card-content">
+            <h2 class="room-list-card-title">Casa da Pedra</h2>
+            <p class="room-list-card-desc">Uma habitação independente, erguida integralmente com a pedra de xisto original recuperada das ruínas da quinta. Oferece dois pisos de privacidade absoluta, sala de estar ampla, piscina de transbordo privativa e lareira suspensa a lenha.</p>
+            <div class="room-list-card-specs">
+              <span>Até 4 Hóspedes</span>
+              <span>•</span>
+              <span>110 m²</span>
+              <span>•</span>
+              <span>2 Camas Super King</span>
+              <span>•</span>
+              <span>Piscina Privativa</span>
+            </div>
+            <div class="room-showcase-price">A partir de €490 <span>/ noite</span></div>
+            <div style="display: flex; gap: var(--space-sm);">
+              <a href="room-detail.html" class="btn btn-secondary">Ver Detalhes</a>
+              <a href="room-detail.html#bookingForm" class="btn btn-primary">Reservar</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Amenities Highlight -->
+    <section class="section section-dark reveal">
+      <div class="container text-center">
+        <div class="editorial-heading text-center" style="margin-bottom: var(--space-lg);">
+          <span class="subtitle" style="color: var(--color-text-muted-light);">Detalhes de Conforto</span>
+          <h2 class="title" style="color: var(--color-text-light);">O que acompanha a sua estadia</h2>
+        </div>
+        <p class="text-muted" style="max-width: 600px; margin: 0 auto var(--space-xl) auto; color: var(--color-text-muted-light);">Todas as nossas opções de alojamento incluem o mesmo padrão rigoroso de conforto e serviços exclusivos.</p>
+        
+        <div class="info-cards-grid" style="text-align: left;">
+          <div class="info-card">
+            <h4>Pequeno-Almoço de Autor</h4>
+            <p style="color: var(--color-text-muted-dark);">Servido diariamente no restaurante Origem ou entregue na sua suite com produtos frescos da horta e pastelaria regional feita na quinta.</p>
+          </div>
+          <div class="info-card">
+            <h4>Minibar Artesanal</h4>
+            <p style="color: var(--color-text-muted-dark);">Uma seleção cuidada de águas termais, queijos locais, chocolates artesanais e uma garrafa de vinho do Douro selecionada pelo escanção.</p>
+          </div>
+          <div class="info-card">
+            <h4>Conforto Térmico</h4>
+            <p style="color: var(--color-text-muted-dark);">Chão radiante em todas as divisões e ar condicionado silencioso, proporcionando uma temperatura ideal de forma ecológica durante todo o ano.</p>
+          </div>
+          <div class="info-card">
+            <h4>Bem-Estar e Spa</h4>
+            <p style="color: var(--color-text-muted-dark);">Produtos de higiene biológicos à base de uva e azeite do Douro, roupões em algodão orgânico e acesso sob consulta a tratamentos e massagens no quarto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container site-footer-grid">
+      <div class="footer-col-info">
+        <span class="footer-logo">Auréa Stay</span>
+        <p>Um pequeno boutique hotel premium no Douro. Silêncio, espaço e exclusividade desenhados em pedra.</p>
+        <p class="italic text-muted">Douro, Portugal</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <nav class="footer-links" aria-label="Navegação secundária no rodapé">
+          <a href="index.html" class="footer-link">Início</a>
+          <a href="rooms.html" class="footer-link">Quartos e Suites</a>
+          <a href="experiences.html" class="footer-link">Experiências</a>
+          <a href="gastronomy.html" class="footer-link">Gastronomia</a>
+          <a href="gallery.html" class="footer-link">Galeria Visual</a>
+          <a href="about.html" class="footer-link">O Hotel e História</a>
+          <a href="contact.html" class="footer-link">Localização e Contacto</a>
+        </nav>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Redes Sociais</h4>
+        <nav class="footer-links" aria-label="Links para redes sociais">
+          <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://facebook.com" class="footer-link" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://pinterest.com" class="footer-link" target="_blank" rel="noopener">Pinterest</a>
+        </nav>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p style="color: var(--color-text-muted-light); margin-bottom: var(--space-sm);">Subscreva para receber crónicas do Douro e convites exclusivos.</p>
+        <form class="newsletter-form" action="#" method="POST" aria-label="Subscrição de Newsletter">
+          <input type="email" placeholder="O seu email" required class="newsletter-input" aria-label="Endereço de Email para Newsletter">
+          <button type="submit" class="newsletter-btn">Subscrever</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="container site-footer-bottom">
+      <p>&copy; 2026 Auréa Stay. Todos os direitos reservados.</p>
+      <div class="footer-meta-links">
+        <a href="#" class="footer-link">Política de Privacidade</a>
+        <span aria-hidden="true" style="opacity: 0.2;">|</span>
+        <a href="#" class="footer-link">Termos e Condições</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

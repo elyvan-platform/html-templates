@@ -1,0 +1,1383 @@
+/* pages.css - Styles for Specific Pages & Sections */
+
+/* ==========================================================================
+   1. HOMEPAGE: IMMERSIVE HERO
+   ========================================================================== */
+.immersive-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: var(--space-xl);
+  overflow: hidden;
+  background-color: var(--color-bg-dark);
+}
+
+.immersive-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.immersive-hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(21, 21, 21, 0.4) 0%, rgba(21, 21, 21, 0.2) 60%, rgba(21, 21, 21, 0.8) 100%);
+  z-index: 2;
+}
+
+.immersive-hero-content {
+  position: relative;
+  z-index: 3;
+  color: var(--color-text-light);
+  width: 100%;
+}
+
+.immersive-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted-light);
+}
+
+.immersive-hero-meta::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.immersive-hero-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-display);
+  font-weight: var(--weight-light);
+  line-height: 1.05;
+  margin-bottom: var(--space-md);
+  max-width: 900px;
+}
+
+.immersive-hero-title span.italic {
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.immersive-hero-desc {
+  max-width: 480px;
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-light);
+  margin-bottom: var(--space-lg);
+  line-height: var(--lh-body);
+}
+
+.immersive-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.scroll-indicator {
+  position: absolute;
+  right: var(--container-padding);
+  bottom: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-text-muted-light);
+  font-size: var(--font-size-xs);
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  z-index: 3;
+}
+
+.scroll-indicator::after {
+  content: '';
+  width: 1px;
+  height: 50px;
+  background-color: currentColor;
+  transform-origin: top;
+  animation: scroll-line 2s infinite ease-in-out;
+}
+
+@keyframes scroll-line {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ==========================================================================
+   2. HOMEPAGE: EDITORIAL INTRO
+   ========================================================================== */
+.editorial-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.editorial-intro-text {
+  padding-right: var(--space-xl);
+}
+
+.editorial-intro-text p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-md);
+}
+
+.editorial-intro-text p.lead {
+  font-size: var(--font-size-md);
+  color: var(--color-earth);
+  line-height: var(--lh-heading);
+  margin-bottom: var(--space-lg);
+}
+
+.signature-block {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.signature-svg {
+  width: 150px;
+  height: 60px;
+  stroke: var(--color-accent-wine);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.signature-label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted-dark);
+}
+
+.editorial-intro-image-wrapper {
+  position: relative;
+  padding-bottom: 120%; /* Portrait aspect */
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+}
+
+.editorial-intro-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.editorial-intro-image-wrapper:hover .editorial-intro-image {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   3. HOMEPAGE: ROOMS DISPLAY (Editorial Alternating Layout)
+   ========================================================================== */
+.homepage-rooms-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+}
+
+.room-showcase-item {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.room-showcase-item:nth-child(even) {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.room-showcase-item:nth-child(even) .room-showcase-img-wrapper {
+  order: 2;
+}
+
+.room-showcase-item:nth-child(even) .room-showcase-content {
+  order: 1;
+  padding-left: 0;
+  padding-right: var(--space-xl);
+}
+
+.room-showcase-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+}
+
+.room-showcase-img-wrapper.ratio-vertical {
+  padding-bottom: 110%;
+}
+
+.room-showcase-img-wrapper.ratio-horizontal {
+  padding-bottom: 75%;
+}
+
+.room-showcase-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.room-showcase-img-wrapper:hover .room-showcase-img {
+  transform: scale(1.02);
+}
+
+.room-showcase-content {
+  padding-left: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.room-showcase-meta {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.room-showcase-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  color: var(--color-earth);
+  margin-bottom: var(--space-sm);
+}
+
+.room-showcase-desc {
+  color: var(--color-text-muted-dark);
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-md);
+  line-height: var(--lh-body);
+}
+
+.room-showcase-specs {
+  display: flex;
+  gap: var(--space-md);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-top: 1px solid var(--border-color-light);
+  border-bottom: 1px solid var(--border-color-light);
+  padding: var(--space-sm) 0;
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+.room-showcase-price {
+  font-size: var(--font-size-md);
+  color: var(--color-accent-wine);
+  font-weight: var(--weight-medium);
+  margin-bottom: var(--space-md);
+}
+
+.room-showcase-price span {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted-dark);
+  font-weight: var(--weight-light);
+}
+
+/* ==========================================================================
+   4. HOMEPAGE: EXPERIENCES (Visual Horizontal Flow)
+   ========================================================================== */
+.experience-intro {
+  max-width: 600px;
+  margin-bottom: var(--space-xl);
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-dark);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.experience-card-img-wrapper {
+  position: relative;
+  padding-bottom: 125%;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.experience-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.experience-card:hover .experience-card-img {
+  transform: scale(1.04);
+}
+
+.experience-card-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  color: var(--color-earth);
+  margin-bottom: var(--space-xxs);
+}
+
+.experience-card-meta {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted-dark);
+}
+
+/* ==========================================================================
+   5. HOMEPAGE: GASTRONOMY
+   ========================================================================== */
+.gastronomy-hero-section {
+  position: relative;
+  padding: 12vw 0;
+  color: var(--color-text-light);
+  overflow: hidden;
+  background-color: var(--color-bg-dark);
+}
+
+.gastronomy-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.gastronomy-bg-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 21, 21, 0.65);
+  z-index: 2;
+}
+
+.gastronomy-inner {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.gastronomy-content {
+  background-color: rgba(44, 37, 32, 0.85); /* Earthy transparent dark */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgba(250, 248, 245, 0.1);
+}
+
+.gastronomy-content h3 {
+  color: var(--color-text-light);
+}
+
+.gastronomy-desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-light);
+  margin-bottom: var(--space-lg);
+  line-height: var(--lh-body);
+}
+
+/* ==========================================================================
+   6. HOMEPAGE: MANIFESTO
+   ========================================================================== */
+.manifesto-section {
+  text-align: center;
+  background-color: var(--color-surface-light);
+  padding: var(--space-xxl) 0;
+}
+
+.manifesto-text {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  line-height: 1.4;
+  color: var(--color-earth);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.manifesto-text span.serif-italic {
+  font-style: italic;
+}
+
+.manifesto-author {
+  margin-top: var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent-wine);
+}
+
+/* ==========================================================================
+   7. HOMEPAGE: TESTIMONIALS
+   ========================================================================== */
+.testimonials-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonial-slide {
+  text-align: center;
+  display: none;
+}
+
+.testimonial-slide.active {
+  display: block;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  line-height: 1.5;
+  color: var(--color-earth);
+  font-style: italic;
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-author {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted-dark);
+}
+
+.testimonials-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.testimonial-nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted-dark);
+  padding: var(--space-xs);
+  transition: color var(--transition-fast);
+}
+
+.testimonial-nav-btn:hover {
+  color: var(--color-accent-wine);
+}
+
+.testimonial-nav-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   8. HOMEPAGE: PRACTICAL INFO
+   ========================================================================== */
+.practical-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-xl);
+}
+
+.practical-info-intro p {
+  color: var(--color-text-muted-dark);
+  font-size: var(--font-size-base);
+}
+
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.info-card {
+  background-color: var(--color-surface-light);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgba(26,26,26,0.03);
+}
+
+.info-card h4 {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-earth);
+  margin-bottom: var(--space-xs);
+}
+
+.info-card p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-dark);
+}
+
+/* ==========================================================================
+   9. CTA FINAL
+   ========================================================================== */
+.cta-final-section {
+  text-align: center;
+  background-color: var(--color-earth);
+  color: var(--color-text-light);
+  padding: var(--space-xxl) 0;
+}
+
+.cta-final-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xxl);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+}
+
+.cta-final-desc {
+  max-width: 500px;
+  margin: 0 auto var(--space-lg);
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-light);
+}
+
+/* ==========================================================================
+   10. ROOMS PAGE
+   ========================================================================== */
+.inner-page-hero {
+  padding-top: calc(var(--space-xxl) + 50px);
+  padding-bottom: var(--space-xl);
+  background-color: var(--color-surface-light);
+  border-bottom: 1px solid var(--border-color-light);
+}
+
+.inner-page-hero-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xxl);
+  color: var(--color-earth);
+  margin-bottom: var(--space-sm);
+}
+
+.inner-page-hero-desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-dark);
+  max-width: 600px;
+}
+
+.filters-wrapper {
+  margin-bottom: var(--space-xl);
+}
+
+.filter-btn-group {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: transparent;
+  color: var(--color-text-muted-dark);
+  border: 1px solid var(--border-color-light);
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--weight-medium);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--color-earth);
+  color: var(--color-text-light);
+  border-color: var(--color-earth);
+}
+
+.rooms-list-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+.room-list-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  border-bottom: 1px solid var(--border-color-light);
+  padding-bottom: var(--space-xl);
+}
+
+.room-list-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.room-list-card-img-wrapper {
+  position: relative;
+  padding-bottom: 65%;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+}
+
+.room-list-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.room-list-card:hover .room-list-card-img {
+  transform: scale(1.02);
+}
+
+.room-list-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.room-list-card-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  color: var(--color-earth);
+  margin-bottom: var(--space-sm);
+}
+
+.room-list-card-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-md);
+  line-height: var(--lh-body);
+}
+
+.room-list-card-specs {
+  display: flex;
+  gap: var(--space-md);
+  width: 100%;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted-dark);
+  border-top: 1px solid var(--border-color-light);
+  border-bottom: 1px solid var(--border-color-light);
+  padding: var(--space-sm) 0;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   11. ROOM DETAIL PAGE
+   ========================================================================== */
+.room-detail-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.room-detail-gallery-main {
+  margin-bottom: var(--space-lg);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.room-detail-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  border-top: 1px solid var(--border-color-light);
+  border-bottom: 1px solid var(--border-color-light);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-lg);
+}
+
+.room-detail-spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-detail-spec-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted-dark);
+}
+
+.room-detail-spec-value {
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  color: var(--color-earth);
+}
+
+.room-detail-body p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-md);
+}
+
+.room-detail-features {
+  margin-top: var(--space-xl);
+}
+
+.room-detail-features h3 {
+  margin-bottom: var(--space-md);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-dark);
+}
+
+.feature-item svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--color-accent-olive);
+  stroke-width: 1.5;
+}
+
+.detail-gallery-section {
+  background-color: var(--color-surface-light);
+}
+
+.detail-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.detail-gallery-item {
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 75%;
+}
+
+.detail-gallery-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.detail-gallery-item:hover .detail-gallery-img {
+  transform: scale(1.03);
+}
+
+.room-detail-conditions {
+  margin-top: var(--space-xl);
+}
+
+.conditions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.conditions-list li {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-dark);
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+.conditions-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-wine);
+}
+
+/* ==========================================================================
+   12. EXPERIENCES PAGE
+   ========================================================================== */
+.experience-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+}
+
+.experience-list-item {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.experience-list-item:nth-child(even) {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.experience-list-item:nth-child(even) .experience-list-img-wrapper {
+  order: 2;
+}
+
+.experience-list-item:nth-child(even) .experience-list-content {
+  order: 1;
+  padding-left: 0;
+  padding-right: var(--space-xl);
+}
+
+.experience-list-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+  padding-bottom: 75%;
+}
+
+.experience-list-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.experience-list-item:hover .experience-list-img {
+  transform: scale(1.03);
+}
+
+.experience-list-content {
+  padding-left: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.experience-list-meta {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.experience-list-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  color: var(--color-earth);
+  margin-bottom: var(--space-sm);
+}
+
+.experience-list-desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-md);
+  line-height: var(--lh-body);
+}
+
+.experience-list-specs {
+  display: flex;
+  gap: var(--space-md);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-top: 1px solid var(--border-color-light);
+  border-bottom: 1px solid var(--border-color-light);
+  padding: var(--space-sm) 0;
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+/* ==========================================================================
+   13. GASTRONOMY PAGE
+   ========================================================================== */
+.gastronomy-chef-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.gastronomy-chef-image {
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.gastronomy-chef-content h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.gastronomy-chef-content p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-md);
+}
+
+.menu-section {
+  background-color: var(--color-surface-light);
+}
+
+.menu-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.menu-card {
+  background-color: var(--color-bg-light);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color-light);
+}
+
+.menu-card-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--color-accent-wine);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.menu-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.menu-item-name {
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  font-weight: var(--weight-medium);
+  color: var(--color-earth);
+}
+
+.menu-item-divider {
+  flex: 1;
+  border-bottom: 1px dotted var(--border-color-light);
+  margin: 0 var(--space-xs) 4px var(--space-xs);
+}
+
+.menu-item-price {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent-wine);
+}
+
+.menu-item-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-dark);
+}
+
+.gastronomy-wine-highlight {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.gastronomy-wine-text h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.gastronomy-wine-text p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-md);
+}
+
+.gastronomy-wine-img {
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   14. GALLERY PAGE
+   ========================================================================== */
+.gallery-grid {
+  columns: 3;
+  column-gap: var(--space-md);
+}
+
+.gallery-grid-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: var(--space-md);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform var(--transition-normal);
+  background-color: var(--color-surface-light);
+}
+
+.gallery-grid-item img {
+  width: 100%;
+  display: block;
+  transition: transform var(--transition-slow), filter var(--transition-slow);
+}
+
+.gallery-grid-item:hover img {
+  transform: scale(1.02);
+}
+
+/* Overlay style */
+.gallery-grid-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 21, 21, 0.4);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 2;
+}
+
+.gallery-grid-item-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-md);
+  color: var(--color-text-light);
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.gallery-grid-item-info-category {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted-light);
+  margin-bottom: 2px;
+}
+
+.gallery-grid-item-info-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  font-weight: var(--weight-light);
+}
+
+.gallery-grid-item:hover::after {
+  opacity: 1;
+}
+
+.gallery-grid-item:hover .gallery-grid-item-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Filtering Transitions for items */
+.gallery-grid-item.hide {
+  display: none;
+}
+
+/* ==========================================================================
+   15. ABOUT PAGE
+   ========================================================================== */
+.about-concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.about-concept-text h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.about-concept-text p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-dark);
+  margin-bottom: var(--space-md);
+}
+
+.about-concept-img {
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.sustainability-card {
+  background-color: var(--color-surface-light);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-sm);
+}
+
+.sustainability-card-icon {
+  margin-bottom: var(--space-sm);
+  color: var(--color-accent-olive);
+}
+
+.sustainability-card-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.sustainability-card h4 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--color-earth);
+  margin-bottom: var(--space-sm);
+}
+
+.sustainability-card p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-dark);
+}
+
+/* ==========================================================================
+   16. CONTACT PAGE
+   ========================================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-xl);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contact-info-block h4 {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-wine);
+  margin-bottom: var(--space-xs);
+}
+
+.contact-info-block p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted-dark);
+}
+
+.contact-form-wrapper {
+  background-color: var(--color-surface-light);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color-light);
+}
+
+.contact-form-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--color-earth);
+  margin-bottom: var(--space-lg);
+}
+
+/* Map Mockup Component */
+.map-mockup {
+  position: relative;
+  background-color: var(--color-surface-light);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-sm);
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-mockup-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f1ea;
+  opacity: 0.95;
+  background-image: radial-gradient(#d3cfc4 1px, transparent 1px), radial-gradient(#d3cfc4 1px, #f4f1ea 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.map-mockup-river {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #dbe4eb;
+  transform: skewY(-8deg);
+}
+
+.map-mockup-river-label {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translateY(-50%) rotate(-8deg);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--font-size-sm);
+  color: #7b94a8;
+  letter-spacing: 0.1em;
+}
+
+.map-mockup-pin {
+  position: absolute;
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.map-mockup-pin-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-accent-wine);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(92, 35, 43, 0.2);
+  animation: pulse-pin 2s infinite;
+}
+
+@keyframes pulse-pin {
+  0% { box-shadow: 0 0 0 0px rgba(92, 35, 43, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(92, 35, 43, 0); }
+  100% { box-shadow: 0 0 0 0px rgba(92, 35, 43, 0); }
+}
+
+.map-mockup-pin-label {
+  margin-top: 8px;
+  background-color: var(--color-earth);
+  color: var(--color-text-light);
+  padding: 4px var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+.map-mockup-gps {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(250, 248, 245, 0.9);
+  padding: 6px var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-dark);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color-light);
+}
+
+.directions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.direction-block h4 {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-earth);
+  margin-bottom: var(--space-sm);
+}
+
+.direction-block p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-dark);
+  line-height: var(--lh-body);
+}

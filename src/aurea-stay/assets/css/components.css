@@ -1,0 +1,800 @@
+/* components.css - Reusable UI Components */
+
+/* ==========================================================================
+   1. BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-primary {
+  background-color: var(--color-accent-wine);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-accent-wine);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-earth);
+  border-color: var(--color-earth);
+  color: var(--color-text-light);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-text-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-text-dark);
+  color: var(--color-bg-light);
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--color-text-light);
+  border: 1px solid rgba(250, 248, 245, 0.4);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-text-dark);
+  border-color: var(--color-text-light);
+}
+
+.btn-text {
+  padding: 0;
+  background: transparent;
+  color: var(--color-accent-wine);
+  border: none;
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.05em;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.btn-text::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0.8);
+  transform-origin: left;
+  transition: transform var(--transition-normal);
+}
+
+.btn-text:hover::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-header);
+  background-color: transparent;
+  border-bottom: 1px solid rgba(250, 248, 245, 0.08);
+  transition: background-color var(--transition-normal), backdrop-filter var(--transition-normal), border-color var(--transition-normal), padding var(--transition-normal);
+  padding: var(--space-md) 0;
+}
+
+.site-header.scrolled {
+  background-color: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+  padding: var(--space-sm) 0;
+}
+
+/* If the page demands light header styling initially */
+.site-header.scrolled .logo,
+.site-header.scrolled .nav-link,
+.site-header.scrolled .lang-btn,
+.site-header.scrolled .mobile-menu-btn {
+  color: var(--color-text-dark);
+}
+
+.site-header.scrolled .site-header-inner {
+  color: var(--color-text-dark);
+}
+
+/* Header Inner Wrapper */
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text-light); /* Default for hero overlay */
+  transition: color var(--transition-normal);
+}
+
+/* Logo */
+.logo {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: var(--font-size-md);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  line-height: var(--lh-tight);
+}
+
+.logo span {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  font-weight: var(--weight-medium);
+  margin-top: 2px;
+  color: var(--color-text-muted-light);
+}
+.site-header.scrolled .logo span {
+  color: var(--color-text-muted-dark);
+}
+
+/* Desktop Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: inherit;
+  position: relative;
+  padding: var(--space-xs) 0;
+  transition: opacity var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-normal);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-link.active {
+  font-weight: var(--weight-medium);
+}
+
+/* Actions in Header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* Language Selector */
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.05em;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  font-weight: var(--weight-light);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+  color: inherit;
+  padding: 2px 4px;
+}
+
+.lang-btn.active {
+  opacity: 1;
+  font-weight: var(--weight-semibold);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: var(--space-xs);
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* Off-canvas Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: var(--color-bg-light);
+  z-index: var(--z-mobile-menu);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl) var(--container-padding);
+  transition: right var(--transition-normal);
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  z-index: calc(var(--z-mobile-menu) - 1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-dark);
+  padding: var(--space-xs);
+  margin-bottom: var(--space-xl);
+}
+
+.mobile-menu-close svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.mobile-nav-link {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  color: var(--color-text-dark);
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--color-accent-wine);
+}
+
+.mobile-menu-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-color-light);
+  padding-top: var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted-dark);
+}
+
+/* Header style override for inner pages (e.g. start light styled) */
+.site-header.header-light-init {
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+}
+.site-header.header-light-init:not(.scrolled) .site-header-inner {
+  color: var(--color-text-dark);
+}
+.site-header.header-light-init:not(.scrolled) .logo span {
+  color: var(--color-text-muted-dark);
+}
+.site-header.header-light-init:not(.scrolled) .btn-outline-light {
+  color: var(--color-text-dark);
+  border-color: rgba(26, 26, 26, 0.4);
+}
+.site-header.header-light-init:not(.scrolled) .btn-outline-light:hover {
+  background-color: var(--color-text-dark);
+  color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   3. EDITORIAL HEADING
+   ========================================================================== */
+.editorial-heading {
+  margin-bottom: var(--space-xl);
+}
+
+.editorial-heading .subtitle {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent-wine);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.editorial-heading .title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xxl);
+  font-weight: var(--weight-light);
+  color: var(--color-earth);
+  line-height: var(--lh-tight);
+}
+
+.editorial-heading .title span.serif-italic {
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.editorial-heading .number {
+  font-family: var(--font-display);
+  font-size: var(--font-size-base);
+  font-style: italic;
+  color: var(--color-text-muted-dark);
+  margin-right: var(--space-sm);
+}
+
+/* ==========================================================================
+   4. FORMS & INPUTS
+   ========================================================================== */
+.form-group {
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+}
+
+.section-dark .form-label {
+  color: var(--color-text-light);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--space-sm);
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-dark);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent-wine);
+  box-shadow: 0 0 0 3px rgba(92, 35, 43, 0.08);
+}
+
+.section-dark .form-input {
+  background-color: rgba(250, 248, 245, 0.03);
+  border: 1px solid var(--border-color-dark);
+  color: var(--color-text-light);
+}
+
+.section-dark .form-input:focus {
+  border-color: var(--color-text-light);
+  box-shadow: 0 0 0 3px rgba(250, 248, 245, 0.08);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-error {
+  font-size: var(--font-size-xs);
+  color: #c0392b;
+  margin-top: 2px;
+  display: none;
+}
+
+.form-success-message {
+  display: none;
+  background-color: rgba(74, 83, 67, 0.1);
+  border: 1px solid var(--color-accent-olive);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-accent-olive);
+  font-size: var(--font-size-sm);
+}
+
+.section-dark .form-success-message {
+  background-color: rgba(74, 83, 67, 0.2);
+  border-color: var(--color-accent-olive);
+  color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   5. BOOKING PANEL (for Detail Page)
+   ========================================================================== */
+.booking-panel {
+  background-color: var(--color-surface-light);
+  border: 1px solid var(--border-color-light);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius-sm);
+  position: sticky;
+  top: 100px;
+}
+
+.booking-panel-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.booking-panel-price {
+  font-size: var(--font-size-md);
+  color: var(--color-accent-wine);
+  font-weight: var(--weight-medium);
+  margin-bottom: var(--space-md);
+}
+
+.booking-panel-price span {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted-dark);
+  font-weight: var(--weight-light);
+}
+
+/* ==========================================================================
+   6. FAQ ACCORDION
+   ========================================================================== */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-color-light);
+  padding-bottom: var(--space-sm);
+}
+
+.section-dark .faq-item {
+  border-bottom: 1px solid var(--border-color-dark);
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding: var(--space-sm) 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  font-weight: var(--weight-regular);
+  color: var(--color-earth);
+  transition: color var(--transition-fast);
+}
+
+.section-dark .faq-trigger {
+  color: var(--color-text-light);
+}
+
+.faq-trigger:hover {
+  color: var(--color-accent-wine);
+}
+
+.section-dark .faq-trigger:hover {
+  color: var(--color-text-muted-light);
+}
+
+.faq-icon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  transition: transform var(--transition-normal);
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Horizontal line */
+.faq-icon::before {
+  width: 12px;
+  height: 1px;
+}
+
+/* Vertical line */
+.faq-icon::after {
+  width: 1px;
+  height: 12px;
+  transition: transform var(--transition-normal);
+}
+
+.faq-item.open .faq-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal), padding var(--transition-normal);
+  color: var(--color-text-muted-dark);
+  font-size: var(--font-size-sm);
+}
+
+.section-dark .faq-content {
+  color: var(--color-text-muted-light);
+}
+
+.faq-item.open .faq-content {
+  padding-bottom: var(--space-sm);
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+.site-footer {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  padding: var(--space-xl) 0 var(--space-md);
+  border-top: 1px solid var(--border-color-dark);
+  font-size: var(--font-size-sm);
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.footer-col-info .footer-logo {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.footer-col-info p {
+  color: var(--color-text-muted-light);
+  margin-bottom: var(--space-md);
+  max-width: 280px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.footer-link {
+  color: var(--color-text-muted-light);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-text-light);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.newsletter-input {
+  flex: 1;
+  background-color: rgba(250, 248, 245, 0.05);
+  border: 1px solid var(--border-color-dark);
+  padding: var(--space-sm);
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-text-muted-light);
+}
+
+.newsletter-btn {
+  background-color: var(--color-text-light);
+  color: var(--color-text-dark);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: var(--weight-medium);
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.newsletter-btn:hover {
+  background-color: var(--color-surface-light);
+}
+
+.site-footer-bottom {
+  border-top: 1px solid var(--border-color-dark);
+  padding-top: var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-muted-light);
+  font-size: var(--font-size-xs);
+}
+
+.footer-meta-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* ==========================================================================
+   8. LIGHTBOX (for Gallery)
+   ========================================================================== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(21, 21, 21, 0.98);
+  backdrop-filter: blur(8px);
+  z-index: var(--z-lightbox);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 85%;
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  border-radius: var(--border-radius-sm);
+}
+
+.lightbox-caption {
+  color: var(--color-text-muted-light);
+  margin-top: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  font-style: italic;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-light);
+  padding: var(--space-xs);
+  z-index: 1010;
+}
+
+.lightbox-close svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-light);
+  padding: var(--space-md);
+  z-index: 1010;
+  transition: opacity var(--transition-fast);
+  opacity: 0.6;
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-nav svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}

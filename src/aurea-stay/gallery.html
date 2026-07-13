@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria Visual | Auréa Stay Boutique Hotel</title>
+  <meta name="description" content="Navegue pela galeria fotográfica do Auréa Stay no Douro. Descubra os nossos interiores contemporâneos, arquitetura em pedra, gastronomia e as paisagens sobre o rio.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <!-- JS Script -->
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <!-- Header -->
+  <header class="site-header header-light-init">
+    <div class="container site-header-inner">
+      <a href="index.html" class="logo" aria-label="Auréa Stay - Início">
+        Auréa
+        <span>Stay</span>
+      </a>
+      
+      <nav class="nav-menu" aria-label="Navegação Principal">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="rooms.html" class="nav-link">Quartos</a>
+        <a href="experiences.html" class="nav-link">Experiências</a>
+        <a href="gastronomy.html" class="nav-link">Gastronomia</a>
+        <a href="gallery.html" class="nav-link active" aria-current="page">Galeria</a>
+        <a href="about.html" class="nav-link">O Hotel</a>
+        <a href="contact.html" class="nav-link">Contacto</a>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="lang-selector" aria-label="Seletor de Idioma">
+          <button class="lang-btn active" aria-label="Alterar idioma para Português" aria-pressed="true">PT</button>
+          <span style="opacity:0.3" aria-hidden="true">|</span>
+          <button class="lang-btn" aria-label="Change language to English" aria-pressed="false">EN</button>
+        </div>
+        <a href="contact.html" class="btn btn-outline-light">Reservar</a>
+        <button class="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay & Menu -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+  <div class="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu móvel">
+    <button class="mobile-menu-close" aria-label="Fechar menu de navegação">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <nav class="mobile-nav" aria-label="Navegação móvel">
+      <a href="index.html" class="mobile-nav-link">Início</a>
+      <a href="rooms.html" class="mobile-nav-link">Quartos</a>
+      <a href="experiences.html" class="mobile-nav-link">Experiências</a>
+      <a href="gastronomy.html" class="mobile-nav-link">Gastronomia</a>
+      <a href="gallery.html" class="mobile-nav-link active" aria-current="page">Galeria</a>
+      <a href="about.html" class="mobile-nav-link">O Hotel</a>
+      <a href="contact.html" class="mobile-nav-link">Contacto</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <p>Auréa Stay</p>
+      <p>Douro, Portugal</p>
+      <p style="margin-top: var(--space-xs);">geral@aureastay.com</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Editorial Header (Inner Page Hero) -->
+    <section class="inner-page-hero">
+      <div class="container">
+        <div class="editorial-heading">
+          <span class="subtitle">Memória e Luz</span>
+          <h1 class="inner-page-hero-title">Galeria de Imagens</h1>
+        </div>
+        <p class="inner-page-hero-desc">Uma coleção de instantes captados no Auréa Stay. Enquadramentos da arquitetura em pedra, pormenores decorativos, pratos do restaurante Origem e a omnipresença da paisagem do rio Douro.</p>
+      </div>
+    </section>
+
+    <!-- Filters & Gallery Grid -->
+    <section class="section container">
+      <!-- Gallery Filter buttons -->
+      <div class="filters-wrapper">
+        <div class="filter-btn-group" role="group" aria-label="Filtrar galeria de fotos">
+          <button class="filter-btn gallery-filter-btn active" data-filter="all" aria-pressed="true">Todas as Imagens</button>
+          <button class="filter-btn gallery-filter-btn" data-filter="rooms" aria-pressed="false">Quartos e Suites</button>
+          <button class="filter-btn gallery-filter-btn" data-filter="architecture" aria-pressed="false">Arquitetura</button>
+          <button class="filter-btn gallery-filter-btn" data-filter="gastronomy" aria-pressed="false">Gastronomia</button>
+          <button class="filter-btn gallery-filter-btn" data-filter="landscape" aria-pressed="false">Paisagem</button>
+        </div>
+      </div>
+
+      <!-- Masonry Grid Layout (Controlled by CSS columns in pages.css) -->
+      <div class="gallery-grid">
+        
+        <!-- Item 1: Landscape Douro -->
+        <div class="gallery-grid-item" data-category="landscape" role="button" aria-label="Ver imagem ampliada do vale do Douro e rio">
+          <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80" alt="Encostas verdes e o rio Douro ao pôr do sol" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Paisagem</div>
+            <div class="gallery-grid-item-info-title">O Rio e as Encostas</div>
+          </div>
+        </div>
+
+        <!-- Item 2: Suite Rio -->
+        <div class="gallery-grid-item" data-category="rooms" role="button" aria-label="Ver imagem ampliada da Suite Rio">
+          <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="Cama minimalista e janelas panorâmicas na Suite Rio" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Quartos</div>
+            <div class="gallery-grid-item-info-title">Suite Rio</div>
+          </div>
+        </div>
+
+        <!-- Item 3: Wine tasting -->
+        <div class="gallery-grid-item" data-category="landscape" role="button" aria-label="Ver imagem ampliada da prova de vinhos">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Copo de vinho Tinto do Douro degustado nas vinhas antigas" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Paisagem</div>
+            <div class="gallery-grid-item-info-title">Provas ao Ar Livre</div>
+          </div>
+        </div>
+
+        <!-- Item 4: Quarto Vinha -->
+        <div class="gallery-grid-item" data-category="rooms" role="button" aria-label="Ver imagem ampliada do Quarto Vinha">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Decoração em madeira de carvalho escuro no Quarto Vinha" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Quartos</div>
+            <div class="gallery-grid-item-info-title">Quarto Vinha</div>
+          </div>
+        </div>
+
+        <!-- Item 5: Stone Wall Architecture -->
+        <div class="gallery-grid-item" data-category="architecture" role="button" aria-label="Ver imagem ampliada da fachada de xisto">
+          <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=800&q=80" alt="Recuperação de paredes originais de xisto integradas no betão contemporâneo" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Arquitetura</div>
+            <div class="gallery-grid-item-info-title">Betão e Xisto</div>
+          </div>
+        </div>
+
+        <!-- Item 6: Fine Food -->
+        <div class="gallery-grid-item" data-category="gastronomy" role="button" aria-label="Ver imagem ampliada do prato gastronómico">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Entrada de legumes biológicos e ervas frescas no restaurante Origem" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Gastronomia</div>
+            <div class="gallery-grid-item-info-title">Restaurante Origem</div>
+          </div>
+        </div>
+
+        <!-- Item 7: Suite Pátio -->
+        <div class="gallery-grid-item" data-category="rooms" role="button" aria-label="Ver imagem ampliada da Suite Pátio">
+          <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="Quarto amplo integrado com banheira esculpida em pedra de granito" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Quartos</div>
+            <div class="gallery-grid-item-info-title">Suite Pátio</div>
+          </div>
+        </div>
+
+        <!-- Item 8: Boat Tour -->
+        <div class="gallery-grid-item" data-category="landscape" role="button" aria-label="Ver imagem ampliada do passeio de barco">
+          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&q=80" alt="Cruzeiro privado de barco de madeira nas águas tranquilas do Douro" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Paisagem</div>
+            <div class="gallery-grid-item-info-title">Passeios de Barco</div>
+          </div>
+        </div>
+
+        <!-- Item 9: Contemporary Pool/Exterior -->
+        <div class="gallery-grid-item" data-category="architecture" role="button" aria-label="Ver imagem ampliada da piscina e edifícios">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Piscina de transbordo integrada com a silhueta das encostas do Douro" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Arquitetura</div>
+            <div class="gallery-grid-item-info-title">Piscina de Transbordo</div>
+          </div>
+        </div>
+
+        <!-- Item 10: Casa da Pedra -->
+        <div class="gallery-grid-item" data-category="rooms" role="button" aria-label="Ver imagem ampliada da Casa da Pedra">
+          <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" alt="Quarto rústico-contemporâneo de dois andares com lareira suspensa" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Quartos</div>
+            <div class="gallery-grid-item-info-title">Casa da Pedra</div>
+          </div>
+        </div>
+
+        <!-- Item 11: Wellness massage / details -->
+        <div class="gallery-grid-item" data-category="gastronomy" role="button" aria-label="Ver imagem ampliada da massagem corporal">
+          <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=800&q=80" alt="Massagem aromática com óleos essenciais de alecrim biológico" loading="lazy">
+          <div class="gallery-grid-item-info">
+            <div class="gallery-grid-item-info-category">Gastronomia</div>
+            <div class="gallery-grid-item-info-title">Tratamentos de Spa</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lightbox Widget -->
+    <div class="lightbox" aria-hidden="true" role="dialog" aria-label="Visualizador de imagens">
+      <button class="lightbox-close" aria-label="Fechar visualizador">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <button class="lightbox-nav lightbox-prev" aria-label="Imagem anterior">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button class="lightbox-nav lightbox-next" aria-label="Próxima imagem">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+      <div class="lightbox-content">
+        <img class="lightbox-img" src="" alt="">
+        <div class="lightbox-caption"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container site-footer-grid">
+      <div class="footer-col-info">
+        <span class="footer-logo">Auréa Stay</span>
+        <p>Um pequeno boutique hotel premium no Douro. Silêncio, espaço e exclusividade desenhados em pedra.</p>
+        <p class="italic text-muted">Douro, Portugal</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <nav class="footer-links" aria-label="Navegação secundária no rodapé">
+          <a href="index.html" class="footer-link">Início</a>
+          <a href="rooms.html" class="footer-link">Quartos e Suites</a>
+          <a href="experiences.html" class="footer-link">Experiências</a>
+          <a href="gastronomy.html" class="footer-link">Gastronomia</a>
+          <a href="gallery.html" class="footer-link">Galeria Visual</a>
+          <a href="about.html" class="footer-link">O Hotel e História</a>
+          <a href="contact.html" class="footer-link">Localização e Contacto</a>
+        </nav>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Redes Sociais</h4>
+        <nav class="footer-links" aria-label="Links para redes sociais">
+          <a href="https://instagram.com" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://facebook.com" class="footer-link" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://pinterest.com" class="footer-link" target="_blank" rel="noopener">Pinterest</a>
+        </nav>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p style="color: var(--color-text-muted-light); margin-bottom: var(--space-sm);">Subscreva para receber crónicas do Douro e convites exclusivos.</p>
+        <form class="newsletter-form" action="#" method="POST" aria-label="Subscrição de Newsletter">
+          <input type="email" placeholder="O seu email" required class="newsletter-input" aria-label="Endereço de Email para Newsletter">
+          <button type="submit" class="newsletter-btn">Subscrever</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="container site-footer-bottom">
+      <p>&copy; 2026 Auréa Stay. Todos os direitos reservados.</p>
+      <div class="footer-meta-links">
+        <a href="#" class="footer-link">Política de Privacidade</a>
+        <span aria-hidden="true" style="opacity: 0.2;">|</span>
+        <a href="#" class="footer-link">Termos e Condições</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
