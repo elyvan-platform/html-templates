@@ -2,7 +2,8 @@
   "name": "html-templates",
   "private": true,
   "scripts": {
-    "showcase:dev": "node scripts/showcase-server.mjs",
+    "dev": "node scripts/showcase-server.mjs",
+    "start": "node scripts/showcase-server.mjs",
     "showcase:generate": "node scripts/generate-showcase.mjs",
     "showcase:watch": "node scripts/generate-showcase.mjs --watch"
   }
