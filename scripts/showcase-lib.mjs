@@ -18,7 +18,7 @@ export async function listTemplateDirectories() {
 
     try {
       const html = await fs.readFile(indexPath, "utf8");
-      templates.push(extractTemplateMeta(slug, html));
+      templates.push(await extractTemplateMeta(slug, html));
     } catch (error) {
       if (error && error.code === "ENOENT") {
         continue;
@@ -31,7 +31,7 @@ export async function listTemplateDirectories() {
   return templates.sort((left, right) => left.name.localeCompare(right.name, "pt"));
 }
 
-export function extractTemplateMeta(slug, html) {
+export async function extractTemplateMeta(slug, html) {
   const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
   const descriptionMatch = html.match(
     /<meta\s+name=["']description["']\s+content=["']([\s\S]*?)["']\s*\/?>/i,
@@ -40,14 +40,46 @@ export function extractTemplateMeta(slug, html) {
   const rawTitle = decodeHtml(titleMatch?.[1] || "");
   const name = cleanTemplateName(rawTitle) || slugToTitle(slug);
   const description = decodeHtml(descriptionMatch?.[1] || "").trim();
+  const previewHref = await findPreviewAsset(slug);
 
   return {
     slug,
     name,
     description,
+    previewHref,
     href: `/src/${slug}/index.html`,
     viewerHref: `/templates/${slug}`,
   };
+}
+
+async function findPreviewAsset(slug) {
+  const previewNames = [
+    "preview.webp",
+    "preview.png",
+    "preview.jpg",
+    "preview.jpeg",
+    "preview.svg",
+  ];
+
+  for (const fileName of previewNames) {
+    const candidate = path.join(srcDir, slug, fileName);
+
+    try {
+      const stats = await fs.stat(candidate);
+
+      if (stats.isFile()) {
+        return `/src/${slug}/${fileName}`;
+      }
+    } catch (error) {
+      if (error && error.code === "ENOENT") {
+        continue;
+      }
+
+      throw error;
+    }
+  }
+
+  return null;
 }
 
 function decodeHtml(value) {
@@ -99,10 +131,17 @@ export function renderShowcasePage(templates) {
       const description = template.description
         ? `<p class="template-copy">${escapeHtml(template.description)}</p>`
         : "";
+      const previewContent = template.previewHref
+        ? `<img src="${escapeHtml(template.previewHref)}" alt="Preview de ${escapeHtml(template.name)}" loading="lazy">`
+        : `<div class="template-fallback-art" aria-hidden="true">
+            <span class="template-fallback-pill">${escapeHtml(template.slug)}</span>
+            <strong>${escapeHtml(template.name)}</strong>
+            <small>${escapeHtml(template.description || "Template pronto para navegar na montra.")}</small>
+          </div>`;
 
       return `      <article class="template-card">
         <a class="template-preview" href="${escapeHtml(template.viewerHref)}">
-          <iframe src="${escapeHtml(template.href)}" title="Preview de ${escapeHtml(template.name)}" loading="lazy"></iframe>
+          ${previewContent}
           <span class="template-preview-overlay">Entrar no template</span>
         </a>
         <div class="template-body">
@@ -250,16 +289,18 @@ export function renderShowcasePage(templates) {
     .template-preview {
       position: relative;
       overflow: hidden;
-      background: #d8cec2;
+      display: grid;
+      align-items: end;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.38), transparent 30%),
+        linear-gradient(135deg, #d8cec2 0%, #c3b2a2 45%, #a98a72 100%);
     }
 
-    .template-preview iframe {
-      width: 1440px;
-      height: 900px;
-      border: 0;
-      transform: scale(0.36);
-      transform-origin: top left;
-      pointer-events: none;
+    .template-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .template-preview::after {
@@ -267,6 +308,48 @@ export function renderShowcasePage(templates) {
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, transparent 50%, rgba(25, 21, 18, 0.62) 100%);
+    }
+
+    .template-fallback-art {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      align-content: end;
+      gap: 10px;
+      padding: 24px;
+      color: #fffaf3;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 85% 18%, rgba(255, 245, 232, 0.18), transparent 20%),
+        linear-gradient(160deg, rgba(59, 38, 24, 0.18), rgba(28, 20, 15, 0.42));
+    }
+
+    .template-fallback-art strong {
+      max-width: 12ch;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      line-height: 0.95;
+      font-weight: 600;
+    }
+
+    .template-fallback-art small {
+      max-width: 34ch;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: rgba(255, 250, 243, 0.84);
+    }
+
+    .template-fallback-pill {
+      width: fit-content;
+      padding: 7px 12px;
+      border: 1px solid rgba(255, 250, 243, 0.28);
+      border-radius: 999px;
+      background: rgba(255, 250, 243, 0.12);
+      backdrop-filter: blur(10px);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
     .template-preview-overlay {
@@ -351,10 +434,6 @@ export function renderShowcasePage(templates) {
 
       .template-card {
         grid-template-rows: 250px auto;
-      }
-
-      .template-preview iframe {
-        transform: scale(0.28);
       }
 
       .template-body {
