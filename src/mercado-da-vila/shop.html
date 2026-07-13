@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loja | Mercado da Vila</title>
+    <meta name="description" content="Loja online do Mercado da Vila com produtos frescos, mercearia, regionais, cabazes e filtros funcionais." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="shop">
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+    <header class="site-header" data-site-header>
+      <div class="header-topbar"><div class="container-wide"><p>Rua do Mercado, 18 · Vila do Ave</p><p>Recolha em loja disponível em menos de 2 horas</p></div></div>
+      <div class="header-main">
+        <div class="container-wide">
+          <a class="brand" href="index.html" aria-label="Mercado da Vila"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M12 31c7-2 10-7 12-17 8 4 11 12 12 23-8 0-19-1-24-6Z" fill="currentColor" /><path d="M15 26c5 0 10 3 14 9" stroke="#fffdf9" stroke-width="2.2" stroke-linecap="round" /></svg></span><span><strong class="brand-name">Mercado da Vila</strong><span class="brand-subtitle">Desde 1987</span></span></a>
+          <nav class="nav-desktop" aria-label="Navegação principal"><ul class="nav-list"><li><a class="nav-link" data-nav="shop" href="shop.html">Loja</a></li><li><a class="nav-link" data-nav="promotions" href="promotions.html">Promoções</a></li><li><a class="nav-link" href="shop.html#cabazes">Cabazes</a></li><li><a class="nav-link" data-nav="delivery" href="delivery.html">Entregas</a></li><li><a class="nav-link" data-nav="recipes" href="recipes.html">Receitas</a></li><li><a class="nav-link" data-nav="about" href="about.html">Sobre</a></li><li><a class="nav-link" data-nav="contact" href="contact.html">Contactos</a></li></ul></nav>
+          <div class="header-actions">
+            <form class="search-inline" data-global-search><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8" /><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg><label class="sr-only" for="global-search-shop">Pesquisar</label><input id="global-search-shop" name="search" type="search" placeholder="Pesquisar produtos" /></form>
+            <a class="header-cart" href="cart.html"><span>Carrinho</span><span class="cart-count" data-cart-count>0</span></a>
+            <a class="btn btn-primary" href="cart.html">Encomendar</a>
+          </div>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-mobile"><span class="sr-only">Abrir menu</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg></button>
+        </div>
+      </div>
+      <aside class="mobile-menu" id="menu-mobile" data-mobile-menu aria-label="Menu mobile"><nav><ul class="mobile-nav-list"><li><a class="mobile-nav-link" href="shop.html">Loja</a></li><li><a class="mobile-nav-link" href="promotions.html">Promoções</a></li><li><a class="mobile-nav-link" href="shop.html#cabazes">Cabazes</a></li><li><a class="mobile-nav-link" href="delivery.html">Entregas</a></li><li><a class="mobile-nav-link" href="recipes.html">Receitas</a></li><li><a class="mobile-nav-link" href="about.html">Sobre</a></li><li><a class="mobile-nav-link" href="contact.html">Contactos</a></li><li><a class="mobile-nav-link" href="cart.html">Carrinho <span class="cart-count" data-cart-count>0</span></a></li></ul></nav></aside>
+    </header>
+    <main id="conteudo">
+      <section class="page-intro">
+        <div class="container-wide page-intro-grid">
+          <div class="reveal">
+            <span class="eyebrow">Loja</span>
+            <h1>Produtos frescos, mercearia bem escolhida e entrega local sem fricção.</h1>
+            <p>Pesquise por produto, filtre por preferência alimentar e confirme disponibilidade antes de encomendar.</p>
+          </div>
+          <div class="page-intro-panel surface-paper reveal">
+            <strong>Hoje em destaque</strong>
+            <p>Mais de 20 produtos com informação de origem, promoções discretas e estado de stock legível.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide split-layout">
+          <aside class="filters-panel reveal">
+            <h2>Filtros</h2>
+            <form data-shop-filters>
+              <div class="control-bar">
+                <div>
+                  <label for="shop-search">Pesquisar produtos</label>
+                  <input class="field" id="shop-search" name="search" type="search" placeholder="Ex.: tomate, queijo, mel" />
+                </div>
+                <div>
+                  <label for="shop-category">Categoria</label>
+                  <select class="select" id="shop-category" name="category">
+                    <option value="">Todas</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="shop-origin">Origem</label>
+                  <select class="select" id="shop-origin" name="origin">
+                    <option value="">Todas</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="shop-price">Preço</label>
+                  <select class="select" id="shop-price" name="price">
+                    <option value="">Qualquer preço</option>
+                    <option value="0-3">Até 3 €</option>
+                    <option value="3-6">3 € a 6 €</option>
+                    <option value="6-999">Mais de 6 €</option>
+                  </select>
+                </div>
+                <div class="checkbox-row">
+                  <label class="choice-chip"><input type="checkbox" name="promotion" /> Em promoção</label>
+                  <label class="choice-chip"><input type="checkbox" name="organic" /> Biológico</label>
+                  <label class="choice-chip"><input type="checkbox" name="glutenFree" /> Sem glúten</label>
+                  <label class="choice-chip"><input type="checkbox" name="vegetarian" /> Vegetariano</label>
+                  <label class="choice-chip"><input type="checkbox" name="available" /> Disponível</label>
+                </div>
+              </div>
+            </form>
+          </aside>
+          <div class="reveal">
+            <div class="control-bar">
+              <div class="control-inline">
+                <div>
+                  <label for="shop-sort">Ordenar</label>
+                  <select class="select" id="shop-sort" data-shop-sort>
+                    <option value="relevance">Relevância</option>
+                    <option value="price-asc">Preço crescente</option>
+                    <option value="price-desc">Preço decrescente</option>
+                    <option value="name">Nome</option>
+                    <option value="recent">Mais recentes</option>
+                  </select>
+                </div>
+                <div class="info-panel">
+                  <strong data-shop-count>0 produtos</strong>
+                  <p>Atualização imediata ao filtrar e pesquisar.</p>
+                </div>
+              </div>
+            </div>
+            <div class="product-grid" data-product-grid="shop"></div>
+            <div class="pagination-mock" aria-label="Paginação visual"><span class="is-active">1</span><a href="shop.html">2</a><a href="shop.html">3</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cabazes">
+        <div class="container-wide">
+          <div class="section-header reveal">
+            <span class="eyebrow">Cabazes</span>
+            <h2>Cabazes prontos para rotina semanal, oferta regional ou reposição rápida.</h2>
+          </div>
+          <div class="basket-grid" data-basket-grid></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container-wide"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M12 31c7-2 10-7 12-17 8 4 11 12 12 23-8 0-19-1-24-6Z" fill="currentColor" /><path d="M15 26c5 0 10 3 14 9" stroke="#fffdf9" stroke-width="2.2" stroke-linecap="round" /></svg></span><span><strong class="brand-name">Mercado da Vila</strong><span class="brand-subtitle">Desde 1987</span></span></a><p>Rua do Mercado, 18 · 4785-112 Vila do Ave</p><p>+351 252 840 210 · ola@mercadodavila.pt</p></div><div class="footer-column"><h3>Loja</h3><ul><li><a href="shop.html">Produtos</a></li><li><a href="promotions.html">Promoções</a></li><li><a href="shop.html#cabazes">Cabazes</a></li><li><a href="recipes.html">Receitas</a></li></ul></div><div class="footer-column"><h3>Serviço</h3><ul><li><a href="delivery.html">Entregas e recolha</a></li><li><a href="contact.html">Contactos</a></li><li><a href="cart.html">Carrinho</a></li><li><a href="about.html">Sobre a loja</a></li></ul></div><div class="footer-column"><h3>Informação</h3><ul><li><a href="contact.html">Política de privacidade</a></li><li><a href="contact.html">Termos e condições</a></li><li><a href="contact.html">Livro de reclamações</a></li><li><p>Pagamentos: MB Way · Multibanco · Numerário · Cartão</p></li></ul></div></div><div class="footer-meta"><p>Horário: Seg. a Sáb. 08:00-19:30</p><p>© 2026 Mercado da Vila.</p></div></div></footer>
+  </body>
+</html>

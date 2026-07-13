@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Planos | Vértice Training Club</title>
+    <meta name="description" content="Comparação de planos Base, Performance e Total com periodicidades mensal, trimestral e anual." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+    <header class="site-header">
+      <div class="container-wide site-header__inner">
+        <a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 64 64" fill="none"><path d="M14 46 32 12l18 34H36l-4-9-4 9H14Z" fill="currentColor"/><path d="M32 12v25" stroke="#0f1702" stroke-width="4" stroke-linecap="round"/></svg></span><span class="brand-copy"><strong class="brand-name">VÉRTICE TRAINING CLUB</strong><span class="brand-tagline">Treina com direção</span></span></a>
+        <nav class="nav-desktop" aria-label="Navegação principal"><ul class="nav-list"><li><a class="nav-link" data-nav-link href="memberships.html">Planos</a></li><li><a class="nav-link" data-nav-link href="classes.html">Aulas</a></li><li><a class="nav-link" data-nav-link href="schedule.html">Horários</a></li><li><a class="nav-link" data-nav-link href="trainers.html">Treinadores</a></li><li><a class="nav-link" data-nav-link href="personal-training.html">Personal Training</a></li><li><a class="nav-link" data-nav-link href="facilities.html">Instalações</a></li><li><a class="nav-link" data-nav-link href="journal.html">Journal</a></li><li><a class="nav-link" data-nav-link href="about.html">Clube</a></li></ul></nav>
+        <div class="header-actions"><a class="btn btn-secondary" href="schedule.html">Horários</a><a class="btn btn-primary" href="trial.html">Treino experimental</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile"><span class="sr-only">Abrir menu</span><svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg></button></div>
+      </div>
+      <aside class="mobile-nav" id="menu-mobile"><div class="mobile-nav__panel"><nav><ul class="mobile-nav__list"><li><a class="mobile-nav-link" href="memberships.html">Planos</a></li><li><a class="mobile-nav-link" href="classes.html">Aulas</a></li><li><a class="mobile-nav-link" href="schedule.html">Horários</a></li><li><a class="mobile-nav-link" href="trainers.html">Treinadores</a></li><li><a class="mobile-nav-link" href="personal-training.html">Personal Training</a></li><li><a class="mobile-nav-link" href="facilities.html">Instalações</a></li><li><a class="mobile-nav-link" href="journal.html">Journal</a></li><li><a class="mobile-nav-link" href="about.html">Clube</a></li><li><a class="mobile-nav-link" href="contact.html">Contactos</a></li></ul></nav></div></aside>
+    </header>
+    <main id="conteudo">
+      <section class="page-hero">
+        <div class="container-wide">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Planos</span>
+            <h1 class="page-title">Planos claros para ritmos de treino diferentes.</h1>
+            <p>Compara acesso, acompanhamento, revisões e condições entre Base, Performance e Total. A taxa de inscrição inicial é de 25 € em qualquer plano.</p>
+          </div>
+          <div class="pricing-toggle reveal">
+            <button class="toggle-btn is-active" type="button" data-price-toggle="monthly">Mensal</button>
+            <button class="toggle-btn" type="button" data-price-toggle="quarterly">Trimestral</button>
+            <button class="toggle-btn" type="button" data-price-toggle="yearly">Anual</button>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container-wide membership-grid">
+          <article class="membership-plan reveal" data-membership-plan="base">
+            <span class="meta-pill">Base</span>
+            <div class="membership-price"><strong data-price>49 €</strong><span>/ mês</span></div>
+            <p>Acesso ao ginásio para quem quer rotina de treino livre com boa base técnica.</p>
+            <ul class="detail-list"><li>Acesso ao ginásio</li><li>Zona de musculação e cardio</li><li>Avaliação inicial</li><li>Aplicação não incluída</li></ul>
+            <p data-total>49 € total</p><p data-savings>Sem fidelização.</p><p data-terms>Cancelamento com 30 dias.</p>
+            <div class="membership-plan__actions"><a class="btn btn-secondary" data-plan-cta href="trial.html">Escolher plano mensal</a><a class="btn btn-primary" href="trial.html">Treino experimental</a></div>
+          </article>
+          <article class="membership-plan membership-plan--featured reveal" data-membership-plan="performance">
+            <span class="meta-pill">Performance</span>
+            <div class="membership-price"><strong data-price>69 €</strong><span>/ mês</span></div>
+            <p>Acesso completo para quem quer combinar treino livre, aulas e uma revisão estruturada.</p>
+            <ul class="detail-list"><li>Acesso completo</li><li>Aulas de grupo</li><li>Avaliação inicial</li><li>Revisão trimestral e plano de treino base</li></ul>
+            <p data-total>69 € total</p><p data-savings>Inclui revisão trimestral.</p><p data-terms>Acesso total e plano base.</p>
+            <div class="membership-plan__actions"><a class="btn btn-primary" data-plan-cta href="trial.html">Escolher plano mensal</a><a class="btn btn-secondary" href="schedule.html">Ver horários</a></div>
+          </article>
+          <article class="membership-plan reveal" data-membership-plan="total">
+            <span class="meta-pill">Total</span>
+            <div class="membership-price"><strong data-price>109 €</strong><span>/ mês</span></div>
+            <p>O plano mais acompanhado para quem quer continuidade próxima e integração com PT.</p>
+            <ul class="detail-list"><li>Acesso completo e aulas</li><li>Revisões mensais</li><li>Sessões de acompanhamento</li><li>Prioridade em eventos e condições PT</li></ul>
+            <p data-total>109 € total</p><p data-savings>Inclui prioridade em eventos.</p><p data-terms>Condições especiais em PT.</p>
+            <div class="membership-plan__actions"><a class="btn btn-secondary" data-plan-cta href="trial.html">Escolher plano mensal</a><a class="btn btn-primary" href="personal-training.html">Ver PT</a></div>
+          </article>
+        </div>
+      </section>
+      <section class="section section-light">
+        <div class="container-wide comparison-table reveal">
+          <table>
+            <thead><tr><th>Critério</th><th>Base</th><th>Performance</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td>Acesso ao ginásio</td><td>Incluído</td><td>Incluído</td><td>Incluído</td></tr>
+              <tr><td>Aulas de grupo</td><td>Não incluídas</td><td>Incluídas</td><td>Incluídas</td></tr>
+              <tr><td>Avaliação inicial</td><td>Incluída</td><td>Incluída</td><td>Incluída</td></tr>
+              <tr><td>Revisões</td><td>Não incluídas</td><td>Trimestral</td><td>Mensal</td></tr>
+              <tr><td>Acompanhamento dedicado</td><td>Não incluído</td><td>Plano base</td><td>Sessões incluídas</td></tr>
+              <tr><td>Compromisso</td><td>30 dias de aviso</td><td>Conforme periodicidade</td><td>Conforme periodicidade</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container-wide plan-grid">
+          <div class="reveal">
+            <div class="section-heading"><span class="eyebrow">Benefícios e condições</span><h2>Sem letras pequenas escondidas.</h2></div>
+            <ul class="list-checks"><li>Taxa de inscrição: 25 €</li><li>Suspensão por férias ou trabalho mediante aviso prévio e dentro das condições do contrato</li><li>Check-in digital e renovação clara</li><li>Acesso a workshops sujeito ao plano ou preço especial</li></ul>
+          </div>
+          <div class="faq-grid">
+            <article class="faq-item reveal"><button type="button" data-accordion-button aria-expanded="true" aria-controls="faq-plan-1"><span>Posso mudar de plano?</span><span>+</span></button><div class="faq-item__panel" id="faq-plan-1"><p>Sim. A mudança entra em vigor no ciclo seguinte, salvo campanhas internas específicas.</p></div></article>
+            <article class="faq-item reveal"><button type="button" data-accordion-button aria-expanded="false" aria-controls="faq-plan-2"><span>Há fidelização?</span><span>+</span></button><div class="faq-item__panel" id="faq-plan-2" hidden><p>Não usamos fidelizações artificiais. O compromisso depende da periodicidade escolhida e fica visível antes da adesão.</p></div></article>
+            <article class="faq-item reveal"><button type="button" data-accordion-button aria-expanded="false" aria-controls="faq-plan-3"><span>Posso experimentar antes?</span><span>+</span></button><div class="faq-item__panel" id="faq-plan-3" hidden><p>Sim. O treino experimental é a conversão principal do site e pode ser visita, aula, avaliação ou treino livre.</p></div></article>
+          </div>
+        </div>
+      </section>
+      <section class="section"><div class="container-tight"><div class="cta-panel reveal"><h2 class="display-title" style="font-size:var(--text-2xl)">Escolhe um plano com contexto ou começa por experimentar.</h2><div class="actions-inline"><a class="btn btn-primary" href="trial.html">Marcar treino experimental</a><a class="btn btn-secondary" href="contact.html">Falar com a equipa</a></div></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="container-wide"><div class="site-footer__grid"><div class="site-footer__brand"><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 64 64" fill="none"><path d="M14 46 32 12l18 34H36l-4-9-4 9H14Z" fill="currentColor"/><path d="M32 12v25" stroke="#0f1702" stroke-width="4" stroke-linecap="round"/></svg></span><span class="brand-copy"><strong class="brand-name">VÉRTICE TRAINING CLUB</strong><span class="brand-tagline">Treina com direção</span></span></a><p style="margin-top:1rem">Rua do Arsenal Atlético, 42 · Porto</p></div><div><h3>Navegação</h3><ul><li><a href="classes.html">Aulas</a></li><li><a href="schedule.html">Horários</a></li><li><a href="trainers.html">Treinadores</a></li></ul></div><div><h3>Marcações</h3><ul><li><a href="trial.html">Treino experimental</a></li><li><a href="personal-training.html">Personal Training</a></li></ul></div><div><h3>Políticas</h3><ul><li><a href="contact.html#privacidade">Privacidade</a></li><li><a href="trial.html#cancelamento">Cancelamento</a></li></ul></div></div><div class="site-footer__base"><p class="site-footer__legal">© 2026 Vértice Training Club</p><p class="site-footer__legal">Seg. a Sex. 06:30-22:30</p></div></div></footer>
+  </body>
+</html>

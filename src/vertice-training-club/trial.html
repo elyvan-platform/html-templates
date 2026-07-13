@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Treino Experimental | Vértice Training Club</title>
+  <meta name="description" content="Fluxo experimental em várias etapas para visita, treino livre, aula, avaliação ou sessão de PT." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/reset.css" /><link rel="stylesheet" href="assets/css/tokens.css" /><link rel="stylesheet" href="assets/css/base.css" /><link rel="stylesheet" href="assets/css/components.css" /><link rel="stylesheet" href="assets/css/pages.css" /><link rel="stylesheet" href="assets/css/responsive.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="site-header"><div class="container-wide site-header__inner"><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 64 64" fill="none"><path d="M14 46 32 12l18 34H36l-4-9-4 9H14Z" fill="currentColor"/><path d="M32 12v25" stroke="#0f1702" stroke-width="4" stroke-linecap="round"/></svg></span><span class="brand-copy"><strong class="brand-name">VÉRTICE TRAINING CLUB</strong><span class="brand-tagline">Treina com direção</span></span></a><div class="header-actions"><a class="btn btn-secondary" href="memberships.html">Planos</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile"><span class="sr-only">Abrir menu</span><svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div></div><aside class="mobile-nav" id="menu-mobile"><div class="mobile-nav__panel"><nav><ul class="mobile-nav__list"><li><a class="mobile-nav-link" href="memberships.html">Planos</a></li><li><a class="mobile-nav-link" href="contact.html">Contactos</a></li></ul></nav></div></aside></header>
+  <main id="conteudo">
+    <section class="page-hero"><div class="container-wide"><div class="section-heading reveal"><span class="eyebrow">Treino experimental</span><h1 class="page-title">Escolhe objetivo, experiência, data e hora.</h1><p>Fluxo frontend em várias etapas com validação, resumo dinâmico e persistência temporária em <code>sessionStorage</code>.</p></div></div></section>
+    <section class="section"><div class="container-wide trial-flow reveal" data-trial-flow id="cancelamento">
+      <div class="trial-flow__steps">
+        <span class="trial-step is-current" data-trial-step="1">1. Objetivo</span><span class="trial-step" data-trial-step="2">2. Experiência</span><span class="trial-step" data-trial-step="3">3. Data</span><span class="trial-step" data-trial-step="4">4. Hora</span><span class="trial-step" data-trial-step="5">5. Dados</span><span class="trial-step" data-trial-step="6">6. Confirmação</span>
+      </div>
+      <div class="trial-flow__body">
+        <div>
+          <section data-step-panel="1"><div class="trial-options"><button class="trial-option" type="button" data-goal-option="Começar a treinar">Começar a treinar</button><button class="trial-option" type="button" data-goal-option="Melhorar a condição física">Melhorar a condição física</button><button class="trial-option" type="button" data-goal-option="Ganhar força">Ganhar força</button><button class="trial-option" type="button" data-goal-option="Criar uma rotina">Criar uma rotina</button><button class="trial-option" type="button" data-goal-option="Experimentar aulas">Experimentar aulas</button><button class="trial-option" type="button" data-goal-option="Conhecer Personal Training">Conhecer Personal Training</button></div></section>
+          <section data-step-panel="2" hidden><div class="trial-options"><button class="trial-option" type="button" data-experience-option="visita">Visita ao clube</button><button class="trial-option" type="button" data-experience-option="livre">Treino livre experimental</button><button class="trial-option" type="button" data-experience-option="aula">Aula experimental</button><button class="trial-option" type="button" data-experience-option="avaliacao">Avaliação com treinador</button><button class="trial-option" type="button" data-experience-option="pt">Sessão de Personal Training</button></div></section>
+          <section data-step-panel="3" hidden><label class="form-field"><span>Escolhe a data</span><input type="date" data-trial-date min="2026-07-14" /></label></section>
+          <section data-step-panel="4" hidden><div class="filter-bar" data-time-options></div></section>
+          <section data-step-panel="5" hidden><form data-trial-form><div class="form-grid"><label class="form-field"><span>Nome</span><input type="text" name="name" required /></label><label class="form-field"><span>Email</span><input type="email" name="email" required /></label><label class="form-field"><span>Telefone</span><input type="tel" name="phone" required /></label><label class="form-field"><span>Consentimento</span><select><option>Autorizo contacto para confirmar a marcação</option></select></label></div></form></section>
+          <section data-step-panel="6" hidden><div class="detail-panel"><h3>Pedido pronto</h3><p>O pedido foi registado localmente e a mensagem de confirmação é simulada no frontend.</p></div></section>
+          <div class="actions-inline" style="margin-top:1.5rem"><button class="btn btn-secondary" type="button" data-prev-step>Voltar</button><button class="btn btn-primary" type="button" data-next-step>Continuar</button><button class="btn btn-primary" type="button" data-confirm-trial>Confirmar pedido</button></div>
+          <p class="booking-feedback" data-trial-feedback aria-live="polite" style="margin-top:1rem"></p>
+        </div>
+        <aside class="trial-summary" data-trial-summary aria-live="polite"></aside>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container-wide"><div class="site-footer__base"><p class="site-footer__legal">Política de cancelamento: até 12 horas antes.</p><p class="site-footer__legal">© 2026 Vértice Training Club</p></div></div></footer>
+</body>
+</html>

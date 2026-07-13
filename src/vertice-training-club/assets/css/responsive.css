@@ -1,0 +1,157 @@
+@media (max-width: 79.99rem) {
+  .nav-desktop,
+  .header-actions .btn-secondary {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .hero-stats,
+  .metric-strip,
+  .membership-grid,
+  .class-list,
+  .trainer-list,
+  .journal-list,
+  .facility-gallery,
+  .testimonial-grid,
+  .faq-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .athletic-hero__layout,
+  .editorial-grid,
+  .intro-split,
+  .story-grid,
+  .detail-hero,
+  .contact-grid,
+  .plan-grid,
+  .trainer-detail-grid,
+  .article-grid,
+  .journal-feature,
+  .facility-map,
+  .trial-flow__body {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mosaic {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 63.99rem) {
+  .grid-4,
+  .grid-3,
+  .grid-2,
+  .stats-band,
+  .editorial-data,
+  .trial-options,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-table-head,
+  .schedule-row {
+    display: none;
+  }
+
+  .schedule-card-mobile {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .hero-media__frame {
+    min-height: 28rem;
+  }
+
+  .hero-schedule-card {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+  }
+
+  .site-footer__grid,
+  .hero-stats,
+  .metric-strip,
+  .membership-grid,
+  .class-list,
+  .trainer-list,
+  .journal-list,
+  .facility-gallery,
+  .testimonial-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  :root {
+    --header-height: 4.9rem;
+  }
+
+  .page-hero,
+  .athletic-hero {
+    padding-top: calc(var(--header-height) + var(--space-6));
+  }
+
+  .hero-title {
+    max-width: 10ch;
+  }
+
+  .site-header__inner {
+    gap: var(--space-3);
+  }
+
+  .brand-mark {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .newsletter {
+    grid-template-columns: 1fr;
+  }
+
+  .actions-inline,
+  .class-card__actions,
+  .trainer-card__actions,
+  .membership-plan__actions,
+  .toolbar,
+  .filter-bar,
+  .pricing-toggle,
+  .page-meta,
+  .schedule-day-nav {
+    align-items: stretch;
+  }
+
+  .actions-inline > *,
+  .class-card__actions > *,
+  .trainer-card__actions > *,
+  .membership-plan__actions > *,
+  .toolbar > *,
+  .filter-bar > *,
+  .pricing-toggle > * {
+    width: 100%;
+  }
+
+  .mosaic {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-nav {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,147 @@
+@media (max-width: 1080px) {
+  .header-main .container-wide,
+  .page-intro-grid,
+  .market-hero-layout,
+  .season-grid,
+  .newsletter-card,
+  .contact-grid,
+  .story-grid,
+  .product-detail-grid,
+  .recipe-detail-grid,
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .feature-strip,
+  .service-grid,
+  .delivery-zones,
+  .team-grid,
+  .values-grid,
+  .testimonial-grid,
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-desktop,
+  .header-actions .search-inline,
+  .header-actions .btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .header-main .container-wide {
+    grid-template-columns: auto 1fr auto auto;
+  }
+
+  .hero-microfacts,
+  .category-composition,
+  .product-grid,
+  .basket-grid,
+  .producer-grid,
+  .promo-grid,
+  .recipe-grid,
+  .feature-strip,
+  .service-grid,
+  .testimonial-grid,
+  .delivery-zones,
+  .team-grid,
+  .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .section,
+  .page-intro {
+    padding: 3.75rem 0;
+  }
+
+  .container,
+  .container-wide {
+    width: min(100% - 1.25rem, var(--container-xl));
+  }
+
+  .header-topbar .container-wide {
+    flex-direction: column;
+  }
+
+  .header-main .container-wide {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .brand-name {
+    font-size: 1.6rem;
+  }
+
+  .hero-copy,
+  .hero-figure,
+  .page-intro-panel,
+  .control-bar,
+  .filters-panel,
+  .info-panel,
+  .testimonial-card,
+  .faq-item,
+  .cart-panel,
+  .checkout-panel,
+  .delivery-checker,
+  .form-card,
+  .detail-card {
+    border-radius: 1rem;
+  }
+
+  .hero-microfacts,
+  .category-composition,
+  .product-grid,
+  .basket-grid,
+  .producer-grid,
+  .promo-grid,
+  .recipe-grid,
+  .feature-strip,
+  .service-grid,
+  .testimonial-grid,
+  .delivery-zones,
+  .team-grid,
+  .values-grid,
+  .nutrition-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    grid-template-columns: 4.5rem 1fr;
+  }
+
+  .price-stack {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .hero-actions,
+  .control-inline,
+  .checkbox-row,
+  .radio-row {
+    flex-direction: column;
+  }
+
+  .btn,
+  .header-cart {
+    width: 100%;
+  }
+
+  .thumb-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

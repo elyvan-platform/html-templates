@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marque a sua visita ao Lume Hair Studio online, em poucos passos. Escolha o serviço, o profissional, a data e a hora que preferir.">
+  <title>Marcação Online — Lume Hair Studio</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar para o conteúdo principal</a>
+<header class="site-header site-header--light" id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo" aria-label="Lume Hair Studio — Página inicial">
+      <svg class="header-logo-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="2" fill="currentColor"/>
+      </svg>
+      <div class="header-logo-text">Lume<span>Hair Studio</span></div>
+    </a>
+    <nav class="header-nav" role="navigation" aria-label="Navegação principal">
+      <ul class="nav-list" role="list">
+        <li><a href="services.html" class="nav-link" data-nav-link>Serviços</a></li>
+        <li><a href="team.html" class="nav-link" data-nav-link>Equipa</a></li>
+        <li><a href="gallery.html" class="nav-link" data-nav-link>Trabalhos</a></li>
+        <li><a href="bridal.html" class="nav-link" data-nav-link>Noivas</a></li>
+        <li><a href="journal.html" class="nav-link" data-nav-link>Journal</a></li>
+        <li><a href="about.html" class="nav-link" data-nav-link>Sobre</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav-link>Contactos</a></li>
+      </ul>
+      <a href="booking.html" class="btn btn--header" aria-current="page">Marcar visita</a>
+    </nav>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+  <ul class="mobile-nav-list" role="list">
+    <li><a href="services.html" class="mobile-nav-link" data-nav-link>Serviços</a></li>
+    <li><a href="team.html" class="mobile-nav-link" data-nav-link>Equipa</a></li>
+    <li><a href="gallery.html" class="mobile-nav-link" data-nav-link>Trabalhos</a></li>
+    <li><a href="bridal.html" class="mobile-nav-link" data-nav-link>Noivas</a></li>
+    <li><a href="journal.html" class="mobile-nav-link" data-nav-link>Journal</a></li>
+    <li><a href="about.html" class="mobile-nav-link" data-nav-link>Sobre</a></li>
+    <li><a href="contact.html" class="mobile-nav-link" data-nav-link>Contactos</a></li>
+  </ul>
+  <div class="mobile-nav-footer">
+    <a href="booking.html" class="btn btn--primary">Marcar visita</a>
+    <p class="mobile-nav-contact">Rua do Século, 42 · Lisboa · <a href="tel:+351912345678">+351 912 345 678</a></p>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- Page hero -->
+  <section class="page-hero page-hero--light page-hero--compact" aria-labelledby="booking-page-title">
+    <div class="container">
+      <div class="page-hero__content page-hero__content--centered">
+        <p class="eyebrow">Reserve o seu momento</p>
+        <h1 class="page-hero__title" id="booking-page-title">Marcação online</h1>
+        <p class="page-hero__desc">
+          Marque a sua visita em cinco passos simples: escolha o serviço, o profissional, a data, o horário e os seus dados. Confirmamos a disponibilidade e enviamos uma confirmação por email.
+        </p>
+        <ol class="booking-process-steps" aria-label="Resumo do processo de marcação">
+          <li>Serviço</li>
+          <li>Profissional</li>
+          <li>Data</li>
+          <li>Hora</li>
+          <li>Dados</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking layout -->
+  <section class="booking-section" aria-label="Formulário de marcação">
+    <div class="container">
+      <div class="booking-layout">
+
+        <!-- Booking flow -->
+        <div class="booking-flow" id="booking-flow" aria-label="Passos de marcação">
+
+          <!-- Step indicators -->
+          <nav class="booking-steps" aria-label="Progresso da marcação">
+            <ol class="booking-steps__list" role="list">
+              <li class="booking-step is-active" data-step="1" aria-current="step">
+                <span class="booking-step__number" aria-hidden="true">1</span>
+                <span class="booking-step__label">Serviço</span>
+              </li>
+              <li class="booking-step" data-step="2">
+                <span class="booking-step__number" aria-hidden="true">2</span>
+                <span class="booking-step__label">Profissional</span>
+              </li>
+              <li class="booking-step" data-step="3">
+                <span class="booking-step__number" aria-hidden="true">3</span>
+                <span class="booking-step__label">Data</span>
+              </li>
+              <li class="booking-step" data-step="4">
+                <span class="booking-step__number" aria-hidden="true">4</span>
+                <span class="booking-step__label">Hora</span>
+              </li>
+              <li class="booking-step" data-step="5">
+                <span class="booking-step__number" aria-hidden="true">5</span>
+                <span class="booking-step__label">Dados</span>
+              </li>
+              <li class="booking-step" data-step="6">
+                <span class="booking-step__number" aria-hidden="true">6</span>
+                <span class="booking-step__label">Confirmar</span>
+              </li>
+            </ol>
+            <div class="booking-steps__progress" aria-hidden="true">
+              <div class="booking-steps__progress-bar" style="width:16.66%"></div>
+            </div>
+          </nav>
+
+          <!-- Panel 1: Serviço -->
+          <div class="booking-panel is-active" data-panel="1" role="group" aria-labelledby="panel1-title">
+            <h2 class="booking-panel__title" id="panel1-title">Que serviço pretende?</h2>
+            <p class="booking-panel__desc">Selecione o tipo de serviço que deseja reservar.</p>
+            <div class="booking-options booking-options--services" role="radiogroup" aria-label="Escolha de serviço">
+
+              <label class="booking-option" data-type="service" data-value="corte">
+                <input type="radio" name="service" value="corte" class="booking-option__input" aria-describedby="service-corte-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3l3 9M18 3l-3 9M6 12l12 0M9 12l-2.5 7M15 12l2.5 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Corte e finalização</span>
+                    <span class="booking-option__meta" id="service-corte-desc">45 min · desde 35 €</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="booking-option" data-type="service" data-value="coloracao">
+                <input type="radio" name="service" value="coloracao" class="booking-option__input" aria-describedby="service-coloracao-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22a8 8 0 01-8-8c0-3.5 2-6.5 4-9l4-5 4 5c2 2.5 4 5.5 4 9a8 8 0 01-8 8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Coloração</span>
+                    <span class="booking-option__meta" id="service-coloracao-desc">90 min · desde 55 €</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="booking-option" data-type="service" data-value="balayage">
+                <input type="radio" name="service" value="balayage" class="booking-option__input" aria-describedby="service-balayage-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Balayage</span>
+                    <span class="booking-option__meta" id="service-balayage-desc">3–4 h · desde 95 €</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="booking-option" data-type="service" data-value="tratamento">
+                <input type="radio" name="service" value="tratamento" class="booking-option__input" aria-describedby="service-tratamento-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Tratamento capilar</span>
+                    <span class="booking-option__meta" id="service-tratamento-desc">45 min · desde 30 €</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="booking-option" data-type="service" data-value="styling">
+                <input type="radio" name="service" value="styling" class="booking-option__input" aria-describedby="service-styling-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 14v8M9 22h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Styling e penteado</span>
+                    <span class="booking-option__meta" id="service-styling-desc">60 min · desde 45 €</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="booking-option" data-type="service" data-value="noiva">
+                <input type="radio" name="service" value="noiva" class="booking-option__input" aria-describedby="service-noiva-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Consulta de noiva</span>
+                    <span class="booking-option__meta" id="service-noiva-desc">60 min · desde 80 €</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+            </div>
+            <div class="booking-panel__actions booking-panel__actions--end">
+              <button class="btn btn--primary" data-booking-next="1" disabled>
+                Continuar
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Panel 2: Profissional -->
+          <div class="booking-panel" data-panel="2" role="group" aria-labelledby="panel2-title" hidden>
+            <h2 class="booking-panel__title" id="panel2-title">Com quem quer marcar?</h2>
+            <p class="booking-panel__desc">Escolha o profissional da sua preferência ou selecione a primeira disponibilidade.</p>
+            <div class="booking-options booking-options--stylists" role="radiogroup" aria-label="Escolha de profissional">
+
+              <label class="booking-option booking-option--stylist" data-type="stylist" data-value="mariana">
+                <input type="radio" name="stylist" value="mariana" class="booking-option__input" aria-describedby="stylist-mariana-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__avatar" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1573230868640-9e7a9bc87d23?auto=format&fit=crop&w=80&h=80&q=80" alt="" width="48" height="48" loading="lazy">
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Mariana Costa</span>
+                    <span class="booking-option__meta" id="stylist-mariana-desc">Direção criativa &amp; Corte</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="booking-option booking-option--stylist" data-type="stylist" data-value="leonor">
+                <input type="radio" name="stylist" value="leonor" class="booking-option__input" aria-describedby="stylist-leonor-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__avatar" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=80&h=80&q=80" alt="" width="48" height="48" loading="lazy">
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Leonor Silva</span>
+                    <span class="booking-option__meta" id="stylist-leonor-desc">Cor &amp; Balayage</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="booking-option booking-option--stylist" data-type="stylist" data-value="rui">
+                <input type="radio" name="stylist" value="rui" class="booking-option__input" aria-describedby="stylist-rui-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__avatar" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1605461803135-e4d3db3fa3bc?auto=format&fit=crop&w=80&h=80&q=80" alt="" width="48" height="48" loading="lazy">
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Rui Almeida</span>
+                    <span class="booking-option__meta" id="stylist-rui-desc">Corte &amp; Styling</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="booking-option booking-option--stylist" data-type="stylist" data-value="sofia">
+                <input type="radio" name="stylist" value="sofia" class="booking-option__input" aria-describedby="stylist-sofia-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__avatar" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&h=80&q=80" alt="" width="48" height="48" loading="lazy">
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Sofia Martins</span>
+                    <span class="booking-option__meta" id="stylist-sofia-desc">Noivas &amp; Penteados</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+              <label class="booking-option booking-option--stylist booking-option--any" data-type="stylist" data-value="qualquer">
+                <input type="radio" name="stylist" value="qualquer" class="booking-option__input" aria-describedby="stylist-qualquer-desc">
+                <div class="booking-option__content">
+                  <div class="booking-option__avatar booking-option__avatar--icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="booking-option__info">
+                    <span class="booking-option__name">Qualquer disponível</span>
+                    <span class="booking-option__meta" id="stylist-qualquer-desc">Primeira disponibilidade</span>
+                  </div>
+                  <div class="booking-option__check" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+              </label>
+
+            </div>
+            <div class="booking-panel__actions">
+              <button class="btn btn--ghost" data-booking-back="2">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Anterior
+              </button>
+              <button class="btn btn--primary" data-booking-next="2" disabled>
+                Continuar
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Panel 3: Data -->
+          <div class="booking-panel" data-panel="3" role="group" aria-labelledby="panel3-title" hidden>
+            <h2 class="booking-panel__title" id="panel3-title">Quando prefere?</h2>
+            <p class="booking-panel__desc">Selecione a data pretendida no calendário.</p>
+
+            <div class="booking-calendar" aria-label="Calendário de marcações">
+              <div class="cal-header">
+                <button class="cal-prev" aria-label="Mês anterior" type="button">
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <span class="cal-title" aria-live="polite">Julho 2026</span>
+                <button class="cal-next" aria-label="Próximo mês" type="button">
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <div class="cal-grid" role="grid" aria-label="Dias do mês">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+
+            <p class="booking-calendar-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              O salão está aberto de segunda a sábado. Domingos encerrado.
+            </p>
+
+            <div class="booking-panel__actions">
+              <button class="btn btn--ghost" data-booking-back="3">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Anterior
+              </button>
+              <button class="btn btn--primary" data-booking-next="3" disabled>
+                Continuar
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Panel 4: Hora -->
+          <div class="booking-panel" data-panel="4" role="group" aria-labelledby="panel4-title" hidden>
+            <h2 class="booking-panel__title" id="panel4-title">Que hora prefere?</h2>
+            <p class="booking-panel__desc">Selecione um horário disponível.</p>
+
+            <div class="time-grid" role="radiogroup" aria-label="Horários disponíveis">
+
+              <button class="time-slot" data-time="09:00" type="button" aria-label="09:00, disponível">09:00</button>
+              <button class="time-slot" data-time="09:30" type="button" aria-label="09:30, disponível">09:30</button>
+              <button class="time-slot" data-time="10:00" type="button" aria-label="10:00, disponível">10:00</button>
+              <button class="time-slot is-unavailable" data-time="10:30" type="button" aria-label="10:30, indisponível" aria-disabled="true" disabled>10:30</button>
+              <button class="time-slot" data-time="11:00" type="button" aria-label="11:00, disponível">11:00</button>
+              <button class="time-slot" data-time="11:30" type="button" aria-label="11:30, disponível">11:30</button>
+              <button class="time-slot is-unavailable" data-time="12:00" type="button" aria-label="12:00, indisponível" aria-disabled="true" disabled>12:00</button>
+              <button class="time-slot is-unavailable" data-time="12:30" type="button" aria-label="12:30, indisponível" aria-disabled="true" disabled>12:30</button>
+              <button class="time-slot" data-time="14:00" type="button" aria-label="14:00, disponível">14:00</button>
+              <button class="time-slot" data-time="14:30" type="button" aria-label="14:30, disponível">14:30</button>
+              <button class="time-slot" data-time="15:00" type="button" aria-label="15:00, disponível">15:00</button>
+              <button class="time-slot" data-time="15:30" type="button" aria-label="15:30, disponível">15:30</button>
+              <button class="time-slot" data-time="16:00" type="button" aria-label="16:00, disponível">16:00</button>
+              <button class="time-slot is-unavailable" data-time="16:30" type="button" aria-label="16:30, indisponível" aria-disabled="true" disabled>16:30</button>
+              <button class="time-slot" data-time="17:00" type="button" aria-label="17:00, disponível">17:00</button>
+              <button class="time-slot" data-time="17:30" type="button" aria-label="17:30, disponível">17:30</button>
+              <button class="time-slot" data-time="18:00" type="button" aria-label="18:00, disponível">18:00</button>
+              <button class="time-slot is-unavailable" data-time="19:00" type="button" aria-label="19:00, indisponível" aria-disabled="true" disabled>19:00</button>
+
+            </div>
+
+            <p class="booking-time-legend" aria-hidden="true">
+              <span class="time-legend-item time-legend-item--available">Disponível</span>
+              <span class="time-legend-item time-legend-item--unavailable">Indisponível</span>
+              <span class="time-legend-item time-legend-item--selected">Selecionado</span>
+            </p>
+
+            <div class="booking-panel__actions">
+              <button class="btn btn--ghost" data-booking-back="4">
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Anterior
+              </button>
+              <button class="btn btn--primary" data-booking-next="4" disabled>
+                Continuar
+                <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Panel 5: Dados pessoais -->
+          <div class="booking-panel" data-panel="5" role="group" aria-labelledby="panel5-title" hidden>
+            <h2 class="booking-panel__title" id="panel5-title">Os seus dados</h2>
+            <p class="booking-panel__desc">Precisamos de alguns dados para confirmar a sua marcação.</p>
+
+            <form class="booking-form" id="booking-form" novalidate aria-label="Formulário de dados pessoais">
+              <div class="form-grid">
+
+                <div class="form-field">
+                  <label class="form-label" for="booking-name">
+                    Nome completo
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="booking-name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    aria-required="true"
+                    aria-describedby="booking-name-error"
+                    placeholder="O seu nome completo"
+                  >
+                  <span class="form-error" id="booking-name-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="booking-email">
+                    Endereço de email
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="booking-email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                    aria-required="true"
+                    aria-describedby="booking-email-error"
+                    placeholder="exemplo@email.com"
+                  >
+                  <span class="form-error" id="booking-email-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="booking-phone">
+                    Número de telemóvel
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="booking-phone"
+                    name="phone"
+                    autocomplete="tel"
+                    required
+                    aria-required="true"
+                    aria-describedby="booking-phone-error"
+                    placeholder="+351 9XX XXX XXX"
+                  >
+                  <span class="form-error" id="booking-phone-error" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-field form-field--full">
+                  <label class="form-label" for="booking-notes">
+                    Notas adicionais
+                    <span class="form-optional">(opcional)</span>
+                  </label>
+                  <textarea
+                    class="form-textarea"
+                    id="booking-notes"
+                    name="notes"
+                    rows="4"
+                    aria-describedby="booking-notes-hint"
+                    placeholder="Comprimento do cabelo, tratamento anterior, alergias conhecidas, ou qualquer outra informação relevante..."
+                  ></textarea>
+                  <p class="form-hint" id="booking-notes-hint">Partilhe qualquer informação que ajude a preparar melhor a sua visita.</p>
+                </div>
+
+                <div class="form-field form-field--full">
+                  <label class="form-check" for="booking-consent">
+                    <input
+                      class="form-check__input"
+                      type="checkbox"
+                      id="booking-consent"
+                      name="consent"
+                      required
+                      aria-required="true"
+                      aria-describedby="booking-consent-error"
+                    >
+                    <span class="form-check__label">
+                      Li e aceito a <a href="#cancelamentos" class="link">política de cancelamento</a>. Compreendo que cancelamentos com menos de 24 horas de antecedência podem implicar uma taxa.
+                    </span>
+                  </label>
+                  <span class="form-error" id="booking-consent-error" role="alert" aria-live="polite"></span>
+                </div>
+
+              </div>
+
+              <div class="booking-panel__actions">
+                <button class="btn btn--ghost" type="button" data-booking-back="5">
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Anterior
+                </button>
+                <button class="btn btn--primary" type="submit" data-booking-submit>
+                  Enviar pedido de marcação
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Success state -->
+          <div class="booking-success" id="booking-success" hidden aria-labelledby="booking-success-title" role="region">
+            <div class="booking-success__icon" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
+                <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" opacity="0.2"/>
+                <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" stroke-dasharray="188" stroke-dashoffset="0" class="booking-success__circle"/>
+                <path d="M20 32l8 8 16-16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h2 class="booking-success__title" id="booking-success-title">Pedido enviado</h2>
+            <p class="booking-success__message">
+              O seu pedido de marcação foi recebido com sucesso. Entraremos em contacto em breve para confirmar a disponibilidade. Receberá uma confirmação por email com todos os detalhes.
+            </p>
+            <p class="booking-success__detail" data-summary-confirm aria-live="polite"></p>
+            <div class="booking-success__actions">
+              <a href="index.html" class="btn btn--primary">Voltar ao início</a>
+              <a href="services.html" class="btn btn--outline">Ver outros serviços</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Aside -->
+        <aside class="booking-aside" aria-label="Resumo da marcação">
+
+          <!-- Summary card -->
+          <div class="booking-summary" aria-label="Resumo da sua marcação">
+            <h2 class="booking-summary__title">Resumo da marcação</h2>
+            <dl class="booking-summary__list">
+              <div class="booking-summary__row">
+                <dt class="booking-summary__label">Serviço</dt>
+                <dd class="booking-summary__value" data-summary="service">—</dd>
+              </div>
+              <div class="booking-summary__row">
+                <dt class="booking-summary__label">Profissional</dt>
+                <dd class="booking-summary__value" data-summary="stylist">—</dd>
+              </div>
+              <div class="booking-summary__row">
+                <dt class="booking-summary__label">Data</dt>
+                <dd class="booking-summary__value" data-summary="date">—</dd>
+              </div>
+              <div class="booking-summary__row">
+                <dt class="booking-summary__label">Hora</dt>
+                <dd class="booking-summary__value" data-summary="time">—</dd>
+              </div>
+              <div class="booking-summary__row">
+                <dt class="booking-summary__label">Duração estimada</dt>
+                <dd class="booking-summary__value" data-summary="duration">—</dd>
+              </div>
+              <div class="booking-summary__row booking-summary__row--total">
+                <dt class="booking-summary__label">Preço indicativo</dt>
+                <dd class="booking-summary__value booking-summary__value--price" data-summary="price">—</dd>
+              </div>
+            </dl>
+            <p class="booking-summary__disclaimer">O preço final é confirmado após avaliação presencial. Pode variar com o comprimento e estado do cabelo.</p>
+          </div>
+
+          <!-- Cancellation policy card -->
+          <div class="aside-card" id="cancelamentos">
+            <h3 class="aside-card__title">Política de cancelamento</h3>
+            <ul class="aside-policy-list" role="list">
+              <li class="aside-policy-item aside-policy-item--ok">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Cancelamento gratuito até 24 horas antes
+              </li>
+              <li class="aside-policy-item aside-policy-item--ok">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Reagendamento sem custo até 24 horas antes
+              </li>
+              <li class="aside-policy-item aside-policy-item--warn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Cancelamento com menos de 24 horas — taxa de 50% do serviço
+              </li>
+              <li class="aside-policy-item aside-policy-item--warn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Não comparência sem aviso — serviço cobrado na totalidade
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact card -->
+          <div class="aside-card aside-card--contact">
+            <h3 class="aside-card__title">Prefere ligar?</h3>
+            <p class="aside-card__text">A nossa equipa está disponível para ajudar com marcações e esclarecimentos.</p>
+            <div class="aside-contact-list">
+              <a href="tel:+351912345678" class="aside-contact-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.1-1.1a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                +351 912 345 678
+              </a>
+              <a href="mailto:geral@lumehair.pt" class="aside-contact-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                geral@lumehair.pt
+              </a>
+              <a href="https://wa.me/351912345678" class="aside-contact-btn" rel="noopener noreferrer" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                WhatsApp
+                <span class="sr-only">(abre numa nova janela)</span>
+              </a>
+            </div>
+            <p class="aside-hours">
+              <strong>Horário:</strong> Seg–Sex 9h–20h · Sáb 9h–18h
+            </p>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ section -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-header section-header--centered">
+        <p class="eyebrow">Dúvidas frequentes</p>
+        <h2 class="section-title" id="faq-title">Perguntas sobre marcações</h2>
+      </div>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-1-answer">
+            <span>Com quanto antecedência devo marcar a minha visita?</span>
+            <svg class="faq-item__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__answer" id="faq-1-answer" hidden>
+            <p>Para serviços mais rápidos, como cortes e tratamentos, recomendamos marcar com 3 a 5 dias de antecedência. Para serviços mais demorados, como balayage, coloração completa ou consultas de noiva, aconselhamos marcar com pelo menos 1 a 2 semanas de antecedência, especialmente aos fins de semana. Se precisar de uma marcação urgente, contacte-nos diretamente por telefone ou WhatsApp — tentamos sempre acomodar.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-2-answer">
+            <span>Qual é a política de cancelamento e reagendamento?</span>
+            <svg class="faq-item__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__answer" id="faq-2-answer" hidden>
+            <p>Pode cancelar ou reagendar gratuitamente até 24 horas antes da marcação, sem qualquer custo. Cancelamentos com menos de 24 horas de antecedência implicam uma taxa correspondente a 50% do valor do serviço reservado. Em caso de não comparência sem aviso prévio, o serviço é cobrado na totalidade. Compreendemos que imprevistos acontecem — se tiver uma emergência, contacte-nos o mais cedo possível.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-3-answer">
+            <span>Com que antecedência devo chegar ao salão?</span>
+            <svg class="faq-item__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__answer" id="faq-3-answer" hidden>
+            <p>Recomendamos que chegue 5 a 10 minutos antes da hora marcada. Este tempo permite-lhe instalar-se, trocar de roupa se necessário e partilhar com o seu profissional qualquer detalhe adicional antes do início do serviço. Para consultas de noiva ou serviços de coloração completa, pode ser feita uma análise inicial do cabelo que beneficia de um pouco mais de tempo. Se chegar mais tarde, tentaremos sempre acomodar, mas pode ser necessário ajustar o serviço.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-4-answer">
+            <span>O que acontece se não houver horários disponíveis?</span>
+            <svg class="faq-item__icon" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-item__answer" id="faq-4-answer" hidden>
+            <p>Se não encontrar nenhuma disponibilidade que se adapte ao seu horário, entre em contacto connosco diretamente por telefone (+351 912 345 678) ou email (geral@lumehair.pt). Mantemos uma lista de espera para cancelamentos de última hora e podemos avisá-lo se surgir uma vaga. Para serviços especiais, como penteados de noiva, existe a possibilidade de marcação em horário alargado mediante acordo prévio.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true" style="color:#fff;"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
+          <div class="footer-logo-text">Lume<span>Hair Studio</span></div>
+        </div>
+        <p class="footer-tagline">Cabelo com identidade, técnica e intenção.</p>
+        <div class="footer-social" aria-label="Redes sociais">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+      <nav aria-label="Serviços"><h3 class="footer-heading">Serviços</h3><ul class="footer-nav-list"><li><a href="services.html" class="footer-nav-link">Corte e styling</a></li><li><a href="services.html" class="footer-nav-link">Coloração</a></li><li><a href="service-detail.html" class="footer-nav-link">Balayage</a></li><li><a href="services.html" class="footer-nav-link">Tratamentos</a></li><li><a href="bridal.html" class="footer-nav-link">Noivas</a></li></ul></nav>
+      <nav aria-label="Páginas"><h3 class="footer-heading">Lume</h3><ul class="footer-nav-list"><li><a href="about.html" class="footer-nav-link">Sobre nós</a></li><li><a href="team.html" class="footer-nav-link">A nossa equipa</a></li><li><a href="gallery.html" class="footer-nav-link">Galeria</a></li><li><a href="journal.html" class="footer-nav-link">Journal</a></li><li><a href="booking.html" class="footer-nav-link">Marcações</a></li><li><a href="contact.html" class="footer-nav-link">Contactos</a></li></ul></nav>
+      <div><h3 class="footer-heading">Contacto</h3><div class="footer-info"><address>Rua do Século, 42<br>1200-433 Lisboa</address><p><a href="tel:+351912345678">+351 912 345 678</a><br><a href="mailto:geral@lumehair.pt">geral@lumehair.pt</a></p><p style="margin-top:1rem;">Seg–Sex: 9h–20h<br>Sáb: 9h–18h</p></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Lume Hair Studio. Todos os direitos reservados.</p><div class="footer-legal-links"><a href="#">Privacidade</a><a href="#">Termos</a><a href="#">Cancelamentos</a></div></div>
+  </div>
+</footer>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

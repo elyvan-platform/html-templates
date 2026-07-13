@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aulas | Vértice Training Club</title>
+  <meta name="description" content="Explora as aulas do Vértice Training Club com filtros por modalidade, intensidade, duração e período do dia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/reset.css" /><link rel="stylesheet" href="assets/css/tokens.css" /><link rel="stylesheet" href="assets/css/base.css" /><link rel="stylesheet" href="assets/css/components.css" /><link rel="stylesheet" href="assets/css/pages.css" /><link rel="stylesheet" href="assets/css/responsive.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="site-header"><div class="container-wide site-header__inner"><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 64 64" fill="none"><path d="M14 46 32 12l18 34H36l-4-9-4 9H14Z" fill="currentColor"/><path d="M32 12v25" stroke="#0f1702" stroke-width="4" stroke-linecap="round"/></svg></span><span class="brand-copy"><strong class="brand-name">VÉRTICE TRAINING CLUB</strong><span class="brand-tagline">Treina com direção</span></span></a><nav class="nav-desktop"><ul class="nav-list"><li><a class="nav-link" data-nav-link href="memberships.html">Planos</a></li><li><a class="nav-link" data-nav-link href="classes.html">Aulas</a></li><li><a class="nav-link" data-nav-link href="schedule.html">Horários</a></li><li><a class="nav-link" data-nav-link href="trainers.html">Treinadores</a></li><li><a class="nav-link" data-nav-link href="personal-training.html">Personal Training</a></li><li><a class="nav-link" data-nav-link href="facilities.html">Instalações</a></li><li><a class="nav-link" data-nav-link href="journal.html">Journal</a></li><li><a class="nav-link" data-nav-link href="about.html">Clube</a></li></ul></nav><div class="header-actions"><a class="btn btn-secondary" href="schedule.html">Horários</a><a class="btn btn-primary" href="trial.html">Treino experimental</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile"><span class="sr-only">Abrir menu</span><svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div></div><aside class="mobile-nav" id="menu-mobile"><div class="mobile-nav__panel"><nav><ul class="mobile-nav__list"><li><a class="mobile-nav-link" href="memberships.html">Planos</a></li><li><a class="mobile-nav-link" href="classes.html">Aulas</a></li><li><a class="mobile-nav-link" href="schedule.html">Horários</a></li><li><a class="mobile-nav-link" href="trainers.html">Treinadores</a></li><li><a class="mobile-nav-link" href="personal-training.html">Personal Training</a></li><li><a class="mobile-nav-link" href="facilities.html">Instalações</a></li><li><a class="mobile-nav-link" href="journal.html">Journal</a></li><li><a class="mobile-nav-link" href="about.html">Clube</a></li></ul></nav></div></aside></header>
+  <main id="conteudo">
+    <section class="page-hero"><div class="container-wide"><div class="section-heading reveal"><span class="eyebrow">Aulas</span><h1 class="page-title">Aulas organizadas por energia, não por ruído.</h1><p>Pesquisa e filtra por modalidade, nível, intensidade, duração e período do dia. Todas as aulas ligam ao mesmo sistema de horários.</p></div></div></section>
+    <section class="section"><div class="container-wide" data-classes-controls>
+      <div class="toolbar reveal">
+        <input class="search-field" data-class-search type="search" placeholder="Pesquisar aula, treinador ou formato" aria-label="Pesquisar aulas" />
+        <select data-filter-key="level" aria-label="Filtrar por nível"><option value="">Todos os níveis</option><option>Iniciação</option><option>Todos os níveis</option><option>Intermédio</option><option>Avançado</option></select>
+        <select data-filter-key="intensity" aria-label="Filtrar por intensidade"><option value="">Todas as intensidades</option><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option><option value="signature">Assinatura</option></select>
+        <select data-filter-key="duration" aria-label="Filtrar por duração"><option value="">Qualquer duração</option><option value="short">Até 35 min</option><option value="medium">36 a 50 min</option><option value="long">Mais de 50 min</option></select>
+        <select data-filter-key="period" aria-label="Filtrar por período"><option value="">Qualquer período</option><option value="morning">Manhã</option><option value="lunch">Almoço</option><option value="afternoon">Tarde</option><option value="evening">Fim do dia</option></select>
+      </div>
+      <div class="filter-bar reveal" style="margin-top:1rem">
+        <button class="filter-btn is-active" type="button" data-filter="all">Todas</button>
+        <button class="filter-btn" type="button" data-filter="forca">Força</button>
+        <button class="filter-btn" type="button" data-filter="cardio">Cardio</button>
+        <button class="filter-btn" type="button" data-filter="mobilidade">Mobilidade</button>
+        <button class="filter-btn" type="button" data-filter="cycling">Cycling</button>
+        <button class="filter-btn" type="button" data-filter="boxing">Boxing</button>
+        <button class="filter-btn" type="button" data-filter="funcional">Funcional</button>
+        <button class="filter-btn" type="button" data-filter="iniciacao">Iniciação</button>
+      </div>
+      <div class="class-list" style="margin-top:2rem" data-classes-list></div>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container-wide"><div class="site-footer__base"><p class="site-footer__legal">Vértice Training Club</p><p class="site-footer__legal"><a href="trial.html">Treino experimental</a> · <a href="schedule.html">Horários</a></p></div></div></footer>
+</body>
+</html>

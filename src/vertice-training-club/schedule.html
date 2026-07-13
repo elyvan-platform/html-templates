@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Horários | Vértice Training Club</title>
+  <meta name="description" content="Horário semanal e diário com filtros por dia, modalidade, treinador, intensidade e período do dia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/reset.css" /><link rel="stylesheet" href="assets/css/tokens.css" /><link rel="stylesheet" href="assets/css/base.css" /><link rel="stylesheet" href="assets/css/components.css" /><link rel="stylesheet" href="assets/css/pages.css" /><link rel="stylesheet" href="assets/css/responsive.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="site-header"><div class="container-wide site-header__inner"><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 64 64" fill="none"><path d="M14 46 32 12l18 34H36l-4-9-4 9H14Z" fill="currentColor"/><path d="M32 12v25" stroke="#0f1702" stroke-width="4" stroke-linecap="round"/></svg></span><span class="brand-copy"><strong class="brand-name">VÉRTICE TRAINING CLUB</strong><span class="brand-tagline">Treina com direção</span></span></a><nav class="nav-desktop"><ul class="nav-list"><li><a class="nav-link" data-nav-link href="memberships.html">Planos</a></li><li><a class="nav-link" data-nav-link href="classes.html">Aulas</a></li><li><a class="nav-link" data-nav-link href="schedule.html">Horários</a></li><li><a class="nav-link" data-nav-link href="trainers.html">Treinadores</a></li></ul></nav><div class="header-actions"><a class="btn btn-primary" href="trial.html">Treino experimental</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile"><span class="sr-only">Abrir menu</span><svg viewBox="0 0 24 24" fill="none" width="20" height="20"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></div></div><aside class="mobile-nav" id="menu-mobile"><div class="mobile-nav__panel"><nav><ul class="mobile-nav__list"><li><a class="mobile-nav-link" href="classes.html">Aulas</a></li><li><a class="mobile-nav-link" href="schedule.html">Horários</a></li><li><a class="mobile-nav-link" href="trial.html">Treino experimental</a></li></ul></nav></div></aside></header>
+  <main id="conteudo">
+    <section class="page-hero"><div class="container-wide"><div class="section-heading reveal"><span class="eyebrow">Horários</span><h1 class="page-title">Consulta diária e semanal sem apertar tabelas ilegíveis.</h1><p>Filtra por dia, modalidade, treinador, intensidade e período. Em mobile, o horário mantém-se em formato de lista.</p></div></div></section>
+    <section class="section"><div class="container-wide schedule-panel reveal" data-schedule-panel>
+      <div class="toolbar">
+        <button class="toggle-btn" type="button" data-today-button>Hoje</button>
+        <select data-schedule-class aria-label="Filtrar modalidade"><option value="">Todas as modalidades</option><option value="forca">Força</option><option value="cardio">Cardio</option><option value="mobilidade">Mobilidade</option><option value="cycling">Cycling</option><option value="boxing">Boxing</option><option value="funcional">Funcional</option><option value="iniciacao">Iniciação</option></select>
+        <select data-schedule-trainer aria-label="Filtrar treinador"><option value="">Todos os treinadores</option><option value="joao-martins">João Martins</option><option value="ines-rocha">Inês Rocha</option><option value="miguel-santos">Miguel Santos</option><option value="carolina-lopes">Carolina Lopes</option><option value="andre-costa">André Costa</option></select>
+        <select data-schedule-intensity aria-label="Filtrar intensidade"><option value="">Todas as intensidades</option><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option><option value="signature">Assinatura</option></select>
+        <select data-schedule-period aria-label="Filtrar período"><option value="">Qualquer período</option><option value="morning">Manhã</option><option value="lunch">Almoço</option><option value="evening">Fim do dia</option></select>
+      </div>
+      <div class="schedule-day-nav" style="margin-top:1rem">
+        <button class="chip-btn is-active day-chip" type="button" data-day-filter="all">Semana</button>
+        <button class="chip-btn day-chip" type="button" data-day-filter="Segunda">Seg.</button>
+        <button class="chip-btn day-chip" type="button" data-day-filter="Terça">Ter.</button>
+        <button class="chip-btn day-chip" type="button" data-day-filter="Quarta">Qua.</button>
+        <button class="chip-btn day-chip" type="button" data-day-filter="Quinta">Qui.</button>
+        <button class="chip-btn day-chip" type="button" data-day-filter="Sexta">Sex.</button>
+        <button class="chip-btn day-chip" type="button" data-day-filter="Sábado">Sáb.</button>
+        <button class="chip-btn day-chip" type="button" data-day-filter="Domingo">Dom.</button>
+      </div>
+      <div class="schedule-table-head" style="margin-top:1.5rem"><div>Hora</div><div>Aula</div><div>Treinador</div><div>Intensidade</div><div>Lugares</div><div>Data</div><div>Ação</div></div>
+      <div class="schedule-grid" data-schedule-grid></div>
+      <p class="booking-feedback" data-booking-feedback aria-live="polite" style="margin-top:1rem"></p>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container-wide"><div class="site-footer__base"><p class="site-footer__legal">Horário alargado · Seg. a Sex. 06:30-22:30</p><p class="site-footer__legal">© 2026 Vértice Training Club</p></div></div></footer>
+</body>
+</html>

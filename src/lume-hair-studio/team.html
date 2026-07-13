@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A equipa do Lume Hair Studio — Conheça Mariana Costa, Leonor Silva, Rui Almeida e Sofia Martins. Quatro profissionais com percurso internacional e dedicação ao detalhe.">
+  <title>A Nossa Equipa — Lume Hair Studio</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <!-- ─── Header ─────────────────────────────────────────────────────── -->
+  <header class="site-header site-header--light" id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Lume Hair Studio — Página inicial">
+        <svg class="header-logo-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="2" fill="currentColor"/>
+        </svg>
+        <div class="header-logo-text">Lume<span>Hair Studio</span></div>
+      </a>
+      <nav class="header-nav" role="navigation" aria-label="Navegação principal">
+        <ul class="nav-list" role="list">
+          <li><a href="services.html" class="nav-link" data-nav-link>Serviços</a></li>
+          <li><a href="team.html" class="nav-link" data-nav-link aria-current="page">Equipa</a></li>
+          <li><a href="gallery.html" class="nav-link" data-nav-link>Trabalhos</a></li>
+          <li><a href="bridal.html" class="nav-link" data-nav-link>Noivas</a></li>
+          <li><a href="journal.html" class="nav-link" data-nav-link>Journal</a></li>
+          <li><a href="about.html" class="nav-link" data-nav-link>Sobre</a></li>
+          <li><a href="contact.html" class="nav-link" data-nav-link>Contactos</a></li>
+        </ul>
+        <a href="booking.html" class="btn btn--header">Marcar visita</a>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+    <ul class="mobile-nav-list" role="list">
+      <li><a href="services.html" class="mobile-nav-link" data-nav-link>Serviços</a></li>
+      <li><a href="team.html" class="mobile-nav-link" data-nav-link>Equipa</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link" data-nav-link>Trabalhos</a></li>
+      <li><a href="bridal.html" class="mobile-nav-link" data-nav-link>Noivas</a></li>
+      <li><a href="journal.html" class="mobile-nav-link" data-nav-link>Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link" data-nav-link>Sobre</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" data-nav-link>Contactos</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary">Marcar visita</a>
+      <p class="mobile-nav-contact">Rua do Século, 42 · Lisboa · <a href="tel:+351912345678">+351 912 345 678</a></p>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ─── Page Hero ────────────────────────────────────────────────── -->
+    <section class="page-hero page-hero--surface" aria-labelledby="team-hero-title">
+      <div class="container">
+        <div class="page-hero__content page-hero__content--centered">
+          <p class="eyebrow page-hero__eyebrow">As pessoas por trás do Lume</p>
+          <h1 id="team-hero-title" class="page-hero__title">A nossa equipa</h1>
+          <p class="page-hero__subtitle" style="max-width:56ch;margin-inline:auto;">
+            Cada profissional do Lume tem o seu percurso, a sua especialidade e a sua forma de trabalhar — mas partilhamos todos a mesma convicção: o resultado nasce da escuta, da técnica e da honestidade. Escolhemos não crescer depressa; escolhemos crescer bem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Filter Bar ────────────────────────────────────────────────── -->
+    <section class="section section--surface team-page" aria-label="Equipa do Lume Hair Studio">
+      <div class="container">
+
+        <div class="filter-bar" role="group" aria-label="Filtrar profissionais por especialidade" data-filter-group="team">
+          <button class="filter-btn filter-btn--active" data-filter="*" aria-pressed="true">Todos</button>
+          <button class="filter-btn" data-filter="corte" aria-pressed="false">Corte</button>
+          <button class="filter-btn" data-filter="cor" aria-pressed="false">Cor</button>
+          <button class="filter-btn" data-filter="balayage" aria-pressed="false">Balayage</button>
+          <button class="filter-btn" data-filter="styling" aria-pressed="false">Styling</button>
+          <button class="filter-btn" data-filter="noivas" aria-pressed="false">Noivas</button>
+          <button class="filter-btn" data-filter="masculino" aria-pressed="false">Masculino</button>
+        </div>
+
+        <!-- ─── Mariana Costa ─────────────────────────────────────── -->
+        <article class="team-feature reveal" data-team-specialty="corte,styling" id="mariana-costa" aria-labelledby="mariana-name">
+          <div class="team-feature__image">
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
+              alt="Retrato de Mariana Costa, diretora criativa e especialista em corte do Lume Hair Studio"
+              width="800" height="1000"
+              loading="eager"
+            >
+          </div>
+          <div class="team-feature__content">
+            <div class="team-feature__header">
+              <p class="eyebrow team-feature__eyebrow">Diretora criativa &amp; Corte</p>
+              <h2 id="mariana-name" class="team-feature__name">Mariana Costa</h2>
+              <div class="divider"></div>
+            </div>
+            <div class="team-feature__bio">
+              <p>
+                Fundadora do Lume Hair Studio em 2016, a Mariana construiu o salão com uma visão clara: criar um espaço onde cada cliente é tratado como um projeto único, não como mais uma marcação do dia. Formou-se na Escola Superior de Coiffure de Paris e especializou-se posteriormente em cortes estruturais em Londres, onde trabalhou em salões de referência da cena editorial britânica.
+              </p>
+              <p>
+                Com 15 anos de experiência acumulada, a sua abordagem privilegia a geometria do rosto, a textura natural do cabelo e o estilo de vida real de cada cliente. Não existe um corte certo universal — existe o corte certo para cada pessoa, encontrado através de uma conversa honesta e de um olhar treinado. É por essa razão que cada sessão com a Mariana começa com pelo menos dez minutos de escuta, antes de qualquer tesoura entrar em cena.
+              </p>
+            </div>
+            <div class="team-feature__meta">
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Especialidades</h3>
+                <ul class="team-feature__specialties" role="list">
+                  <li class="tag">Corte estrutural</li>
+                  <li class="tag">Corte personalizado</li>
+                  <li class="tag">Styling</li>
+                  <li class="tag">Diagnóstico capilar</li>
+                </ul>
+              </div>
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Experiência</h3>
+                <p class="team-feature__meta-value">15 anos</p>
+              </div>
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Formação</h3>
+                <p class="team-feature__meta-value">Paris · Londres</p>
+              </div>
+            </div>
+            <a href="booking.html?stylist=mariana" class="btn btn--primary">Marcar com a Mariana</a>
+          </div>
+        </article>
+
+        <!-- ─── Leonor Silva ──────────────────────────────────────── -->
+        <article class="team-feature team-feature--reverse reveal" data-team-specialty="cor,balayage" id="leonor-silva" aria-labelledby="leonor-name">
+          <div class="team-feature__image">
+            <img
+              src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=80"
+              alt="Retrato de Leonor Silva, colorista e especialista em balayage do Lume Hair Studio"
+              width="800" height="1000"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-feature__content">
+            <div class="team-feature__header">
+              <p class="eyebrow team-feature__eyebrow">Colorista &amp; Especialista em Balayage</p>
+              <h2 id="leonor-name" class="team-feature__name">Leonor Silva</h2>
+              <div class="divider"></div>
+            </div>
+            <div class="team-feature__bio">
+              <p>
+                A Leonor especializou-se em coloração criativa e técnicas de balayage em Barcelona e Milão, cidades onde a cultura de cor é levada a um nível de exigência raramente encontrado em Portugal. Ao longo de 10 anos dedicados quase exclusivamente à cor, foi desenvolvendo uma metodologia própria de diagnóstico que permite avaliar com precisão as possibilidades e limitações de cada cabelo antes de iniciar qualquer processo.
+              </p>
+              <p>
+                O seu trabalho distingue-se pela capacidade de criar resultados que parecem naturais mesmo quando a transformação foi significativa. Não persegue tendências — persegue o resultado certo para cada pessoa. É por isso que é frequentemente consultada por outros profissionais da área que procuram o seu olhar clínico sobre casos complexos de coloração.
+              </p>
+            </div>
+            <div class="team-feature__meta">
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Especialidades</h3>
+                <ul class="team-feature__specialties" role="list">
+                  <li class="tag">Balayage</li>
+                  <li class="tag">Coloração criativa</li>
+                  <li class="tag">Babylights</li>
+                  <li class="tag">Efeito sol</li>
+                </ul>
+              </div>
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Experiência</h3>
+                <p class="team-feature__meta-value">10 anos</p>
+              </div>
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Formação</h3>
+                <p class="team-feature__meta-value">Barcelona · Milão</p>
+              </div>
+            </div>
+            <a href="booking.html?stylist=leonor" class="btn btn--primary">Marcar com a Leonor</a>
+          </div>
+        </article>
+
+        <!-- ─── Rui Almeida ───────────────────────────────────────── -->
+        <article class="team-feature reveal" data-team-specialty="corte,masculino,styling" id="rui-almeida" aria-labelledby="rui-name">
+          <div class="team-feature__image">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80"
+              alt="Retrato de Rui Almeida, cabeleireiro e especialista em corte masculino do Lume Hair Studio"
+              width="800" height="1000"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-feature__content">
+            <div class="team-feature__header">
+              <p class="eyebrow team-feature__eyebrow">Cabeleireiro &amp; Especialista Masculino</p>
+              <h2 id="rui-name" class="team-feature__name">Rui Almeida</h2>
+              <div class="divider"></div>
+            </div>
+            <div class="team-feature__bio">
+              <p>
+                Antes de se juntar ao Lume, o Rui trabalhou durante 5 anos em salões de referência em Lisboa e Madrid, onde aperfeiçoou uma abordagem contemporânea ao corte que respeita tanto a identidade visual do cliente como as especificidades de cada tipo de cabelo. A sua versatilidade é um dos seus maiores ativos: trabalha com igual conforto em cortes femininos estruturados e em cortes masculinos de precisão.
+              </p>
+              <p>
+                O Rui mantém uma prática constante de formação contínua, com foco especial em técnicas de barbear e cortes masculinos premium. Acredita que o serviço masculino merece a mesma atenção e rigor que qualquer outro, e que a maioria dos homens ainda não sabe o que é possível fazer quando se trabalha com o tipo certo de cabelo. É esse potencial que tenta revelar em cada marcação.
+              </p>
+            </div>
+            <div class="team-feature__meta">
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Especialidades</h3>
+                <ul class="team-feature__specialties" role="list">
+                  <li class="tag">Corte masculino</li>
+                  <li class="tag">Barba</li>
+                  <li class="tag">Corte feminino</li>
+                  <li class="tag">Styling</li>
+                </ul>
+              </div>
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Experiência</h3>
+                <p class="team-feature__meta-value">10 anos</p>
+              </div>
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Formação</h3>
+                <p class="team-feature__meta-value">Lisboa · Madrid</p>
+              </div>
+            </div>
+            <a href="booking.html?stylist=rui" class="btn btn--primary">Marcar com o Rui</a>
+          </div>
+        </article>
+
+        <!-- ─── Sofia Martins ─────────────────────────────────────── -->
+        <article class="team-feature team-feature--reverse reveal" data-team-specialty="noivas,penteados,styling" id="sofia-martins" aria-labelledby="sofia-name">
+          <div class="team-feature__image">
+            <img
+              src="https://images.unsplash.com/photo-1573230868640-9e7a9bc87d23?auto=format&fit=crop&w=800&q=80"
+              alt="Retrato de Sofia Martins, especialista em noivas e penteados do Lume Hair Studio"
+              width="800" height="1000"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-feature__content">
+            <div class="team-feature__header">
+              <p class="eyebrow team-feature__eyebrow">Especialista em Noivas &amp; Penteados</p>
+              <h2 id="sofia-name" class="team-feature__name">Sofia Martins</h2>
+              <div class="divider"></div>
+            </div>
+            <div class="team-feature__bio">
+              <p>
+                A Sofia descobriu a sua vocação para penteados de ocasião após anos de trabalho em eventos de moda e produção editorial, onde aprendeu que o cabelo é muitas vezes o elemento que define ou desfaz uma imagem. Com formação avançada em técnicas de penteado nupcial e mais de 200 casamentos ao longo da sua carreira, tornou-se a referência no Lume para momentos que não podem correr mal.
+              </p>
+              <p>
+                O que distingue o trabalho da Sofia é a sua capacidade de ouvir o que a cliente imagina e transformá-lo num resultado exequível e duradouro. Oferece sempre uma sessão de teste antes do grande dia — não como formalidade, mas como garantia. Cada detalhe é registado, cada produto é escolhido com atenção, e cada noiva parte do Lume com a certeza de que o cabelo vai estar perfeito ao fim do dia.
+              </p>
+            </div>
+            <div class="team-feature__meta">
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Especialidades</h3>
+                <ul class="team-feature__specialties" role="list">
+                  <li class="tag">Penteado de noiva</li>
+                  <li class="tag">Penteados de ocasião</li>
+                  <li class="tag">Styling editorial</li>
+                  <li class="tag">Maquilhagem (parceria)</li>
+                </ul>
+              </div>
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Experiência</h3>
+                <p class="team-feature__meta-value">12 anos</p>
+              </div>
+              <div class="team-feature__meta-block">
+                <h3 class="team-feature__meta-label">Casamentos</h3>
+                <p class="team-feature__meta-value">+200</p>
+              </div>
+            </div>
+            <a href="booking.html?stylist=sofia" class="btn btn--primary">Marcar com a Sofia</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ─── Stats da equipa ───────────────────────────────────────────── -->
+    <section class="section section--dark" aria-labelledby="team-stats-title">
+      <div class="container">
+        <h2 id="team-stats-title" class="sr-only">Números da equipa Lume</h2>
+        <div class="team-stats-grid" aria-label="Estatísticas da equipa">
+          <div class="team-stat reveal">
+            <div class="team-stat__number" data-count="4">4</div>
+            <div class="team-stat__label">Profissionais</div>
+          </div>
+          <div class="team-stat reveal reveal--delay-1">
+            <div class="team-stat__number" data-count="47">47</div>
+            <div class="team-stat__label">Anos de experiência combinados</div>
+          </div>
+          <div class="team-stat reveal reveal--delay-2">
+            <div class="team-stat__number" data-count="4200" data-suffix="+">+4200</div>
+            <div class="team-stat__label">Clientes ativos</div>
+          </div>
+          <div class="team-stat reveal reveal--delay-3">
+            <div class="team-stat__number">2016</div>
+            <div class="team-stat__label">Lisboa, desde</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Filosofia da equipa ───────────────────────────────────────── -->
+    <section class="section section--surface" aria-labelledby="team-values-title">
+      <div class="container">
+        <div class="home-intro">
+          <div class="home-intro__content reveal">
+            <p class="eyebrow">O que nos une</p>
+            <h2 id="team-values-title">Um espaço construído sobre confiança mútua.</h2>
+            <div class="divider"></div>
+            <p class="lead">
+              No Lume, cada profissional tem autonomia criativa e é tratado como especialista na sua área. Não temos hierarquias desnecessárias, não temos objetivos de vendas por serviço e não promovemos produtos que não usaríamos.
+            </p>
+            <p>
+              Esta cultura de trabalho traduz-se diretamente na experiência do cliente. Quando um profissional está seguro e satisfeito com o seu espaço de trabalho, tem mais disponibilidade para se focar no que realmente importa: o resultado e a relação com quem está na cadeira.
+            </p>
+            <p>
+              Fomos crescendo lentamente desde 2016, recrutando apenas quando encontramos a pessoa certa — não quando precisamos de mais uma mão. Cada membro da equipa foi escolhido não apenas pelo currículo, mas pela forma como pensa o trabalho.
+            </p>
+          </div>
+          <div class="home-intro__image reveal reveal--right">
+            <div class="home-intro__image-main">
+              <img
+                src="https://images.unsplash.com/photo-1582095133179-bfd08e2195b5?auto=format&fit=crop&w=900&q=80"
+                alt="Interior do Lume Hair Studio com a equipa ao trabalho"
+                width="900" height="1100"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Junte-se à equipa ─────────────────────────────────────────── -->
+    <section class="section" aria-labelledby="join-title">
+      <div class="container">
+        <div class="join-team-block reveal">
+          <div class="join-team-block__content">
+            <p class="eyebrow">Trabalhar no Lume</p>
+            <h2 id="join-title">Junte-se à equipa</h2>
+            <div class="divider"></div>
+            <p>
+              Se partilha os nossos valores — escuta ativa, honestidade técnica, rigor sem arrogância e vontade genuína de melhorar — gostaríamos de conhecê-lo. Não temos vagas abertas permanentes, mas recebemos apresentações espontâneas e guardamos os perfis que nos surpreendem.
+            </p>
+            <p>
+              Envie o seu portfólio e uma nota sobre o que o traz ao Lume. Não precisa de ser longa — só precisa de ser verdadeira.
+            </p>
+            <a href="mailto:equipa@lumehair.pt" class="btn btn--secondary" style="margin-top:var(--space-6);">
+              equipa@lumehair.pt
+            </a>
+          </div>
+          <div class="join-team-block__values" aria-label="Valores da equipa">
+            <div class="join-team-value">
+              <div class="join-team-value__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z" fill="currentColor" opacity=".8"/></svg>
+              </div>
+              <div>
+                <h3>Autonomia criativa</h3>
+                <p>Cada profissional tem liberdade para desenvolver o seu estilo e perspetiva.</p>
+              </div>
+            </div>
+            <div class="join-team-value">
+              <div class="join-team-value__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>Formação contínua</h3>
+                <p>Apoiamos a participação em formações e eventos da indústria ao longo do ano.</p>
+              </div>
+            </div>
+            <div class="join-team-value">
+              <div class="join-team-value__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>Equipa pequena e coesa</h3>
+                <p>Sem hierarquias desnecessárias. Cada voz conta nas decisões do espaço.</p>
+              </div>
+            </div>
+            <div class="join-team-value">
+              <div class="join-team-value__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>Foco no bem-estar</h3>
+                <p>Horários equilibrados, ambiente saudável e clientes que respeitam o vosso trabalho.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA de marcação ───────────────────────────────────────────── -->
+    <section class="quick-booking" aria-labelledby="team-cta-title">
+      <div class="container">
+        <div class="section-heading--center reveal">
+          <p class="eyebrow" style="color:var(--color-accent-light);">Escolha o seu profissional</p>
+          <h2 id="team-cta-title" class="section-title text-white">Marque a sua próxima visita.</h2>
+          <p class="section-subtitle" style="color:rgba(255,255,255,0.6);">
+            Pode marcar com um profissional específico ou deixar que lhe sugeramos o mais indicado para o seu serviço.
+          </p>
+          <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-top:var(--space-8);">
+            <a href="booking.html" class="btn btn--primary btn--lg">Marcar visita</a>
+            <a href="services.html" class="btn btn--outline btn--lg" style="border-color:rgba(255,255,255,0.35);color:#fff;">Ver serviços e preços</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ───────────────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true" style="color:#fff;">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="20" cy="20" r="2" fill="currentColor"/>
+            </svg>
+            <div class="footer-logo-text">Lume<span>Hair Studio</span></div>
+          </div>
+          <p class="footer-tagline">Cabelo com identidade, técnica e intenção.</p>
+          <div class="footer-social" aria-label="Redes sociais">
+            <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+            <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="Serviços"><h3 class="footer-heading">Serviços</h3><ul class="footer-nav-list"><li><a href="services.html" class="footer-nav-link">Corte e styling</a></li><li><a href="services.html" class="footer-nav-link">Coloração</a></li><li><a href="service-detail.html" class="footer-nav-link">Balayage</a></li><li><a href="services.html" class="footer-nav-link">Tratamentos</a></li><li><a href="bridal.html" class="footer-nav-link">Noivas</a></li></ul></nav>
+        <nav aria-label="Páginas"><h3 class="footer-heading">Lume</h3><ul class="footer-nav-list"><li><a href="about.html" class="footer-nav-link">Sobre nós</a></li><li><a href="team.html" class="footer-nav-link">A nossa equipa</a></li><li><a href="gallery.html" class="footer-nav-link">Galeria</a></li><li><a href="journal.html" class="footer-nav-link">Journal</a></li><li><a href="booking.html" class="footer-nav-link">Marcações</a></li><li><a href="contact.html" class="footer-nav-link">Contactos</a></li></ul></nav>
+        <div><h3 class="footer-heading">Contacto</h3><div class="footer-info"><address>Rua do Século, 42<br>1200-433 Lisboa</address><p><a href="tel:+351912345678">+351 912 345 678</a><br><a href="mailto:geral@lumehair.pt">geral@lumehair.pt</a></p><p style="margin-top:1rem;">Seg–Sex: 9h–20h<br>Sáb: 9h–18h</p></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Lume Hair Studio.</p><div class="footer-legal-links"><a href="#">Privacidade</a><a href="#">Termos</a><a href="#">Cancelamentos</a></div></div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

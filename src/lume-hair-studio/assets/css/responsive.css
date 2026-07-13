@@ -1,0 +1,575 @@
+/* responsive.css — Lume Hair Studio */
+
+/* ─── 1024px — tablet landscape ─────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+
+  .header-nav {
+    gap: var(--space-5);
+  }
+
+  .nav-list {
+    gap: var(--space-4);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+  }
+
+  /* Homepage */
+  .home-intro {
+    gap: var(--space-12);
+  }
+
+  .services-editorial {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .service-editorial-item:nth-child(1) { grid-column: span 6; grid-row: span 1; }
+  .service-editorial-item:nth-child(2) { grid-column: span 3; }
+  .service-editorial-item:nth-child(3) { grid-column: span 3; }
+  .service-editorial-item:nth-child(4) { grid-column: span 2; }
+  .service-editorial-item:nth-child(5) { grid-column: span 2; }
+  .service-editorial-item:nth-child(6) { grid-column: span 2; }
+
+  .before-after-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-section-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-process {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .home-process__visual {
+    position: static;
+    max-width: 30rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-booking__form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quick-booking__form .btn {
+    grid-column: 1 / -1;
+  }
+
+  .info-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Services */
+  .service-feature {
+    gap: var(--space-10);
+  }
+
+  /* Service detail */
+  .service-detail-hero__image {
+    width: 45%;
+  }
+
+  .service-detail-layout {
+    grid-template-columns: 1fr 17rem;
+    gap: var(--space-10);
+  }
+
+  /* Team */
+  .team-feature {
+    gap: var(--space-12);
+  }
+
+  /* Stylist detail */
+  .stylist-hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stylist-hero__content {
+    padding: var(--space-16) var(--space-10) var(--space-10);
+  }
+
+  .stylist-detail-layout {
+    grid-template-columns: 1fr 18rem;
+    gap: var(--space-10);
+  }
+
+  /* Gallery */
+  .gallery-masonry {
+    columns: 2;
+  }
+
+  /* Booking */
+  .booking-layout {
+    grid-template-columns: 1fr 20rem;
+    gap: var(--space-8);
+  }
+
+  /* Bridal */
+  .bridal-packages-grid {
+    gap: var(--space-4);
+  }
+
+  /* Journal */
+  .journal-layout {
+    grid-template-columns: 1fr 18rem;
+    gap: var(--space-10);
+  }
+
+  .journal-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .journal-featured__image {
+    min-height: 18rem;
+  }
+
+  /* Article */
+  .article-layout {
+    grid-template-columns: 1fr 17rem;
+    gap: var(--space-10);
+  }
+
+  /* About */
+  .about-story {
+    gap: var(--space-12);
+  }
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact */
+  .contact-layout {
+    gap: var(--space-10);
+  }
+
+  /* Highlight service */
+  .highlight-service__content {
+    padding: var(--space-12) var(--space-10);
+  }
+}
+
+/* ─── 768px — tablet portrait ────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Header */
+  .header-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .site-header--dark-bg:not(.is-scrolled) .menu-toggle span {
+    background: var(--color-white);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Editorial hero */
+  .editorial-hero__meta {
+    display: none;
+  }
+
+  .editorial-hero__content {
+    padding-bottom: var(--space-16);
+  }
+
+  /* Homepage */
+  .home-intro {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .home-intro__number {
+    display: none;
+  }
+
+  .services-editorial {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-editorial-item:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .highlight-service {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-service__image {
+    min-height: 20rem;
+  }
+
+  .highlight-service__content {
+    padding: var(--space-10) var(--space-8);
+  }
+
+  .before-after-grid {
+    grid-template-columns: 1fr;
+    max-width: 30rem;
+    margin-inline: auto;
+  }
+
+  .team-section-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-booking__form {
+    grid-template-columns: 1fr;
+  }
+
+  .info-section {
+    grid-template-columns: 1fr;
+  }
+
+  /* Services */
+  .service-feature {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .service-feature:nth-child(even) .service-feature__image {
+    order: 0;
+  }
+
+  .service-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .service-row__meta {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: var(--space-5);
+  }
+
+  /* Service detail */
+  .service-detail-hero__image {
+    display: none;
+  }
+
+  .service-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-aside {
+    position: static;
+  }
+
+  /* Page hero */
+  .page-hero__image {
+    display: none;
+  }
+
+  /* Team */
+  .team-feature {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    direction: ltr !important;
+  }
+
+  /* Stylist detail */
+  .stylist-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .stylist-hero__image {
+    aspect-ratio: 4/3;
+    min-height: 20rem;
+  }
+
+  .stylist-hero__content {
+    padding: var(--space-12) var(--space-8);
+  }
+
+  .stylist-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stylist-detail-aside {
+    position: static;
+  }
+
+  .stylist-works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Gallery */
+  .gallery-masonry {
+    columns: 2;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Booking */
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-aside {
+    position: static;
+  }
+
+  .booking-panel {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .booking-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .time-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Bridal */
+  .bridal-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bridal-packages-grid {
+    grid-template-columns: 1fr;
+    max-width: 28rem;
+    margin-inline: auto;
+  }
+
+  /* Journal */
+  .journal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .journal-sidebar {
+    position: static;
+    order: -1;
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Article */
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .article-aside {
+    position: static;
+  }
+
+  .article-hero {
+    aspect-ratio: 4/3;
+    max-height: 22rem;
+  }
+
+  /* About */
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-sustainability-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-team-mini {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact */
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── 480px — mobile ─────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+
+  /* Typography scale override */
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+
+  .editorial-hero__title {
+    font-size: clamp(2.75rem, 12vw, 4.5rem);
+  }
+
+  .editorial-hero__body {
+    font-size: var(--text-base);
+  }
+
+  .editorial-hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Header */
+  .header-logo-text {
+    font-size: var(--text-base);
+  }
+
+  /* Services */
+  .services-editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .service-editorial-item:nth-child(n) {
+    grid-column: span 1;
+  }
+
+  .booking-options {
+    grid-template-columns: 1fr;
+  }
+
+  .time-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .booking-steps {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Team */
+  .team-section-grid {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+
+  /* Gallery */
+  .gallery-masonry {
+    columns: 1;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Products */
+  .products-grid {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+
+  /* Stylist works */
+  .stylist-works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Bridal */
+  .bridal-hero__title {
+    font-size: var(--text-4xl);
+  }
+
+  /* About */
+  .about-team-mini {
+    grid-template-columns: 1fr;
+    max-width: 18rem;
+    margin-inline: auto;
+  }
+
+  /* Process step */
+  .process-step {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .process-step__number {
+    font-size: var(--text-3xl);
+  }
+
+  /* Before after */
+  .before-after-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-legal-links {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}
+
+/* ─── Wide screens ───────────────────────────────────────────────────────── */
+
+@media (min-width: 1440px) {
+
+  .services-editorial {
+    min-height: 36rem;
+  }
+
+  .service-editorial-item {
+    min-height: unset;
+  }
+
+  .before-after-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ─── Print ──────────────────────────────────────────────────────────────── */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .menu-toggle,
+  .mobile-nav,
+  .booking-flow,
+  .lightbox,
+  .btn,
+  .filter-bar {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0;
+    font-size: 11pt;
+  }
+
+  .editorial-hero {
+    min-height: auto;
+    page-break-after: always;
+  }
+}

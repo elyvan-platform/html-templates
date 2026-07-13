@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mercado da Vila | Produtos frescos, produtores próximos e serviço de sempre</title>
+    <meta
+      name="description"
+      content="Mercearia local portuguesa com venda física, encomendas online, entregas locais, cabazes e produtos regionais."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="home">
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+    <header class="site-header" data-site-header>
+      <div class="header-topbar">
+        <div class="container-wide">
+          <p>Seg. a Sáb. 08:00-19:30 · Rua do Mercado, 18 · Vila do Ave</p>
+          <p>Entregas locais no próprio dia para encomendas até às 12:30</p>
+        </div>
+      </div>
+      <div class="header-main">
+        <div class="container-wide">
+          <a class="brand" href="index.html" aria-label="Mercado da Vila, página inicial">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M12 31c7-2 10-7 12-17 8 4 11 12 12 23-8 0-19-1-24-6Z" fill="currentColor" />
+                <path d="M15 26c5 0 10 3 14 9" stroke="#fffdf9" stroke-width="2.2" stroke-linecap="round" />
+              </svg>
+            </span>
+            <span>
+              <strong class="brand-name">Mercado da Vila</strong>
+              <span class="brand-subtitle">Desde 1987</span>
+            </span>
+          </a>
+          <nav class="nav-desktop" aria-label="Navegação principal">
+            <ul class="nav-list">
+              <li><a class="nav-link" data-nav="shop" href="shop.html">Loja</a></li>
+              <li><a class="nav-link" data-nav="promotions" href="promotions.html">Promoções</a></li>
+              <li><a class="nav-link" href="shop.html#cabazes">Cabazes</a></li>
+              <li><a class="nav-link" data-nav="delivery" href="delivery.html">Entregas</a></li>
+              <li><a class="nav-link" data-nav="recipes" href="recipes.html">Receitas</a></li>
+              <li><a class="nav-link" data-nav="about" href="about.html">Sobre</a></li>
+              <li><a class="nav-link" data-nav="contact" href="contact.html">Contactos</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <form class="search-inline" data-global-search>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8" />
+                <path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+              <label class="sr-only" for="global-search-home">Pesquisar produtos</label>
+              <input id="global-search-home" name="search" type="search" placeholder="Pesquisar produtos" />
+            </form>
+            <a class="header-cart" href="cart.html" aria-label="Ver carrinho">
+              <span>Carrinho</span>
+              <span class="cart-count" data-cart-count>0</span>
+            </a>
+            <a class="btn btn-primary" href="shop.html">Encomendar</a>
+          </div>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-mobile">
+            <span class="sr-only">Abrir menu</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <aside class="mobile-menu" id="menu-mobile" data-mobile-menu aria-label="Menu mobile">
+        <nav>
+          <ul class="mobile-nav-list">
+            <li><a class="mobile-nav-link" href="shop.html">Loja</a></li>
+            <li><a class="mobile-nav-link" href="promotions.html">Promoções</a></li>
+            <li><a class="mobile-nav-link" href="shop.html#cabazes">Cabazes</a></li>
+            <li><a class="mobile-nav-link" href="delivery.html">Entregas</a></li>
+            <li><a class="mobile-nav-link" href="recipes.html">Receitas</a></li>
+            <li><a class="mobile-nav-link" href="about.html">Sobre</a></li>
+            <li><a class="mobile-nav-link" href="contact.html">Contactos</a></li>
+            <li><a class="mobile-nav-link" href="cart.html">Carrinho <span class="cart-count" data-cart-count>0</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+    </header>
+
+    <main id="conteudo">
+      <section class="market-hero">
+        <div class="container-wide market-hero-layout">
+          <div class="hero-copy reveal">
+            <div class="hero-grid">
+              <span class="eyebrow">Mercearia local portuguesa</span>
+              <div>
+                <p class="note">Escolhido todas as manhãs</p>
+                <h1 class="hero-title">O melhor da região, escolhido todas as manhãs.</h1>
+              </div>
+              <p>
+                Fruta e legumes frescos, padaria, charcutaria, produtos regionais e cabazes prontos a seguir para casa,
+                para o restaurante da esquina ou para a cozinha de fim de semana.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="shop.html">Comprar produtos</a>
+                <a class="btn btn-secondary" href="shop.html#cabazes">Ver cabazes</a>
+              </div>
+              <div class="hero-microfacts">
+                <div class="hero-stat">
+                  <strong>Entregas locais</strong>
+                  <span>Segunda a sábado, até 12 km</span>
+                </div>
+                <div class="hero-stat">
+                  <strong>Destaque do dia</strong>
+                  <span>Tomate coração de boi da Quinta da Ribeira</span>
+                </div>
+                <div class="hero-stat">
+                  <strong>Produtor próximo</strong>
+                  <span>Recolha feita a 9 km da loja</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-media reveal">
+            <figure class="hero-figure">
+              <img
+                src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
+                alt="Banca de mercearia com legumes frescos e fruta da época"
+                width="1200"
+                height="900"
+              />
+              <div class="floating-note surface-paper">
+                <strong>Hoje na banca</strong>
+                <p>Pêssego nacional, broa de milho e queijo curado acabados de chegar.</p>
+              </div>
+              <div class="price-ticket">
+                <span class="tag">Sabores de verão</span>
+                <strong>Cabaz da Horta</strong>
+                <p>Ideal para 3 a 4 pessoas · 18,90 €</p>
+              </div>
+              <div class="info-card">
+                <strong>Entrega no próprio dia</strong>
+                <p>Encomendas até às 12:30, entrega entre as 15:00 e as 19:00.</p>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide season-grid">
+          <div class="season-feature surface-paper reveal">
+            <span class="eyebrow">Sabores de verão</span>
+            <h2>Fruta madura, legumes de horta e refeições leves para dias longos.</h2>
+            <p>
+              Nesta altura do ano, a bancada muda de cor logo cedo: tomate de cheiro intenso, pêssego doce, courgette tenra,
+              ervas frescas e queijo curado para pratos rápidos que sabem a mercado bem abastecido.
+            </p>
+            <a class="btn btn-accent" href="recipes.html">Ver sugestões da estação</a>
+          </div>
+          <div class="info-panel reveal">
+            <ul class="season-list">
+              <li><strong>Fruta da época</strong><span>Pêssego nacional, cereja tardia, maçã precoce</span></li>
+              <li><strong>Legumes</strong><span>Tomate, courgette, feijão-verde e alface romana</span></li>
+              <li><strong>Regionais</strong><span>Azeite, mel multifloral e queijo curado</span></li>
+              <li><strong>Receita ligada</strong><span><a class="inline-link" href="recipe-detail.html">Salada de pêssego e queijo curado</a></span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide">
+          <div class="section-header reveal">
+            <span class="eyebrow">Categorias principais</span>
+            <h2>Uma loja organizada como uma boa banca de mercado.</h2>
+            <p>Hierarquia clara, produtos em várias escalas e informação comercial imediata.</p>
+          </div>
+          <div class="category-composition">
+            <article class="category-feature category-feature--tall reveal">
+              <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=900&q=80" alt="Fruta fresca exposta em banca" width="900" height="1200" loading="lazy" />
+              <h3>Fruta e legumes</h3>
+              <p>Escolha diária de produtores da região, com origem identificada e stock atualizado.</p>
+            </article>
+            <article class="category-feature reveal">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Broa de milho e pão tradicional" width="900" height="675" loading="lazy" />
+              <h3>Padaria</h3>
+              <p>Broa, papo-secos e pão rústico com fornadas regulares.</p>
+            </article>
+            <article class="category-feature reveal">
+              <img src="https://images.unsplash.com/photo-1518164534281-5943b5919739?auto=format&fit=crop&w=900&q=80" alt="Queijos e charcutaria artesanal" width="900" height="675" loading="lazy" />
+              <h3>Charcutaria</h3>
+              <p>Queijos, enchidos e tábuas para levar para casa.</p>
+            </article>
+            <article class="category-feature reveal">
+              <img src="https://images.unsplash.com/photo-1601593768799-76fa1f67f7b7?auto=format&fit=crop&w=900&q=80" alt="Produtos regionais embalados em prateleira" width="900" height="675" loading="lazy" />
+              <h3>Produtos regionais</h3>
+              <p>Mercearia de confiança, frascos, conservas e produtos de pequena produção.</p>
+            </article>
+            <article class="category-feature reveal">
+              <img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=900&q=80" alt="Banca de produtos a granel" width="900" height="675" loading="lazy" />
+              <h3>A granel, biológicos e cabazes</h3>
+              <p>Compra flexível, menos desperdício e opções para rotina semanal.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide">
+          <div class="section-header reveal">
+            <span class="eyebrow">Produtos em destaque</span>
+            <h2>O essencial da semana, pronto para adicionar ao carrinho.</h2>
+          </div>
+          <div class="product-grid" data-product-grid="featured"></div>
+        </div>
+      </section>
+
+      <section class="section home-baskets" id="cabazes">
+        <div class="container-wide">
+          <div class="section-header reveal">
+            <span class="eyebrow">Cabazes</span>
+            <h2>Cabazes pensados para famílias, cozinhas pequenas e mesas de fim de semana.</h2>
+          </div>
+          <div class="basket-grid" data-basket-grid></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide">
+          <div class="section-header reveal">
+            <span class="eyebrow">Produtores locais</span>
+            <h2>Transparência real: quem produz, onde fica e o que traz à loja.</h2>
+          </div>
+          <div class="producer-grid" data-producer-grid></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide">
+          <div class="section-header reveal">
+            <span class="eyebrow">Promoções da semana</span>
+            <h2>Preço ajustado com critério, sem linguagem de hipermercado.</h2>
+          </div>
+          <div class="promo-grid" data-promo-grid="home"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide feature-strip">
+          <article class="info-panel reveal">
+            <h3>Entrega ao domicílio</h3>
+            <p>Rotas locais para famílias, idosos e pequenos negócios com janelas horárias claras.</p>
+          </article>
+          <article class="info-panel reveal">
+            <h3>Recolha em loja</h3>
+            <p>Encomende online e recolha quando sair do trabalho, sem filas nem espera desnecessária.</p>
+          </article>
+          <article class="info-panel reveal">
+            <h3>Encomendas por telefone</h3>
+            <p>Atendimento humano para quem prefere falar connosco antes de confirmar a compra.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide">
+          <div class="section-header reveal">
+            <span class="eyebrow">Receitas e sugestões</span>
+            <h2>Ideias práticas para cozinhar com o que chega hoje ao mercado.</h2>
+          </div>
+          <div class="recipe-grid" data-recipe-grid="home"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide">
+          <div class="section-header reveal">
+            <span class="eyebrow">Testemunhos</span>
+            <h2>Clientes que compram para casa, para alojamento local e para a cozinha diária.</h2>
+          </div>
+          <div class="testimonial-grid">
+            <article class="testimonial-card reveal">
+              <blockquote>“Peço fruta e legumes para a semana toda e chega sempre com a mesma atenção de balcão.”</blockquote>
+              <p><strong>Ana Martins</strong> · Vila do Ave</p>
+            </article>
+            <article class="testimonial-card reveal">
+              <blockquote>“Os cabazes resolvem a cozinha do restaurante nas noites mais apertadas, sem perder qualidade.”</blockquote>
+              <p><strong>Rui Carvalho</strong> · Casa de Pasto do Largo</p>
+            </article>
+            <article class="testimonial-card reveal">
+              <blockquote>“Para a minha mãe, o atendimento por telefone e a entrega em casa fazem toda a diferença.”</blockquote>
+              <p><strong>Helena Guedes</strong> · Bairro do Souto</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container-wide newsletter-card reveal">
+          <div>
+            <span class="eyebrow">Newsletter semanal</span>
+            <h2>Receba produtos da semana, promoções com contexto e sugestões de cabaz.</h2>
+            <p>Sem excesso de mensagens. Apenas o que vale a pena saber antes de fazer a próxima encomenda.</p>
+          </div>
+          <form class="newsletter-form" data-newsletter-form novalidate>
+            <label for="newsletter-email">Email</label>
+            <input class="field" id="newsletter-email" type="email" name="email" placeholder="nome@exemplo.pt" required />
+            <label class="choice-chip" for="newsletter-consent">
+              <input id="newsletter-consent" type="checkbox" name="consent" required />
+              Aceito receber comunicações do Mercado da Vila.
+            </label>
+            <button class="btn btn-accent" type="submit">Subscrever</button>
+            <p class="message" data-form-message aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container-wide">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path d="M12 31c7-2 10-7 12-17 8 4 11 12 12 23-8 0-19-1-24-6Z" fill="currentColor" />
+                  <path d="M15 26c5 0 10 3 14 9" stroke="#fffdf9" stroke-width="2.2" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span>
+                <strong class="brand-name">Mercado da Vila</strong>
+                <span class="brand-subtitle">Produtos frescos, produtores próximos e serviço de sempre.</span>
+              </span>
+            </a>
+            <p>Rua do Mercado, 18 · 4785-112 Vila do Ave</p>
+            <p>+351 252 840 210 · ola@mercadodavila.pt</p>
+          </div>
+          <div class="footer-column">
+            <h3>Loja</h3>
+            <ul>
+              <li><a href="shop.html">Produtos</a></li>
+              <li><a href="promotions.html">Promoções</a></li>
+              <li><a href="shop.html#cabazes">Cabazes</a></li>
+              <li><a href="recipes.html">Receitas</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Serviço</h3>
+            <ul>
+              <li><a href="delivery.html">Entregas e recolha</a></li>
+              <li><a href="contact.html">Contactos</a></li>
+              <li><a href="cart.html">Carrinho</a></li>
+              <li><a href="about.html">Sobre a loja</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Informação</h3>
+            <ul>
+              <li><a href="contact.html">Política de privacidade</a></li>
+              <li><a href="contact.html">Termos e condições</a></li>
+              <li><a href="contact.html">Livro de reclamações</a></li>
+              <li><p>Pagamentos: MB Way · Multibanco · Numerário · Cartão</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-meta">
+          <p>Horário: Seg. a Sáb. 08:00-19:30 · Domingo encerrado</p>
+          <p>© 2026 Mercado da Vila. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

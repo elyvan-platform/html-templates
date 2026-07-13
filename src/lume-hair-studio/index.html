@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lume Hair Studio — Salão de cabeleireiro contemporâneo em Lisboa. Corte, coloração, balayage, penteados e serviços para noivas. Marque a sua visita online.">
+  <title>Lume Hair Studio — Cabelo com identidade, técnica e intenção</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <!-- ─── Header ─────────────────────────────────────────────────────── -->
+  <header class="site-header site-header--transparent site-header--dark-bg" id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Lume Hair Studio — Página inicial">
+        <svg class="header-logo-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="2" fill="currentColor"/>
+        </svg>
+        <div class="header-logo-text">
+          Lume
+          <span>Hair Studio</span>
+        </div>
+      </a>
+
+      <nav class="header-nav" role="navigation" aria-label="Navegação principal">
+        <ul class="nav-list" role="list">
+          <li><a href="services.html" class="nav-link" data-nav-link aria-current="false">Serviços</a></li>
+          <li><a href="team.html" class="nav-link" data-nav-link>Equipa</a></li>
+          <li><a href="gallery.html" class="nav-link" data-nav-link>Trabalhos</a></li>
+          <li><a href="bridal.html" class="nav-link" data-nav-link>Noivas</a></li>
+          <li><a href="journal.html" class="nav-link" data-nav-link>Journal</a></li>
+          <li><a href="about.html" class="nav-link" data-nav-link>Sobre</a></li>
+          <li><a href="contact.html" class="nav-link" data-nav-link>Contactos</a></li>
+        </ul>
+        <a href="booking.html" class="btn btn--header">Marcar visita</a>
+      </nav>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile" aria-hidden="true">
+    <ul class="mobile-nav-list" role="list">
+      <li><a href="services.html" class="mobile-nav-link" data-nav-link>Serviços</a></li>
+      <li><a href="team.html" class="mobile-nav-link" data-nav-link>Equipa</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link" data-nav-link>Trabalhos</a></li>
+      <li><a href="bridal.html" class="mobile-nav-link" data-nav-link>Noivas</a></li>
+      <li><a href="journal.html" class="mobile-nav-link" data-nav-link>Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link" data-nav-link>Sobre</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" data-nav-link>Contactos</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary">Marcar visita</a>
+      <p class="mobile-nav-contact">Rua do Século, 42 · Lisboa · <a href="tel:+351912345678">+351 912 345 678</a></p>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ─── Hero ─────────────────────────────────────────────────────── -->
+    <section class="editorial-hero" aria-label="Apresentação">
+      <div class="editorial-hero__bg">
+        <img
+          src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80"
+          alt="Cabeleireira a trabalhar num corte elegante"
+          width="1600"
+          height="1067"
+        >
+      </div>
+
+      <div class="editorial-hero__content">
+        <p class="eyebrow editorial-hero__eyebrow">Lisboa · Desde 2016</p>
+        <h1 class="editorial-hero__title">
+          Cabelo com<br><em>identidade,</em><br>técnica e<br>intenção.
+        </h1>
+        <p class="editorial-hero__body">
+          Um espaço onde cada visita começa com uma conversa real e termina com um resultado que é verdadeiramente seu.
+        </p>
+        <div class="editorial-hero__actions">
+          <a href="booking.html" class="btn btn--primary btn--lg">Marcar visita</a>
+          <a href="services.html" class="btn btn--ghost btn--lg">Conhecer serviços</a>
+        </div>
+      </div>
+
+      <div class="editorial-hero__meta">
+        <span class="editorial-hero__location">Rua do Século, 42 · Lisboa</span>
+        <span class="editorial-hero__location" style="margin-top:0.25rem;">Seg–Sáb · 9h–20h</span>
+      </div>
+    </section>
+
+    <!-- ─── Introdução ────────────────────────────────────────────────── -->
+    <section class="section section--surface" aria-labelledby="intro-title">
+      <div class="container">
+        <div class="home-intro">
+          <div class="home-intro__content reveal">
+            <div class="home-intro__number" aria-hidden="true">08</div>
+            <p class="eyebrow">A nossa filosofia</p>
+            <h2 id="intro-title">Cada cabelo conta uma história diferente.</h2>
+            <div class="divider"></div>
+            <p class="lead">
+              No Lume, acreditamos que um bom resultado começa antes da tesoura ou da cor. Começa na escuta, no diagnóstico honesto e na compreensão do que cada cliente realmente precisa.
+            </p>
+            <p>
+              Trabalhamos com técnicas contemporâneas e produtos de desempenho comprovado, sempre com foco na saúde capilar e na consistência do resultado ao longo do tempo. O nosso objetivo não é impressionar numa única visita — é construir uma relação de confiança que dure anos.
+            </p>
+            <div class="flex flex--gap-8" style="margin-top:var(--space-10);">
+              <div class="stat-block">
+                <div class="stat-block__number" data-count="8" data-suffix="+"">8+</div>
+                <div class="stat-block__label">Anos em Lisboa</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-block__number" data-count="4200" data-suffix="+">4200+</div>
+                <div class="stat-block__label">Clientes ativos</div>
+              </div>
+              <div class="stat-block">
+                <div class="stat-block__number" data-count="4" data-suffix="">4</div>
+                <div class="stat-block__label">Profissionais</div>
+              </div>
+            </div>
+          </div>
+          <div class="home-intro__image reveal reveal--right">
+            <div class="home-intro__image-main">
+              <img
+                src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=80"
+                alt="Interior do Lume Hair Studio"
+                width="900" height="1200"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Serviços – composição editorial ──────────────────────────── -->
+    <section class="section" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">O que fazemos</p>
+          <h2 id="services-title" class="section-title">Serviços para cada momento<br>e cada tipo de cabelo.</h2>
+        </div>
+
+        <div class="services-editorial" aria-label="Galeria de serviços">
+          <article class="service-editorial-item reveal" data-service-category="corte">
+            <div class="service-editorial-item__image">
+              <img
+                src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80"
+                alt="Corte de cabelo moderno"
+                width="800" height="1000"
+                loading="lazy"
+              >
+            </div>
+            <div class="service-editorial-item__overlay">
+              <span class="service-editorial-item__name">Corte &amp; Styling</span>
+              <span class="service-editorial-item__price">desde 35 €</span>
+            </div>
+            <a href="service-detail.html" class="service-editorial-item__link" aria-label="Ver serviço Corte e Styling"></a>
+          </article>
+
+          <article class="service-editorial-item reveal reveal--delay-1" data-service-category="cor">
+            <div class="service-editorial-item__image">
+              <img
+                src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=80"
+                alt="Coloração profissional"
+                width="800" height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="service-editorial-item__overlay">
+              <span class="service-editorial-item__name">Coloração</span>
+              <span class="service-editorial-item__price">desde 55 €</span>
+            </div>
+            <a href="service-detail.html" class="service-editorial-item__link" aria-label="Ver serviço de Coloração"></a>
+          </article>
+
+          <article class="service-editorial-item reveal reveal--delay-2" data-service-category="balayage">
+            <div class="service-editorial-item__image">
+              <img
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
+                alt="Resultado de balayage personalizada"
+                width="800" height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="service-editorial-item__overlay">
+              <span class="service-editorial-item__name">Balayage</span>
+              <span class="service-editorial-item__price">desde 95 €</span>
+            </div>
+            <a href="service-detail.html" class="service-editorial-item__link" aria-label="Ver serviço de Balayage"></a>
+          </article>
+
+          <article class="service-editorial-item reveal reveal--delay-1" data-service-category="tratamentos">
+            <div class="service-editorial-item__image">
+              <img
+                src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=800&q=80"
+                alt="Tratamento capilar de hidratação"
+                width="800" height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="service-editorial-item__overlay">
+              <span class="service-editorial-item__name">Tratamentos</span>
+              <span class="service-editorial-item__price">desde 30 €</span>
+            </div>
+            <a href="service-detail.html" class="service-editorial-item__link" aria-label="Ver serviço de Tratamentos"></a>
+          </article>
+
+          <article class="service-editorial-item reveal reveal--delay-2" data-service-category="penteados">
+            <div class="service-editorial-item__image">
+              <img
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+                alt="Penteado elegante para ocasião especial"
+                width="800" height="600"
+                loading="lazy"
+              >
+            </div>
+            <div class="service-editorial-item__overlay">
+              <span class="service-editorial-item__name">Penteados</span>
+              <span class="service-editorial-item__price">desde 45 €</span>
+            </div>
+            <a href="bridal.html" class="service-editorial-item__link" aria-label="Ver penteados e noivas"></a>
+          </article>
+
+          <article class="service-editorial-item reveal reveal--delay-3" data-service-category="noivas">
+            <div class="service-editorial-item__image">
+              <img
+                src="https://images.unsplash.com/photo-1465495976277-a5fdc77d3d59?auto=format&fit=crop&w=800&q=80"
+                alt="Penteado nupcial com detalhe floral"
+                width="800" height="1000"
+                loading="lazy"
+              >
+            </div>
+            <div class="service-editorial-item__overlay">
+              <span class="service-editorial-item__name">Noivas</span>
+              <span class="service-editorial-item__price">desde 150 €</span>
+            </div>
+            <a href="bridal.html" class="service-editorial-item__link" aria-label="Ver serviços para noivas"></a>
+          </article>
+        </div>
+
+        <div class="text-center" style="margin-top:var(--space-12);">
+          <a href="services.html" class="btn btn--secondary">Ver todos os serviços e preços</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Destaque Balayage ─────────────────────────────────────────── -->
+    <section class="highlight-service reveal" aria-labelledby="highlight-title">
+      <div class="highlight-service__image">
+        <img
+          src="https://images.unsplash.com/photo-1626196340012-1e7f6acfb66c?auto=format&fit=crop&w=1000&q=80"
+          alt="Resultado de balayage personalizada — cabelo com movimento e luz natural"
+          width="1000" height="1200"
+          loading="lazy"
+        >
+      </div>
+      <div class="highlight-service__content">
+        <p class="eyebrow">Serviço em destaque</p>
+        <h2 id="highlight-title">Balayage personalizada</h2>
+        <p>
+          A balayage é uma das técnicas mais complexas e pessoais da coloração. No Lume, cada aplicação é única: analisamos o tom natural, a textura, o estilo de vida e o resultado desejado para criar uma cor que pareça crescer com o cabelo.
+        </p>
+        <div class="highlight-service__meta">
+          <div class="highlight-service__meta-item">
+            <strong>A partir de 95 €</strong>
+            Preço indicativo
+          </div>
+          <div class="highlight-service__meta-item">
+            <strong>3–4 horas</strong>
+            Duração média
+          </div>
+          <div class="highlight-service__meta-item">
+            <strong>Leonor Silva</strong>
+            Especialista
+          </div>
+        </div>
+        <a href="service-detail.html" class="btn btn--ghost">Saber mais e marcar</a>
+      </div>
+    </section>
+
+    <!-- ─── Antes e depois ────────────────────────────────────────────── -->
+    <section class="section before-after-section" aria-labelledby="ba-title">
+      <div class="container">
+        <div class="section-heading--center reveal">
+          <p class="eyebrow" style="color:var(--color-accent-light);">Transformações reais</p>
+          <h2 id="ba-title" class="section-title text-white">Antes e depois.</h2>
+          <p class="section-subtitle" style="color:rgba(255,255,255,0.65);">
+            Deslize para comparar. Cada resultado foi alcançado com diagnóstico personalizado e técnica cuidada.
+          </p>
+        </div>
+
+        <div class="before-after-grid">
+          <!-- Item 1 -->
+          <div>
+            <div class="before-after" role="img" aria-label="Transformação: balayage em cabelo castanho">
+              <div class="before-after__images">
+                <div class="before-after__before">
+                  <img
+                    src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=600&q=70"
+                    alt="Antes — cabelo castanho uniforme"
+                    width="600" height="750"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="before-after__after">
+                  <img
+                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80"
+                    alt="Depois — balayage com mechas douradas"
+                    width="600" height="750"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="before-after__divider" aria-hidden="true"></div>
+                <div class="before-after__handle" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M7 10l-4 0M7 7l-4 3 4 3M13 10l4 0M13 7l4 3-4 3" stroke="#1A1410" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="before-after__labels" aria-hidden="true">
+                  <span class="before-after__label">Antes</span>
+                  <span class="before-after__label">Depois</span>
+                </div>
+              </div>
+            </div>
+            <div class="before-after__info">
+              <p class="before-after__service">Balayage dourada</p>
+              <p class="before-after__stylist">por Leonor Silva · 3h30</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div>
+            <div class="before-after" role="img" aria-label="Transformação: corte e styling">
+              <div class="before-after__images">
+                <div class="before-after__before">
+                  <img
+                    src="https://images.unsplash.com/photo-1573230868640-9e7a9bc87d23?auto=format&fit=crop&w=600&q=70"
+                    alt="Antes — cabelo liso sem volume"
+                    width="600" height="750"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="before-after__after">
+                  <img
+                    src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80"
+                    alt="Depois — corte com camadas e movimento"
+                    width="600" height="750"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="before-after__divider" aria-hidden="true"></div>
+                <div class="before-after__handle" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M7 10l-4 0M7 7l-4 3 4 3M13 10l4 0M13 7l4 3-4 3" stroke="#1A1410" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="before-after__labels" aria-hidden="true">
+                  <span class="before-after__label">Antes</span>
+                  <span class="before-after__label">Depois</span>
+                </div>
+              </div>
+            </div>
+            <div class="before-after__info">
+              <p class="before-after__service">Corte com camadas</p>
+              <p class="before-after__stylist">por Mariana Costa · 1h15</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div>
+            <div class="before-after" role="img" aria-label="Transformação: coloração castanho caramel">
+              <div class="before-after__images">
+                <div class="before-after__before">
+                  <img
+                    src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=70"
+                    alt="Antes — cabelo castanho escuro sem brilho"
+                    width="600" height="750"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="before-after__after">
+                  <img
+                    src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
+                    alt="Depois — tonalização castanho caramel com brilho"
+                    width="600" height="750"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="before-after__divider" aria-hidden="true"></div>
+                <div class="before-after__handle" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M7 10l-4 0M7 7l-4 3 4 3M13 10l4 0M13 7l4 3-4 3" stroke="#1A1410" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="before-after__labels" aria-hidden="true">
+                  <span class="before-after__label">Antes</span>
+                  <span class="before-after__label">Depois</span>
+                </div>
+              </div>
+            </div>
+            <div class="before-after__info">
+              <p class="before-after__service">Tonalização castanho caramel</p>
+              <p class="before-after__stylist">por Leonor Silva · 2h</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div>
+            <div class="before-after" role="img" aria-label="Transformação: penteado de noiva">
+              <div class="before-after__images">
+                <div class="before-after__before">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=70"
+                    alt="Antes — cabelo solto natural"
+                    width="600" height="750"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="before-after__after">
+                  <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80"
+                    alt="Depois — penteado de noiva trabalhado"
+                    width="600" height="750"
+                    loading="lazy"
+                  >
+                </div>
+                <div class="before-after__divider" aria-hidden="true"></div>
+                <div class="before-after__handle" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M7 10l-4 0M7 7l-4 3 4 3M13 10l4 0M13 7l4 3-4 3" stroke="#1A1410" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="before-after__labels" aria-hidden="true">
+                  <span class="before-after__label">Antes</span>
+                  <span class="before-after__label">Depois</span>
+                </div>
+              </div>
+            </div>
+            <div class="before-after__info">
+              <p class="before-after__service">Penteado de noiva com acessórios</p>
+              <p class="before-after__stylist">por Sofia Martins · 2h30</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top:var(--space-10);">
+          <a href="gallery.html" class="btn btn--outline">Ver galeria completa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Equipa ────────────────────────────────────────────────────── -->
+    <section class="section section--surface" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">A nossa equipa</p>
+          <h2 id="team-title" class="section-title">Profissionais com percurso,<br>visão e dedicação.</h2>
+        </div>
+
+        <div class="team-section-grid">
+          <div class="stylist-card reveal">
+            <div class="stylist-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80"
+                alt="Mariana Costa — Diretora criativa"
+                width="600" height="800"
+                loading="lazy"
+              >
+              <div class="stylist-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="stylist-card__body">
+              <h3 class="stylist-card__name">Mariana Costa</h3>
+              <p class="stylist-card__role">Direção criativa &amp; Corte</p>
+              <p class="stylist-card__bio">Fundadora do Lume com 15 anos de experiência. Formada em Paris e Londres, especializada em cortes estruturais e personalizados.</p>
+              <div class="stylist-card__actions">
+                <a href="stylist-detail.html" class="btn btn--secondary btn--sm">Ver perfil</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Marcar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="stylist-card reveal reveal--delay-1">
+            <div class="stylist-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80"
+                alt="Leonor Silva — Especialista em cor"
+                width="600" height="800"
+                loading="lazy"
+              >
+              <div class="stylist-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="stylist-card__body">
+              <h3 class="stylist-card__name">Leonor Silva</h3>
+              <p class="stylist-card__role">Cor &amp; Balayage</p>
+              <p class="stylist-card__bio">Colorista certificada com formação especializada em técnicas de mechas e balayage. A sua abordagem privilegia resultados naturais e duradouros.</p>
+              <div class="stylist-card__actions">
+                <a href="stylist-detail.html" class="btn btn--secondary btn--sm">Ver perfil</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Marcar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="stylist-card reveal reveal--delay-2">
+            <div class="stylist-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80"
+                alt="Rui Almeida — Corte e styling masculino"
+                width="600" height="800"
+                loading="lazy"
+              >
+              <div class="stylist-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="stylist-card__body">
+              <h3 class="stylist-card__name">Rui Almeida</h3>
+              <p class="stylist-card__role">Corte &amp; Styling</p>
+              <p class="stylist-card__bio">Especialista em cortes masculinos e femininos com 10 anos de experiência em salões de referência em Lisboa e Madrid.</p>
+              <div class="stylist-card__actions">
+                <a href="stylist-detail.html" class="btn btn--secondary btn--sm">Ver perfil</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Marcar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="stylist-card reveal reveal--delay-3">
+            <div class="stylist-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1573230868640-9e7a9bc87d23?auto=format&fit=crop&w=600&q=80"
+                alt="Sofia Martins — Penteados e noivas"
+                width="600" height="800"
+                loading="lazy"
+              >
+              <div class="stylist-card__overlay" aria-hidden="true"></div>
+            </div>
+            <div class="stylist-card__body">
+              <h3 class="stylist-card__name">Sofia Martins</h3>
+              <p class="stylist-card__role">Noivas &amp; Penteados</p>
+              <p class="stylist-card__bio">Especialista em penteados de noiva e occasions styling. Já participou em mais de 200 casamentos em Portugal e no estrangeiro.</p>
+              <div class="stylist-card__actions">
+                <a href="stylist-detail.html" class="btn btn--secondary btn--sm">Ver perfil</a>
+                <a href="booking.html" class="btn btn--primary btn--sm">Marcar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top:var(--space-12);">
+          <a href="team.html" class="btn btn--secondary">Conhecer toda a equipa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Processo de atendimento ───────────────────────────────────── -->
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        <div class="home-process">
+          <div>
+            <div class="reveal">
+              <p class="eyebrow">Como trabalhamos</p>
+              <h2 id="process-title" class="section-title">O nosso processo<br>de atendimento.</h2>
+              <p class="section-subtitle">
+                Cada visita segue um percurso pensado para garantir o melhor resultado possível, sem surpresas.
+              </p>
+            </div>
+
+            <div class="process-step reveal">
+              <div class="process-step__number" aria-hidden="true">01</div>
+              <div class="process-step__content">
+                <h3 class="process-step__title">Escuta ativa</h3>
+                <p class="process-step__desc">
+                  Começamos sempre por ouvir. O que traz, o que já tentou, o que gosta e o que quer evitar. Esta conversa é tão importante como qualquer técnica.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal--delay-1">
+              <div class="process-step__number" aria-hidden="true">02</div>
+              <div class="process-step__content">
+                <h3 class="process-step__title">Diagnóstico capilar</h3>
+                <p class="process-step__desc">
+                  Analisamos o estado do cabelo: estrutura, historial de cor, nível de hidratação, couro cabeludo e comportamento natural.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal--delay-2">
+              <div class="process-step__number" aria-hidden="true">03</div>
+              <div class="process-step__content">
+                <h3 class="process-step__title">Proposta personalizada</h3>
+                <p class="process-step__desc">
+                  Apresentamos uma proposta concreta: técnicas, produtos, resultado esperado, manutenção necessária e preço final.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal--delay-3">
+              <div class="process-step__number" aria-hidden="true">04</div>
+              <div class="process-step__content">
+                <h3 class="process-step__title">Serviço com detalhe</h3>
+                <p class="process-step__desc">
+                  O serviço é executado com total atenção e sem pressa. Cada etapa é explicada e qualquer dúvida esclarecida no momento.
+                </p>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal--delay-4">
+              <div class="process-step__number" aria-hidden="true">05</div>
+              <div class="process-step__content">
+                <h3 class="process-step__title">Orientação para casa</h3>
+                <p class="process-step__desc">
+                  Saída acompanhada por recomendações de manutenção, produtos adequados e sugestão de próxima visita para manter o resultado.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-process__visual reveal reveal--right">
+            <img
+              src="https://images.unsplash.com/photo-1582095133179-bfd08e2195b5?auto=format&fit=crop&w=900&q=80"
+              alt="Cabeleireira a realizar diagnóstico capilar"
+              width="900" height="1200"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Galeria prévia ────────────────────────────────────────────── -->
+    <section class="section section--surface" aria-labelledby="gallery-title">
+      <div class="container container--xl">
+        <div class="section-heading--center reveal">
+          <p class="eyebrow">Trabalhos recentes</p>
+          <h2 id="gallery-title" class="section-title">Resultados que falam<br>por si próprios.</h2>
+        </div>
+
+        <div class="gallery-grid" id="home-gallery">
+          <div class="gallery-item reveal" data-category="corte" tabindex="0" role="button" aria-label="Ver imagem: Corte bob estrutural">
+            <img
+              src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80"
+              alt="Corte bob estrutural com finalização perfeita"
+              width="600" height="800"
+              loading="lazy"
+            >
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__category">Corte</span>
+              <h3 class="gallery-item__title">Bob estrutural</h3>
+              <span class="gallery-item__stylist">Mariana Costa</span>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal reveal--delay-1" data-category="cor" tabindex="0" role="button" aria-label="Ver imagem: Balayage mel e caramel">
+            <img
+              src="https://images.unsplash.com/photo-1626196340012-1e7f6acfb66c?auto=format&fit=crop&w=600&q=80"
+              alt="Balayage tons mel e caramel com movimento natural"
+              width="600" height="500"
+              loading="lazy"
+            >
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__category">Balayage</span>
+              <h3 class="gallery-item__title">Tons mel e caramel</h3>
+              <span class="gallery-item__stylist">Leonor Silva</span>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal reveal--delay-2" data-category="cor" tabindex="0" role="button" aria-label="Ver imagem: Coloração vermelha intensa">
+            <img
+              src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
+              alt="Coloração vermelha intensa e brilhante"
+              width="600" height="750"
+              loading="lazy"
+            >
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__category">Coloração</span>
+              <h3 class="gallery-item__title">Vermelho intenso</h3>
+              <span class="gallery-item__stylist">Leonor Silva</span>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal" data-category="noivas" tabindex="0" role="button" aria-label="Ver imagem: Penteado nupcial romântico">
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80"
+              alt="Penteado nupcial com acessório floral"
+              width="600" height="750"
+              loading="lazy"
+            >
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__category">Noivas</span>
+              <h3 class="gallery-item__title">Penteado nupcial</h3>
+              <span class="gallery-item__stylist">Sofia Martins</span>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal reveal--delay-1" data-category="tratamentos" tabindex="0" role="button" aria-label="Ver imagem: Cabelo tratado com brillo natural">
+            <img
+              src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=600&q=80"
+              alt="Resultado de tratamento: cabelo com brilho e leveza"
+              width="600" height="500"
+              loading="lazy"
+            >
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__category">Tratamentos</span>
+              <h3 class="gallery-item__title">Brilho e leveza</h3>
+              <span class="gallery-item__stylist">Mariana Costa</span>
+            </div>
+          </div>
+
+          <div class="gallery-item reveal reveal--delay-2" data-category="corte" tabindex="0" role="button" aria-label="Ver imagem: Corte masculino contemporâneo">
+            <img
+              src="https://images.unsplash.com/photo-1605461803135-e4d3db3fa3bc?auto=format&fit=crop&w=600&q=80"
+              alt="Corte masculino contemporâneo com degradê"
+              width="600" height="750"
+              loading="lazy"
+            >
+            <div class="gallery-item__overlay">
+              <span class="gallery-item__category">Masculino</span>
+              <h3 class="gallery-item__title">Corte contemporâneo</h3>
+              <span class="gallery-item__stylist">Rui Almeida</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+          <button class="lightbox__close" aria-label="Fechar">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="lightbox__prev" aria-label="Imagem anterior">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="lightbox__next" aria-label="Próxima imagem">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="lightbox__content">
+            <img src="" alt="" width="1200" height="900">
+          </div>
+          <div class="lightbox__caption" aria-live="polite"></div>
+        </div>
+
+        <div class="text-center" style="margin-top:var(--space-12);">
+          <a href="gallery.html" class="btn btn--secondary">Ver galeria completa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Testemunhos ───────────────────────────────────────────────── -->
+    <section class="section" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-heading--center reveal">
+          <p class="eyebrow">O que dizem</p>
+          <h2 id="testimonials-title" class="section-title">Clientes que voltam<br>e recomendam.</h2>
+        </div>
+
+        <div class="grid grid--2" style="gap:var(--space-6);">
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__mark" aria-hidden="true">"</div>
+            <p class="testimonial-card__quote">
+              "Fui pela primeira vez ao Lume para fazer uma balayage e saí com o cabelo que sempre quis. A Leonor explicou cada passo, foi completamente honesta sobre o processo e o resultado superou tudo o que eu esperava."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Retrato de Ana Ferreira" width="100" height="100" loading="lazy">
+              </div>
+              <div>
+                <p class="testimonial-card__name">Ana Ferreira</p>
+                <p class="testimonial-card__service">Balayage dourada · <span class="testimonial-card__stylist">Leonor Silva</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal--delay-1">
+            <div class="testimonial-card__mark" aria-hidden="true">"</div>
+            <p class="testimonial-card__quote">
+              "Procurava um lugar onde me ouvissem de verdade. No Lume, a Mariana percebeu exatamente o que eu queria mesmo antes de eu conseguir explicar. Vou há três anos e nunca considerei mudar."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=100&q=80" alt="Retrato de Sara Lopes" width="100" height="100" loading="lazy">
+              </div>
+              <div>
+                <p class="testimonial-card__name">Sara Lopes</p>
+                <p class="testimonial-card__service">Corte e styling · <span class="testimonial-card__stylist">Mariana Costa</span> · cliente habitual</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal--delay-2">
+            <div class="testimonial-card__mark" aria-hidden="true">"</div>
+            <p class="testimonial-card__quote">
+              "A Sofia fez o meu penteado de noiva e foi perfeita. Tivemos uma sessão de teste meses antes, ela guardou todos os detalhes e no dia estava tudo exatamente como queríamos. Recomendo a qualquer noiva."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://images.unsplash.com/photo-1573230868640-9e7a9bc87d23?auto=format&fit=crop&w=100&q=80" alt="Retrato de Catarina Mendes" width="100" height="100" loading="lazy">
+              </div>
+              <div>
+                <p class="testimonial-card__name">Catarina Mendes</p>
+                <p class="testimonial-card__service">Penteado de noiva · <span class="testimonial-card__stylist">Sofia Martins</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal--delay-3">
+            <div class="testimonial-card__mark" aria-hidden="true">"</div>
+            <p class="testimonial-card__quote">
+              "Sempre tive receio de salões de cabeleireiro — cortes que não ficavam bem, cores que desbotavam rápido. No Lume encontrei finalmente um espaço onde me sinto à vontade e onde os resultados são consistentes."
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80" alt="Retrato de Miguel Santos" width="100" height="100" loading="lazy">
+              </div>
+              <div>
+                <p class="testimonial-card__name">Miguel Santos</p>
+                <p class="testimonial-card__service">Corte masculino · <span class="testimonial-card__stylist">Rui Almeida</span> · cliente habitual</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Produtos ──────────────────────────────────────────────────── -->
+    <section class="section section--surface" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Cuidado em casa</p>
+          <h2 id="products-title" class="section-title">Os produtos que<br>recomendamos.</h2>
+          <p class="section-subtitle" style="max-width:44ch;">
+            Selecionamos apenas produtos de desempenho comprovado, que complementam os serviços que realizamos no salão.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <div class="product-card reveal">
+            <div class="product-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1585232361-5af9aba4c5e0?auto=format&fit=crop&w=400&q=80"
+                alt="Champô nutritivo de uso diário"
+                width="400" height="400"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__type">Champô</div>
+            <h3 class="product-card__name">Nutritive Daily</h3>
+            <p class="product-card__desc">Fórmula suave para lavagem frequente. Preserva a cor e hidrata sem pesar.</p>
+            <p class="product-card__price">18 €</p>
+            <a href="contact.html" class="btn btn--outline btn--sm">Pedir aconselhamento</a>
+          </div>
+
+          <div class="product-card reveal reveal--delay-1">
+            <div class="product-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=400&q=80"
+                alt="Máscara reparadora de hidratação intensa"
+                width="400" height="400"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__type">Máscara</div>
+            <h3 class="product-card__name">Repair Intense</h3>
+            <p class="product-card__desc">Tratamento semanal para cabelo danificado ou quimicamente tratado. Reconstrói a fibra capilar.</p>
+            <p class="product-card__price">24 €</p>
+            <a href="contact.html" class="btn btn--outline btn--sm">Pedir aconselhamento</a>
+          </div>
+
+          <div class="product-card reveal reveal--delay-2">
+            <div class="product-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1619085819929-b12a5ed72ead?auto=format&fit=crop&w=400&q=80"
+                alt="Sérum de brilho para finalização"
+                width="400" height="400"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__type">Sérum</div>
+            <h3 class="product-card__name">Shine Serum</h3>
+            <p class="product-card__desc">Sérum leve para finalização. Elimina o frizz, adiciona brilho e define sem engordurar.</p>
+            <p class="product-card__price">22 €</p>
+            <a href="contact.html" class="btn btn--outline btn--sm">Pedir aconselhamento</a>
+          </div>
+
+          <div class="product-card reveal reveal--delay-3">
+            <div class="product-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80"
+                alt="Protetor térmico antes do uso de calor"
+                width="400" height="400"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__type">Protetor térmico</div>
+            <h3 class="product-card__name">Heat Shield Pro</h3>
+            <p class="product-card__desc">Proteção até 230°C. Aplica-se antes de qualquer ferramenta de calor. Mantém a hidratação.</p>
+            <p class="product-card__price">19 €</p>
+            <a href="contact.html" class="btn btn--outline btn--sm">Pedir aconselhamento</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Marcação rápida ────────────────────────────────────────────── -->
+    <section class="quick-booking" aria-labelledby="quickbook-title">
+      <div class="container">
+        <div class="section-heading--center reveal">
+          <p class="eyebrow" style="color:var(--color-accent-light);">Marque agora</p>
+          <h2 id="quickbook-title" class="section-title text-white">Pronto para a próxima<br>visita?</h2>
+          <p class="section-subtitle" style="color:rgba(255,255,255,0.6);">
+            Marcação online em menos de 2 minutos. Escolha o serviço, a profissional e o horário que lhe convém.
+          </p>
+        </div>
+
+        <div class="quick-booking__form" style="max-width:62rem;margin-inline:auto;">
+          <div class="form-group" style="margin:0;">
+            <label class="form-label" style="color:rgba(255,255,255,0.55);" for="qb-service">Serviço</label>
+            <div class="form-select-wrapper">
+              <select class="form-select" id="qb-service" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:#fff;">
+                <option value="">Escolher serviço</option>
+                <option>Corte e finalização</option>
+                <option>Coloração</option>
+                <option>Balayage</option>
+                <option>Tratamento</option>
+                <option>Penteado</option>
+                <option>Consulta de noiva</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin:0;">
+            <label class="form-label" style="color:rgba(255,255,255,0.55);" for="qb-stylist">Profissional</label>
+            <div class="form-select-wrapper">
+              <select class="form-select" id="qb-stylist" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:#fff;">
+                <option value="">Qualquer disponível</option>
+                <option>Mariana Costa</option>
+                <option>Leonor Silva</option>
+                <option>Rui Almeida</option>
+                <option>Sofia Martins</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin:0;">
+            <label class="form-label" style="color:rgba(255,255,255,0.55);" for="qb-date">Data</label>
+            <input type="date" class="form-input" id="qb-date" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:#fff;">
+          </div>
+          <div class="form-group" style="margin:0;">
+            <label class="form-label" style="color:rgba(255,255,255,0.55);" for="qb-time">Hora</label>
+            <div class="form-select-wrapper">
+              <select class="form-select" id="qb-time" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:#fff;">
+                <option value="">Escolher hora</option>
+                <option>09:00</option><option>09:30</option><option>10:00</option>
+                <option>10:30</option><option>11:00</option><option>11:30</option>
+                <option>14:00</option><option>14:30</option><option>15:00</option>
+                <option>15:30</option><option>16:00</option><option>17:00</option>
+                <option>18:00</option><option>19:00</option>
+              </select>
+            </div>
+          </div>
+          <a href="booking.html" class="btn btn--primary btn--lg" style="white-space:nowrap;align-self:flex-end;padding-bottom:1rem;padding-top:1rem;">
+            Ver disponibilidade
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Informação prática ────────────────────────────────────────── -->
+    <section class="section" aria-labelledby="info-title">
+      <div class="container">
+        <div class="section-heading--center reveal">
+          <p class="eyebrow">Como chegar</p>
+          <h2 id="info-title" class="section-title">Estamos no coração<br>de Lisboa.</h2>
+        </div>
+
+        <div class="info-section">
+          <div class="info-block reveal">
+            <div class="info-block__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M16 3C11 3 7 7 7 12c0 7 9 17 9 17s9-10 9-17c0-5-4-9-9-9z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <circle cx="16" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="info-block__title">Localização</h3>
+            <div class="info-block__content">
+              <p>Rua do Século, 42<br>1200-433 Lisboa<br>Bairro do Chiado</p>
+              <p style="margin-top:var(--space-3);">Metro: Baixa-Chiado (linha azul e verde)<br>Bus: 758, 790<br>Parque: Atrium Saldanha, 10 min a pé</p>
+            </div>
+          </div>
+
+          <div class="info-block reveal reveal--delay-1">
+            <div class="info-block__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16 8v8l5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="info-block__title">Horário</h3>
+            <div class="info-block__content">
+              <p>Segunda a sexta: 9h–20h<br>Sábado: 9h–18h<br>Domingo: encerrado</p>
+              <p style="margin-top:var(--space-3);">Aceita marcações até 24h antes.<br>Marcações de noiva com consulta prévia.</p>
+            </div>
+          </div>
+
+          <div class="info-block reveal reveal--delay-2">
+            <div class="info-block__icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <rect x="6" y="8" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6 13h20" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="10" cy="18" r="1.5" fill="currentColor"/>
+                <circle cx="16" cy="18" r="1.5" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="info-block__title">Pagamento</h3>
+            <div class="info-block__content">
+              <p>Dinheiro, Multibanco, MB Way, Visa, Mastercard.</p>
+              <p style="margin-top:var(--space-3);">Cancelamento gratuito até 24h antes. Cancelamentos tardios ou faltas podem implicar uma taxa de reserva de 20 €.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Instagram visual ──────────────────────────────────────────── -->
+    <section class="section section--surface" aria-labelledby="instagram-title">
+      <div class="container container--xl">
+        <div class="section-heading--center reveal">
+          <p class="eyebrow">@lumehavrstudio</p>
+          <h2 id="instagram-title" class="section-title">Acompanhe o nosso<br>trabalho no Instagram.</h2>
+        </div>
+
+        <div class="instagram-grid" aria-label="Publicações recentes do Instagram">
+          <div class="instagram-item reveal">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=400&q=75" alt="Corte moderno — publicação Instagram" width="400" height="400" loading="lazy">
+            <div class="instagram-item__overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" rx="6" stroke="white" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="white" stroke-width="1.5"/><circle cx="20.5" cy="7.5" r="1.5" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="instagram-item reveal reveal--delay-1">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=400&q=75" alt="Balayage natural — publicação Instagram" width="400" height="400" loading="lazy">
+            <div class="instagram-item__overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" rx="6" stroke="white" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="white" stroke-width="1.5"/><circle cx="20.5" cy="7.5" r="1.5" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="instagram-item reveal reveal--delay-2">
+            <img src="https://images.unsplash.com/photo-1626196340012-1e7f6acfb66c?auto=format&fit=crop&w=400&q=75" alt="Cor mel e dourado — publicação Instagram" width="400" height="400" loading="lazy">
+            <div class="instagram-item__overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" rx="6" stroke="white" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="white" stroke-width="1.5"/><circle cx="20.5" cy="7.5" r="1.5" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="instagram-item reveal reveal--delay-1">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=75" alt="Penteado noiva — publicação Instagram" width="400" height="400" loading="lazy">
+            <div class="instagram-item__overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" rx="6" stroke="white" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="white" stroke-width="1.5"/><circle cx="20.5" cy="7.5" r="1.5" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="instagram-item reveal reveal--delay-2">
+            <img src="https://images.unsplash.com/photo-1582095133179-bfd08e2195b5?auto=format&fit=crop&w=400&q=75" alt="Profissional a trabalhar — publicação Instagram" width="400" height="400" loading="lazy">
+            <div class="instagram-item__overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" rx="6" stroke="white" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="white" stroke-width="1.5"/><circle cx="20.5" cy="7.5" r="1.5" fill="white"/></svg>
+            </div>
+          </div>
+          <div class="instagram-item reveal reveal--delay-3">
+            <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=400&q=75" alt="Detalhe de textura de cabelo — publicação Instagram" width="400" height="400" loading="lazy">
+            <div class="instagram-item__overlay" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" rx="6" stroke="white" stroke-width="1.5"/><circle cx="14" cy="14" r="5" stroke="white" stroke-width="1.5"/><circle cx="20.5" cy="7.5" r="1.5" fill="white"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Newsletter ────────────────────────────────────────────────── -->
+    <section class="section section--dark" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center;">
+          <div class="reveal">
+            <p class="eyebrow" style="color:var(--color-accent-light);">Fique a par</p>
+            <h2 id="newsletter-title" class="section-title text-white" style="margin-bottom:var(--space-4);">Tendências, dicas e<br>novidades do Lume.</h2>
+            <p style="color:rgba(255,255,255,0.6);margin-bottom:0;">
+              Subscreva a nossa newsletter mensal para receber os artigos mais recentes do Journal, promoções exclusivas e novidades do salão.
+            </p>
+          </div>
+          <div class="reveal reveal--right">
+            <form class="newsletter-form newsletter-form--dark" data-validate>
+              <input type="email" placeholder="O seu email" aria-label="Endereço de email" required>
+              <button type="submit" class="btn btn--primary">Subscrever</button>
+            </form>
+            <p class="newsletter-success" style="display:none;color:rgba(255,255,255,0.8);font-size:0.875rem;margin-top:0.75rem;">
+              Subscrito com sucesso. Bem-vindo à comunidade Lume.
+            </p>
+            <p style="font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:0.75rem;">
+              Sem spam. Cancelamento a qualquer momento. Consulte a nossa
+              <a href="#" style="color:rgba(255,255,255,0.5);">política de privacidade</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ───────────────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Coluna 1 -->
+        <div>
+          <div class="footer-logo">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true" style="color:#fff;">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="20" cy="20" r="2" fill="currentColor"/>
+            </svg>
+            <div class="footer-logo-text">
+              Lume
+              <span>Hair Studio</span>
+            </div>
+          </div>
+          <p class="footer-tagline">Cabelo com identidade, técnica e intenção. Um espaço criado para quem valoriza o detalhe.</p>
+          <div class="footer-social" aria-label="Redes sociais">
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Pinterest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.23-5.21 1.23-5.21s-.31-.63-.31-1.56c0-1.46.85-2.55 1.91-2.55.9 0 1.34.67 1.34 1.49 0 .91-.58 2.26-.88 3.51-.25 1.05.52 1.9 1.55 1.9 1.87 0 3.12-2.39 3.12-5.23 0-2.16-1.46-3.67-3.55-3.67-2.42 0-3.84 1.81-3.84 3.69 0 .73.28 1.51.63 1.94.07.08.08.16.06.24l-.23.96c-.04.15-.13.18-.29.11-1.07-.5-1.74-2.07-1.74-3.33 0-2.71 1.97-5.2 5.68-5.2 2.98 0 5.3 2.12 5.3 4.96 0 2.96-1.87 5.34-4.46 5.34-.87 0-1.69-.45-1.97-0.99l-.54 2.01c-.2.75-.73 1.69-1.08 2.26.81.25 1.67.38 2.56.38 5.52 0 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="1" fill="currentColor" opacity=".8"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2 -->
+        <nav aria-label="Serviços">
+          <h3 class="footer-heading">Serviços</h3>
+          <ul class="footer-nav-list" role="list">
+            <li><a href="services.html" class="footer-nav-link">Corte e styling</a></li>
+            <li><a href="services.html" class="footer-nav-link">Coloração</a></li>
+            <li><a href="service-detail.html" class="footer-nav-link">Balayage</a></li>
+            <li><a href="services.html" class="footer-nav-link">Tratamentos</a></li>
+            <li><a href="services.html" class="footer-nav-link">Penteados</a></li>
+            <li><a href="bridal.html" class="footer-nav-link">Noivas</a></li>
+            <li><a href="services.html" class="footer-nav-link">Serviços masculinos</a></li>
+          </ul>
+        </nav>
+
+        <!-- Coluna 3 -->
+        <nav aria-label="Páginas do site">
+          <h3 class="footer-heading">Lume</h3>
+          <ul class="footer-nav-list" role="list">
+            <li><a href="about.html" class="footer-nav-link">Sobre nós</a></li>
+            <li><a href="team.html" class="footer-nav-link">A nossa equipa</a></li>
+            <li><a href="gallery.html" class="footer-nav-link">Galeria de trabalhos</a></li>
+            <li><a href="journal.html" class="footer-nav-link">Journal</a></li>
+            <li><a href="booking.html" class="footer-nav-link">Marcações online</a></li>
+            <li><a href="contact.html" class="footer-nav-link">Contactos</a></li>
+          </ul>
+        </nav>
+
+        <!-- Coluna 4 -->
+        <div>
+          <h3 class="footer-heading">Contacto</h3>
+          <div class="footer-info">
+            <address>
+              Rua do Século, 42<br>
+              1200-433 Lisboa<br>
+              Chiado
+            </address>
+            <p>
+              <a href="tel:+351912345678">+351 912 345 678</a><br>
+              <a href="mailto:geral@lumehair.pt">geral@lumehair.pt</a>
+            </p>
+            <p style="margin-top:var(--space-4);">
+              Seg–Sex: 9h–20h<br>
+              Sáb: 9h–18h
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Lume Hair Studio. Todos os direitos reservados.</p>
+        <div class="footer-legal-links">
+          <a href="#">Política de privacidade</a>
+          <a href="#">Termos e condições</a>
+          <a href="#">Política de cancelamento</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

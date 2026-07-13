@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Receitas | Mercado da Vila</title>
+    <meta name="description" content="Receitas sazonais do Mercado da Vila com pesquisa, filtros e ligação direta a ingredientes." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="recipes">
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+    <header class="site-header" data-site-header>
+      <div class="header-topbar"><div class="container-wide"><p>Receitas ligadas aos produtos da loja</p><p>Pesquisa por ingrediente, refeição, tempo e sazonalidade</p></div></div>
+      <div class="header-main"><div class="container-wide"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M12 31c7-2 10-7 12-17 8 4 11 12 12 23-8 0-19-1-24-6Z" fill="currentColor" /><path d="M15 26c5 0 10 3 14 9" stroke="#fffdf9" stroke-width="2.2" stroke-linecap="round" /></svg></span><span><strong class="brand-name">Mercado da Vila</strong><span class="brand-subtitle">Desde 1987</span></span></a><nav class="nav-desktop" aria-label="Navegação principal"><ul class="nav-list"><li><a class="nav-link" data-nav="shop" href="shop.html">Loja</a></li><li><a class="nav-link" data-nav="promotions" href="promotions.html">Promoções</a></li><li><a class="nav-link" href="shop.html#cabazes">Cabazes</a></li><li><a class="nav-link" data-nav="delivery" href="delivery.html">Entregas</a></li><li><a class="nav-link" data-nav="recipes" href="recipes.html">Receitas</a></li><li><a class="nav-link" data-nav="about" href="about.html">Sobre</a></li><li><a class="nav-link" data-nav="contact" href="contact.html">Contactos</a></li></ul></nav><div class="header-actions"><form class="search-inline" data-global-search><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8" /><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg><label class="sr-only" for="global-search-recipes">Pesquisar</label><input id="global-search-recipes" name="search" type="search" placeholder="Pesquisar produtos" /></form><a class="header-cart" href="cart.html"><span>Carrinho</span><span class="cart-count" data-cart-count>0</span></a><a class="btn btn-primary" href="shop.html">Encomendar</a></div><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-mobile"><span class="sr-only">Abrir menu</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg></button></div></div>
+      <aside class="mobile-menu" id="menu-mobile" data-mobile-menu aria-label="Menu mobile"><nav><ul class="mobile-nav-list"><li><a class="mobile-nav-link" href="shop.html">Loja</a></li><li><a class="mobile-nav-link" href="promotions.html">Promoções</a></li><li><a class="mobile-nav-link" href="delivery.html">Entregas</a></li><li><a class="mobile-nav-link" href="recipes.html">Receitas</a></li><li><a class="mobile-nav-link" href="about.html">Sobre</a></li><li><a class="mobile-nav-link" href="contact.html">Contactos</a></li><li><a class="mobile-nav-link" href="cart.html">Carrinho <span class="cart-count" data-cart-count>0</span></a></li></ul></nav></aside>
+    </header>
+    <main id="conteudo">
+      <section class="page-intro">
+        <div class="container-wide page-intro-grid">
+          <div class="reveal">
+            <span class="eyebrow">Receitas</span>
+            <h1>Cozinha da época para aproveitar melhor o que entra hoje na loja.</h1>
+            <p>Receitas rápidas, económicas e sazonais, pensadas para famílias, almoços leves e refeições de semana.</p>
+          </div>
+          <div class="page-intro-panel surface-paper reveal">
+            <strong>Receita em destaque</strong>
+            <p><a class="inline-link" href="recipe-detail.html">Salada de pêssego, queijo curado e nozes</a> · pronta em 15 minutos.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container-wide split-layout">
+          <aside class="filters-panel reveal">
+            <h2>Pesquisa e filtros</h2>
+            <form data-recipe-filters>
+              <div class="control-bar">
+                <div><label for="recipe-search">Pesquisar</label><input class="field" id="recipe-search" name="search" type="search" placeholder="Ex.: tomate, sopa, pêssego" /></div>
+                <div class="checkbox-row">
+                  <label class="choice-chip"><input type="checkbox" name="pequeno-almoco" /> Pequeno-almoço</label>
+                  <label class="choice-chip"><input type="checkbox" name="almoco" /> Almoço</label>
+                  <label class="choice-chip"><input type="checkbox" name="jantar" /> Jantar</label>
+                  <label class="choice-chip"><input type="checkbox" name="sobremesa" /> Sobremesa</label>
+                  <label class="choice-chip"><input type="checkbox" name="vegetariano" /> Vegetariano</label>
+                  <label class="choice-chip"><input type="checkbox" name="rapido" /> Rápido</label>
+                  <label class="choice-chip"><input type="checkbox" name="economico" /> Económico</label>
+                  <label class="choice-chip"><input type="checkbox" name="sazonal" /> Sazonal</label>
+                </div>
+              </div>
+            </form>
+          </aside>
+          <div class="reveal">
+            <div class="control-bar">
+              <div class="info-panel">
+                <strong data-recipe-count>0 receitas</strong>
+                <p>Resultados filtrados no frontend sem recarregar a página.</p>
+              </div>
+            </div>
+            <div class="recipe-grid" data-recipe-grid="all"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container-wide"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M12 31c7-2 10-7 12-17 8 4 11 12 12 23-8 0-19-1-24-6Z" fill="currentColor" /><path d="M15 26c5 0 10 3 14 9" stroke="#fffdf9" stroke-width="2.2" stroke-linecap="round" /></svg></span><span><strong class="brand-name">Mercado da Vila</strong><span class="brand-subtitle">Desde 1987</span></span></a><p>Rua do Mercado, 18 · 4785-112 Vila do Ave</p><p>+351 252 840 210 · ola@mercadodavila.pt</p></div><div class="footer-column"><h3>Receitas</h3><ul><li><a href="recipes.html">Arquivo</a></li><li><a href="recipe-detail.html">Receita em destaque</a></li><li><a href="shop.html">Ingredientes</a></li></ul></div><div class="footer-column"><h3>Serviço</h3><ul><li><a href="delivery.html">Entregas</a></li><li><a href="cart.html">Carrinho</a></li><li><a href="contact.html">Contactos</a></li></ul></div><div class="footer-column"><h3>Informação</h3><ul><li><a href="about.html">Sobre</a></li><li><a href="contact.html">Livro de reclamações</a></li><li><p>Pagamentos: MB Way · Multibanco · Numerário · Cartão</p></li></ul></div></div><div class="footer-meta"><p>Receitas ligadas ao ritmo da banca e da época.</p><p>© 2026 Mercado da Vila.</p></div></div></footer>
+  </body>
+</html>

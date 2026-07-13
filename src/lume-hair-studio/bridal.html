@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Noivas — Lume Hair Studio. Penteados de noiva em Lisboa. Pacotes personalizados, teste de penteado, deslocação ao local e preparação completa para o dia mais especial da sua vida.">
+  <title>Noivas — Lume Hair Studio</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <!-- ─── Header ─────────────────────────────────────────────────────── -->
+  <header class="site-header site-header--light" id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Lume Hair Studio — Página inicial">
+        <svg class="header-logo-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
+        <div class="header-logo-text">Lume<span>Hair Studio</span></div>
+      </a>
+      <nav class="header-nav" role="navigation" aria-label="Navegação principal">
+        <ul class="nav-list" role="list">
+          <li><a href="services.html" class="nav-link" data-nav-link>Serviços</a></li>
+          <li><a href="team.html" class="nav-link" data-nav-link>Equipa</a></li>
+          <li><a href="gallery.html" class="nav-link" data-nav-link>Trabalhos</a></li>
+          <li><a href="bridal.html" class="nav-link" data-nav-link aria-current="page">Noivas</a></li>
+          <li><a href="journal.html" class="nav-link" data-nav-link>Journal</a></li>
+          <li><a href="about.html" class="nav-link" data-nav-link>Sobre</a></li>
+          <li><a href="contact.html" class="nav-link" data-nav-link>Contactos</a></li>
+        </ul>
+        <a href="booking.html" class="btn btn--header">Marcar visita</a>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+    <ul class="mobile-nav-list" role="list">
+      <li><a href="services.html" class="mobile-nav-link" data-nav-link>Serviços</a></li>
+      <li><a href="team.html" class="mobile-nav-link" data-nav-link>Equipa</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link" data-nav-link>Trabalhos</a></li>
+      <li><a href="bridal.html" class="mobile-nav-link" data-nav-link aria-current="page">Noivas</a></li>
+      <li><a href="journal.html" class="mobile-nav-link" data-nav-link>Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link" data-nav-link>Sobre</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" data-nav-link>Contactos</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary">Marcar visita</a>
+      <p class="mobile-nav-contact">Rua do Século, 42 · Lisboa · <a href="tel:+351912345678">+351 912 345 678</a></p>
+    </div>
+  </nav>
+
+  <!-- ─── Main ───────────────────────────────────────────────────────── -->
+  <main id="main" tabindex="-1">
+
+    <!-- 1. Bridal Hero -->
+    <section class="bridal-hero" aria-label="Cabeçalho da página de noivas">
+      <div class="bridal-hero__bg">
+        <img
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80"
+          alt="Noiva com penteado elegante"
+          width="1600" height="1067"
+        >
+      </div>
+      <div class="bridal-hero__content container">
+        <p class="eyebrow" style="color:rgba(255,255,255,0.7);">Para o seu dia especial</p>
+        <h1 class="bridal-hero__title"><em>Um momento que merece ser perfeito.</em></h1>
+        <p class="bridal-hero__subtitle">Mais do que um penteado — uma experiência cuidada, tranquila e completamente personalizada para o dia mais importante da sua vida.</p>
+        <div class="editorial-hero__actions">
+          <a href="#proposal-form" class="btn btn--primary btn--lg">Pedir proposta</a>
+          <a href="#packages" class="btn btn--ghost btn--lg">Ver pacotes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Intro Editorial -->
+    <section class="section" aria-labelledby="bridal-intro-heading">
+      <div class="container">
+        <div class="service-feature">
+          <div class="service-feature__image">
+            <div class="service-feature__image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1465495976277-a5fdc77d3d59?auto=format&fit=crop&w=900&q=80"
+                alt="Sofia Martins, especialista em noivas, a trabalhar num penteado nupcial"
+                width="900" height="1125"
+                loading="lazy"
+              >
+            </div>
+          </div>
+          <div class="service-feature__content">
+            <p class="eyebrow">A nossa especialista</p>
+            <div class="divider"></div>
+            <h2 id="bridal-intro-heading">Sofia Martins,<br>especialista em noivas</h2>
+            <p class="section-subtitle">Com mais de uma década de experiência exclusivamente dedicada a cerimónias nupciais, Sofia Martins é a força criativa por detrás de cada experiência de noiva no Lume.</p>
+            <p style="margin-top:1.5rem;">A nossa filosofia é simples: o penteado da noiva deve ser uma extensão da sua personalidade, não uma imposição de tendência. Por isso, cada processo começa com uma conversa — sobre quem é, o que a faz sentir confiante e que memórias quer guardar nas fotografias.</p>
+            <p>O processo inclui sempre uma sessão de teste realizada dois a três meses antes do casamento, onde experimentamos diferentes opções, testamos a compatibilidade dos acessórios e garantimos que o estilo escolhido aguenta a duração do dia. No próprio dia, estamos presentes desde a preparação até à última fotografia.</p>
+            <p>Para casamentos com várias acompanhantes, coordenamos uma equipa de apoio que trabalha em paralelo, garantindo que toda a preparação corre dentro do tempo previsto.</p>
+            <div class="flex flex--gap-8" style="margin-top:2.5rem;">
+              <div class="stat-block">
+                <div class="stat-block__number" data-count="200" data-suffix="+">200+</div>
+                <p class="stat-block__label">Noivas acompanhadas</p>
+              </div>
+              <div class="stat-block">
+                <div class="stat-block__number" data-count="10" data-suffix=" anos">10 anos</div>
+                <p class="stat-block__label">De experiência nupcial</p>
+              </div>
+            </div>
+            <div style="margin-top:2.5rem;">
+              <a href="#proposal-form" class="btn btn--primary">Iniciar o processo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Bridal Services Grid -->
+    <section class="section section--surface" aria-labelledby="bridal-services-heading">
+      <div class="container">
+        <div class="section-heading--center">
+          <p class="eyebrow">O que oferecemos</p>
+          <h2 id="bridal-services-heading">Serviços para noivas</h2>
+          <p class="section-subtitle">Cada serviço foi pensado para acompanhar a noiva em diferentes fases do processo — desde os primeiros testes até ao grande dia.</p>
+        </div>
+        <div class="bridal-services-grid" role="list">
+
+          <article class="bridal-service-item reveal" role="listitem">
+            <div class="bridal-service-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);letter-spacing:var(--tracking-tight);margin-bottom:var(--space-2);">Teste de penteado</h3>
+            <p style="font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-3);">2–3 meses antes · 1h30 · Desde 80 €</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--leading-relaxed);">A sessão de teste é o momento onde explorámos diferentes estilos, testamos acessórios e garantimos que o resultado final se adequa ao rosto, ao vestido e à personalidade da noiva. Fundamental para entrar no dia do casamento com total confiança.</p>
+          </article>
+
+          <article class="bridal-service-item reveal reveal--delay-1" role="listitem">
+            <div class="bridal-service-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);letter-spacing:var(--tracking-tight);margin-bottom:var(--space-2);">Penteado no dia</h3>
+            <p style="font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-3);">No salão ou na sua localização · 2–3h · Desde 150 €</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--leading-relaxed);">O serviço principal de noiva, com opção de realização no salão ou com deslocação ao local da cerimónia ou hotel. Inclui preparação do cabelo, aplicação de produtos de fixação de longa duração e acabamento com produtos premium.</p>
+          </article>
+
+          <article class="bridal-service-item reveal reveal--delay-2" role="listitem">
+            <div class="bridal-service-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);letter-spacing:var(--tracking-tight);margin-bottom:var(--space-2);">Preparação completa</h3>
+            <p style="font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-3);">3–4h · Desde 250 €</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--leading-relaxed);">Penteado e maquilhagem em parceria com a nossa maquilhadora de referência. Uma preparação completa e coordenada, onde o look final é concebido como um todo — para que penteado e maquilhagem sejam absolutamente harmoniosos.</p>
+          </article>
+
+          <article class="bridal-service-item reveal" role="listitem">
+            <div class="bridal-service-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);letter-spacing:var(--tracking-tight);margin-bottom:var(--space-2);">Acompanhantes</h3>
+            <p style="font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-3);">Por marcação · Desde 45 € por pessoa</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--leading-relaxed);">Penteados para madrinhas, mãe da noiva e demais acompanhantes. Agendamos a preparação em bloco para garantir que todos os penteados ficam concluídos dentro do prazo, com o mesmo nível de cuidado e qualidade da noiva principal.</p>
+          </article>
+
+          <article class="bridal-service-item reveal reveal--delay-1" role="listitem">
+            <div class="bridal-service-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);letter-spacing:var(--tracking-tight);margin-bottom:var(--space-2);">Deslocação ao local</h3>
+            <p style="font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-3);">Disponível num raio de 30 km de Lisboa · Desde +50 €</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--leading-relaxed);">Deslocamo-nos ao local que a noiva preferir — hotel, quinta, casa de família. O valor da deslocação varia conforme a distância e o número de profissionais necessários. Consulte-nos para uma proposta personalizada.</p>
+          </article>
+
+          <article class="bridal-service-item reveal reveal--delay-2" role="listitem">
+            <div class="bridal-service-item__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-lg);letter-spacing:var(--tracking-tight);margin-bottom:var(--space-2);">Consulta inicial gratuita</h3>
+            <p style="font-size:var(--text-xs);letter-spacing:var(--tracking-widest);text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-3);">30 min · Gratuita</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);line-height:var(--leading-relaxed);">Uma conversa sem compromisso para entender a visão da noiva, conhecer o estilo do casamento, analisar as referências visuais e esclarecer todas as dúvidas. Pode ser feita presencialmente no salão ou por videochamada.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Packages -->
+    <section class="section" id="packages" aria-labelledby="packages-heading">
+      <div class="container">
+        <div class="section-heading--center">
+          <p class="eyebrow">Pacotes nupciais</p>
+          <h2 id="packages-heading">Escolha o pacote certo para si</h2>
+          <p class="section-subtitle">Três opções pensadas para diferentes necessidades e momentos. Todos os pacotes incluem acompanhamento personalizado da Sofia Martins.</p>
+        </div>
+        <div class="bridal-packages-grid" role="list">
+
+          <!-- Essencial -->
+          <article class="bridal-package reveal" role="listitem">
+            <h3 class="bridal-package__name">Pacote Essencial</h3>
+            <p class="bridal-package__tagline">Para a noiva que quer o essencial com qualidade</p>
+            <div class="bridal-package__price">Desde 230 € <span>por pacote</span></div>
+            <ul class="bridal-package__features" aria-label="O que está incluído">
+              <li class="bridal-package__feature">Consulta inicial (30 min)</li>
+              <li class="bridal-package__feature">Teste de penteado</li>
+              <li class="bridal-package__feature">Penteado no dia do casamento</li>
+              <li class="bridal-package__feature">Produto de finalização para casa</li>
+            </ul>
+            <p style="font-size:var(--text-xs);color:var(--color-muted);margin-bottom:var(--space-8);">Duração total: ~5 horas entre teste e dia</p>
+            <a href="#proposal-form" class="btn btn--secondary">Pedir proposta</a>
+          </article>
+
+          <!-- Atelier (featured) -->
+          <article class="bridal-package bridal-package--featured reveal reveal--delay-1" role="listitem">
+            <div class="bridal-package__tag">Mais escolhido</div>
+            <h3 class="bridal-package__name">Pacote Atelier</h3>
+            <p class="bridal-package__tagline">A escolha da maioria das nossas noivas</p>
+            <div class="bridal-package__price">Desde 380 € <span>por pacote</span></div>
+            <ul class="bridal-package__features" aria-label="O que está incluído">
+              <li class="bridal-package__feature">Consulta inicial</li>
+              <li class="bridal-package__feature">Diagnóstico capilar</li>
+              <li class="bridal-package__feature">Teste de penteado</li>
+              <li class="bridal-package__feature">Tratamento preparatório</li>
+              <li class="bridal-package__feature">Penteado no dia + styling final</li>
+              <li class="bridal-package__feature">Produto de finalização premium</li>
+              <li class="bridal-package__feature">Acompanhamento fotográfico dos detalhes</li>
+            </ul>
+            <p style="font-size:var(--text-xs);color:var(--color-muted);margin-bottom:var(--space-8);">Duração total: ~7 horas entre sessões</p>
+            <a href="#proposal-form" class="btn btn--primary">Pedir proposta</a>
+          </article>
+
+          <!-- Dia Completo -->
+          <article class="bridal-package reveal reveal--delay-2" role="listitem">
+            <h3 class="bridal-package__name">Pacote Dia Completo</h3>
+            <p class="bridal-package__tagline">A experiência completa, da preparação ao final do dia</p>
+            <div class="bridal-package__price">Desde 580 € <span>por pacote</span></div>
+            <ul class="bridal-package__features" aria-label="O que está incluído">
+              <li class="bridal-package__feature">Tudo do Pacote Atelier</li>
+              <li class="bridal-package__feature">Maquilhagem em parceria</li>
+              <li class="bridal-package__feature">Penteado das acompanhantes (até 2 pessoas)</li>
+              <li class="bridal-package__feature">Deslocação ao local incluída (até 20 km)</li>
+            </ul>
+            <p style="font-size:var(--text-xs);color:var(--color-muted);margin-bottom:var(--space-8);">Duração total: dia completo</p>
+            <a href="#proposal-form" class="btn btn--secondary">Pedir proposta</a>
+          </article>
+
+        </div>
+        <p style="text-align:center;font-size:var(--text-sm);color:var(--color-muted);margin-top:var(--space-8);">Preços indicativos. A proposta final é personalizada após a consulta inicial. IVA incluído.</p>
+      </div>
+    </section>
+
+    <!-- 5. Cronograma sugerido -->
+    <section class="section section--surface" aria-labelledby="timeline-heading">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-20);align-items:start;">
+          <div>
+            <p class="eyebrow">O caminho até ao altar</p>
+            <h2 id="timeline-heading">Cronograma sugerido</h2>
+            <p class="section-subtitle">Cada fase do processo tem o seu momento. Este guia ajuda a garantir que chega ao dia do casamento preparada e tranquila.</p>
+          </div>
+          <div class="bridal-timeline" role="list">
+
+            <div class="bridal-timeline-item is-active" role="listitem">
+              <div class="bridal-timeline-item__dot" aria-hidden="true">1</div>
+              <div class="bridal-timeline-item__content">
+                <h3>3–6 meses antes</h3>
+                <p>Consulta inicial gratuita, definição do estilo e realização do teste de penteado. É também o momento ideal para iniciar um tratamento capilar preparatório se o cabelo precisar de reforço.</p>
+              </div>
+            </div>
+
+            <div class="bridal-timeline-item" role="listitem">
+              <div class="bridal-timeline-item__dot" aria-hidden="true">2</div>
+              <div class="bridal-timeline-item__content">
+                <h3>1–2 meses antes</h3>
+                <p>Sessão de tratamento preparatório para fortalecer e hidratar o cabelo. Ajustes ao estilo escolhido se necessário, incluindo novos testes de acessórios ou técnicas complementares.</p>
+              </div>
+            </div>
+
+            <div class="bridal-timeline-item" role="listitem">
+              <div class="bridal-timeline-item__dot" aria-hidden="true">3</div>
+              <div class="bridal-timeline-item__content">
+                <h3>1 semana antes</h3>
+                <p>Chamada de confirmação de todos os detalhes logísticos: hora de início, local, número de pessoas, checklist de produtos a usar e confirmação de eventuais acessórios.</p>
+              </div>
+            </div>
+
+            <div class="bridal-timeline-item" role="listitem">
+              <div class="bridal-timeline-item__dot" aria-hidden="true">4</div>
+              <div class="bridal-timeline-item__content">
+                <h3>Dia do casamento</h3>
+                <p>Chegada ao salão ou deslocação ao local acordado. Penteado da noiva em primeiro lugar, seguido das acompanhantes. Acabamento com produtos de longa duração testados previamente.</p>
+              </div>
+            </div>
+
+            <div class="bridal-timeline-item" role="listitem">
+              <div class="bridal-timeline-item__dot" aria-hidden="true">5</div>
+              <div class="bridal-timeline-item__content">
+                <h3>Depois do casamento</h3>
+                <p>Follow-up com a noiva para partilha de fotografias e recomendações de produtos de manutenção. Ficamos sempre disponíveis para questões no pós-cerimónia.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Gallery -->
+    <section class="section" aria-labelledby="bridal-gallery-heading">
+      <div class="container">
+        <div class="section-heading--center" style="margin-bottom:var(--space-12);">
+          <p class="eyebrow">Galeria nupcial</p>
+          <h2 id="bridal-gallery-heading">O nosso trabalho</h2>
+        </div>
+        <div class="grid grid--2" style="gap:var(--space-4);" role="list">
+          <figure class="img-ratio img-ratio--portrait reveal" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80"
+              alt="Penteado de noiva — laço alto clássico com flores naturais"
+              width="700" height="933"
+              loading="lazy"
+            >
+            <figcaption class="sr-only">Penteado de noiva com flores naturais</figcaption>
+          </figure>
+          <figure class="img-ratio img-ratio--portrait reveal reveal--delay-1" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1465495976277-a5fdc77d3d59?auto=format&fit=crop&w=700&q=80"
+              alt="Noiva com penteado romântico e véu comprido"
+              width="700" height="933"
+              loading="lazy"
+            >
+            <figcaption class="sr-only">Noiva com penteado romântico</figcaption>
+          </figure>
+          <figure class="img-ratio img-ratio--portrait reveal" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80"
+              alt="Retrato de noiva com penteado sofisticado"
+              width="700" height="933"
+              loading="lazy"
+            >
+            <figcaption class="sr-only">Retrato de noiva</figcaption>
+          </figure>
+          <figure class="img-ratio img-ratio--portrait reveal reveal--delay-1" role="listitem">
+            <img
+              src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=80"
+              alt="Preparação da noiva — detalhe do penteado e adereços"
+              width="700" height="933"
+              loading="lazy"
+            >
+            <figcaption class="sr-only">Detalhe do penteado da noiva com adereços</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Testimonials -->
+    <section class="section section--surface" aria-labelledby="bridal-testimonials-heading">
+      <div class="container">
+        <div class="section-heading--center">
+          <p class="eyebrow">Noivas Lume</p>
+          <h2 id="bridal-testimonials-heading">O que dizem as nossas noivas</h2>
+        </div>
+        <div class="grid grid--2" style="gap:var(--space-6);">
+
+          <article class="testimonial-card reveal">
+            <span class="testimonial-card__mark" aria-hidden="true">"</span>
+            <blockquote class="testimonial-card__quote">
+              "A Sofia percebeu exatamente o que eu queria — algo simples mas com personalidade. No dia do casamento, o penteado durou do início ao fim, mesmo com o calor de agosto. Não podia ter pedido mais."
+            </blockquote>
+            <footer class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">
+                <img
+                  src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=100&q=80"
+                  alt=""
+                  width="44" height="44"
+                  loading="lazy"
+                >
+              </div>
+              <div>
+                <p class="testimonial-card__name">Beatriz Rodrigues</p>
+                <p class="testimonial-card__service">Casamento em agosto de 2024</p>
+                <p class="testimonial-card__stylist">Sofia Martins</p>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card reveal reveal--delay-1">
+            <span class="testimonial-card__mark" aria-hidden="true">"</span>
+            <blockquote class="testimonial-card__quote">
+              "Desde o primeiro contacto até ao fim do dia, a experiência foi absolutamente excecional. O teste de penteado deu-me uma tranquilidade enorme. Senti-me cuidada, ouvida e completamente à vontade. O resultado foi melhor do que tudo o que tinha imaginado."
+            </blockquote>
+            <footer class="testimonial-card__author">
+              <div class="testimonial-card__avatar" aria-hidden="true">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80"
+                  alt=""
+                  width="44" height="44"
+                  loading="lazy"
+                >
+              </div>
+              <div>
+                <p class="testimonial-card__name">Ana Ferreira</p>
+                <p class="testimonial-card__service">Casamento em maio de 2024 · Pacote Atelier</p>
+                <p class="testimonial-card__stylist">Sofia Martins</p>
+              </div>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section class="section" aria-labelledby="bridal-faq-heading">
+      <div class="container container--md">
+        <div class="section-heading--center">
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2 id="bridal-faq-heading">Perguntas sobre serviços nupciais</h2>
+        </div>
+        <div role="list" aria-label="Perguntas frequentes sobre serviços de noiva">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="bridal-faq-1">
+              <span class="faq-question-text">Com quanto tempo de antecedência devo reservar o serviço de noiva?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="bridal-faq-1" aria-hidden="true">
+              <div class="faq-answer-inner">
+                Recomendamos que a reserva seja feita com pelo menos 6 meses de antecedência, especialmente para datas de verão (junho a setembro) e feriados nacionais, onde os horários esgotam rapidamente. A consulta inicial pode ser marcada a qualquer momento, mas a data do casamento deve ser bloqueada o mais cedo possível.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="bridal-faq-2">
+              <span class="faq-question-text">O que devo levar para o teste de penteado?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="bridal-faq-2" aria-hidden="true">
+              <div class="faq-answer-inner">
+                Aconselhamos a trazer referências visuais (fotografias do Instagram, Pinterest ou revistas), os acessórios que planeia usar no dia (tiara, véu, brincos) e, se possível, vir com o cabelo lavado e seco sem produtos de styling para que possamos trabalhar o mais próximo possível das condições do dia do casamento.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="bridal-faq-3">
+              <span class="faq-question-text">É possível fazer mais do que um teste de penteado?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="bridal-faq-3" aria-hidden="true">
+              <div class="faq-answer-inner">
+                Sim. A maioria dos pacotes inclui um teste de penteado, mas é possível marcar sessões adicionais a um preço separado. Por vezes, quando a noiva quer explorar dois estilos muito diferentes, faz sentido realizar dois testes para garantir total confiança na escolha final. Consulte-nos para perceber o que faz mais sentido no seu caso.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="bridal-faq-4">
+              <span class="faq-question-text">Fazem deslocação fora da área de Lisboa?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="bridal-faq-4" aria-hidden="true">
+              <div class="faq-answer-inner">
+                Fazemos deslocações num raio padrão de 30 km de Lisboa incluídas nos pacotes mais completos. Para distâncias superiores, é possível negociar um valor adicional de deslocação. Casamentos no Alentejo, Serra da Arrábida ou arredores de Setúbal são pedidos que recebemos frequentemente — contacte-nos para uma proposta personalizada.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="bridal-faq-5">
+              <span class="faq-question-text">Qual é a política de cancelamento para serviços de noiva?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="bridal-faq-5" aria-hidden="true">
+              <div class="faq-answer-inner">
+                Dado o caráter exclusivo do serviço de noiva, aplicamos uma política de cancelamento específica. Para cancelamentos com mais de 60 dias de antecedência, devolvemos o valor integral do sinal. Entre 30 e 60 dias, retemos 50% do sinal como compensação pela reserva exclusiva da data. Para cancelamentos com menos de 30 dias, o sinal não é reembolsado. Alterações de data ficam sujeitas a disponibilidade.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Proposal Form -->
+    <section class="section section--surface" id="proposal-form" aria-labelledby="proposal-form-heading">
+      <div class="container container--md">
+        <div class="section-heading--center">
+          <p class="eyebrow">Dê o primeiro passo</p>
+          <h2 id="proposal-form-heading">Pedir uma proposta personalizada</h2>
+          <p class="section-subtitle">Partilhe os detalhes do seu casamento connosco. Respondemos em 48 horas com uma proposta à medida.</p>
+        </div>
+
+        <form data-validate action="#" method="post" novalidate aria-label="Formulário de pedido de proposta para noivas">
+
+          <div class="grid grid--2" style="gap:0 var(--space-6);">
+
+            <div class="form-group">
+              <label class="form-label required" for="bridal-nome">Nome completo</label>
+              <input class="form-input" type="text" id="bridal-nome" name="nome" required autocomplete="name" placeholder="O seu nome">
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label required" for="bridal-email">Email</label>
+              <input class="form-input" type="email" id="bridal-email" name="email" required autocomplete="email" placeholder="o.seu@email.pt">
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label required" for="bridal-telefone">Telefone</label>
+              <input class="form-input" type="tel" id="bridal-telefone" name="telefone" required autocomplete="tel" placeholder="+351 9XX XXX XXX">
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label required" for="bridal-data">Data do casamento</label>
+              <input class="form-input" type="date" id="bridal-data" name="data_casamento" required>
+              <span class="form-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="bridal-local">Local do casamento</label>
+              <input class="form-input" type="text" id="bridal-local" name="local" placeholder="Ex: Quinta das Rosas, Sintra">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="bridal-pessoas">Número de pessoas</label>
+              <div class="form-select-wrapper">
+                <select class="form-select" id="bridal-pessoas" name="numero_pessoas">
+                  <option value="">Selecionar…</option>
+                  <option value="1">Só eu (a noiva)</option>
+                  <option value="2">Eu + 1</option>
+                  <option value="3">Eu + 2</option>
+                  <option value="4+">Eu + 3 ou mais</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <fieldset style="margin-bottom:var(--space-6);">
+            <legend class="form-label" style="margin-bottom:var(--space-4);">Serviços pretendidos</legend>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3);">
+              <label class="form-checkbox-group">
+                <input class="form-checkbox" type="checkbox" name="servicos[]" value="teste_penteado">
+                <span class="form-checkbox-label">Teste de penteado</span>
+              </label>
+              <label class="form-checkbox-group">
+                <input class="form-checkbox" type="checkbox" name="servicos[]" value="penteado_dia">
+                <span class="form-checkbox-label">Penteado no dia</span>
+              </label>
+              <label class="form-checkbox-group">
+                <input class="form-checkbox" type="checkbox" name="servicos[]" value="acompanhantes">
+                <span class="form-checkbox-label">Penteado das acompanhantes</span>
+              </label>
+              <label class="form-checkbox-group">
+                <input class="form-checkbox" type="checkbox" name="servicos[]" value="deslocacao">
+                <span class="form-checkbox-label">Deslocação ao local</span>
+              </label>
+              <label class="form-checkbox-group">
+                <input class="form-checkbox" type="checkbox" name="servicos[]" value="maquilhagem">
+                <span class="form-checkbox-label">Maquilhagem (em parceria)</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label class="form-label" for="bridal-mensagem">Mensagem</label>
+            <textarea class="form-textarea" id="bridal-mensagem" name="mensagem" rows="5" placeholder="Conte-nos um pouco sobre o seu casamento, o estilo que tem em mente e qualquer detalhe que considere relevante."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-checkbox-group">
+              <input class="form-checkbox" type="checkbox" id="bridal-consent" name="consent" required>
+              <span class="form-checkbox-label">Autorizo o tratamento dos meus dados pessoais para receber uma proposta personalizada relativa aos serviços de noiva do Lume Hair Studio.</span>
+            </label>
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-success" role="alert" aria-live="polite">
+            <strong>Proposta recebida com sucesso!</strong><br>
+            Entraremos em contacto consigo no prazo de 48 horas com uma proposta personalizada. Obrigada por confiar no Lume para este momento tão especial.
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg">Enviar pedido de proposta</button>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true" style="color:#fff;"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg><div class="footer-logo-text">Lume<span>Hair Studio</span></div></div>
+          <p class="footer-tagline">Cabelo com identidade, técnica e intenção.</p>
+          <div class="footer-social" aria-label="Redes sociais"><a href="#" class="footer-social-link" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a><a href="#" class="footer-social-link" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
+        </div>
+        <nav aria-label="Serviços"><h3 class="footer-heading">Serviços</h3><ul class="footer-nav-list"><li><a href="services.html" class="footer-nav-link">Corte e styling</a></li><li><a href="services.html" class="footer-nav-link">Coloração</a></li><li><a href="service-detail.html" class="footer-nav-link">Balayage</a></li><li><a href="services.html" class="footer-nav-link">Tratamentos</a></li><li><a href="bridal.html" class="footer-nav-link">Noivas</a></li></ul></nav>
+        <nav aria-label="Páginas"><h3 class="footer-heading">Lume</h3><ul class="footer-nav-list"><li><a href="about.html" class="footer-nav-link">Sobre nós</a></li><li><a href="team.html" class="footer-nav-link">A nossa equipa</a></li><li><a href="gallery.html" class="footer-nav-link">Galeria</a></li><li><a href="journal.html" class="footer-nav-link">Journal</a></li><li><a href="booking.html" class="footer-nav-link">Marcações</a></li><li><a href="contact.html" class="footer-nav-link">Contactos</a></li></ul></nav>
+        <div><h3 class="footer-heading">Contacto</h3><div class="footer-info"><address>Rua do Século, 42<br>1200-433 Lisboa</address><p><a href="tel:+351912345678">+351 912 345 678</a><br><a href="mailto:geral@lumehair.pt">geral@lumehair.pt</a></p><p style="margin-top:1rem;">Seg–Sex: 9h–20h<br>Sáb: 9h–18h</p></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Lume Hair Studio. Todos os direitos reservados.</p><div class="footer-legal-links"><a href="#">Privacidade</a><a href="#">Termos</a><a href="#">Cancelamentos</a></div></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

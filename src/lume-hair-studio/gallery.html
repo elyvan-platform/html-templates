@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galeria de trabalhos do Lume Hair Studio — cortes, coloração, balayage, styling e penteados de noiva realizados pela nossa equipa em Lisboa.">
+  <title>Galeria de Trabalhos — Lume Hair Studio</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar para o conteúdo principal</a>
+<header class="site-header site-header--light" id="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo" aria-label="Lume Hair Studio — Página inicial">
+      <svg class="header-logo-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="2" fill="currentColor"/>
+      </svg>
+      <div class="header-logo-text">Lume<span>Hair Studio</span></div>
+    </a>
+    <nav class="header-nav" role="navigation" aria-label="Navegação principal">
+      <ul class="nav-list" role="list">
+        <li><a href="services.html" class="nav-link" data-nav-link>Serviços</a></li>
+        <li><a href="team.html" class="nav-link" data-nav-link>Equipa</a></li>
+        <li><a href="gallery.html" class="nav-link" aria-current="page" data-nav-link>Trabalhos</a></li>
+        <li><a href="bridal.html" class="nav-link" data-nav-link>Noivas</a></li>
+        <li><a href="journal.html" class="nav-link" data-nav-link>Journal</a></li>
+        <li><a href="about.html" class="nav-link" data-nav-link>Sobre</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav-link>Contactos</a></li>
+      </ul>
+      <a href="booking.html" class="btn btn--header">Marcar visita</a>
+    </nav>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+  <ul class="mobile-nav-list" role="list">
+    <li><a href="services.html" class="mobile-nav-link" data-nav-link>Serviços</a></li>
+    <li><a href="team.html" class="mobile-nav-link" data-nav-link>Equipa</a></li>
+    <li><a href="gallery.html" class="mobile-nav-link" aria-current="page" data-nav-link>Trabalhos</a></li>
+    <li><a href="bridal.html" class="mobile-nav-link" data-nav-link>Noivas</a></li>
+    <li><a href="journal.html" class="mobile-nav-link" data-nav-link>Journal</a></li>
+    <li><a href="about.html" class="mobile-nav-link" data-nav-link>Sobre</a></li>
+    <li><a href="contact.html" class="mobile-nav-link" data-nav-link>Contactos</a></li>
+  </ul>
+  <div class="mobile-nav-footer">
+    <a href="booking.html" class="btn btn--primary">Marcar visita</a>
+    <p class="mobile-nav-contact">Rua do Século, 42 · Lisboa · <a href="tel:+351912345678">+351 912 345 678</a></p>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- Page hero -->
+  <section class="page-hero page-hero--light" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="page-hero__content page-hero__content--centered">
+        <p class="eyebrow">Resultados reais</p>
+        <h1 class="page-hero__title" id="gallery-title">Galeria de trabalhos</h1>
+        <p class="page-hero__desc">
+          Cada imagem conta a história de uma transformação. Aqui reunimos uma seleção dos trabalhos da nossa equipa — cortes, colorações, balayage, penteados e muito mais. Todos realizados no Lume Hair Studio, em Lisboa, com as mãos e a intenção dos nossos profissionais.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter bar -->
+  <section class="gallery-filter-section" aria-label="Filtrar galeria">
+    <div class="container">
+      <div class="filter-bar" role="group" aria-label="Filtrar por categoria" data-filter-group="gallery">
+        <button class="filter-btn is-active" data-filter="*" aria-pressed="true">Todos</button>
+        <button class="filter-btn" data-filter="corte" aria-pressed="false">Corte</button>
+        <button class="filter-btn" data-filter="cor" aria-pressed="false">Cor</button>
+        <button class="filter-btn" data-filter="balayage" aria-pressed="false">Balayage</button>
+        <button class="filter-btn" data-filter="styling" aria-pressed="false">Styling</button>
+        <button class="filter-btn" data-filter="noivas" aria-pressed="false">Noivas</button>
+        <button class="filter-btn" data-filter="masculino" aria-pressed="false">Masculino</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Masonry gallery -->
+  <section class="gallery-section" aria-label="Imagens da galeria">
+    <div class="container">
+      <div class="gallery-masonry" id="gallery-masonry" role="list" aria-label="Galeria de trabalhos">
+
+        <!-- 1: Corte -->
+        <div
+          class="gallery-item"
+          data-category="corte"
+          role="button"
+          tabindex="0"
+          aria-label="Corte estruturado em cabelo liso — Mariana Costa"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80"
+            alt="Corte estruturado em cabelo liso, com linha de franja a acompanhar o rosto"
+            width="600"
+            height="750"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Corte</span>
+            <p class="gallery-item__title">Corte estruturado</p>
+            <p class="gallery-item__stylist">Mariana Costa</p>
+          </div>
+        </div>
+
+        <!-- 2: Balayage -->
+        <div
+          class="gallery-item"
+          data-category="balayage"
+          role="button"
+          tabindex="0"
+          aria-label="Balayage mel em cabelo comprido — Leonor Silva"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80"
+            alt="Balayage mel com reflexos dourados em cabelo comprido e ondulado"
+            width="600"
+            height="800"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Balayage</span>
+            <p class="gallery-item__title">Balayage mel</p>
+            <p class="gallery-item__stylist">Leonor Silva</p>
+          </div>
+        </div>
+
+        <!-- 3: Cor -->
+        <div
+          class="gallery-item"
+          data-category="cor"
+          role="button"
+          tabindex="0"
+          aria-label="Coloração vermelha intensa — Leonor Silva"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
+            alt="Coloração vermelha intensa com acabamento brilhante e definido"
+            width="600"
+            height="700"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Cor</span>
+            <p class="gallery-item__title">Vermelho intenso</p>
+            <p class="gallery-item__stylist">Leonor Silva</p>
+          </div>
+        </div>
+
+        <!-- 4: Noivas -->
+        <div
+          class="gallery-item"
+          data-category="noivas"
+          role="button"
+          tabindex="0"
+          aria-label="Penteado de noiva com coque elegante — Sofia Martins"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80"
+            alt="Penteado de noiva com coque baixo elegante e pormenores trançados"
+            width="600"
+            height="900"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Noivas</span>
+            <p class="gallery-item__title">Coque nupcial</p>
+            <p class="gallery-item__stylist">Sofia Martins</p>
+          </div>
+        </div>
+
+        <!-- 5: Corte natural -->
+        <div
+          class="gallery-item"
+          data-category="corte"
+          role="button"
+          tabindex="0"
+          aria-label="Corte em cabelo natural com volume — Rui Almeida"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=600&q=80"
+            alt="Corte em cabelo natural com volume e textura definida"
+            width="600"
+            height="750"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Corte</span>
+            <p class="gallery-item__title">Corte texturizado</p>
+            <p class="gallery-item__stylist">Rui Almeida</p>
+          </div>
+        </div>
+
+        <!-- 6: Balayage detalhe -->
+        <div
+          class="gallery-item"
+          data-category="balayage"
+          role="button"
+          tabindex="0"
+          aria-label="Detalhe de babylights em cabelo castanho — Leonor Silva"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=600&q=80"
+            alt="Detalhe de babylights em cabelo castanho com reflexos naturais"
+            width="600"
+            height="800"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Balayage</span>
+            <p class="gallery-item__title">Babylights naturais</p>
+            <p class="gallery-item__stylist">Leonor Silva</p>
+          </div>
+        </div>
+
+        <!-- 7: Balayage dourado -->
+        <div
+          class="gallery-item"
+          data-category="balayage"
+          role="button"
+          tabindex="0"
+          aria-label="Balayage dourado com finalização de ferro — Leonor Silva"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1626196340012-1e7f6acfb66c?auto=format&fit=crop&w=600&q=80"
+            alt="Balayage dourado com finalização a ferro e ondas suaves"
+            width="600"
+            height="700"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Balayage</span>
+            <p class="gallery-item__title">Balayage dourado</p>
+            <p class="gallery-item__stylist">Leonor Silva</p>
+          </div>
+        </div>
+
+        <!-- 8: Styling -->
+        <div
+          class="gallery-item"
+          data-category="styling"
+          role="button"
+          tabindex="0"
+          aria-label="Styling com ondas suaves e volume — Mariana Costa"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1582095133179-bfd08e2195b5?auto=format&fit=crop&w=600&q=80"
+            alt="Styling com ondas suaves e muito volume na raiz"
+            width="600"
+            height="750"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Styling</span>
+            <p class="gallery-item__title">Ondas volumosas</p>
+            <p class="gallery-item__stylist">Mariana Costa</p>
+          </div>
+        </div>
+
+        <!-- 9: Cor 2 -->
+        <div
+          class="gallery-item"
+          data-category="cor"
+          role="button"
+          tabindex="0"
+          aria-label="Coloração castanho acobreado — Leonor Silva"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80"
+            alt="Coloração castanho acobreado com acabamento liso e brilhante"
+            width="600"
+            height="800"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Cor</span>
+            <p class="gallery-item__title">Castanho acobreado</p>
+            <p class="gallery-item__stylist">Leonor Silva</p>
+          </div>
+        </div>
+
+        <!-- 10: Noivas 2 -->
+        <div
+          class="gallery-item"
+          data-category="noivas"
+          role="button"
+          tabindex="0"
+          aria-label="Penteado de noiva com trança lateral — Sofia Martins"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1465495976277-a5fdc77d3d59?auto=format&fit=crop&w=600&q=80"
+            alt="Penteado de noiva com trança lateral e acessórios florais"
+            width="600"
+            height="900"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Noivas</span>
+            <p class="gallery-item__title">Trança nupcial</p>
+            <p class="gallery-item__stylist">Sofia Martins</p>
+          </div>
+        </div>
+
+        <!-- 11: Masculino -->
+        <div
+          class="gallery-item"
+          data-category="masculino"
+          role="button"
+          tabindex="0"
+          aria-label="Corte masculino clássico com degrade — Rui Almeida"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1605461803135-e4d3db3fa3bc?auto=format&fit=crop&w=600&q=80"
+            alt="Corte masculino clássico com degrade lateral e topo texturizado"
+            width="600"
+            height="700"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Masculino</span>
+            <p class="gallery-item__title">Corte clássico</p>
+            <p class="gallery-item__stylist">Rui Almeida</p>
+          </div>
+        </div>
+
+        <!-- 12: Retrato / Corte -->
+        <div
+          class="gallery-item"
+          data-category="corte"
+          role="button"
+          tabindex="0"
+          aria-label="Corte lob com franja cortina — Mariana Costa"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80"
+            alt="Corte lob com franja cortina e acabamento natural"
+            width="600"
+            height="750"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Corte</span>
+            <p class="gallery-item__title">Lob com franja cortina</p>
+            <p class="gallery-item__stylist">Mariana Costa</p>
+          </div>
+        </div>
+
+        <!-- 13: Styling especial -->
+        <div
+          class="gallery-item"
+          data-category="styling"
+          role="button"
+          tabindex="0"
+          aria-label="Styling para evento com caracóis definidos — Sofia Martins"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80"
+            alt="Styling para evento com caracóis definidos e brilho intenso"
+            width="600"
+            height="800"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Styling</span>
+            <p class="gallery-item__title">Caracóis para evento</p>
+            <p class="gallery-item__stylist">Sofia Martins</p>
+          </div>
+        </div>
+
+        <!-- 14: Cor 3 -->
+        <div
+          class="gallery-item"
+          data-category="cor"
+          role="button"
+          tabindex="0"
+          aria-label="Coloração loiro platinado — Leonor Silva"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1573230868640-9e7a9bc87d23?auto=format&fit=crop&w=600&q=80"
+            alt="Coloração loiro platinado com tonalização fria e acabamento sedoso"
+            width="600"
+            height="750"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Cor</span>
+            <p class="gallery-item__title">Loiro platinado</p>
+            <p class="gallery-item__stylist">Leonor Silva</p>
+          </div>
+        </div>
+
+        <!-- 15: Masculino / Salão -->
+        <div
+          class="gallery-item"
+          data-category="masculino"
+          role="button"
+          tabindex="0"
+          aria-label="Corte masculino contemporâneo com barba — Rui Almeida"
+          data-gallery-item
+        >
+          <img
+            src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&q=80"
+            alt="Corte masculino contemporâneo com linha definida e acabamento mate"
+            width="600"
+            height="700"
+            loading="lazy"
+          >
+          <div class="gallery-item__overlay" aria-hidden="true">
+            <span class="gallery-item__category">Masculino</span>
+            <p class="gallery-item__title">Corte contemporâneo</p>
+            <p class="gallery-item__stylist">Rui Almeida</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No results message -->
+      <p class="gallery-empty" id="gallery-empty" aria-live="polite" hidden>
+        Não foram encontrados trabalhos nesta categoria.
+      </p>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+    <button class="lightbox__close" aria-label="Fechar">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <button class="lightbox__prev" aria-label="Imagem anterior">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="lightbox__next" aria-label="Próxima imagem">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="lightbox__content"><img src="" alt="" width="1200" height="900"></div>
+    <div class="lightbox__caption" aria-live="polite"></div>
+  </div>
+
+  <!-- CTA booking -->
+  <section class="cta-section" aria-labelledby="gallery-cta-title">
+    <div class="container">
+      <div class="cta-card cta-card--dark">
+        <div class="cta-card__content">
+          <p class="eyebrow eyebrow--light">Pronta para a sua transformação?</p>
+          <h2 class="cta-card__title" id="gallery-cta-title">O seu próximo look começa aqui</h2>
+          <p class="cta-card__desc">
+            Cada trabalho que vê aqui nasceu de uma conversa, de uma escuta atenta e de técnica com intenção. Marque a sua visita e conte-nos o que imagina.
+          </p>
+          <div class="cta-card__actions">
+            <a href="booking.html" class="btn btn--primary">Marcar visita</a>
+            <a href="team.html" class="btn btn--outline-light">Conhecer a equipa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true" style="color:#fff;"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
+          <div class="footer-logo-text">Lume<span>Hair Studio</span></div>
+        </div>
+        <p class="footer-tagline">Cabelo com identidade, técnica e intenção.</p>
+        <div class="footer-social" aria-label="Redes sociais">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+      <nav aria-label="Serviços"><h3 class="footer-heading">Serviços</h3><ul class="footer-nav-list"><li><a href="services.html" class="footer-nav-link">Corte e styling</a></li><li><a href="services.html" class="footer-nav-link">Coloração</a></li><li><a href="service-detail.html" class="footer-nav-link">Balayage</a></li><li><a href="services.html" class="footer-nav-link">Tratamentos</a></li><li><a href="bridal.html" class="footer-nav-link">Noivas</a></li></ul></nav>
+      <nav aria-label="Páginas"><h3 class="footer-heading">Lume</h3><ul class="footer-nav-list"><li><a href="about.html" class="footer-nav-link">Sobre nós</a></li><li><a href="team.html" class="footer-nav-link">A nossa equipa</a></li><li><a href="gallery.html" class="footer-nav-link">Galeria</a></li><li><a href="journal.html" class="footer-nav-link">Journal</a></li><li><a href="booking.html" class="footer-nav-link">Marcações</a></li><li><a href="contact.html" class="footer-nav-link">Contactos</a></li></ul></nav>
+      <div><h3 class="footer-heading">Contacto</h3><div class="footer-info"><address>Rua do Século, 42<br>1200-433 Lisboa</address><p><a href="tel:+351912345678">+351 912 345 678</a><br><a href="mailto:geral@lumehair.pt">geral@lumehair.pt</a></p><p style="margin-top:1rem;">Seg–Sex: 9h–20h<br>Sáb: 9h–18h</p></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 Lume Hair Studio. Todos os direitos reservados.</p><div class="footer-legal-links"><a href="#">Privacidade</a><a href="#">Termos</a><a href="#">Cancelamentos</a></div></div>
+  </div>
+</footer>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

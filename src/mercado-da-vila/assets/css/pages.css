@@ -1,0 +1,134 @@
+.season-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-xl);
+}
+
+.season-feature {
+  padding: 1.4rem;
+  border-radius: 1.5rem;
+}
+
+.season-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.season-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed rgba(111, 75, 51, 0.22);
+}
+
+.home-baskets {
+  background: linear-gradient(180deg, rgba(233, 220, 198, 0.46), rgba(255, 253, 249, 0));
+}
+
+.producer-feature blockquote,
+.testimonial-card blockquote {
+  color: var(--color-ink);
+  font-size: 1.05rem;
+}
+
+.product-detail-grid,
+.recipe-detail-grid {
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: start;
+}
+
+.detail-card {
+  padding: 1.4rem;
+  border-radius: 1.4rem;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 253, 249, 0.92);
+  box-shadow: var(--shadow-card);
+}
+
+.detail-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.nutrition-grid,
+.delivery-zones,
+.team-grid,
+.values-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.nutrition-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.delivery-zones,
+.team-grid,
+.values-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.history-list,
+.ingredient-list,
+.step-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.step-list li {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(53, 93, 61, 0.2);
+}
+
+.contact-grid {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.story-grid {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.story-grid img {
+  width: 100%;
+  border-radius: 1.5rem;
+  aspect-ratio: var(--ratio-wide);
+  object-fit: cover;
+}
+
+.contact-list,
+.delivery-list,
+.policy-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.inline-link {
+  color: var(--color-leaf);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+.pagination-mock {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: var(--space-2xl);
+}
+
+.pagination-mock span,
+.pagination-mock a {
+  display: inline-grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.pagination-mock .is-active {
+  background: var(--color-leaf);
+  color: var(--color-white);
+}

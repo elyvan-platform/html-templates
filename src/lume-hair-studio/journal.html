@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Journal do Lume Hair Studio — Tendências capilares, cuidados, coloração, bastidores do salão e inspiração para noivas. Artigos escritos pela nossa equipa de especialistas.">
+  <title>Journal — Lume Hair Studio</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Saltar para o conteúdo principal</a>
+
+  <!-- ─── Header ─────────────────────────────────────────────────────── -->
+  <header class="site-header site-header--light" id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Lume Hair Studio — Página inicial">
+        <svg class="header-logo-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
+        <div class="header-logo-text">Lume<span>Hair Studio</span></div>
+      </a>
+      <nav class="header-nav" role="navigation" aria-label="Navegação principal">
+        <ul class="nav-list" role="list">
+          <li><a href="services.html" class="nav-link" data-nav-link>Serviços</a></li>
+          <li><a href="team.html" class="nav-link" data-nav-link>Equipa</a></li>
+          <li><a href="gallery.html" class="nav-link" data-nav-link>Trabalhos</a></li>
+          <li><a href="bridal.html" class="nav-link" data-nav-link>Noivas</a></li>
+          <li><a href="journal.html" class="nav-link" data-nav-link aria-current="page">Journal</a></li>
+          <li><a href="about.html" class="nav-link" data-nav-link>Sobre</a></li>
+          <li><a href="contact.html" class="nav-link" data-nav-link>Contactos</a></li>
+        </ul>
+        <a href="booking.html" class="btn btn--header">Marcar visita</a>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+    <ul class="mobile-nav-list" role="list">
+      <li><a href="services.html" class="mobile-nav-link" data-nav-link>Serviços</a></li>
+      <li><a href="team.html" class="mobile-nav-link" data-nav-link>Equipa</a></li>
+      <li><a href="gallery.html" class="mobile-nav-link" data-nav-link>Trabalhos</a></li>
+      <li><a href="bridal.html" class="mobile-nav-link" data-nav-link>Noivas</a></li>
+      <li><a href="journal.html" class="mobile-nav-link" data-nav-link aria-current="page">Journal</a></li>
+      <li><a href="about.html" class="mobile-nav-link" data-nav-link>Sobre</a></li>
+      <li><a href="contact.html" class="mobile-nav-link" data-nav-link>Contactos</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="booking.html" class="btn btn--primary">Marcar visita</a>
+      <p class="mobile-nav-contact">Rua do Século, 42 · Lisboa · <a href="tel:+351912345678">+351 912 345 678</a></p>
+    </div>
+  </nav>
+
+  <!-- ─── Main ───────────────────────────────────────────────────────── -->
+  <main id="main" tabindex="-1">
+
+    <!-- Page Hero -->
+    <section class="page-hero" aria-labelledby="journal-page-heading">
+      <div class="container">
+        <div class="page-hero__content">
+          <p class="eyebrow">Journal</p>
+          <h1 id="journal-page-heading">Tendências, cuidados<br>e bastidores do Lume.</h1>
+          <p class="section-subtitle">Artigos escritos pela nossa equipa — sobre o que aprendemos, o que valorizamos e o que acreditamos que merece atenção no universo do cabelo.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section section--sm">
+      <div class="container">
+
+        <!-- 2. Featured Article -->
+        <article class="journal-featured reveal" aria-label="Artigo em destaque">
+          <div class="journal-featured__image">
+            <img
+              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80"
+              alt="Processo de coloração capilar em salão — técnica de mechas"
+              width="900" height="600"
+              loading="lazy"
+            >
+          </div>
+          <div class="journal-featured__content">
+            <p class="eyebrow">Coloração</p>
+            <p class="journal-featured__meta">12 de Janeiro de 2025 · Por Leonor Silva</p>
+            <h2>Como prolongar o brilho da coloração</h2>
+            <p>Saiba como manter a cor vibrante por mais tempo com os produtos certos, hábitos de lavagem adequados e cuidados preventivos que fazem toda a diferença entre uma cor que dura semanas e uma que dura meses.</p>
+            <a href="journal-detail.html" class="btn btn--ghost" aria-label="Ler artigo: Como prolongar o brilho da coloração">Ler artigo</a>
+          </div>
+        </article>
+
+        <!-- 3. Search & Filters + Grid layout -->
+        <div class="journal-layout" style="margin-top:var(--space-16);">
+
+          <!-- Main: Search bar + Grid -->
+          <div>
+
+            <!-- Search bar above articles -->
+            <div style="margin-bottom:var(--space-8);">
+              <form class="journal-search-form search-form" role="search" aria-label="Pesquisar artigos">
+                <input
+                  class="journal-search-input"
+                  type="search"
+                  name="q"
+                  placeholder="Pesquisar artigos…"
+                  aria-label="Texto de pesquisa"
+                  autocomplete="off"
+                >
+                <button type="submit" aria-label="Pesquisar">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </button>
+              </form>
+              <!-- Category filter buttons (mobile/desktop both visible above) -->
+              <div class="filter-bar" style="margin-top:var(--space-4);margin-bottom:0;" role="toolbar" aria-label="Filtrar por categoria">
+                <button class="filter-btn journal-category-btn is-active" data-category="all">Todos</button>
+                <button class="filter-btn journal-category-btn" data-category="coloracao">Coloração</button>
+                <button class="filter-btn journal-category-btn" data-category="corte">Corte</button>
+                <button class="filter-btn journal-category-btn" data-category="tratamentos">Tratamentos</button>
+                <button class="filter-btn journal-category-btn" data-category="tendencias">Tendências</button>
+                <button class="filter-btn journal-category-btn" data-category="noivas">Noivas</button>
+                <button class="filter-btn journal-category-btn" data-category="bastidores">Bastidores</button>
+              </div>
+            </div>
+
+            <!-- 4. Article grid -->
+            <div class="journal-grid" role="list" aria-label="Lista de artigos">
+
+              <!-- Article 1 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="coloracao"
+                data-title="como prolongar o brilho da coloração"
+                data-excerpt="saiba como manter a cor vibrante por mais tempo com os produtos e hábitos certos"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
+                    alt="Mechas coloridas — técnica de coloração profissional"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Coloração</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">Como prolongar o brilho da coloração</a></h2>
+                  <p class="journal-card__excerpt">Saiba como manter a cor vibrante por mais tempo com os produtos e hábitos certos.</p>
+                  <footer class="journal-card__meta">
+                    <span>Leonor Silva · 12 Jan 2025</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: Como prolongar o brilho da coloração">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Article 2 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="corte"
+                data-title="os cortes que vão dominar 2025"
+                data-excerpt="da curtíssima lob ao shag moderno a nossa seleção dos cortes que estão a marcar o ano"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80"
+                    alt="Cabeleireiro a efetuar um corte moderno"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Corte</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">Os cortes que vão dominar 2025</a></h2>
+                  <p class="journal-card__excerpt">Da curtíssima lob ao shag moderno — a nossa seleção dos cortes que estão a marcar o ano.</p>
+                  <footer class="journal-card__meta">
+                    <span>Mariana Costa · 5 Jan 2025</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: Os cortes que vão dominar 2025">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Article 3 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="tratamentos"
+                data-title="rotina semanal de cuidados capilares"
+                data-excerpt="um guia prático para construir uma rotina simples e eficaz adaptada ao seu tipo de cabelo"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=600&q=80"
+                    alt="Produtos de cuidado capilar em prateleira de salão"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Tratamentos</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">Rotina semanal de cuidados capilares</a></h2>
+                  <p class="journal-card__excerpt">Um guia prático para construir uma rotina simples e eficaz, adaptada ao seu tipo de cabelo.</p>
+                  <footer class="journal-card__meta">
+                    <span>Mariana Costa · 28 Dez 2024</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: Rotina semanal de cuidados capilares">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Article 4 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="tendencias"
+                data-title="balayage em 2025 o que há de novo"
+                data-excerpt="a técnica que não sai de moda continua a evoluir conheça as variações mais pedidas este ano"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1626196340012-1e7f6acfb66c?auto=format&fit=crop&w=600&q=80"
+                    alt="Resultado de balayage — efeito de degradé natural no cabelo"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Tendências</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">Balayage em 2025: o que há de novo</a></h2>
+                  <p class="journal-card__excerpt">A técnica que não sai de moda continua a evoluir. Conheça as variações mais pedidas este ano.</p>
+                  <footer class="journal-card__meta">
+                    <span>Leonor Silva · 20 Dez 2024</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: Balayage em 2025">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Article 5 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="noivas"
+                data-title="o que fazer nos 3 meses antes do casamento"
+                data-excerpt="o cabelo da noiva não começa a ser preparado no dia começa meses antes o nosso guia completo"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80"
+                    alt="Noiva com penteado elegante no dia do casamento"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Noivas</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">O que fazer nos 3 meses antes do casamento</a></h2>
+                  <p class="journal-card__excerpt">O cabelo da noiva não começa a ser preparado no dia — começa meses antes. O nosso guia completo.</p>
+                  <footer class="journal-card__meta">
+                    <span>Sofia Martins · 15 Dez 2024</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: O que fazer nos 3 meses antes do casamento">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Article 6 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="bastidores"
+                data-title="como escolhemos os nossos produtos profissionais"
+                data-excerpt="não usamos o que está na moda usamos o que funciona a nossa filosofia de seleção de produtos"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&q=80"
+                    alt="Prateleira com produtos profissionais de cabeleireiro"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Bastidores</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">Como escolhemos os nossos produtos profissionais</a></h2>
+                  <p class="journal-card__excerpt">Não usamos o que está na moda — usamos o que funciona. A nossa filosofia de seleção de produtos.</p>
+                  <footer class="journal-card__meta">
+                    <span>Mariana Costa · 8 Dez 2024</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: Como escolhemos os nossos produtos profissionais">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Article 7 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="tratamentos"
+                data-title="sabe quando o seu cabelo precisa de um tratamento"
+                data-excerpt="quatro sinais que o seu cabelo está a pedir ajuda e como responder antes que o dano seja maior"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=600&q=80"
+                    alt="Tratamento capilar profissional — aplicação de máscara"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Tratamentos</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">Sabe quando o seu cabelo precisa de um tratamento?</a></h2>
+                  <p class="journal-card__excerpt">Quatro sinais que o seu cabelo está a pedir ajuda — e como responder antes que o dano seja maior.</p>
+                  <footer class="journal-card__meta">
+                    <span>Leonor Silva · 1 Dez 2024</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: Quando o cabelo precisa de tratamento">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Article 8 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="tendencias"
+                data-title="tendências de cor para a primavera"
+                data-excerpt="do castanho alavancado ao loiro mel as paletas de cor que entram com a nova estação"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80"
+                    alt="Cabelo colorido com tons quentes de primavera"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Tendências</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">Tendências de cor para a primavera</a></h2>
+                  <p class="journal-card__excerpt">Do castanho alavancado ao loiro mel: as paletas de cor que entram com a nova estação.</p>
+                  <footer class="journal-card__meta">
+                    <span>Leonor Silva · 24 Nov 2024</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: Tendências de cor para a primavera">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Article 9 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="bastidores"
+                data-title="um dia no lume hair studio"
+                data-excerpt="do primeiro cliente da manhã ao fecho um olhar aos bastidores do nosso espaço no chiado"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1582095133179-bfd08e2195b5?auto=format&fit=crop&w=600&q=80"
+                    alt="Interior do salão Lume Hair Studio — visão geral do espaço"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Bastidores</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">Um dia no Lume Hair Studio</a></h2>
+                  <p class="journal-card__excerpt">Do primeiro cliente da manhã ao fecho — um olhar aos bastidores do nosso espaço no Chiado.</p>
+                  <footer class="journal-card__meta">
+                    <span>Mariana Costa · 18 Nov 2024</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: Um dia no Lume Hair Studio">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Article 10 -->
+              <article class="journal-card"
+                role="listitem"
+                data-category="corte"
+                data-title="como manter o corte entre visitas ao salão"
+                data-excerpt="truques simples para que o seu corte continue com boa aparência semanas depois da última visita"
+              >
+                <a href="journal-detail.html" class="journal-card__image" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80"
+                    alt="Cabeleireiro a finalizar um corte com secador profissional"
+                    width="600" height="338"
+                    loading="lazy"
+                  >
+                </a>
+                <div class="journal-card__body">
+                  <p class="journal-card__category">Corte</p>
+                  <h2 class="journal-card__title"><a href="journal-detail.html">Como manter o corte entre visitas ao salão</a></h2>
+                  <p class="journal-card__excerpt">Truques simples para que o seu corte continue com boa aparência semanas depois da última visita.</p>
+                  <footer class="journal-card__meta">
+                    <span>Rui Almeida · 11 Nov 2024</span>
+                    <a href="journal-detail.html" aria-label="Ler artigo: Como manter o corte entre visitas ao salão">Ler →</a>
+                  </footer>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- 5. No results message -->
+            <div class="journal-no-results" role="status" aria-live="polite" style="display:none;">Nenhum artigo encontrado.</div>
+
+          </div>
+
+          <!-- 6. Sidebar -->
+          <aside class="journal-sidebar" aria-label="Barra lateral do Journal">
+
+            <!-- Sidebar search -->
+            <div class="journal-sidebar-block">
+              <h3>Pesquisar</h3>
+              <form class="journal-search-form search-form" role="search" aria-label="Pesquisar artigos na barra lateral">
+                <input
+                  class="journal-search-input"
+                  type="search"
+                  name="q"
+                  placeholder="Pesquisar…"
+                  aria-label="Texto de pesquisa"
+                  autocomplete="off"
+                >
+                <button type="submit" aria-label="Pesquisar">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </button>
+              </form>
+            </div>
+
+            <!-- Category list -->
+            <div class="journal-sidebar-block">
+              <h3>Categorias</h3>
+              <ul class="journal-category-list" role="list">
+                <li><button class="journal-category-btn is-active" data-category="all">Todos os artigos</button></li>
+                <li><button class="journal-category-btn" data-category="coloracao">Coloração</button></li>
+                <li><button class="journal-category-btn" data-category="corte">Corte</button></li>
+                <li><button class="journal-category-btn" data-category="tratamentos">Tratamentos</button></li>
+                <li><button class="journal-category-btn" data-category="tendencias">Tendências</button></li>
+                <li><button class="journal-category-btn" data-category="noivas">Noivas</button></li>
+                <li><button class="journal-category-btn" data-category="bastidores">Bastidores</button></li>
+              </ul>
+            </div>
+
+            <!-- Recent articles -->
+            <div class="journal-sidebar-block">
+              <h3>Artigos recentes</h3>
+              <nav aria-label="Artigos recentes">
+                <ul style="display:flex;flex-direction:column;gap:var(--space-4);">
+                  <li style="border-bottom:var(--border-thin);padding-bottom:var(--space-4);">
+                    <a href="journal-detail.html" style="font-size:var(--text-sm);color:var(--color-text);font-weight:var(--font-weight-medium);line-height:var(--leading-snug);display:block;" class="link-underline">Como prolongar o brilho da coloração</a>
+                    <span style="font-size:var(--text-xs);color:var(--color-muted);">12 Jan 2025</span>
+                  </li>
+                  <li style="border-bottom:var(--border-thin);padding-bottom:var(--space-4);">
+                    <a href="journal-detail.html" style="font-size:var(--text-sm);color:var(--color-text);font-weight:var(--font-weight-medium);line-height:var(--leading-snug);display:block;" class="link-underline">Os cortes que vão dominar 2025</a>
+                    <span style="font-size:var(--text-xs);color:var(--color-muted);">5 Jan 2025</span>
+                  </li>
+                  <li style="border-bottom:var(--border-thin);padding-bottom:var(--space-4);">
+                    <a href="journal-detail.html" style="font-size:var(--text-sm);color:var(--color-text);font-weight:var(--font-weight-medium);line-height:var(--leading-snug);display:block;" class="link-underline">Rotina semanal de cuidados capilares</a>
+                    <span style="font-size:var(--text-xs);color:var(--color-muted);">28 Dez 2024</span>
+                  </li>
+                  <li>
+                    <a href="journal-detail.html" style="font-size:var(--text-sm);color:var(--color-text);font-weight:var(--font-weight-medium);line-height:var(--leading-snug);display:block;" class="link-underline">Balayage em 2025: o que há de novo</a>
+                    <span style="font-size:var(--text-xs);color:var(--color-muted);">20 Dez 2024</span>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="journal-sidebar-block" style="background:var(--color-surface-dark);">
+              <h3 style="color:rgba(255,255,255,0.4);">Newsletter</h3>
+              <p style="font-size:var(--text-sm);color:rgba(255,255,255,0.65);margin-bottom:var(--space-5);line-height:var(--leading-relaxed);">Receba os novos artigos e novidades do Lume diretamente no seu email.</p>
+              <form class="newsletter-form newsletter-form--dark" aria-label="Subscrever newsletter">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="O seu email"
+                  required
+                  autocomplete="email"
+                  aria-label="Endereço de email para newsletter"
+                >
+                <button type="submit" class="btn btn--primary btn--sm">Subscrever</button>
+              </form>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true" style="color:#fff;"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.2"/><path d="M20 8 C14 14 12 20 20 20 C28 20 26 26 20 32" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg><div class="footer-logo-text">Lume<span>Hair Studio</span></div></div>
+          <p class="footer-tagline">Cabelo com identidade, técnica e intenção.</p>
+          <div class="footer-social" aria-label="Redes sociais"><a href="#" class="footer-social-link" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a><a href="#" class="footer-social-link" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
+        </div>
+        <nav aria-label="Serviços"><h3 class="footer-heading">Serviços</h3><ul class="footer-nav-list"><li><a href="services.html" class="footer-nav-link">Corte e styling</a></li><li><a href="services.html" class="footer-nav-link">Coloração</a></li><li><a href="service-detail.html" class="footer-nav-link">Balayage</a></li><li><a href="services.html" class="footer-nav-link">Tratamentos</a></li><li><a href="bridal.html" class="footer-nav-link">Noivas</a></li></ul></nav>
+        <nav aria-label="Páginas"><h3 class="footer-heading">Lume</h3><ul class="footer-nav-list"><li><a href="about.html" class="footer-nav-link">Sobre nós</a></li><li><a href="team.html" class="footer-nav-link">A nossa equipa</a></li><li><a href="gallery.html" class="footer-nav-link">Galeria</a></li><li><a href="journal.html" class="footer-nav-link">Journal</a></li><li><a href="booking.html" class="footer-nav-link">Marcações</a></li><li><a href="contact.html" class="footer-nav-link">Contactos</a></li></ul></nav>
+        <div><h3 class="footer-heading">Contacto</h3><div class="footer-info"><address>Rua do Século, 42<br>1200-433 Lisboa</address><p><a href="tel:+351912345678">+351 912 345 678</a><br><a href="mailto:geral@lumehair.pt">geral@lumehair.pt</a></p><p style="margin-top:1rem;">Seg–Sex: 9h–20h<br>Sáb: 9h–18h</p></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 Lume Hair Studio. Todos os direitos reservados.</p><div class="footer-legal-links"><a href="#">Privacidade</a><a href="#">Termos</a><a href="#">Cancelamentos</a></div></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
