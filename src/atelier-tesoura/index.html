@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Atelier Tesoura: cortes, coloração e tratamentos capilares com marcação online simples.">
+  <title>Atelier Tesoura | Salão de cabeleireiro</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="header">
+    <a class="logo" href="#inicio" aria-label="Atelier Tesoura, início">Atelier <strong>Tesoura</strong></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navegacao">Menu</button>
+    <nav id="navegacao" aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a><a href="#equipa">Equipa</a><a href="#precos">Preços</a><a href="#contactos">Contactos</a>
+      <a class="nav-cta" href="#marcar">Marcar</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <p class="eyebrow">Salão de cabeleireiro · Desde 2014</p>
+      <h1>O teu cabelo, <em>à medida.</em></h1>
+      <p class="intro">Cortes precisos, cor com luz natural e tratamentos que cuidam da fibra. Cada atendimento começa com uma conversa e termina quando estás satisfeita.</p>
+      <div class="hero-actions">
+        <a class="button" href="#marcar">Marcar atendimento</a>
+        <a class="text-link" href="#servicos">Ver serviços</a>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="section-heading">
+        <p class="eyebrow">01 · Serviços</p>
+        <h2>Tudo para o teu <em>cabelo.</em></h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="card-number">01</span>
+          <h3>Corte e finalização</h3>
+          <p>Corte personalizado ao formato do rosto e ao ritmo do teu dia a dia, com secagem e finalização.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">02</span>
+          <h3>Coloração</h3>
+          <p>Cor global, retoques de raiz, mechas e balayage, com fórmulas pensadas para preservar o brilho.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">03</span>
+          <h3>Tratamentos</h3>
+          <p>Hidratação, reconstrução e terapias de couro cabeludo para cabelos secos, danificados ou sensibilizados.</p>
+        </article>
+        <article class="card">
+          <span class="card-number">04</span>
+          <h3>Noivas e eventos</h3>
+          <p>Penteados para cerimónias e festas, com prova prévia para chegares ao dia certo com total tranquilidade.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="equipa">
+      <div class="section-heading">
+        <p class="eyebrow">02 · Equipa</p>
+        <h2>Quem te <em>atende.</em></h2>
+      </div>
+      <div class="team">
+        <article class="member">
+          <div class="avatar" aria-hidden="true">IM</div>
+          <h3>Inês Matos</h3>
+          <p class="role">Diretora criativa · Cortes e cor</p>
+        </article>
+        <article class="member">
+          <div class="avatar" aria-hidden="true">RC</div>
+          <h3>Rui Carvalho</h3>
+          <p class="role">Especialista em cortes masculinos</p>
+        </article>
+        <article class="member">
+          <div class="avatar" aria-hidden="true">TL</div>
+          <h3>Teresa Lopes</h3>
+          <p class="role">Coloração e tratamentos</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="precos">
+      <div class="section-heading">
+        <p class="eyebrow">03 · Preços</p>
+        <h2>Transparência <em>desde o início.</em></h2>
+        <p>Preços indicativos. O valor final depende do comprimento e da densidade do cabelo, e é confirmado na consulta.</p>
+      </div>
+      <table class="price-table">
+        <caption class="visually-hidden">Lista de preços indicativos</caption>
+        <thead>
+          <tr><th scope="col">Serviço</th><th scope="col">Duração</th><th scope="col">Preço</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Corte feminino</th><td>45 min</td><td>desde 35 €</td></tr>
+          <tr><th scope="row">Corte masculino</th><td>30 min</td><td>18 €</td></tr>
+          <tr><th scope="row">Coloração global</th><td>1 h 30</td><td>desde 60 €</td></tr>
+          <tr><th scope="row">Mechas ou balayage</th><td>2 h 30 – 3 h</td><td>desde 95 €</td></tr>
+          <tr><th scope="row">Tratamento de hidratação</th><td>30 min</td><td>25 €</td></tr>
+          <tr><th scope="row">Penteado de noiva</th><td>1 h 30</td><td>a partir de 120 €</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section section-alt" id="marcar">
+      <div class="section-heading">
+        <p class="eyebrow">04 · Marcação</p>
+        <h2>Reserva o teu <em>lugar.</em></h2>
+        <p>Escolhe o serviço e deixa-nos os teus contactos. Confirmamos por email ou telefone em menos de 24 horas.</p>
+      </div>
+      <form class="booking-form" id="form-marcacao" novalidate>
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" required>
+          <p class="field-error" id="erro-nome" role="alert" hidden>Indica o teu nome.</p>
+        </div>
+        <div class="form-group">
+          <label for="contacto">Telefone ou email</label>
+          <input id="contacto" name="contacto" type="text" autocomplete="tel" required>
+          <p class="field-error" id="erro-contacto" role="alert" hidden>Indica um telefone ou email válido.</p>
+        </div>
+        <div class="form-group">
+          <label for="servico">Serviço</label>
+          <select id="servico" name="servico" required>
+            <option value="">Escolhe um serviço</option>
+            <option>Corte e finalização</option>
+            <option>Coloração</option>
+            <option>Tratamentos</option>
+            <option>Noivas e eventos</option>
+          </select>
+          <p class="field-error" id="erro-servico" role="alert" hidden>Escolhe um serviço.</p>
+        </div>
+        <div class="form-group">
+          <label for="data">Data preferida</label>
+          <input id="data" name="data" type="date">
+        </div>
+        <button class="button" type="submit">Enviar pedido</button>
+        <p class="form-status" id="estado-marcacao" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="section contact" id="contactos">
+      <div>
+        <p class="eyebrow">05 · Contactos</p>
+        <h2>Vem <em>visitar-nos.</em></h2>
+        <p>Rua Exemplo, 12 · 1200-000 Lisboa</p>
+        <p><a href="tel:+351210000000">+351 210 000 000</a> · <a href="mailto:ola@atelier-tesoura.exemplo">ola@atelier-tesoura.exemplo</a></p>
+      </div>
+      <table class="hours-table">
+        <caption>Horário</caption>
+        <tbody>
+          <tr><th scope="row">Seg – Sex</th><td>9h – 20h</td></tr>
+          <tr><th scope="row">Sábado</th><td>9h – 18h</td></tr>
+          <tr><th scope="row">Domingo</th><td>Encerrado</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Atelier Tesoura · Dados fictícios para substituir antes da publicação.</p>
+  </footer>
+</body>
+</html>
