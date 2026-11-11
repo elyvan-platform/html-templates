@@ -8,6 +8,7 @@
   "scripts": {
     "build": "node --check scripts/showcase-lib.mjs && node --check scripts/showcase-server.mjs && node scripts/generate-showcase.mjs",
     "dev": "HOST=127.0.0.1 PORT=4321 node scripts/showcase-server.mjs",
-    "start": "node scripts/showcase-server.mjs"
+    "start": "node scripts/showcase-server.mjs",
+    "test": "node --test"
   }
 }
