@@ -138,7 +138,7 @@ export function templateArea(template) {
     ['Beleza', /hair|tesoura/],
     ['Comércio', /mercado|mercearia/],
     ['Desporto', /training|fitness-dashboard|atlantico|atlântico/],
-    ['Educação', /agrupamento/],
+    ['Educação', /agrupamento|learning-platform/],
     ['Serviços públicos', /junta/],
     ['Hotelaria', /stay|solar-do-sossego/],
     ['Viagens', /travel-explorer/],
