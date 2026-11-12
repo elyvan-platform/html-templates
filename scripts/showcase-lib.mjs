@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -125,558 +126,68 @@ export function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-export function renderShowcasePage(templates) {
-  const cards = templates
-    .map((template) => {
-      const description = template.description
-        ? `<p class="template-copy">${escapeHtml(template.description)}</p>`
-        : "";
+const styles = readFileSync(new URL('./showcase/ui.css', import.meta.url), 'utf8');
+const clientScript = readFileSync(new URL('./showcase/ui.js', import.meta.url), 'utf8');
 
-      return `      <article class="template-card">
-        <a class="template-preview" href="${escapeHtml(template.href)}">
-          <iframe src="${escapeHtml(template.href)}" title="Preview de ${escapeHtml(template.name)}" loading="lazy"></iframe>
-          <span class="template-preview-overlay">Abrir template</span>
-        </a>
-        <div class="template-body">
-          <a class="template-meta-link" href="${escapeHtml(template.href)}">
-            <p class="template-kicker">${escapeHtml(template.slug)}</p>
-            <h2>${escapeHtml(template.name)}</h2>
-            ${description}
-          </a>
-          <a class="template-link" href="${escapeHtml(template.viewerHref)}">Preview parcial</a>
-        </div>
-      </article>`;
-    })
-    .join("\n");
+export function templateArea(template) {
+  const value = `${template.slug} ${template.name}`.toLowerCase();
+  const groups = [
+    ['Saúde', /saude|saúde|clinica|clínica|farmacia|farmácia/],
+    ['Restauração', /cafe|café|pastelaria|casa-da-mesa/],
+    ['Beleza', /hair|tesoura/],
+    ['Comércio', /mercado|mercearia/],
+    ['Desporto', /training|atlantico|atlântico/],
+    ['Educação', /agrupamento/],
+    ['Serviços públicos', /junta/],
+    ['Hotelaria', /stay/],
+    ['Arquitetura', /forma-norte/],
+    ['Mobilidade', /rota-norte/],
+  ];
+  return groups.find(([, pattern]) => pattern.test(value))?.[0] || 'Outras áreas';
+}
 
+function page(title, body) {
   return `<!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Montra de Templates</title>
-  <meta name="description" content="Galeria automática dos templates HTML existentes em src.">
-  <style>
-    :root {
-      --bg: #f4efe7;
-      --surface: rgba(255, 255, 255, 0.78);
-      --surface-strong: #ffffff;
-      --text: #1f1a17;
-      --muted: #6e6258;
-      --line: rgba(31, 26, 23, 0.12);
-      --accent: #9f5c36;
-      --shadow: 0 28px 60px rgba(55, 37, 23, 0.14);
-      --radius-lg: 28px;
-      --radius-md: 20px;
-      --font-display: "Georgia", "Times New Roman", serif;
-      --font-body: "Segoe UI", Tahoma, sans-serif;
-    }
+<html lang="pt-PT"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escapeHtml(title)}</title><meta name="description" content="Descubra templates para a sua área e explore cada detalhe em mobile, tablet e desktop.">
+<style>${styles}</style>
+<script>try{const t=localStorage.getItem('showcase-theme');document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}</script>
+</head><body><a class="skip-link" href="#main">Saltar para o conteúdo</a><div class="shell">
+<header class="topbar"><a class="brand" href="/" aria-label="Montra de templates — início"><span class="brand-mark" aria-hidden="true">✦</span>template.space</a>
+<label class="theme-control" for="theme">Aparência <select id="theme"><option value="system" selected>Sistema</option><option value="light">Claro</option><option value="dark">Escuro</option></select></label></header>
+${body}
+<footer class="footer"><span>template.space / Uma ideia. Infinitas possibilidades.</span><span>Explore. Experimente. Imagine.</span></footer></div><script>${clientScript}</script></body></html>`;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+function previewStage() {
+  return `<div class="devices" role="group" aria-label="Dispositivo de preview">
+${[['mobile','Mobile'],['tablet','Tablet'],['desktop','Desktop']].map(([key,label]) => `<button type="button" data-device="${key}" aria-pressed="${key === 'desktop'}">${label}</button>`).join('')}
+</div>`;
+}
+function stage(href = 'about:blank', name = '') {
+  return `<section class="preview-stage" aria-label="Simulação do template"><p class="viewport-label" id="viewport-label" aria-live="polite"></p><div class="frame-wrap"><iframe class="device-frame" id="device-frame" src="${escapeHtml(href)}" title="Preview de ${escapeHtml(name)}" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe></div></section>`;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: var(--font-body);
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(159, 92, 54, 0.12), transparent 28rem),
-        linear-gradient(180deg, #fbf8f3 0%, var(--bg) 45%, #efe5d7 100%);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(31, 26, 23, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(31, 26, 23, 0.035) 1px, transparent 1px);
-      background-size: 32px 32px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 80%);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    code {
-      font-family: "SFMono-Regular", Consolas, monospace;
-    }
-
-    .page-shell {
-      width: min(1200px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 56px 0 72px;
-    }
-
-    .hero {
-      display: grid;
-      gap: 20px;
-      padding: 32px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: rgba(255, 251, 247, 0.72);
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-label {
-      margin: 0;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .hero h1 {
-      margin: 0;
-      max-width: 10ch;
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      line-height: 0.92;
-      font-weight: 600;
-    }
-
-    .hero p {
-      margin: 0;
-      max-width: 60ch;
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .hero-meta strong {
-      color: var(--text);
-    }
-
-    .templates-grid {
-      display: grid;
-      gap: 24px;
-      margin-top: 32px;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .template-card {
-      display: grid;
-      grid-template-rows: 320px auto;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      box-shadow: 0 16px 38px rgba(55, 37, 23, 0.12);
-    }
-
-    .template-preview {
-      position: relative;
-      overflow: hidden;
-      background: #d8cec2;
-    }
-
-    .template-preview iframe {
-      width: 1440px;
-      height: 900px;
-      border: 0;
-      transform: scale(0.36);
-      transform-origin: top left;
-      pointer-events: none;
-    }
-
-    .template-preview::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(25, 21, 18, 0.62) 100%);
-    }
-
-    .template-preview-overlay {
-      position: absolute;
-      left: 20px;
-      bottom: 18px;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      font-size: 0.88rem;
-      font-weight: 600;
-    }
-
-    .template-body {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 22px;
-    }
-
-    .template-meta-link {
-      display: block;
-    }
-
-    .template-kicker {
-      margin: 0 0 8px;
-      font-size: 0.74rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .template-body h2 {
-      margin: 0;
-      font-size: 1.5rem;
-      line-height: 1.1;
-      font-family: var(--font-display);
-      font-weight: 600;
-    }
-
-    .template-copy {
-      margin: 12px 0 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 0.98rem;
-    }
-
-    .template-link {
-      flex-shrink: 0;
-      align-self: end;
-      padding: 12px 14px;
-      border-radius: 999px;
-      background: var(--surface-strong);
-      border: 1px solid var(--line);
-      font-size: 0.92rem;
-      font-weight: 600;
-    }
-
-    .empty-state {
-      margin-top: 32px;
-      padding: 32px;
-      border-radius: var(--radius-md);
-      border: 1px dashed var(--line);
-      background: rgba(255, 255, 255, 0.6);
-      color: var(--muted);
-    }
-
-    @media (max-width: 720px) {
-      .page-shell {
-        width: min(100% - 20px, 1200px);
-        padding: 20px 0 48px;
-      }
-
-      .hero {
-        padding: 24px;
-      }
-
-      .templates-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .template-card {
-        grid-template-rows: 250px auto;
-      }
-
-      .template-preview iframe {
-        transform: scale(0.28);
-      }
-
-      .template-body {
-        flex-direction: column;
-      }
-
-      .template-link {
-        align-self: start;
-      }
-    }
-  </style>
-</head>
-<body>
-  <main class="page-shell">
-    <section class="hero">
-      <p class="hero-label">Template Showcase</p>
-      <h1>Montra automática de templates</h1>
-      <p>Esta página é servida diretamente a partir das subpastas de <code>src</code>. Cada novo template com <code>index.html</code> passa a aparecer automaticamente na montra e tem uma área própria de visualização.</p>
-      <div class="hero-meta">
-        <span><strong>${templates.length}</strong> templates detetados</span>
-        <span>Origem: <code>/src</code></span>
-      </div>
-    </section>
-    ${
-      templates.length
-        ? `<section class="templates-grid">
-${cards}
-    </section>`
-        : `<section class="empty-state">Nenhum template foi encontrado em <code>src</code>.</section>`
-    }
-  </main>
-</body>
-</html>`;
+export function renderShowcasePage(templates) {
+  const areas = [...new Set(templates.map(templateArea))].sort((a,b) => a.localeCompare(b,'pt'));
+  const cards = templates.map(template => {
+    const name = escapeHtml(template.name), href = escapeHtml(template.href), area = escapeHtml(templateArea(template));
+    const preview = `data-preview data-href="${href}" data-name="${name}"`;
+    return `<article class="template-card" data-area="${area}">
+<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><iframe class="thumbnail" src="${href}" title="Miniatura de ${name}" loading="lazy" tabindex="-1" sandbox></iframe><span class="preview-tag">Explorar template ↗</span></button>
+<div class="template-body"><p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
+<div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Pré-visualizar ${name}">Preview →</button></div></div></article>`;
+  }).join('');
+  return page('Montra de Templates', `<main id="main"><section class="hero"><p class="eyebrow">Uma nova perspetiva digital</p><h1>O próximo passo da sua marca começa <span>aqui.</span></h1><p class="hero-copy">Design com personalidade, para cada ideia. Descubra o seu template e experimente-o em qualquer ecrã.</p><div class="hero-bottom"><span class="collection-label">Coleção / ${String(templates.length).padStart(2,'0')} templates</span><span class="results"><span class="status-dot"></span>Prontos para explorar</span></div></section>
+<section class="catalogue" aria-label="Coleção de templates"><div class="toolbar"><label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Pesquisar templates…" aria-label="Pesquisar templates"></label><span class="results" id="result-count" role="status">${templates.length} de ${templates.length} templates</span></div>
+<div class="filters" role="group" aria-label="Filtrar por área"><button type="button" data-filter="all" aria-pressed="true">Todas as áreas</button>${areas.map(area => `<button type="button" data-filter="${escapeHtml(area)}" aria-pressed="false">${escapeHtml(area)}</button>`).join('')}</div>
+<div class="templates-grid">${cards}</div><div class="empty-state" id="no-results" ${templates.length ? 'hidden' : ''}><h2>Nenhum template encontrado</h2><p>Experimente outra pesquisa ou explore todas as áreas.</p><button type="button" id="reset-filters">Limpar filtros</button></div></section></main>
+<dialog class="preview-dialog" id="preview-dialog" aria-labelledby="preview-title"><div class="preview-toolbar"><h2 class="preview-title" id="preview-title">Preview</h2>${previewStage()}<div class="preview-links"><a id="preview-direct" href="#" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" id="close-preview" aria-label="Fechar preview">Fechar ×</button></div></div>${stage()}</dialog>`);
 }
 
 export function renderTemplateViewerPage(templates, currentTemplate) {
-  const currentIndex = templates.findIndex((template) => template.slug === currentTemplate.slug);
-  const previous = currentIndex > 0 ? templates[currentIndex - 1] : templates.at(-1);
-  const next = currentIndex < templates.length - 1 ? templates[currentIndex + 1] : templates[0];
-
-  const templateLinks = templates
-    .map((template) => {
-      const currentClass = template.slug === currentTemplate.slug ? " template-item-current" : "";
-
-      return `        <a class="template-item${currentClass}" href="${escapeHtml(template.viewerHref)}">
-          <span>${escapeHtml(template.name)}</span>
-          <small>${escapeHtml(template.slug)}</small>
-        </a>`;
-    })
-    .join("\n");
-
-  const description = currentTemplate.description
-    ? `<p class="viewer-copy">${escapeHtml(currentTemplate.description)}</p>`
-    : "";
-
-  return `<!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(currentTemplate.name)} | Viewer</title>
-  <meta name="description" content="Visualização do template ${escapeHtml(currentTemplate.name)}.">
-  <style>
-    :root {
-      --bg: #131313;
-      --panel: #1d1d1d;
-      --panel-soft: #262626;
-      --text: #f3efe8;
-      --muted: #b6aa9f;
-      --line: rgba(255, 255, 255, 0.08);
-      --accent: #d4a373;
-      --radius: 22px;
-      --font-display: "Georgia", "Times New Roman", serif;
-      --font-body: "Segoe UI", Tahoma, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: var(--font-body);
-      color: var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(212, 163, 115, 0.18), transparent 28rem),
-        linear-gradient(180deg, #181818 0%, #101010 100%);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .viewer-layout {
-      display: grid;
-      grid-template-columns: 320px minmax(0, 1fr);
-      min-height: 100vh;
-    }
-
-    .viewer-sidebar {
-      display: grid;
-      grid-template-rows: auto auto 1fr auto;
-      gap: 24px;
-      padding: 28px;
-      background: rgba(14, 14, 14, 0.9);
-      border-right: 1px solid var(--line);
-      backdrop-filter: blur(16px);
-    }
-
-    .viewer-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .viewer-heading h1 {
-      margin: 8px 0 0;
-      font-size: 2.4rem;
-      line-height: 0.95;
-      font-family: var(--font-display);
-      font-weight: 600;
-    }
-
-    .viewer-label {
-      margin: 0;
-      font-size: 0.75rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .viewer-copy {
-      margin: 14px 0 0;
-      line-height: 1.7;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .viewer-nav {
-      display: grid;
-      gap: 12px;
-    }
-
-    .viewer-nav-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .viewer-button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 12px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--panel-soft);
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .viewer-list {
-      display: grid;
-      gap: 10px;
-      align-content: start;
-      overflow: auto;
-    }
-
-    .template-item {
-      display: grid;
-      gap: 4px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .template-item small {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .template-item-current {
-      background: rgba(212, 163, 115, 0.16);
-      border-color: rgba(212, 163, 115, 0.42);
-    }
-
-    .viewer-raw-link {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 14px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #1a130d;
-      font-weight: 700;
-    }
-
-    .viewer-stage {
-      display: grid;
-      grid-template-rows: auto 1fr;
-      min-width: 0;
-      padding: 18px;
-      gap: 18px;
-    }
-
-    .viewer-stage-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 14px 18px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--line);
-      color: var(--muted);
-    }
-
-    .viewer-stage-frame {
-      overflow: hidden;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      background: #ffffff;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
-    }
-
-    .viewer-stage-frame iframe {
-      width: 100%;
-      height: calc(100vh - 92px);
-      border: 0;
-      background: #ffffff;
-    }
-
-    @media (max-width: 980px) {
-      .viewer-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .viewer-sidebar {
-        grid-template-rows: auto auto auto auto;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .viewer-stage-frame iframe {
-        height: 78vh;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="viewer-layout">
-    <aside class="viewer-sidebar">
-      <a class="viewer-back" href="/">← Voltar à montra</a>
-      <section class="viewer-heading">
-        <p class="viewer-label">Template Viewer</p>
-        <h1>${escapeHtml(currentTemplate.name)}</h1>
-        ${description}
-      </section>
-      <nav class="viewer-nav" aria-label="Navegação entre templates">
-        <div class="viewer-nav-row">
-          <a class="viewer-button" href="${escapeHtml(previous.viewerHref)}">Anterior</a>
-          <a class="viewer-button" href="${escapeHtml(next.viewerHref)}">Seguinte</a>
-        </div>
-        <div class="viewer-list">
-${templateLinks}
-        </div>
-      </nav>
-      <a class="viewer-raw-link" href="${escapeHtml(currentTemplate.href)}" target="_blank" rel="noreferrer">Abrir template direto</a>
-    </aside>
-    <main class="viewer-stage">
-      <div class="viewer-stage-bar">
-        <span>A navegar em <strong>${escapeHtml(currentTemplate.slug)}</strong></span>
-        <span>O layout corre no mesmo servidor, com os assets reais do template.</span>
-      </div>
-      <section class="viewer-stage-frame">
-        <iframe src="${escapeHtml(currentTemplate.href)}" title="Template ${escapeHtml(currentTemplate.name)}"></iframe>
-      </section>
-    </main>
-  </div>
-</body>
-</html>`;
+  const index = templates.findIndex(template => template.slug === currentTemplate.slug);
+  const previous = templates[(index - 1 + templates.length) % templates.length];
+  const next = templates[(index + 1) % templates.length];
+  return page(`${currentTemplate.name} | Preview`, `<main id="main" class="viewer-shell"><a href="/">← Voltar à montra</a><p class="eyebrow">${escapeHtml(templateArea(currentTemplate))}</p><h1>${escapeHtml(currentTemplate.name)}</h1><nav class="viewer-nav" aria-label="Navegação entre templates"><a class="button" href="${escapeHtml(previous.viewerHref)}">← Anterior</a><a class="button" href="${escapeHtml(next.viewerHref)}">Seguinte →</a><a class="button" href="${escapeHtml(currentTemplate.href)}" target="_blank" rel="noopener">Abrir site ↗</a></nav><div class="preview-toolbar"><span>Explore em diferentes ecrãs</span>${previewStage()}</div>${stage(currentTemplate.href,currentTemplate.name)}</main>`);
 }
