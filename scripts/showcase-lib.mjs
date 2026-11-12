@@ -132,6 +132,7 @@ const clientScript = readFileSync(new URL('./showcase/ui.js', import.meta.url), 
 export function templateArea(template) {
   const value = `${template.slug} ${template.name}`.toLowerCase();
   const groups = [
+    ['Cultura e revistas', /margem-revista/],
     ['Saúde', /saude|saúde|clinica|clínica|farmacia|farmácia/],
     ['Restauração', /cafe|café|pastelaria|casa-da-mesa/],
     ['Beleza', /hair|tesoura/],
