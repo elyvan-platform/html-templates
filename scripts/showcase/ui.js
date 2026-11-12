@@ -17,6 +17,50 @@ if (themeSelect) {
 }
 systemTheme.addEventListener('change', applyTheme);
 const cards = [...document.querySelectorAll('.template-card')];
+// Observe the card, rather than the oversized, scaled iframe. Withholding src
+// prevents the browser's native lazy-loading distance from fetching the catalogue.
+const pendingThumbnails = new Set(cards);
+function loadThumbnail(card) {
+  if (card.hidden || !pendingThumbnails.has(card)) return;
+  const thumbnail = card.querySelector('.thumbnail');
+  thumbnail.src = thumbnail.dataset.src;
+  delete thumbnail.dataset.src;
+  pendingThumbnails.delete(card);
+  thumbnailObserver?.unobserve(card);
+}
+const thumbnailObserver = typeof IntersectionObserver === 'function'
+  ? new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) loadThumbnail(entry.target);
+      }
+    }, { rootMargin: '200px 0px', threshold: 0 })
+  : null;
+function refreshThumbnails() {
+  for (const card of pendingThumbnails) {
+    if (thumbnailObserver) {
+      // Re-observe after filtering so newly visible cards get a fresh entry.
+      thumbnailObserver.unobserve(card);
+      if (!card.hidden) thumbnailObserver.observe(card);
+    } else if (!card.hidden) {
+      const bounds = card.getBoundingClientRect();
+      if (bounds.bottom >= -200 && bounds.top <= window.innerHeight + 200) loadThumbnail(card);
+    }
+  }
+}
+if (!thumbnailObserver && cards.length) {
+  let scheduled = false;
+  const scheduleThumbnails = () => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      scheduled = false;
+      refreshThumbnails();
+    });
+  };
+  window.addEventListener('scroll', scheduleThumbnails, { passive: true });
+  window.addEventListener('resize', scheduleThumbnails);
+}
+refreshThumbnails();
 let area = 'all';
 const search = document.querySelector('#search');
 function filterCards() {
@@ -30,6 +74,7 @@ function filterCards() {
   document.querySelector('#result-count').textContent = `${count} de ${cards.length} templates`;
   document.querySelector('#no-results').hidden = count !== 0;
   resizeThumbnails();
+  refreshThumbnails();
 }
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   area = button.dataset.filter;
