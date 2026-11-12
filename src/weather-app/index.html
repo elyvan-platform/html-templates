@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brisa Meteo | Weather App</title>
+<meta name="description" content="Dashboard demo de previsão do tempo em glassmorphism: pesquisa de cidades, previsão horária e semanal, °C/°F, vento, chuva, humidade e favoritos locais.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%231d3b6b'/%3E%3Ccircle cx='13' cy='13' r='6' fill='%23ffd36b'/%3E%3Cpath d='M9 24a5 5 0 0 1 1-9.9A6 6 0 0 1 22 16a4 4 0 0 1 0 8z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css"><script src="assets/main.js" defer></script>
+</head>
+<body data-sky="part">
+<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+<div class="sky" aria-hidden="true"><span class="sun"></span><span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span></div>
+<div class="app">
+<header class="top"><a class="brand" href="#conteudo"><span aria-hidden="true">◐</span> Brisa<em>meteo</em></a><span class="demo">DEMO · dados fictícios de 12 nov. 2026, 14:00</span>
+<div class="units" role="group" aria-label="Unidade de temperatura"><button type="button" data-unit="C" aria-pressed="true">°C</button><button type="button" data-unit="F" aria-pressed="false">°F</button></div></header>
+<div class="grid">
+<aside class="glass side" aria-label="Localizações">
+<form id="search-form" role="search"><label for="search">Pesquisar cidade</label><div class="field"><input id="search" type="search" placeholder="Ex.: Porto, Algarve…" autocomplete="off"></div></form>
+<p id="result-count" class="count" role="status"></p>
+<ul id="city-list" class="cities"></ul>
+<div id="empty" class="empty" hidden><span aria-hidden="true">🔎</span><h2>Localização não encontrada</h2><p>Este conjunto de demonstração só inclui 8 localizações portuguesas.</p><button type="button" id="clear">Ver todas as localizações</button></div>
+</aside>
+<main id="conteudo" class="main">
+<section class="glass hero" aria-labelledby="city-title"><div><p class="eyebrow" id="city-region"></p><h1 id="city-title"></h1><p class="note">Temperatura atual de demonstração — não é uma medição real.</p><button type="button" id="fav-toggle" class="fav" aria-pressed="false"></button></div>
+<div class="now"><span id="now-icon" class="big-icon" aria-hidden="true"></span><div><strong id="now-temp" class="temp"></strong><p id="now-cond"></p></div></div></section>
+<section class="metrics" aria-label="Condições atuais"><article class="glass"><h2>Vento</h2><strong id="m-wind"></strong><div class="bar"><i id="bar-wind"></i></div></article><article class="glass"><h2>Prob. de chuva</h2><strong id="m-rain"></strong><div class="bar"><i id="bar-rain"></i></div></article><article class="glass"><h2>Humidade</h2><strong id="m-hum"></strong><div class="bar"><i id="bar-hum"></i></div></article></section>
+<section class="glass" aria-labelledby="h-title"><h2 id="h-title">Próximas 24 horas</h2><ol id="hourly" class="hourly" tabindex="0" aria-label="Previsão horária, deslizar para ver mais"></ol></section>
+<section class="glass" aria-labelledby="w-title"><h2 id="w-title">Próximos 7 dias</h2><ol id="weekly" class="weekly"></ol></section>
+<section class="glass" aria-labelledby="f-title"><h2 id="f-title">Favoritos</h2><ul id="fav-list" class="favs"></ul><p id="fav-empty" class="note" hidden>Ainda sem favoritos. Use a estrela junto a uma cidade para a guardar. Os favoritos duram apenas esta visita.</p></section>
+</main></div>
+<footer class="foot">Demo educativa · Sem API, sem dados reais · Não use para decisões meteorológicas.</footer>
+<p id="announcement" class="sr-only" role="status"></p>
+<noscript><p class="note">Ative o JavaScript para explorar a previsão de demonstração.</p></noscript>
+</div></body></html>
