@@ -18,12 +18,24 @@ if (themeSelect) {
 systemTheme.addEventListener('change', applyTheme);
 const cards = [...document.querySelectorAll('.template-card')];
 const pendingThumbnails = new Set(cards.filter(card => card.querySelector('.thumbnail').dataset.src));
-// Observe the card rather than the scaled iframe's 1440 × 900 layout box.
+// Keep the existing card visibility queue shared with search and filters.
+for (const card of cards) {
+  const thumbnail = card.querySelector('.thumbnail');
+  const fallback = thumbnail.src;
+  thumbnail.addEventListener('error', () => {
+    thumbnail.removeAttribute('srcset');
+    if (thumbnail.src !== fallback) thumbnail.src = fallback;
+  });
+}
 function loadThumbnail(card) {
   const thumbnail = card.querySelector('.thumbnail');
   if (card.hidden || !thumbnail.dataset.src) return;
   // Visibility is controlled here; avoid a second browser-specific lazy-load delay.
   thumbnail.loading = 'eager';
+  if (thumbnail.dataset.srcset) {
+    thumbnail.srcset = thumbnail.dataset.srcset;
+    delete thumbnail.dataset.srcset;
+  }
   thumbnail.src = thumbnail.dataset.src;
   delete thumbnail.dataset.src;
   pendingThumbnails.delete(card);
@@ -71,7 +83,6 @@ function filterCards() {
   }
   document.querySelector('#result-count').textContent = `${count} de ${cards.length} templates`;
   document.querySelector('#no-results').hidden = count !== 0;
-  resizeThumbnails();
   observeThumbnails();
 }
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
@@ -84,14 +95,6 @@ document.querySelector('#reset-filters')?.addEventListener('click', () => {
   search.value = '';
   document.querySelector('[data-filter="all"]').click();
 });
-function resizeThumbnails() {
-  // Read all widths before writing transforms to avoid repeated layout work.
-  const sizes = cards.filter(card => !card.hidden).map(card => ({
-    thumbnail: card.querySelector('.thumbnail'),
-    scale: card.querySelector('.template-preview').clientWidth / 1440,
-  }));
-  for (const { thumbnail, scale } of sizes) thumbnail.style.transform = `scale(${scale})`;
-}
 const dialog = document.querySelector('#preview-dialog');
 const frame = document.querySelector('#device-frame');
 let device = 'desktop';
@@ -125,8 +128,7 @@ document.querySelectorAll('[data-preview]').forEach(button => button.addEventLis
 }));
 document.querySelector('#close-preview')?.addEventListener('click', () => dialog.close());
 dialog?.addEventListener('close', () => { frame.src = 'about:blank'; });
-window.addEventListener('resize', () => { resizeThumbnails(); resizeDevice(); observeThumbnails(); });
-resizeThumbnails();
+window.addEventListener('resize', () => { resizeDevice(); observeThumbnails(); });
 resizeDevice();
 
 observeThumbnails();

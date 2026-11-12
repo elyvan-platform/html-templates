@@ -8,7 +8,11 @@ const script = readFileSync(new URL('../scripts/showcase/ui.js', import.meta.url
 
 function setup({ observer = true } = {}) {
   const cards = [0, 1, 2].map(index => {
-    const thumbnail = { dataset: { src: `/template-${index}.html` }, style: {} };
+    const handlers = {};
+    const thumbnail = { dataset: { src: `/template-${index}.webp`, srcset: `/template-${index}.webp 480w` }, style: {}, handlers,
+      addEventListener(event, callback) { handlers[event] = callback; },
+      removeAttribute(name) { delete this[name]; },
+    };
     return {
       hidden: false, dataset: { area: index === 2 ? 'Saúde' : 'Comércio' },
       textContent: `Template ${index}`, thumbnail,
@@ -42,11 +46,14 @@ function setup({ observer = true } = {}) {
 }
 
 test('showcase thumbnails have deferred URLs and no initial template requests', () => {
-  const html = renderShowcasePage([{ slug: 'example', name: 'Example', href: '/src/example/index.html', description: '' }]);
-  const thumbnails = html.match(/<iframe class="thumbnail"[^>]*>/g);
+  const html = renderShowcasePage([{ slug: 'example', name: 'Example', href: '/src/example/index.webp', description: '', previewHref: '/src/showcase-assets/example-480.webp' }]);
+  const thumbnails = html.match(/<img class="thumbnail"[^>]*>/g);
   assert.equal(thumbnails.length, 1);
-  assert.match(thumbnails[0], /data-src="\/src\/example\/index.html"/);
-  assert.doesNotMatch(thumbnails[0], /\ssrc=/);
+  assert.match(thumbnails[0], /data-src="\/src\/showcase-assets\/example-480.webp"/);
+  assert.match(thumbnails[0], /src="data:image\/svg\+xml,/);
+  assert.match(thumbnails[0], /data-srcset=/);
+  assert.match(thumbnails[0], /width="960" height="600"/);
+  assert.doesNotMatch(html, /<iframe class="thumbnail"/);
 });
 
 test('only intersecting visible cards load, once, including after search changes', () => {
@@ -56,7 +63,7 @@ test('only intersecting visible cards load, once, including after search changes
   app.intersect(app.cards[0], false);
   assert.equal(app.cards[0].thumbnail.src, undefined);
   app.intersect(app.cards[0]);
-  assert.equal(app.cards[0].thumbnail.src, '/template-0.html');
+  assert.equal(app.cards[0].thumbnail.src, '/template-0.webp');
   assert.equal(app.observed.has(app.cards[0]), false);
   app.search.value = 'Template 1';
   app.searchEvents.input();
@@ -64,28 +71,28 @@ test('only intersecting visible cards load, once, including after search changes
   app.intersect(app.cards[2]); // A queued entry for a newly hidden card must not load it.
   assert.equal(app.cards[2].thumbnail.src, undefined);
   app.intersect(app.cards[1]);
-  assert.equal(app.cards[1].thumbnail.src, '/template-1.html');
+  assert.equal(app.cards[1].thumbnail.src, '/template-1.webp');
   app.search.value = '';
   app.searchEvents.input();
   assert.equal(app.observed.size, 1);
   assert.ok(app.observed.has(app.cards[2]));
   app.intersect(app.cards[2]);
-  assert.equal(app.cards[2].thumbnail.src, '/template-2.html');
+  assert.equal(app.cards[2].thumbnail.src, '/template-2.webp');
   assert.equal(app.observed.size, 0);
   assert.equal(app.elements['#result-count'].textContent, '3 de 3 templates');
 });
 
 test('fallback loads only nearby cards on initial render, scroll and resize', () => {
   const app = setup({ observer: false });
-  assert.equal(app.cards[0].thumbnail.src, '/template-0.html');
+  assert.equal(app.cards[0].thumbnail.src, '/template-0.webp');
   assert.equal(app.cards[1].thumbnail.src, undefined);
   app.cards[1].getBoundingClientRect = () => ({ top: 400, bottom: 700 });
   app.events.scroll();
-  assert.equal(app.cards[1].thumbnail.src, '/template-1.html');
+  assert.equal(app.cards[1].thumbnail.src, '/template-1.webp');
   assert.equal(app.cards[2].thumbnail.src, undefined);
   app.cards[2].getBoundingClientRect = () => ({ top: 500, bottom: 800 });
   app.events.resize();
-  assert.equal(app.cards[2].thumbnail.src, '/template-2.html');
+  assert.equal(app.cards[2].thumbnail.src, '/template-2.webp');
 });
 
 test('activated thumbnails load immediately and are never measured again by the fallback', () => {
@@ -96,7 +103,7 @@ test('activated thumbnails load immediately and are never measured again by the 
   loaded.getBoundingClientRect = () => { throw new Error('Loaded thumbnails must leave the pending queue'); };
   app.events.scroll();
   app.events.resize();
-  assert.equal(loaded.thumbnail.src, '/template-0.html');
+  assert.equal(loaded.thumbnail.src, '/template-0.webp');
 });
 
 test('fallback defers hidden search results until they are visible and near the viewport', () => {
@@ -108,6 +115,18 @@ test('fallback defers hidden search results until they are visible and near the 
   assert.equal(app.cards[1].thumbnail.src, undefined);
   app.search.value = '';
   app.searchEvents.input();
-  assert.equal(app.cards[1].thumbnail.src, '/template-1.html');
+  assert.equal(app.cards[1].thumbnail.src, '/template-1.webp');
   assert.equal(app.cards[2].thumbnail.src, undefined);
+});
+
+
+test('responsive sources activate with the existing queue and errors clear srcset', () => {
+  const app = setup();
+  const image = app.cards[0].thumbnail;
+  app.intersect(app.cards[0]);
+  assert.equal(image.srcset, '/template-0.webp 480w');
+  assert.equal(image.dataset.srcset, undefined);
+  image.handlers.error();
+  assert.equal(image.srcset, undefined);
+  assert.equal(image.src, undefined); // original placeholder in this mock
 });

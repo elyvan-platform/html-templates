@@ -48,13 +48,26 @@ export async function extractTemplateMeta(slug, html) {
     name,
     description,
     previewHref,
+    thumbnailHref: await findThumbnailAsset(slug) || previewHref,
     href: `/src/${slug}/index.html`,
     viewerHref: `/templates/${slug}`,
   };
 }
 
+async function findThumbnailAsset(slug) {
+  try {
+    await fs.access(path.join(srcDir, "showcase-assets", `${slug}-480.webp`));
+    await fs.access(path.join(srcDir, "showcase-assets", `${slug}-960.webp`));
+    return `/src/showcase-assets/${slug}-480.webp`;
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+  return null;
+}
+
 async function findPreviewAsset(slug) {
   const previewNames = [
+    "preview.avif",
     "preview.webp",
     "preview.png",
     "preview.jpg",
@@ -180,13 +193,17 @@ function stage(href = 'about:blank', name = '') {
   return `<section class="preview-stage" aria-label="Simulação do template"><p class="viewport-label" id="viewport-label" aria-live="polite"></p><div class="frame-wrap"><iframe class="device-frame" id="device-frame" src="${escapeHtml(href)}" title="Preview de ${escapeHtml(name)}" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe></div></section>`;
 }
 
+const thumbnailPlaceholder = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600"><rect width="960" height="600" fill="#e5e8f0"/><text x="480" y="300" text-anchor="middle" fill="#59627a" font-family="sans-serif" font-size="28">Pré-visualização indisponível</text></svg>');
+
 export function renderShowcasePage(templates) {
   const areas = [...new Set(templates.map(templateArea))].sort((a,b) => a.localeCompare(b,'pt'));
   const cards = templates.map(template => {
     const name = escapeHtml(template.name), href = escapeHtml(template.href), area = escapeHtml(templateArea(template));
+    const image = template.thumbnailHref || template.previewHref;
+    const responsive = image?.endsWith('-480.webp') ? ` data-srcset="${escapeHtml(image.slice(1))} 480w, ${escapeHtml(image.slice(1).replace('-480.webp', '-960.webp'))} 960w"` : '';
     const preview = `data-preview data-href="${href}" data-name="${name}"`;
     return `<article class="template-card" data-area="${area}">
-<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><iframe class="thumbnail" data-src="${href}" title="Miniatura de ${name}" loading="lazy" tabindex="-1" sandbox></iframe><span class="preview-tag">Explorar template ↗</span></button>
+<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><img class="thumbnail" src="${thumbnailPlaceholder}"${image ? ` data-src="${escapeHtml(image)}"` : ''}${responsive} sizes="(max-width: 650px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 88px) / 2), (max-width: 1464px) calc((100vw - 112px) / 3), 450px" width="960" height="600" alt="Página inicial de ${name} — ${area}" loading="lazy" decoding="async"><span class="preview-tag">Explorar template ↗</span></button>
 <div class="template-body"><p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
 <div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Pré-visualizar ${name}">Preview →</button></div></div></article>`;
   }).join('');
