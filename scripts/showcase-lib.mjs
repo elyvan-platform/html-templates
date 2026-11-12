@@ -184,9 +184,12 @@ export function renderShowcasePage(templates) {
   const areas = [...new Set(templates.map(templateArea))].sort((a,b) => a.localeCompare(b,'pt'));
   const cards = templates.map(template => {
     const name = escapeHtml(template.name), href = escapeHtml(template.href), area = escapeHtml(templateArea(template));
+    const thumbnail = escapeHtml(template.previewHref || '/src/showcase-assets/placeholder.svg');
+    const responsive = template.previewHref?.endsWith('/preview.webp')
+      ? ` data-srcset="${escapeHtml(template.previewHref.replace('/preview.webp', '/preview-480.webp'))} 480w, ${thumbnail} 960w"` : '';
     const preview = `data-preview data-href="${href}" data-name="${name}"`;
     return `<article class="template-card" data-area="${area}">
-<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><iframe class="thumbnail" data-src="${href}" title="Miniatura de ${name}" loading="lazy" tabindex="-1" sandbox></iframe><span class="preview-tag">Explorar template ↗</span></button>
+<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><img class="thumbnail" src="/src/showcase-assets/placeholder.svg" data-src="${thumbnail}"${responsive} data-fallback="/src/showcase-assets/placeholder.svg" alt="Captura do template ${name} — ${area}" width="960" height="600" sizes="(max-width: 650px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 88px) / 2), (max-width: 1464px) calc((100vw - 112px) / 3), 450px" loading="lazy" decoding="async"><span class="preview-tag">Explorar template ↗</span></button>
 <div class="template-body"><p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
 <div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Pré-visualizar ${name}">Preview →</button></div></div></article>`;
   }).join('');

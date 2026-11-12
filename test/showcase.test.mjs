@@ -33,3 +33,27 @@ test('new areas fall back gracefully and template metadata is escaped', () => {
   assert.ok(!html.includes('<img src=x>'));
   assert.match(renderShowcasePage([]), /id="no-results" >/);
 });
+
+test('all catalog thumbnails are local images with responsive assets and reserved space', async () => {
+  const { stat } = await import('node:fs/promises');
+  const templates = await listTemplateDirectories();
+  const html = renderShowcasePage(templates);
+  assert.equal((html.match(/<img class="thumbnail"/g) || []).length, templates.length);
+  assert.equal((html.match(/<iframe /g) || []).length, 1, 'only the blank preview frame remains');
+  for (const template of templates) {
+    assert.ok(template.previewHref, template.slug);
+    const asset = await stat(new URL(`..${template.previewHref}`, import.meta.url));
+    assert.ok(asset.size > 0 && asset.size < 150_000, template.slug);
+    if (template.previewHref.endsWith('.webp')) {
+      const small = await stat(new URL(`..${template.previewHref.replace('/preview.webp', '/preview-480.webp')}`, import.meta.url));
+      assert.ok(small.size > 0 && small.size < asset.size, template.slug);
+    }
+  }
+  assert.equal((html.match(/width="960" height="600"/g) || []).length, templates.length);
+});
+
+test('missing thumbnail metadata uses the local placeholder without a card iframe', () => {
+  const html = renderShowcasePage([{slug:'missing', name:'Missing', href:'/src/missing/index.html'}]);
+  assert.match(html, /data-src="\/src\/showcase-assets\/placeholder.svg"/);
+  assert.match(html, /alt="Captura do template Missing — Outras áreas"/);
+});
