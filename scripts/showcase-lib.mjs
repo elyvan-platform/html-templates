@@ -145,7 +145,7 @@ export function templateArea(template) {
     ['Arquitetura', /forma-norte|architecture-studio/],
     ['Branding e design', /agencia-criativa/],
     ['Imobiliário', /limiar-imobiliaria/],
-    ['Design e decoração', /maison|albor/],
+    ['Design e decoração', /maison|albor|lume-configurator/],
     ['Mobilidade', /rota-norte/],
     ['Automóvel', /automotive/],
     ['Finanças', /finance-dashboard|balanço|balanco/],
