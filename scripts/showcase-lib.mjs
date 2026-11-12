@@ -141,6 +141,7 @@ export function templateArea(template) {
     ['Serviços públicos', /junta/],
     ['Hotelaria', /stay/],
     ['Arquitetura', /forma-norte/],
+    ['Branding e design', /agencia-criativa/],
     ['Imobiliário', /limiar-imobiliaria/],
     ['Design e decoração', /maison|albor/],
     ['Mobilidade', /rota-norte/],

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agência Criativa | Estúdio de branding e design</title>
+  <meta name="description" content="Template editorial experimental para estúdio de branding e design: hero tipográfico, portefólio de casos, serviços, processo, equipa, manifesto e formulário de briefing local.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23ff4d1a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="site-header">
+    <a class="logo" href="#topo" aria-label="Fio Vivo, início">fio<span>/</span>vivo</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navegacao">Menu</button>
+    <nav id="navegacao" aria-label="Principal">
+      <ul>
+        <li><a href="#casos">Casos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#equipa">Equipa</a></li>
+        <li><a href="#manifesto">Manifesto</a></li>
+        <li><a class="nav-cta" href="#briefing">Briefing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="topo" aria-labelledby="hero-titulo">
+      <p class="kicker">Estúdio de branding &amp; design · Porto · desde 2014</p>
+      <h1 id="hero-titulo"><span class="line">Marcas</span><span class="line outline">com ruído</span><span class="line">q.b.</span></h1>
+      <div class="hero-foot">
+        <p>Construímos identidades que não pedem desculpa. Estratégia, nome, sistema visual e linguagem para marcas que preferem ser lembradas a ser toleradas.</p>
+        <a class="btn" href="#briefing">Começar um projeto <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="marquee" aria-hidden="true"><div><span>Identidade · Naming · Editorial · Packaging · Motion · Web · </span><span>Identidade · Naming · Editorial · Packaging · Motion · Web · </span></div></div>
+    </section>
+
+    <section id="casos" class="section" aria-labelledby="casos-titulo">
+      <div class="section-head">
+        <h2 id="casos-titulo">Casos<sup>06</sup></h2>
+        <div class="filters" role="group" aria-label="Filtrar casos por disciplina">
+          <button type="button" class="chip" data-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="chip" data-filter="Identidade" aria-pressed="false">Identidade</button>
+          <button type="button" class="chip" data-filter="Editorial" aria-pressed="false">Editorial</button>
+          <button type="button" class="chip" data-filter="Packaging" aria-pressed="false">Packaging</button>
+          <button type="button" class="chip" data-filter="Digital" aria-pressed="false">Digital</button>
+        </div>
+      </div>
+      <p class="muted" id="casos-estado" role="status" aria-live="polite"></p>
+      <ul class="cases" id="lista-casos"></ul>
+      <p class="empty" id="casos-vazio" hidden>Nenhum caso nesta disciplina — ainda. <button type="button" class="link" data-filter-reset>Ver todos os casos</button></p>
+    </section>
+
+    <dialog id="caso" class="case-dialog" aria-labelledby="caso-titulo">
+      <div class="case-visual" id="caso-visual" aria-hidden="true"></div>
+      <div class="case-body">
+        <p class="kicker" id="caso-meta"></p>
+        <h3 id="caso-titulo"></h3>
+        <p id="caso-texto"></p>
+        <dl class="facts" id="caso-factos"></dl>
+        <div class="case-nav">
+          <button type="button" class="btn ghost" data-case-step="-1">← Anterior</button>
+          <button type="button" class="btn ghost" data-case-step="1">Seguinte →</button>
+          <button type="button" class="btn" data-case-close>Fechar</button>
+        </div>
+      </div>
+    </dialog>
+
+    <section id="servicos" class="section dark" aria-labelledby="servicos-titulo">
+      <h2 id="servicos-titulo">Serviços</h2>
+      <ol class="services">
+        <li><details name="servico" open><summary><span class="num">01</span> Estratégia &amp; naming</summary><p>Workshops de posicionamento, auditoria de categoria, plataforma de marca e criação de nomes verificados (registo e domínios).</p></details></li>
+        <li><details name="servico"><summary><span class="num">02</span> Identidade visual</summary><p>Logótipo, tipografia, cor, grelha, ilustração e um manual vivo que a vossa equipa consegue mesmo usar à segunda-feira.</p></details></li>
+        <li><details name="servico"><summary><span class="num">03</span> Editorial &amp; packaging</summary><p>Livros, revistas, relatórios, rótulos e embalagens, com acompanhamento em gráfica e provas de cor.</p></details></li>
+        <li><details name="servico"><summary><span class="num">04</span> Web &amp; motion</summary><p>Sites rápidos e acessíveis, sistemas de design em código e animação de marca com respeito por quem prefere menos movimento.</p></details></li>
+      </ol>
+    </section>
+
+    <section id="processo" class="section" aria-labelledby="processo-titulo">
+      <h2 id="processo-titulo">Processo</h2>
+      <ol class="steps">
+        <li><span class="big" aria-hidden="true">1</span><h3>Escuta</h3><p>Duas semanas de entrevistas, auditoria e referências. Sem slides de 80 páginas.</p></li>
+        <li><span class="big" aria-hidden="true">2</span><h3>Aposta</h3><p>Apresentamos uma única direção defendida, não um menu de três opções mornas.</p></li>
+        <li><span class="big" aria-hidden="true">3</span><h3>Sistema</h3><p>A ideia vira regras, componentes e ferramentas testadas em aplicações reais.</p></li>
+        <li><span class="big" aria-hidden="true">4</span><h3>Passagem</h3><p>Formação à equipa, ficheiros organizados e três meses de apoio incluídos.</p></li>
+      </ol>
+    </section>
+
+    <section id="equipa" class="section" aria-labelledby="equipa-titulo">
+      <h2 id="equipa-titulo">Equipa</h2>
+      <ul class="team">
+        <li><span class="avatar" aria-hidden="true">IM</span><h3>Inês Marques</h3><p>Direção criativa</p></li>
+        <li><span class="avatar" aria-hidden="true">TS</span><h3>Tomás Seixas</h3><p>Estratégia &amp; naming</p></li>
+        <li><span class="avatar" aria-hidden="true">LC</span><h3>Leonor Cabral</h3><p>Design editorial</p></li>
+        <li><span class="avatar" aria-hidden="true">RP</span><h3>Rui Pimentel</h3><p>Desenvolvimento &amp; motion</p></li>
+      </ul>
+    </section>
+
+    <section id="manifesto" class="section manifesto" aria-labelledby="manifesto-titulo">
+      <h2 id="manifesto-titulo" class="sr-only">Manifesto</h2>
+      <blockquote>
+        <p>Acreditamos que o <mark>silêncio</mark> também é um ruído mal desenhado. Que a clareza é uma forma de <mark>coragem</mark>. Que uma marca é aquilo que fazem quando ninguém está a ver, e o resto é <mark>embalagem</mark>.</p>
+      </blockquote>
+      <ul class="beliefs">
+        <li>Menos opções, mais convicção.</li>
+        <li>Acessível não é feio.</li>
+        <li>Movimento só quando diz alguma coisa.</li>
+      </ul>
+    </section>
+
+    <section id="briefing" class="section dark" aria-labelledby="briefing-titulo">
+      <div class="briefing-grid">
+        <div>
+          <h2 id="briefing-titulo">Conta-nos o que precisas</h2>
+          <p>Este formulário é uma demonstração: o briefing fica guardado <strong>apenas neste browser</strong> (localStorage). Não é enviado a ninguém.</p>
+          <h3 class="sub">Briefings guardados</h3>
+          <ul id="briefings" class="saved" aria-live="polite"></ul>
+          <p class="empty" id="briefings-vazio">Ainda não guardaste nenhum briefing.</p>
+          <button type="button" class="link" id="limpar" hidden>Apagar briefings guardados</button>
+        </div>
+        <form id="form-briefing" novalidate>
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required aria-describedby="erro-nome">
+            <p class="error" id="erro-nome" hidden>Indica o teu nome (mínimo 2 letras).</p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="erro-email">
+            <p class="error" id="erro-email" hidden>Indica um email válido, por exemplo nome@empresa.pt.</p>
+          </div>
+          <div class="field">
+            <label for="tipo">Tipo de projeto</label>
+            <select id="tipo" name="tipo" required aria-describedby="erro-tipo">
+              <option value="">Escolhe uma opção</option>
+              <option>Nova identidade</option>
+              <option>Redesenho de marca</option>
+              <option>Editorial / packaging</option>
+              <option>Web &amp; motion</option>
+            </select>
+            <p class="error" id="erro-tipo" hidden>Escolhe o tipo de projeto.</p>
+          </div>
+          <div class="field">
+            <label for="orcamento">Orçamento indicativo</label>
+            <select id="orcamento" name="orcamento">
+              <option>Até 5 000 €</option>
+              <option>5 000 – 15 000 €</option>
+              <option>15 000 – 40 000 €</option>
+              <option>Mais de 40 000 €</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mensagem">O desafio <span class="muted">(mín. 20 caracteres)</span></label>
+            <textarea id="mensagem" name="mensagem" rows="5" required aria-describedby="erro-mensagem contador"></textarea>
+            <p class="muted" id="contador">0 caracteres</p>
+            <p class="error" id="erro-mensagem" hidden>Descreve o desafio com pelo menos 20 caracteres.</p>
+          </div>
+          <button class="btn" type="submit">Guardar briefing <span aria-hidden="true">→</span></button>
+          <p id="estado-briefing" class="form-status" role="status" tabindex="-1"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="mega" aria-hidden="true">fio/vivo</p>
+    <p>Rua das Flores 118, 4050-262 Porto · <a href="mailto:ola@fiovivo.example">ola@fiovivo.example</a> · Dados e nomes fictícios para demonstração.</p>
+  </footer>
+</body>
+</html>
