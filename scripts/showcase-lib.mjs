@@ -48,13 +48,25 @@ export async function extractTemplateMeta(slug, html) {
     name,
     description,
     previewHref,
+    screenshotHref: await findScreenshot(slug),
     href: `/src/${slug}/index.html`,
     viewerHref: `/templates/${slug}`,
   };
 }
 
+async function findScreenshot(slug) {
+  try {
+    await fs.access(path.join(srcDir, slug, "screenshot.webp"));
+    return `/src/${slug}/screenshot.webp`;
+  } catch (error) {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  }
+}
+
 async function findPreviewAsset(slug) {
   const previewNames = [
+    "preview.avif",
     "preview.webp",
     "preview.png",
     "preview.jpg",
@@ -185,8 +197,9 @@ export function renderShowcasePage(templates) {
   const cards = templates.map(template => {
     const name = escapeHtml(template.name), href = escapeHtml(template.href), area = escapeHtml(templateArea(template));
     const preview = `data-preview data-href="${href}" data-name="${name}"`;
+    const image = template.screenshotHref ? `<img class="thumbnail" data-src="${escapeHtml(template.screenshotHref)}" alt="Página inicial do template ${name}" width="720" height="450" loading="lazy" decoding="async" onerror="this.hidden=true">` : '';
     return `<article class="template-card" data-area="${area}">
-<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><iframe class="thumbnail" data-src="${href}" title="Miniatura de ${name}" loading="lazy" tabindex="-1" sandbox></iframe><span class="preview-tag">Explorar template ↗</span></button>
+<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><span class="thumbnail-placeholder" aria-hidden="true">Miniatura indisponível</span>${image}<span class="preview-tag">Explorar template ↗</span></button>
 <div class="template-body"><p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
 <div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Pré-visualizar ${name}">Preview →</button></div></div></article>`;
   }).join('');

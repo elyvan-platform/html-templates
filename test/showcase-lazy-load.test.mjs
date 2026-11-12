@@ -42,10 +42,10 @@ function setup({ observer = true } = {}) {
 }
 
 test('showcase thumbnails have deferred URLs and no initial template requests', () => {
-  const html = renderShowcasePage([{ slug: 'example', name: 'Example', href: '/src/example/index.html', description: '' }]);
-  const thumbnails = html.match(/<iframe class="thumbnail"[^>]*>/g);
+  const html = renderShowcasePage([{ slug: 'example', name: 'Example', href: '/src/example/index.html', screenshotHref: '/src/example/screenshot.webp', description: '' }]);
+  const thumbnails = html.match(/<img class="thumbnail"[^>]*>/g);
   assert.equal(thumbnails.length, 1);
-  assert.match(thumbnails[0], /data-src="\/src\/example\/index.html"/);
+  assert.match(thumbnails[0], /data-src="\/src\/example\/screenshot.webp"/);
   assert.doesNotMatch(thumbnails[0], /\ssrc=/);
 });
 
