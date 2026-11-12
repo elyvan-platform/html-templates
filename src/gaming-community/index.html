@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel Porto | Comunidade Gaming</title>
+<meta name="description" content="Portal demo de comunidade gaming com destaques, catálogo filtrável, notícias, rankings fictícios, perfil de jogador, badges e favoritos.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230a0a10'/%3E%3Cpath d='M8 9h9v6H8zM15 16h9v7h-9z' fill='%23c6ff3d'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="#destaques" aria-label="Pixel Porto, início"><span class="brand-mark" aria-hidden="true"></span>Pixel<em>Porto</em></a>
+<nav class="main-nav" aria-label="Principal">
+<a href="#destaques">Destaques</a>
+<a href="#catalogo">Catálogo</a>
+<a href="#noticias">Notícias</a>
+<a href="#rankings">Rankings</a>
+<a href="#perfil">Perfil</a>
+</nav>
+<a class="fav-pill" href="#perfil" aria-label="Favoritos guardados, ver perfil"><span aria-hidden="true">♥</span> <span id="fav-count">0</span></a>
+</div>
+</header>
+
+<noscript><p class="notice notice-static">Esta demo precisa de JavaScript para filtrar jogos, guardar favoritos e abrir notícias.</p></noscript>
+<p class="notice" id="aviso-armazenamento" role="status" hidden>O navegador não permite guardar preferências. Favoritos e nome de jogador ficam ativos apenas nesta visita.</p>
+
+<main id="conteudo">
+
+<section id="destaques" class="section hero" aria-labelledby="destaques-titulo">
+<div class="hero-copy">
+<p class="eyebrow">Comunidade gaming · Porto</p>
+<h1 id="destaques-titulo">Joga, compara e descobre a próxima <span>sessão</span>.</h1>
+<p class="hero-lede">Notícias da comunidade, jogos escolhidos pelos membros e rankings do mês, num só lugar.</p>
+<p class="demo-note"><span aria-hidden="true">◆</span> Demo com dados fictícios e guardados apenas neste navegador.</p>
+</div>
+<div class="carousel" id="carrossel" role="region" aria-roledescription="carrossel" aria-label="Jogos em destaque">
+<div class="slides" id="slides"></div>
+<div class="carousel-controls">
+<button type="button" class="icon-btn" id="prev" aria-label="Destaque anterior"><span aria-hidden="true">←</span></button>
+<div class="dots" id="dots"></div>
+<button type="button" class="icon-btn" id="next" aria-label="Destaque seguinte"><span aria-hidden="true">→</span></button>
+</div>
+</div>
+</section>
+
+<section id="catalogo" class="section" aria-labelledby="catalogo-titulo">
+<div class="section-head">
+<p class="eyebrow">Catálogo</p>
+<h2 id="catalogo-titulo">Jogos da comunidade</h2>
+</div>
+<div class="catalog-tools">
+<label class="field field-search">
+<span>Pesquisar jogos</span>
+<input id="jogo-pesquisa" type="search" placeholder="Ex.: torre, corrida, pirata…" autocomplete="off">
+</label>
+<label class="field">
+<span>Plataforma</span>
+<select id="plataforma"><option value="">Todas</option></select>
+</label>
+<label class="field">
+<span>Ordenar por</span>
+<select id="ordem">
+<option value="destaque">Relevância</option>
+<option value="avaliacao">Melhor avaliados</option>
+<option value="lancamento">Mais recentes</option>
+<option value="nome">Nome (A–Z)</option>
+</select>
+</label>
+<label class="toggle"><input type="checkbox" id="so-favoritos"><span>Só favoritos</span></label>
+</div>
+<div class="chips" id="generos" role="group" aria-label="Filtrar por género"></div>
+<p class="results" id="catalogo-estado" role="status"></p>
+<div class="game-grid" id="jogos"></div>
+<div class="empty-state" id="jogos-vazio" hidden>
+<h3>Nenhum jogo corresponde aos filtros</h3>
+<p>Experimenta outro termo ou limpa os filtros para voltar a ver o catálogo completo.</p>
+<button type="button" class="btn ghost" id="limpar-filtros">Limpar filtros</button>
+</div>
+</section>
+
+<section id="noticias" class="section" aria-labelledby="noticias-titulo">
+<div class="section-head">
+<p class="eyebrow">Notícias</p>
+<h2 id="noticias-titulo">O que se passa na comunidade</h2>
+</div>
+<div class="chips" id="categorias" role="group" aria-label="Filtrar notícias por categoria"></div>
+<ul class="news-list" id="noticias-lista"></ul>
+<div class="empty-state" id="noticias-vazio" hidden>
+<h3>Sem notícias nesta categoria</h3>
+<p>Escolhe outra categoria para continuar a ler.</p>
+</div>
+<dialog class="news-dialog" id="noticia-dialog" aria-labelledby="noticia-titulo">
+<article class="news-article" id="noticia-conteudo"></article>
+<form method="dialog" class="dialog-actions"><button type="submit" class="btn">Fechar</button></form>
+</dialog>
+</section>
+
+<section id="rankings" class="section" aria-labelledby="rankings-titulo">
+<div class="section-head">
+<p class="eyebrow">Rankings</p>
+<h2 id="rankings-titulo">Os melhores da comunidade</h2>
+<p class="muted">Pontuações fictícias para demonstração.</p>
+</div>
+<div class="tabs" id="ranking-tabs" role="tablist" aria-label="Tipo de ranking">
+<button type="button" role="tab" id="tab-global" data-key="global" aria-selected="true" aria-controls="ranking-painel" tabindex="0">Global</button>
+<button type="button" role="tab" id="tab-semanal" data-key="semanal" aria-selected="false" aria-controls="ranking-painel" tabindex="-1">Semanal</button>
+<button type="button" role="tab" id="tab-competitivo" data-key="competitivo" aria-selected="false" aria-controls="ranking-painel" tabindex="-1">Competitivo</button>
+</div>
+<div class="panel ranking-panel" id="ranking-painel" role="tabpanel" aria-labelledby="tab-global">
+<table class="ranking-table">
+<caption class="visually-hidden">Classificação de jogadores fictícios</caption>
+<thead>
+<tr><th scope="col">Posição</th><th scope="col">Jogador</th><th scope="col" class="col-cidade">Cidade</th><th scope="col" class="num" id="col-pontos">Pontos</th><th scope="col"><span class="visually-hidden">Ação</span></th></tr>
+</thead>
+<tbody id="ranking-corpo"></tbody>
+</table>
+</div>
+</section>
+
+<section id="perfil" class="section" aria-labelledby="perfil-titulo">
+<div class="section-head">
+<p class="eyebrow">Perfil</p>
+<h2 id="perfil-titulo" tabindex="-1">Jogador, badges e favoritos</h2>
+</div>
+<div class="profile-picker">
+<label class="field">
+<span>Ver perfil de</span>
+<select id="perfil-select"></select>
+</label>
+</div>
+<div class="profile-layout">
+<article class="profile-card" id="perfil-cartao" aria-labelledby="perfil-nome">
+<div class="avatar avatar-lg" id="perfil-avatar" aria-hidden="true"></div>
+<div class="profile-head">
+<h3 id="perfil-nome"></h3>
+<p class="muted" id="perfil-cidade"></p>
+<p class="profile-bio" id="perfil-bio"></p>
+</div>
+<dl class="stats" id="perfil-stats"></dl>
+<form class="nick-form" id="nick-form" novalidate hidden>
+<label class="field">
+<span>Nome de jogador (2 a 16 caracteres)</span>
+<input id="nick-input" maxlength="16" autocomplete="nickname" aria-describedby="nick-ajuda">
+</label>
+<p class="hint" id="nick-ajuda">Letras, números, espaços, pontos, traços ou underscores.</p>
+<p class="field-error" id="nick-erro" role="alert" hidden></p>
+<button type="submit" class="btn">Guardar nome</button>
+</form>
+</article>
+<div class="empty-state" id="perfil-erro" hidden>
+<h3>Perfil não encontrado</h3>
+<p>Este jogador já não está disponível na demo.</p>
+<button type="button" class="btn ghost" id="perfil-reset">Ver o meu perfil</button>
+</div>
+<div class="profile-side">
+<section class="panel" aria-labelledby="badges-titulo">
+<h3 id="badges-titulo">Badges</h3>
+<ul class="badge-list" id="badges"></ul>
+</section>
+<section class="panel" aria-labelledby="favoritos-titulo">
+<h3 id="favoritos-titulo" tabindex="-1">Os meus favoritos</h3>
+<ul class="fav-list" id="favoritos-lista"></ul>
+<p class="hint" id="favoritos-vazio" hidden>Ainda não tens favoritos. Marca um jogo no catálogo para o guardar aqui.</p>
+</section>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<span>Pixel Porto · Demo de comunidade gaming</span>
+<span>Dados fictícios, sem contas nem ligações a serviços externos.</span>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/data.js" defer></script>
+<script src="assets/main.js" defer></script>
+</body>
+</html>
