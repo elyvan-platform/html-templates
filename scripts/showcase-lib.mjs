@@ -142,7 +142,7 @@ export function templateArea(template) {
     ['Serviços públicos', /junta/],
     ['Hotelaria', /stay|solar-do-sossego/],
     ['Viagens', /travel-explorer/],
-    ['Arquitetura', /forma-norte/],
+    ['Arquitetura', /forma-norte|architecture-studio/],
     ['Branding e design', /agencia-criativa/],
     ['Imobiliário', /limiar-imobiliaria/],
     ['Design e decoração', /maison|albor/],
