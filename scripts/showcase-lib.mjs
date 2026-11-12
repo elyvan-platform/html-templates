@@ -148,7 +148,7 @@ export function templateArea(template) {
     ['Design e decoração', /maison|albor/],
     ['Mobilidade', /rota-norte/],
     ['Finanças', /finance-dashboard|balanço|balanco/],
-    ['Tecnologia', /pulso-conference|saas|orbit|admin-dashboard|crypto-dashboard|nexo-ai|portfolio-developer/],
+    ['Tecnologia', /pulso-conference|saas|orbit|admin-dashboard|crypto-dashboard|nexo-ai|portfolio-developer|cyber/],
   ];
   return groups.find(([, pattern]) => pattern.test(value))?.[0] || 'Outras áreas';
 }
