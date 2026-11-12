@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reveja as quantidades e o total do seu carrinho na Maison Albor.">
+  <title>Carrinho | Maison Albor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@400..800&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body data-page="carrinho">
+  <a class="skip-link" href="#main">Saltar para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Maison Albor, início">Maison <em>Albor</em></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="catalogo.html">Catálogo</a>
+      <a href="index.html#categorias">Categorias</a>
+      <a href="favoritos.html">Favoritos <span class="count" data-favorite-count>0</span></a>
+      <a href="carrinho.html" aria-current="page">Carrinho <span class="count" data-cart-count>0</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="page-head">
+      <p class="eyebrow">Carrinho</p>
+      <h1 id="cart-title" tabindex="-1">O seu carrinho</h1>
+    </header>
+    <div class="cart-page">
+      <section aria-label="Artigos no carrinho">
+        <ul class="cart-list" id="cart-list"></ul>
+        <div class="empty-state" id="cart-empty" hidden>
+          <h2>O seu carrinho está vazio</h2>
+          <p>As peças que adicionar aparecem aqui, com quantidades e totais.</p>
+          <a class="btn btn-solid" href="catalogo.html">Ver o catálogo</a>
+        </div>
+      </section>
+
+      <aside class="cart-summary" id="cart-summary" aria-labelledby="summary-title" hidden>
+        <h2 id="summary-title">Resumo</h2>
+        <dl class="totals">
+          <div><dt>Subtotal</dt><dd id="t-subtotal"></dd></div>
+          <div><dt id="t-discount-label">Desconto</dt><dd id="t-discount"></dd></div>
+          <div><dt>Envio</dt><dd><span id="t-shipping"></span><br><span class="fine-note" id="t-shipping-note"></span></dd></div>
+          <div class="grand"><dt>Total</dt><dd id="t-total"></dd></div>
+        </dl>
+        <p class="fine-note" id="t-vat"></p>
+
+        <form class="promo" id="promo-form" novalidate>
+          <label for="promo-code">Código promocional</label>
+          <div class="promo-row">
+            <input id="promo-code" type="text" autocomplete="off" placeholder="Ex.: ALBOR10">
+            <button type="submit" class="btn btn-line">Aplicar</button>
+          </div>
+          <p id="promo-feedback" class="feedback" role="status"></p>
+          <button type="button" class="text-button" id="promo-remove" hidden>Remover código</button>
+        </form>
+
+        <button type="button" class="btn btn-solid" id="checkout">Finalizar compra</button>
+        <p id="checkout-note" class="feedback" role="status"></p>
+        <p class="fine-note">Valores simulados para demonstração. Nenhum pagamento é processado.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">Maison <em>Albor</em></a>
+      <p>Objetos para habitar, desde 2014. Loja de demonstração com dados fictícios.</p>
+    </div>
+    <div class="footer-grid">
+      <nav aria-label="Rodapé">
+        <h2>Loja</h2>
+        <ul>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="favoritos.html">Favoritos</a></li>
+          <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Atelier</h2>
+        <ul>
+          <li>Rua da Bela Vista, 128, Porto</li>
+          <li>Seg. a sáb., 10h às 19h</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="mailto:ola@maisonalbor.pt">ola@maisonalbor.pt</a></li>
+          <li>+351 220 000 000</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

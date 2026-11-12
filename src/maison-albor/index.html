@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Design e decoração para habitar com calma. Candeeiros, mobiliário, têxteis, cerâmica e mesa, com favoritos e carrinho de demonstração.">
+  <title>Maison Albor | Objetos para habitar com calma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@400..800&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body data-page="inicio">
+  <a class="skip-link" href="#main">Saltar para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Maison Albor, início">Maison <em>Albor</em></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="catalogo.html">Catálogo</a>
+      <a href="index.html#categorias">Categorias</a>
+      <a href="favoritos.html">Favoritos <span class="count" data-favorite-count>0</span></a>
+      <a href="carrinho.html">Carrinho <span class="count" data-cart-count>0</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <figure class="hero-media">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=80" alt="Sala de estar com luz natural, paredes quentes e um candeeiro de arco" width="1400" height="1750" fetchpriority="high">
+      </figure>
+      <div class="hero-copy">
+        <p class="eyebrow">Coleção Inverno 2026</p>
+        <h1 id="hero-title">Objetos para habitar <em>com calma.</em></h1>
+        <p class="lead">Peças de design e decoração feitas em pequenos ateliês do Norte. Menos ruído, mais matéria e uma luz que acompanha o dia.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="catalogo.html">Ver catálogo</a>
+          <a class="btn btn-line" href="#categorias">Explorar categorias</a>
+        </div>
+      </div>
+    </section>
+
+    <p class="manifesto">Escolhemos cada peça pela forma, pela matéria e pela maneira como envelhece. <span>Não há pressa em decorar.</span></p>
+
+    <section class="section" id="categorias" aria-labelledby="categorias-title">
+      <header class="section-head">
+        <p class="eyebrow">01 — Categorias</p>
+        <h2 id="categorias-title">Explorar por <em>ofício</em></h2>
+      </header>
+      <div class="category-grid" id="category-grid"></div>
+    </section>
+
+    <section class="section" aria-labelledby="destaque-title">
+      <header class="section-head">
+        <p class="eyebrow">02 — Peça da semana</p>
+        <h2 id="destaque-title">Feita à mão, <em>sem pressa</em></h2>
+      </header>
+      <div id="featured"></div>
+    </section>
+
+    <section class="section" aria-labelledby="novidades-title">
+      <header class="section-head split">
+        <div>
+          <p class="eyebrow">03 — Novidades</p>
+          <h2 id="novidades-title">Chegou <em>agora</em></h2>
+        </div>
+        <a class="text-link" href="catalogo.html?ordenar=novidades">Ver todas as novidades →</a>
+      </header>
+      <div class="product-grid" id="novelties"></div>
+    </section>
+
+    <section class="band" aria-labelledby="band-title">
+      <div class="band-inner">
+        <p class="eyebrow">Lista de convites</p>
+        <h2 id="band-title">Uma carta por mês, <em>sem ruído.</em></h2>
+        <form id="newsletter" class="newsletter" novalidate>
+          <label for="email">Email</label>
+          <div class="newsletter-row">
+            <input id="email" type="email" autocomplete="email" placeholder="nome@exemplo.pt">
+            <button class="btn btn-solid" type="submit">Subscrever</button>
+          </div>
+          <p id="newsletter-feedback" class="feedback" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">Maison <em>Albor</em></a>
+      <p>Objetos para habitar, desde 2014. Loja de demonstração com dados fictícios.</p>
+    </div>
+    <div class="footer-grid">
+      <nav aria-label="Rodapé">
+        <h2>Loja</h2>
+        <ul>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="favoritos.html">Favoritos</a></li>
+          <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Atelier</h2>
+        <ul>
+          <li>Rua da Bela Vista, 128, Porto</li>
+          <li>Seg. a sáb., 10h às 19h</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="mailto:ola@maisonalbor.pt">ola@maisonalbor.pt</a></li>
+          <li>+351 220 000 000</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

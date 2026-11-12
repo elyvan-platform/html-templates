@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Detalhe de peça da Maison Albor, com variantes, galeria, favoritos e carrinho.">
+  <title>Peça | Maison Albor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@400..800&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body data-page="produto">
+  <a class="skip-link" href="#main">Saltar para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Maison Albor, início">Maison <em>Albor</em></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="catalogo.html">Catálogo</a>
+      <a href="index.html#categorias">Categorias</a>
+      <a href="favoritos.html">Favoritos <span class="count" data-favorite-count>0</span></a>
+      <a href="carrinho.html">Carrinho <span class="count" data-cart-count>0</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <nav class="breadcrumbs" aria-label="Caminho">
+      <ol>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a id="crumb-category" href="catalogo.html">Categoria</a></li>
+        <li aria-current="page" id="crumb-name"></li>
+      </ol>
+    </nav>
+
+    <div id="product-error" class="error-page empty-state" hidden>
+      <p class="eyebrow">Erro 404</p>
+      <h1 id="page-title">Não encontramos esta peça</h1>
+      <p>O endereço pode estar incompleto ou a peça já não está disponível.</p>
+      <a class="btn btn-solid" href="catalogo.html">Voltar ao catálogo</a>
+    </div>
+
+    <div id="product-view" class="product-page" hidden>
+      <div class="product-layout">
+        <div class="gallery">
+          <figure class="gallery-main"><img id="gallery-image" src="" alt="" width="1200" height="1500"></figure>
+          <div class="gallery-thumbs" id="gallery-thumbs"></div>
+        </div>
+
+        <div class="product-info-panel">
+          <div>
+            <p class="eyebrow" id="product-category"></p>
+            <h1 id="product-name"></h1>
+          </div>
+          <p class="product-price-line" id="product-price"></p>
+          <p class="lead" id="product-summary"></p>
+
+          <form id="product-form" class="product-form">
+            <div id="option-groups"></div>
+            <div class="quantity-row">
+              <label for="quantity">Quantidade</label>
+              <div class="stepper">
+                <button type="button" data-step="-1" aria-label="Diminuir quantidade">−</button>
+                <input id="quantity" type="number" inputmode="numeric" min="1" value="1" aria-describedby="stock-note">
+                <button type="button" data-step="1" aria-label="Aumentar quantidade">+</button>
+              </div>
+              <p id="stock-note" class="stock-note" aria-live="polite"></p>
+            </div>
+            <div class="product-actions">
+              <button type="submit" class="btn btn-solid" id="add-button">Adicionar ao carrinho</button>
+              <button type="button" class="btn btn-line" id="favorite-button" data-favorite data-id="" aria-pressed="false"><span data-favorite-text>Guardar nos favoritos</span></button>
+            </div>
+            <p id="product-feedback" class="feedback" role="status"></p>
+          </form>
+
+          <div class="details">
+            <details>
+              <summary>Descrição</summary>
+              <p id="product-description"></p>
+            </details>
+            <details>
+              <summary>Materiais</summary>
+              <p data-field="materials"></p>
+            </details>
+            <details>
+              <summary>Dimensões</summary>
+              <p data-field="dimensions"></p>
+            </details>
+            <details>
+              <summary>Entrega e devoluções</summary>
+              <p>Envio gratuito em encomendas acima de 150 €. Devoluções gratuitas até 30 dias, com a peça na embalagem original.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <section class="related" aria-labelledby="related-title">
+        <h2 id="related-title">Também pode gostar</h2>
+        <div class="product-grid" id="related-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">Maison <em>Albor</em></a>
+      <p>Objetos para habitar, desde 2014. Loja de demonstração com dados fictícios.</p>
+    </div>
+    <div class="footer-grid">
+      <nav aria-label="Rodapé">
+        <h2>Loja</h2>
+        <ul>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="favoritos.html">Favoritos</a></li>
+          <li><a href="carrinho.html">Carrinho</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Atelier</h2>
+        <ul>
+          <li>Rua da Bela Vista, 128, Porto</li>
+          <li>Seg. a sáb., 10h às 19h</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="mailto:ola@maisonalbor.pt">ola@maisonalbor.pt</a></li>
+          <li>+351 220 000 000</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
