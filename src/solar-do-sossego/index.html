@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Solar do Sossego, hotel boutique no Douro: explore quartos com galeria, experiências, disponibilidade ilustrativa e um pedido de reserva sem confirmação automática.">
+  <title>Solar do Sossego | Hotel boutique no Douro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar para o conteúdo</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Solar do Sossego, início">Solar <em>do Sossego</em></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="#quartos">Quartos</a>
+      <a href="#experiencias">Experiências</a>
+      <a href="#reservas" class="nav-cta">Pedir reserva</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1800&q=75" alt="Casa em pedra de xisto com piscina, ao final da tarde" width="1800" height="1100" fetchpriority="high">
+      <div class="hero-text">
+        <p class="eyebrow">Hotel boutique · Douro Superior</p>
+        <h1 id="hero-title">Um solar à beira do silêncio.</h1>
+        <p>Nove quartos, uma cozinha de brasa e socalcos a perder de vista. Chegue sem pressa; o resto trata-se.</p>
+        <a class="button" href="#reservas">Escolher datas</a>
+      </div>
+    </section>
+
+    <section class="intro section" aria-labelledby="intro-title">
+      <p class="eyebrow">A casa</p>
+      <h2 id="intro-title">Pedra, linho e luz de fim de tarde.</h2>
+      <p>O Solar do Sossego ocupa uma antiga casa de lavoura do século XVIII, restaurada com materiais da região. Sem televisão nos quartos, sem horários rígidos: o dia faz-se de pequeno-almoço no pátio, banhos de rio e jantares longos.</p>
+      <dl class="facts">
+        <div><dt>9</dt><dd>quartos e suites</dd></div>
+        <div><dt>14 ha</dt><dd>de vinha e olival</dd></div>
+        <div><dt>4,9</dt><dd>média dos hóspedes (exemplo)</dd></div>
+      </dl>
+    </section>
+
+    <section class="section wide" id="quartos" aria-labelledby="rooms-title">
+      <div class="section-head">
+        <p class="eyebrow">Quartos</p>
+        <h2 id="rooms-title">Dormir com vista.</h2>
+      </div>
+      <div class="rooms" id="rooms"><p class="notice">A carregar os quartos…</p></div>
+      <noscript><p class="notice">Ative o JavaScript para explorar os quartos e a galeria.</p></noscript>
+    </section>
+
+    <section class="section wide tinted" id="experiencias" aria-labelledby="exp-title">
+      <div class="section-head">
+        <p class="eyebrow">Experiências</p>
+        <h2 id="exp-title">Dias com ritmo de rio.</h2>
+        <div class="filters" role="group" aria-label="Filtrar experiências">
+          <button type="button" data-filter="all" aria-pressed="true">Todas</button>
+          <button type="button" data-filter="Natureza" aria-pressed="false">Natureza</button>
+          <button type="button" data-filter="Sabores" aria-pressed="false">Sabores</button>
+          <button type="button" data-filter="Bem-estar" aria-pressed="false">Bem-estar</button>
+        </div>
+      </div>
+      <p class="sr-only" id="exp-status" role="status"></p>
+      <ul class="experiences" id="experiences"></ul>
+    </section>
+
+    <section class="section wide booking" id="reservas" aria-labelledby="book-title">
+      <div class="section-head">
+        <p class="eyebrow">Reservas</p>
+        <h2 id="book-title">Escolha as datas.</h2>
+        <p>A disponibilidade abaixo é ilustrativa e calculada localmente. Nada é reservado: envia-nos um pedido e respondemos pessoalmente.</p>
+      </div>
+      <div class="booking-grid">
+        <form id="search-form" class="panel" novalidate aria-labelledby="search-title">
+          <h3 id="search-title">Datas e hóspedes</h3>
+          <div class="row">
+            <label>Chegada <input type="date" id="checkin" name="checkin" required></label>
+            <label>Partida <input type="date" id="checkout" name="checkout" required></label>
+          </div>
+          <div class="stepper" role="group" aria-label="Número de hóspedes">
+            <span id="guests-label">Hóspedes</span>
+            <button type="button" id="guests-minus" aria-label="Menos um hóspede">−</button>
+            <output id="guests" aria-labelledby="guests-label" aria-live="polite">2</output>
+            <button type="button" id="guests-plus" aria-label="Mais um hóspede">+</button>
+          </div>
+          <p class="error" id="search-error" role="alert" hidden></p>
+          <button class="button" type="submit">Ver disponibilidade</button>
+        </form>
+
+        <div class="panel" aria-live="polite" aria-labelledby="avail-title">
+          <h3 id="avail-title">Disponibilidade ilustrativa</h3>
+          <div id="availability"><p class="notice">Escolha datas e hóspedes para ver os quartos.</p></div>
+        </div>
+      </div>
+
+      <form id="request-form" class="panel request" novalidate aria-labelledby="request-title">
+        <h3 id="request-title">Pedido de reserva</h3>
+        <p class="hint">Este formulário não envia dados para lado nenhum. Ao submeter, prepara um resumo que pode copiar ou enviar por email.</p>
+        <div class="row">
+          <label>Quarto
+            <select id="req-room" name="room" required><option value="">Escolha um quarto</option></select>
+          </label>
+          <label>Nome completo <input id="req-name" name="name" autocomplete="name" required></label>
+        </div>
+        <div class="row">
+          <label>Email <input id="req-email" name="email" type="email" autocomplete="email" required></label>
+          <label>Telefone (opcional) <input id="req-phone" name="phone" type="tel" autocomplete="tel"></label>
+        </div>
+        <label>Pedidos especiais (opcional) <textarea id="req-notes" name="notes" rows="3" maxlength="400"></textarea></label>
+        <label class="check"><input type="checkbox" id="req-consent" name="consent" required> Compreendo que este pedido não constitui uma reserva confirmada.</label>
+        <p class="error" id="request-error" role="alert" hidden></p>
+        <button class="button" type="submit">Preparar pedido</button>
+      </form>
+
+      <div id="request-result" class="panel result" tabindex="-1" hidden>
+        <h3>Pedido preparado — ainda não enviado</h3>
+        <p>Nenhuma reserva foi feita nem confirmada. Para o submeter, envie o resumo por email ou copie-o.</p>
+        <pre id="summary"></pre>
+        <div class="actions">
+          <a class="button" id="mailto" href="#">Abrir no email</a>
+          <button class="button ghost" type="button" id="copy">Copiar resumo</button>
+          <button class="button ghost" type="button" id="reset">Novo pedido</button>
+        </div>
+        <p class="hint" id="copy-status" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>Solar do Sossego</strong> · Quinta da Eira Velha, 5130-000 Douro Superior</p>
+    <p>Dados de demonstração: nome, preços, morada e contactos são fictícios. Fotografias © Unsplash.</p>
+  </footer>
+
+  <dialog id="room-dialog" aria-labelledby="dlg-title">
+    <button type="button" class="dlg-close" id="dlg-close" aria-label="Fechar detalhes">×</button>
+    <div class="dlg-gallery">
+      <img id="dlg-image" src="" alt="" width="1000" height="680">
+      <div class="dlg-nav">
+        <button type="button" id="dlg-prev" aria-label="Fotografia anterior">←</button>
+        <span id="dlg-count" aria-live="polite"></span>
+        <button type="button" id="dlg-next" aria-label="Fotografia seguinte">→</button>
+      </div>
+      <div class="thumbs" id="dlg-thumbs"></div>
+    </div>
+    <div class="dlg-body">
+      <h3 id="dlg-title"></h3>
+      <p id="dlg-desc"></p>
+      <ul class="amenities" id="dlg-amenities"></ul>
+      <p class="price" id="dlg-price"></p>
+      <button type="button" class="button" id="dlg-choose">Pedir este quarto</button>
+    </div>
+  </dialog>
+</body>
+</html>

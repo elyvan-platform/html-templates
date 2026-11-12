@@ -140,7 +140,7 @@ export function templateArea(template) {
     ['Desporto', /training|fitness-dashboard|atlantico|atlântico/],
     ['Educação', /agrupamento/],
     ['Serviços públicos', /junta/],
-    ['Hotelaria', /stay/],
+    ['Hotelaria', /stay|solar-do-sossego/],
     ['Viagens', /travel-explorer/],
     ['Arquitetura', /forma-norte/],
     ['Branding e design', /agencia-criativa/],
