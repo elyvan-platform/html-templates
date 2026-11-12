@@ -142,6 +142,7 @@ export function templateArea(template) {
     ['Hotelaria', /stay/],
     ['Arquitetura', /forma-norte/],
     ['Mobilidade', /rota-norte/],
+    ['Tecnologia', /saas|orbit/],
   ];
   return groups.find(([, pattern]) => pattern.test(value))?.[0] || 'Outras áreas';
 }
