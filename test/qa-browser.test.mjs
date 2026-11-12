@@ -70,7 +70,7 @@ test('QA: accessibility, keyboard and local link integrity', { timeout: 180000 }
       const trigger = page.locator('[data-preview]:visible').first();
       await trigger.focus();
       await page.keyboard.press('Enter');
-      await page.locator('dialog').waitFor({ state: 'visible' });
+      await page.locator('#preview-dialog').waitFor({ state: 'visible' });
       assert.equal(await page.evaluate(() => document.querySelector('dialog').contains(document.activeElement)), true);
       for (const device of ['mobile', 'tablet', 'desktop']) {
         const button = page.locator(`[data-device="${device}"]`);

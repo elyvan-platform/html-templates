@@ -33,7 +33,7 @@ function filterCards() {
   const query = normalize(search?.value.trim() || '');
   let count = 0;
   for (const card of cards) {
-    card.hidden = (area !== 'all' && card.dataset.area !== area) || !normalize(card.dataset.search).includes(query);
+    card.hidden = (document.querySelector('#favorites-view')?.getAttribute('aria-pressed') === 'true' && card.dataset.favorite !== 'true') || (area !== 'all' && card.dataset.area !== area) || !normalize(card.dataset.search).includes(query);
     if (!card.hidden) count++;
   }
   document.querySelector('#result-count').textContent = `${count} de ${cards.length} templates`;
@@ -99,3 +99,127 @@ document.querySelector('#close-preview')?.addEventListener('click', () => dialog
 dialog?.addEventListener('close', () => { frame.src = 'about:blank'; });
 window.addEventListener('resize', resizeDevice);
 resizeDevice();
+
+// Store only catalogue identifiers; stale or malformed saved data never becomes markup.
+if (document.querySelector('#favorites-view')) {
+  const bySlug = new Map(cards.map(card => [card.dataset.slug, card]));
+  function readSelection(key, maximum = Infinity) {
+    try {
+      const value = JSON.parse(localStorage.getItem(key));
+      return new Set((Array.isArray(value) ? value : []).filter(slug => typeof slug === 'string' && bySlug.has(slug)).filter((slug, index, list) => list.indexOf(slug) === index).slice(0, maximum));
+    } catch { return new Set(); }
+  }
+  const favorites = readSelection('showcase-favorites');
+  const selected = readSelection('showcase-comparison', 3);
+  const favoritesView = document.querySelector('#favorites-view');
+  const comparison = document.querySelector('#comparison-dialog');
+  const columns = document.querySelector('#comparison-columns');
+  const selection = document.querySelector('#comparison-selection');
+  const open = document.querySelector('#open-comparison');
+  const status = document.querySelector('#selection-status');
+  function save() {
+    try {
+      localStorage.setItem('showcase-favorites', JSON.stringify([...favorites]));
+      localStorage.setItem('showcase-comparison', JSON.stringify([...selected]));
+    } catch { status.textContent = 'Armazenamento indisponível. As escolhas mantêm-se apenas nesta página.'; }
+  }
+  function remove(slug) {
+    selected.delete(slug);
+    update();
+    save();
+    status.textContent = 'Template removido da comparação.';
+    // Rebuilt controls no longer own focus. Choose the next useful native control.
+    (comparison.open ? document.querySelector('#close-comparison') : open.disabled ? document.querySelector('#clear-comparison') : open).focus();
+  }
+  function removeButton(slug, name) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = `Remover ${name}`;
+    button.addEventListener('click', () => remove(slug));
+    return button;
+  }
+  function update() {
+    favoritesView.textContent = `Favoritos (${favorites.size})`;
+    document.querySelector('#favorites-empty').hidden = favorites.size !== 0 || favoritesView.getAttribute('aria-pressed') !== 'true';
+    for (const card of cards) {
+      const slug = card.dataset.slug;
+      card.dataset.favorite = String(favorites.has(slug));
+      const favorite = card.querySelector('[data-favorite]');
+      favorite.setAttribute('aria-pressed', String(favorites.has(slug)));
+      favorite.textContent = favorites.has(slug) ? '★ Favorito' : '☆ Favorito';
+      const compare = card.querySelector('[data-compare]');
+      compare.setAttribute('aria-pressed', String(selected.has(slug)));
+      compare.textContent = selected.has(slug) ? 'Remover da comparação' : 'Comparar';
+      compare.setAttribute('aria-describedby', 'selection-help');
+    }
+    open.textContent = `Comparar (${selected.size}/3)`;
+    open.disabled = selected.size < 2;
+    selection.replaceChildren();
+    columns.replaceChildren();
+    document.querySelector('#comparison-empty').hidden = selected.size >= 2;
+    for (const slug of selected) {
+      const card = bySlug.get(slug);
+      const name = card.dataset.name;
+      selection.append(removeButton(slug, name));
+      const column = document.createElement('article');
+      const title = document.createElement('h3');
+      title.textContent = name;
+      column.append(title);
+      for (const [label, value] of [
+        ['Área', card.dataset.area],
+        ['Descrição', card.querySelector('.template-copy').textContent],
+        ['Labels existentes', card.querySelector('.featured-badge')?.textContent || 'Sem labels adicionais'],
+      ]) {
+        const paragraph = document.createElement('p');
+        const heading = document.createElement('strong');
+        heading.textContent = `${label}: `;
+        paragraph.append(heading, value);
+        column.append(paragraph);
+      }
+      const link = card.querySelector('.card-actions a').cloneNode(true);
+      link.setAttribute('aria-label', `Abrir site: ${name} (nova janela)`);
+      column.append(link, removeButton(slug, name));
+      columns.append(column);
+    }
+    filterCards();
+  }
+  for (const card of cards) {
+    const slug = card.dataset.slug;
+    card.querySelector('[data-favorite]').addEventListener('click', () => {
+      favorites.has(slug) ? favorites.delete(slug) : favorites.add(slug);
+      update();
+      save();
+      status.textContent = favorites.has(slug) ? 'Template guardado nos favoritos.' : 'Template removido dos favoritos.';
+      if (card.hidden) favoritesView.focus();
+    });
+    card.querySelector('[data-compare]').addEventListener('click', () => {
+      if (selected.has(slug)) selected.delete(slug);
+      else if (selected.size < 3) selected.add(slug);
+      else {
+        status.textContent = 'Limite de 3 templates. Remova um da seleção para o substituir.';
+        return;
+      }
+      update();
+      save();
+      status.textContent = `${selected.size} de 3 templates selecionados. Selecione pelo menos 2 para comparar.`;
+    });
+  }
+  favoritesView.addEventListener('click', () => {
+    const active = favoritesView.getAttribute('aria-pressed') !== 'true';
+    favoritesView.setAttribute('aria-pressed', String(active));
+    update();
+  });
+  open.addEventListener('click', () => { if (selected.size >= 2) comparison.showModal(); });
+  document.querySelector('#close-comparison').addEventListener('click', () => comparison.close());
+  comparison.addEventListener('close', () => (open.disabled ? document.querySelector('#clear-comparison') : open).focus());
+  for (const id of ['clear-comparison', 'clear-comparison-dialog']) {
+    document.querySelector(`#${id}`).addEventListener('click', () => {
+      selected.clear();
+      update();
+      save();
+      status.textContent = 'Comparação limpa.';
+      if (comparison.open) comparison.close();
+    });
+  }
+  update();
+}
