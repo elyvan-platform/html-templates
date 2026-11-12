@@ -141,6 +141,7 @@ export function templateArea(template) {
     ['Serviços públicos', /junta/],
     ['Hotelaria', /stay/],
     ['Arquitetura', /forma-norte/],
+    ['Imobiliário', /limiar-imobiliaria/],
     ['Design e decoração', /maison|albor/],
     ['Mobilidade', /rota-norte/],
     ['Tecnologia', /saas|orbit|admin-dashboard|crypto-dashboard|nexo-ai|portfolio-developer/],
