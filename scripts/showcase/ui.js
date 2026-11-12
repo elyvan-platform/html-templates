@@ -17,6 +17,44 @@ if (themeSelect) {
 }
 systemTheme.addEventListener('change', applyTheme);
 const cards = [...document.querySelectorAll('.template-card')];
+// Observe the card rather than the scaled iframe's 1440 × 900 layout box.
+function loadThumbnail(card) {
+  const thumbnail = card.querySelector('.thumbnail');
+  if (card.hidden || !thumbnail.dataset.src) return;
+  thumbnail.src = thumbnail.dataset.src;
+  delete thumbnail.dataset.src;
+  thumbnailObserver?.unobserve(card);
+}
+const thumbnailObserver = typeof IntersectionObserver === 'function'
+  ? new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) loadThumbnail(entry.target);
+    }
+  }, { rootMargin: '200px 0px' })
+  : null;
+function observeThumbnails() {
+  for (const card of cards) {
+    if (thumbnailObserver) {
+      thumbnailObserver.unobserve(card);
+      if (!card.hidden && card.querySelector('.thumbnail').dataset.src) thumbnailObserver.observe(card);
+    } else if (!card.hidden) {
+      const bounds = card.getBoundingClientRect();
+      if (bounds.bottom > -200 && bounds.top < window.innerHeight + 200) loadThumbnail(card);
+    }
+  }
+}
+// Older browsers keep the same on-demand behaviour without IntersectionObserver.
+if (!thumbnailObserver) {
+  let scheduled = false;
+  window.addEventListener('scroll', () => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      scheduled = false;
+      observeThumbnails();
+    });
+  }, { passive: true });
+}
 let area = 'all';
 const search = document.querySelector('#search');
 function filterCards() {
@@ -30,6 +68,7 @@ function filterCards() {
   document.querySelector('#result-count').textContent = `${count} de ${cards.length} templates`;
   document.querySelector('#no-results').hidden = count !== 0;
   resizeThumbnails();
+  observeThumbnails();
 }
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   area = button.dataset.filter;
@@ -79,6 +118,8 @@ document.querySelectorAll('[data-preview]').forEach(button => button.addEventLis
 }));
 document.querySelector('#close-preview')?.addEventListener('click', () => dialog.close());
 dialog?.addEventListener('close', () => { frame.src = 'about:blank'; });
-window.addEventListener('resize', () => { resizeThumbnails(); resizeDevice(); });
+window.addEventListener('resize', () => { resizeThumbnails(); resizeDevice(); observeThumbnails(); });
 resizeThumbnails();
 resizeDevice();
+
+observeThumbnails();

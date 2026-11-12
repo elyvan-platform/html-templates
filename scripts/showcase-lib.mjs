@@ -186,7 +186,7 @@ export function renderShowcasePage(templates) {
     const name = escapeHtml(template.name), href = escapeHtml(template.href), area = escapeHtml(templateArea(template));
     const preview = `data-preview data-href="${href}" data-name="${name}"`;
     return `<article class="template-card" data-area="${area}">
-<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><iframe class="thumbnail" src="${href}" title="Miniatura de ${name}" loading="lazy" tabindex="-1" sandbox></iframe><span class="preview-tag">Explorar template ↗</span></button>
+<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><iframe class="thumbnail" data-src="${href}" title="Miniatura de ${name}" loading="lazy" tabindex="-1" sandbox></iframe><span class="preview-tag">Explorar template ↗</span></button>
 <div class="template-body"><p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
 <div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Pré-visualizar ${name}">Preview →</button></div></div></article>`;
   }).join('');
