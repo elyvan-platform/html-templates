@@ -10,9 +10,12 @@
     "dev": "HOST=127.0.0.1 PORT=4321 node scripts/showcase-server.mjs",
     "start": "node scripts/showcase-server.mjs",
     "test": "node --test",
-    "thumbnails": "node scripts/capture-thumbnails.mjs"
+    "thumbnails": "node scripts/capture-thumbnails.mjs",
+    "pretest": "node scripts/ensure-qa-browser.mjs",
+    "test:qa": "node scripts/ensure-qa-browser.mjs && node --test test/qa-browser.test.mjs"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.11.0",
     "playwright": "^1.56.1"
   }
 }

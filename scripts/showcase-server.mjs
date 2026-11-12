@@ -69,7 +69,7 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`[showcase] server running at http://${host}:${port}`);
+  console.log(`[showcase] server running at http://${host}:${server.address().port}`);
 });
 
 function sendHtml(response, statusCode, html) {

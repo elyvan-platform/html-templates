@@ -19,3 +19,5 @@
 @media(max-width:650px){.filters{display:none}.mobile-area-filter{display:grid;gap:4px;margin:0 0 24px}.mobile-area-filter label{font-size:13px;color:var(--muted)}.mobile-area-filter select{width:100%;min-width:0;min-height:44px}}
 
 .sort-control{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}.section-title{font-size:20px;margin:28px 0 16px}.featured-badge{display:inline-block;color:var(--accent);background:var(--tint);border:1px solid var(--accent);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;margin-bottom:12px}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}

@@ -1,0 +1,57 @@
+{
+  "/src/cafe-aurora/index.html": [
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": [
+        ".section-heading > div > h2 > em"
+      ]
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": [
+        ".section-heading > p"
+      ]
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": [
+        ".featured > p"
+      ]
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": [
+        ".menu-note"
+      ]
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": [
+        ".visit-copy > p:nth-child(3)"
+      ]
+    }
+  ],
+  "/src/architecture-studio/index.html": [
+    {
+      "rule": "label-content-name-mismatch",
+      "impact": "serious",
+      "target": [
+        "a[aria-label=\"Architecture Studio — início\"]"
+      ]
+    }
+  ],
+  "/src/admin-dashboard/index.html": [
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": [
+        "#log > li > span"
+      ]
+    }
+  ]
+}

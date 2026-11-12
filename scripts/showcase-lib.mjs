@@ -187,7 +187,7 @@ function page(title, body) {
 <style>${styles}</style>
 <script>try{const t=localStorage.getItem('showcase-theme');document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}</script>
 </head><body><a class="skip-link" href="#main">Saltar para o conteúdo</a><div class="shell">
-<header class="topbar"><a class="brand" href="/" aria-label="Montra de templates — início"><span class="brand-mark" aria-hidden="true">✦</span>template.space</a>
+<header class="topbar"><a class="brand" href="/" aria-label="template.space — Montra de templates — início"><span class="brand-mark" aria-hidden="true">✦</span>template.space</a>
 <label class="theme-control" for="theme">Aparência <select id="theme"><option value="system" selected>Sistema</option><option value="light">Claro</option><option value="dark">Escuro</option></select></label></header>
 ${body}
 <footer class="footer"><span>template.space / Uma ideia. Infinitas possibilidades.</span><span>Explore. Experimente. Imagine.</span></footer></div><script>${clientScript}</script></body></html>`;
@@ -222,9 +222,9 @@ export function renderShowcasePage(templates) {
     const name = escapeHtml(template.name), href = escapeHtml(template.href), area = escapeHtml(templateArea(template));
     const preview = `data-preview data-href="${href}" data-name="${name}"`;
     return `<article class="template-card" data-area="${area}" data-name="${name}" data-slug="${escapeHtml(template.slug)}" data-search="${escapeHtml([template.name, templateArea(template), template.description || ''].join(' '))}">
-<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}">${renderThumbnail(template, index)}<span class="preview-tag">Explorar template ↗</span></button>
+<button type="button" class="template-preview" ${preview}>${renderThumbnail(template, index)}<span class="preview-tag">Explorar template ↗<span class="sr-only"> ${name}</span></span></button>
 <div class="template-body">${template.featured === true ? '<span class="featured-badge">Em destaque</span>' : ''}<p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
-<div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Pré-visualizar ${name}">Preview →</button></div></div></article>`;
+<div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Preview → ${name}">Preview →</button></div></div></article>`;
   };
   const featured = ordered.filter(template => template.featured === true);
   const regular = ordered.filter(template => template.featured !== true);
@@ -233,7 +233,7 @@ export function renderShowcasePage(templates) {
 <div class="mobile-area-filter"><label for="area-select">Filtrar por área</label><select id="area-select"><option value="all">Todas as áreas</option>${areas.map(area => `<option value="${escapeHtml(area)}">${escapeHtml(area)}</option>`).join('')}</select></div>
 <div class="filters" role="group" aria-label="Filtrar por área"><button type="button" data-filter="all" aria-pressed="true">Todas as áreas</button>${areas.map(area => `<button type="button" data-filter="${escapeHtml(area)}" aria-pressed="false">${escapeHtml(area)}</button>`).join('')}</div>
 <section id="featured-section" aria-labelledby="featured-title" ${featured.length ? '' : 'hidden'}><h2 id="featured-title" class="section-title">Em destaque</h2><div class="templates-grid" id="featured-grid">${featured.map(renderCard).join('')}</div></section><section id="catalogue-section" aria-labelledby="catalogue-title" ${regular.length ? '' : 'hidden'}><h2 id="catalogue-title" class="section-title">Todos os templates</h2><div class="templates-grid" id="catalogue-grid">${regular.map((template, index) => renderCard(template, index + featured.length)).join('')}</div></section><div class="empty-state" id="no-results" ${templates.length ? 'hidden' : ''}><h2>Nenhum template encontrado</h2><p>Experimente outra pesquisa ou explore todas as áreas.</p><button type="button" id="reset-filters">Limpar filtros</button></div></section></main>
-<dialog class="preview-dialog" id="preview-dialog" aria-labelledby="preview-title"><div class="preview-toolbar"><h2 class="preview-title" id="preview-title">Preview</h2>${previewStage()}<div class="preview-links"><a id="preview-direct" href="#" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" id="close-preview" aria-label="Fechar preview">Fechar ×</button></div></div>${stage()}</dialog>`);
+<dialog class="preview-dialog" id="preview-dialog" aria-labelledby="preview-title"><div class="preview-toolbar"><h2 class="preview-title" id="preview-title">Preview</h2>${previewStage()}<div class="preview-links"><a id="preview-direct" href="#" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" id="close-preview" aria-label="Fechar × preview">Fechar ×</button></div></div>${stage()}</dialog>`);
 }
 
 export function renderTemplateViewerPage(templates, currentTemplate) {
