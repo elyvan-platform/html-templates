@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Painel de gestão de utilizadores e operações internas, com indicadores, gráficos e tabela de dados.">
+  <title>Painel Meridiano | Admin Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f2937'/%3E%3Cpath d='M8 22V10l8 8 8-8v12' fill='none' stroke='%23f59e0b' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Barra lateral">
+      <a class="brand" href="#visao-geral"><span class="brand-mark" aria-hidden="true">M</span><span>Meridiano<small>Operações internas</small></span></a>
+      <nav aria-label="Navegação principal">
+        <a href="#visao-geral" aria-current="true">Visão geral</a>
+        <a href="#graficos">Atividade</a>
+        <a href="#utilizadores">Utilizadores</a>
+        <a href="#registo">Registo de operações</a>
+      </nav>
+      <p class="side-note">Dados fictícios guardados apenas neste navegador.</p>
+    </aside>
+    <div class="scrim" id="scrim" hidden></div>
+    <div class="main-col">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="sidebar" aria-label="Abrir menu">☰</button>
+        <div><p class="eyebrow">Quinta-feira, 12 de novembro</p><h1>Visão geral</h1></div>
+        <div class="top-actions">
+          <button class="btn" type="button" id="reset-data">Repor dados</button>
+          <button class="btn primary" type="button" id="new-user">+ Novo utilizador</button>
+        </div>
+      </header>
+      <main id="conteudo">
+        <section id="visao-geral" aria-labelledby="kpi-title">
+          <h2 id="kpi-title" class="sr-only">Indicadores principais</h2>
+          <ul class="kpis" id="kpis"></ul>
+        </section>
+
+        <section id="graficos" class="charts" aria-label="Gráficos de atividade">
+          <article class="card">
+            <header class="card-head"><h2>Pedidos tratados por semana</h2><span class="chip">Últimas 12 semanas</span></header>
+            <div id="line-chart" class="chart" role="img" aria-label="Gráfico de linha com pedidos tratados por semana"></div>
+            <details class="data-details"><summary>Ver dados do gráfico</summary><table id="line-table"><caption class="sr-only">Pedidos por semana</caption></table></details>
+          </article>
+          <article class="card">
+            <header class="card-head"><h2>Utilizadores por departamento</h2><span class="chip">Atual</span></header>
+            <div id="bar-chart" class="chart" role="img" aria-label="Gráfico de barras com utilizadores por departamento"></div>
+            <details class="data-details"><summary>Ver dados do gráfico</summary><table id="bar-table"><caption class="sr-only">Utilizadores por departamento</caption></table></details>
+          </article>
+        </section>
+
+        <section id="utilizadores" class="card table-card" aria-labelledby="users-title">
+          <header class="card-head"><h2 id="users-title">Utilizadores</h2><span class="chip" id="count-chip" aria-live="polite"></span></header>
+          <form class="toolbar" id="filters" role="search" aria-label="Filtrar utilizadores">
+            <label class="field grow"><span>Pesquisar</span><input type="search" id="q" placeholder="Nome, email ou departamento" autocomplete="off"></label>
+            <label class="field"><span>Função</span><select id="f-role"><option value="">Todas</option></select></label>
+            <label class="field"><span>Estado</span><select id="f-status"><option value="">Todos</option></select></label>
+            <button type="button" class="btn" id="clear-filters">Limpar</button>
+            <button type="button" class="btn ghost" id="simulate-error">Simular erro</button>
+          </form>
+          <div class="table-wrap" id="table-wrap" tabindex="0" role="region" aria-label="Tabela de utilizadores, deslize para ver mais">
+            <table id="users-table">
+              <thead><tr>
+                <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="name">Utilizador</button></th>
+                <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="role">Função</button></th>
+                <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="dept">Departamento</button></th>
+                <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="status">Estado</button></th>
+                <th scope="col" aria-sort="none"><button type="button" class="sort" data-sort="last">Último acesso</button></th>
+                <th scope="col"><span class="sr-only">Ações</span></th>
+              </tr></thead>
+              <tbody id="rows"></tbody>
+            </table>
+            <div id="state" class="state" role="status" hidden></div>
+          </div>
+          <footer class="pager">
+            <label class="field inline"><span>Linhas</span><select id="page-size"><option>5</option><option selected>8</option><option>12</option></select></label>
+            <p id="range" aria-live="polite"></p>
+            <div class="pager-btns"><button class="btn" type="button" id="prev">← Anterior</button><span id="page-label"></span><button class="btn" type="button" id="next">Seguinte →</button></div>
+          </footer>
+        </section>
+
+        <section id="registo" class="card" aria-labelledby="log-title">
+          <header class="card-head"><h2 id="log-title">Registo de operações</h2><span class="chip">Sessão atual</span></header>
+          <ol class="log" id="log" aria-live="polite"></ol>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <dialog id="user-dialog" aria-labelledby="dialog-title">
+    <form id="user-form" method="dialog" novalidate>
+      <header class="dlg-head"><h2 id="dialog-title">Novo utilizador</h2><button type="button" class="icon-btn" data-close aria-label="Fechar">✕</button></header>
+      <div class="dlg-body">
+        <label class="field"><span>Nome completo</span><input name="name" required autocomplete="off" aria-describedby="e-name"><small class="err" id="e-name"></small></label>
+        <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="off" aria-describedby="e-email"><small class="err" id="e-email"></small></label>
+        <div class="two">
+          <label class="field"><span>Função</span><select name="role"></select></label>
+          <label class="field"><span>Departamento</span><select name="dept"></select></label>
+        </div>
+        <label class="field"><span>Estado</span><select name="status"></select></label>
+      </div>
+      <footer class="dlg-foot"><button type="button" class="btn" data-close>Cancelar</button><button type="submit" class="btn primary" id="save-btn">Guardar</button></footer>
+    </form>
+  </dialog>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+    <form method="dialog">
+      <header class="dlg-head"><h2 id="confirm-title">Remover utilizador</h2></header>
+      <div class="dlg-body"><p id="confirm-text"></p></div>
+      <footer class="dlg-foot"><button class="btn" value="cancel">Cancelar</button><button class="btn danger" value="ok" id="confirm-ok">Remover</button></footer>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
