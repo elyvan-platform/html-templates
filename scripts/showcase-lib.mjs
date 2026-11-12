@@ -147,6 +147,7 @@ export function templateArea(template) {
     ['Imobiliário', /limiar-imobiliaria/],
     ['Design e decoração', /maison|albor/],
     ['Mobilidade', /rota-norte/],
+    ['Automóvel', /automotive/],
     ['Finanças', /finance-dashboard|balanço|balanco/],
     ['Emprego e carreiras', /oportuna/],
     ['Meteorologia', /weather-app/],

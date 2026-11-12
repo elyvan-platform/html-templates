@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Showcase premium de motos e automóveis: modelos em destaque, catálogo, comparação de fichas técnicas fictícias, galeria fullscreen e contacto demonstrativo.">
+  <meta name="theme-color" content="#0a0b0d">
+  <title>Velocitá Garage | Automotive Showcase</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/data.js" defer></script>
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="header">
+    <a class="logo" href="#inicio" aria-label="Velocitá Garage, início">VELOCITÁ<span>/garage</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navegacao">Menu</button>
+    <nav id="navegacao" aria-label="Navegação principal">
+      <a href="#destaque">Destaque</a><a href="#catalogo">Catálogo</a><a href="#comparar">Comparar</a><a href="#contacto" class="nav-cta">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="hero-copy">
+        <p class="eyebrow">Coleção demonstrativa · Motos e automóveis</p>
+        <h1 id="hero-titulo">Sente a estrada<br><em>antes de ligar o motor.</em></h1>
+        <p class="intro">Quatro máquinas fictícias, desenhadas para emocionar. Explora cores, galerias e fichas técnicas — todos os dados são exemplo.</p>
+        <div class="hero-actions"><a class="button" href="#catalogo">Ver catálogo</a><a class="text-link" href="#contacto">Pedir test-drive</a></div>
+      </div>
+      <figure class="hero-art" id="hero-art" aria-label="Ilustração do modelo em destaque"></figure>
+    </section>
+
+    <section class="section" id="destaque" aria-labelledby="destaque-titulo">
+      <div class="section-head"><p class="eyebrow">Modelo em destaque</p><h2 id="destaque-titulo">Detalhes que se sentem.</h2></div>
+      <div class="detail">
+        <div class="stage">
+          <div class="stage-art" id="detail-art" role="img" aria-label=""></div>
+          <button class="button ghost" type="button" id="open-gallery">Abrir galeria fullscreen</button>
+        </div>
+        <div class="detail-info">
+          <p class="kicker" id="detail-type"></p>
+          <h3 id="detail-name"></h3>
+          <p id="detail-tagline"></p>
+          <fieldset class="swatches">
+            <legend>Cor: <strong id="color-name"></strong></legend>
+            <div id="swatches"></div>
+          </fieldset>
+          <dl class="specs-mini" id="detail-specs"></dl>
+          <p class="price" id="detail-price"></p>
+          <a class="button" href="#contacto" id="detail-cta">Pedir informação</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo" aria-labelledby="catalogo-titulo">
+      <div class="section-head"><p class="eyebrow">Catálogo</p><h2 id="catalogo-titulo">Escolhe a tua máquina.</h2></div>
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filtrar por tipo">
+          <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" data-filter="carro" aria-pressed="false">Automóveis</button>
+          <button type="button" data-filter="mota" aria-pressed="false">Motos</button>
+        </div>
+        <label class="search" for="pesquisa"><span>Pesquisar</span><input id="pesquisa" type="search" placeholder="Nome ou categoria" autocomplete="off"></label>
+        <label class="sort" for="ordem"><span>Ordenar</span>
+          <select id="ordem"><option value="nome">Nome</option><option value="potencia">Potência</option><option value="preco">Preço</option></select>
+        </label>
+      </div>
+      <p class="count" id="count" role="status" aria-live="polite"></p>
+      <div class="cards" id="cards"></div>
+      <p class="empty" id="empty" hidden>Nenhum modelo corresponde à pesquisa. <button type="button" class="text-link" id="reset-filters">Limpar filtros</button></p>
+    </section>
+
+    <section class="section" id="comparar" aria-labelledby="comparar-titulo">
+      <div class="section-head"><p class="eyebrow">Comparação</p><h2 id="comparar-titulo">Lado a lado.</h2></div>
+      <p class="note">Fichas técnicas fictícias, apenas para demonstração. Seleciona 2 ou 3 modelos no catálogo.</p>
+      <div id="compare-empty" class="empty" role="status"></div>
+      <div class="table-wrap" id="compare-wrap" hidden tabindex="0" role="region" aria-label="Tabela de comparação">
+        <table id="compare-table"></table>
+      </div>
+      <button class="button ghost" type="button" id="clear-compare" hidden>Limpar comparação</button>
+    </section>
+
+    <section class="section contact" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="section-head"><p class="eyebrow">Contacto demonstrativo</p><h2 id="contacto-titulo">Reserva o teu test-drive.</h2></div>
+      <form id="form" novalidate>
+        <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" autocomplete="name" required aria-describedby="nome-erro"><p class="error" id="nome-erro" hidden></p></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-erro"><p class="error" id="email-erro" hidden></p></div>
+        <div class="field"><label for="modelo">Modelo</label><select id="modelo" name="modelo" required aria-describedby="modelo-erro"></select><p class="error" id="modelo-erro" hidden></p></div>
+        <div class="field full"><label for="mensagem">Mensagem (opcional)</label><textarea id="mensagem" name="mensagem" rows="4"></textarea></div>
+        <button class="button" type="submit">Enviar pedido</button>
+        <p class="note full">Demonstração: nada é enviado nem guardado.</p>
+        <p class="success full" id="success" role="status" tabindex="-1" hidden></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer"><p>Velocitá Garage é uma marca fictícia. Modelos, preços e especificações são exemplos demonstrativos e não correspondem a veículos reais.</p></footer>
+
+  <dialog id="gallery" aria-label="Galeria fullscreen">
+    <button type="button" class="close" id="gallery-close" aria-label="Fechar galeria">✕</button>
+    <button type="button" class="nav prev" id="gallery-prev" aria-label="Imagem anterior">‹</button>
+    <figure><div id="gallery-art" role="img"></div><figcaption id="gallery-caption" aria-live="polite"></figcaption></figure>
+    <button type="button" class="nav next" id="gallery-next" aria-label="Imagem seguinte">›</button>
+  </dialog>
+  <noscript><p class="footer">Este template requer JavaScript para o catálogo interativo.</p></noscript>
+</body>
+</html>
