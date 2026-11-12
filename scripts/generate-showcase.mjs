@@ -7,7 +7,7 @@ const isWatchMode = process.argv.includes("--watch");
 
 async function generateShowcase() {
   const templates = await listTemplateDirectories();
-  const html = renderShowcasePage(templates).replaceAll('href="/', 'href="./').replaceAll('src="/', 'src="./');
+  const html = renderShowcasePage(templates).replaceAll('href="/', 'href="./').replaceAll('src="/', 'src="./').replace(/srcset="([^"]*)"/g, (_, list) => `srcset="${list.replace(/(^|, )\//g, '$1./')}"`);
   await fs.writeFile(outputPath, html, "utf8");
   console.log(`[showcase] generated ${path.relative(rootDir, outputPath)} with ${templates.length} template(s)`);
 }

@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { THUMBNAIL_DIR, THUMBNAIL_SIZE, THUMBNAIL_WIDTHS } from "./thumbnail-lib.mjs";
 
 export const rootDir = process.cwd();
 export const srcDir = path.join(rootDir, "src");
@@ -42,15 +43,32 @@ export async function extractTemplateMeta(slug, html) {
   const name = cleanTemplateName(rawTitle) || slugToTitle(slug);
   const description = decodeHtml(descriptionMatch?.[1] || "").trim();
   const previewHref = await findPreviewAsset(slug);
+  const thumbnail = await findThumbnail(slug);
 
   return {
     slug,
     name,
     description,
     previewHref,
+    thumbnail,
     href: `/src/${slug}/index.html`,
     viewerHref: `/templates/${slug}`,
   };
+}
+
+// Returns the generated thumbnail set (see capture-thumbnails.mjs) or null when it is missing.
+async function findThumbnail(slug) {
+  const widest = Math.max(...THUMBNAIL_WIDTHS);
+  try {
+    await fs.access(path.join(rootDir, THUMBNAIL_DIR, `${slug}-${widest}.jpg`));
+    return `/${THUMBNAIL_DIR}/${slug}`;
+  } catch (error) {
+    if (error && error.code === "ENOENT") {
+      return null;
+    }
+
+    throw error;
+  }
 }
 
 async function findPreviewAsset(slug) {
@@ -171,6 +189,19 @@ ${body}
 <footer class="footer"><span>template.space / Uma ideia. Infinitas possibilidades.</span><span>Explore. Experimente. Imagine.</span></footer></div><script>${clientScript}</script></body></html>`;
 }
 
+export function renderThumbnail(template, index = 0) {
+  const name = escapeHtml(template.name);
+  const fallback = `<span class="thumb-fallback" aria-hidden="true">${name}</span>`;
+  if (!template.thumbnail) {
+    return `<span class="thumb-frame is-missing">${fallback}</span>`;
+  }
+  const set = ext => THUMBNAIL_WIDTHS.map(width => `${escapeHtml(template.thumbnail)}-${width}.${ext} ${width}w`).join(', ');
+  const sizes = '(max-width: 650px) 100vw, (max-width: 1100px) 50vw, 460px';
+  // The first row is above the fold on desktop: load it eagerly and let the browser lazy-load the rest natively.
+  const loading = index < 3 ? 'loading="eager"' + (index === 0 ? ' fetchpriority="high"' : '') : 'loading="lazy"';
+  return `<span class="thumb-frame">${fallback}<picture><source type="image/avif" srcset="${set('avif')}" sizes="${sizes}"><source type="image/webp" srcset="${set('webp')}" sizes="${sizes}"><img class="thumbnail" src="${escapeHtml(template.thumbnail)}-${Math.min(...THUMBNAIL_WIDTHS)}.jpg" srcset="${set('jpg')}" sizes="${sizes}" width="${THUMBNAIL_SIZE.width}" height="${THUMBNAIL_SIZE.height}" alt="Pré-visualização da página inicial de ${name}" ${loading} decoding="async"></picture></span>`;
+}
+
 function previewStage() {
   return `<div class="devices" role="group" aria-label="Dispositivo de preview">
 ${[['mobile','Mobile'],['tablet','Tablet'],['desktop','Desktop']].map(([key,label]) => `<button type="button" data-device="${key}" aria-pressed="${key === 'desktop'}">${label}</button>`).join('')}
@@ -182,11 +213,11 @@ function stage(href = 'about:blank', name = '') {
 
 export function renderShowcasePage(templates) {
   const areas = [...new Set(templates.map(templateArea))].sort((a,b) => a.localeCompare(b,'pt'));
-  const cards = templates.map(template => {
+  const cards = templates.map((template, index) => {
     const name = escapeHtml(template.name), href = escapeHtml(template.href), area = escapeHtml(templateArea(template));
     const preview = `data-preview data-href="${href}" data-name="${name}"`;
     return `<article class="template-card" data-area="${area}">
-<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><iframe class="thumbnail" data-src="${href}" title="Miniatura de ${name}" loading="lazy" tabindex="-1" sandbox></iframe><span class="preview-tag">Explorar template ↗</span></button>
+<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}">${renderThumbnail(template, index)}<span class="preview-tag">Explorar template ↗</span></button>
 <div class="template-body"><p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
 <div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Pré-visualizar ${name}">Preview →</button></div></div></article>`;
   }).join('');

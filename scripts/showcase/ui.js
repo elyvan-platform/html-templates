@@ -17,48 +17,14 @@ if (themeSelect) {
 }
 systemTheme.addEventListener('change', applyTheme);
 const cards = [...document.querySelectorAll('.template-card')];
-const pendingThumbnails = new Set(cards.filter(card => card.querySelector('.thumbnail').dataset.src));
-// Observe the card rather than the scaled iframe's 1440 × 900 layout box.
-function loadThumbnail(card) {
-  const thumbnail = card.querySelector('.thumbnail');
-  if (card.hidden || !thumbnail.dataset.src) return;
-  // Visibility is controlled here; avoid a second browser-specific lazy-load delay.
-  thumbnail.loading = 'eager';
-  thumbnail.src = thumbnail.dataset.src;
-  delete thumbnail.dataset.src;
-  pendingThumbnails.delete(card);
-  thumbnailObserver?.unobserve(card);
+// Thumbnails are static <img> elements lazy-loaded natively; a broken file reveals the name placeholder.
+function markMissing(image) {
+  image.closest('.thumb-frame')?.classList.add('is-missing');
 }
-const thumbnailObserver = typeof IntersectionObserver === 'function'
-  ? new IntersectionObserver(entries => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) loadThumbnail(entry.target);
-    }
-  }, { rootMargin: '200px 0px' })
-  : null;
-function observeThumbnails() {
-  for (const card of pendingThumbnails) {
-    if (thumbnailObserver) {
-      thumbnailObserver.unobserve(card);
-      if (!card.hidden && card.querySelector('.thumbnail').dataset.src) thumbnailObserver.observe(card);
-    } else if (!card.hidden) {
-      const bounds = card.getBoundingClientRect();
-      if (bounds.bottom > -200 && bounds.top < window.innerHeight + 200) loadThumbnail(card);
-    }
-  }
-}
-// Older browsers keep the same on-demand behaviour without IntersectionObserver.
-if (!thumbnailObserver) {
-  let scheduled = false;
-  window.addEventListener('scroll', () => {
-    if (scheduled) return;
-    scheduled = true;
-    requestAnimationFrame(() => {
-      scheduled = false;
-      observeThumbnails();
-    });
-  }, { passive: true });
-}
+document.querySelectorAll('.thumbnail').forEach(image => {
+  image.addEventListener('error', () => markMissing(image));
+  if (image.complete && image.naturalWidth === 0) markMissing(image);
+});
 let area = 'all';
 const search = document.querySelector('#search');
 function filterCards() {
@@ -71,8 +37,6 @@ function filterCards() {
   }
   document.querySelector('#result-count').textContent = `${count} de ${cards.length} templates`;
   document.querySelector('#no-results').hidden = count !== 0;
-  resizeThumbnails();
-  observeThumbnails();
 }
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   area = button.dataset.filter;
@@ -84,14 +48,6 @@ document.querySelector('#reset-filters')?.addEventListener('click', () => {
   search.value = '';
   document.querySelector('[data-filter="all"]').click();
 });
-function resizeThumbnails() {
-  // Read all widths before writing transforms to avoid repeated layout work.
-  const sizes = cards.filter(card => !card.hidden).map(card => ({
-    thumbnail: card.querySelector('.thumbnail'),
-    scale: card.querySelector('.template-preview').clientWidth / 1440,
-  }));
-  for (const { thumbnail, scale } of sizes) thumbnail.style.transform = `scale(${scale})`;
-}
 const dialog = document.querySelector('#preview-dialog');
 const frame = document.querySelector('#device-frame');
 let device = 'desktop';
@@ -125,8 +81,5 @@ document.querySelectorAll('[data-preview]').forEach(button => button.addEventLis
 }));
 document.querySelector('#close-preview')?.addEventListener('click', () => dialog.close());
 dialog?.addEventListener('close', () => { frame.src = 'about:blank'; });
-window.addEventListener('resize', () => { resizeThumbnails(); resizeDevice(); observeThumbnails(); });
-resizeThumbnails();
+window.addEventListener('resize', resizeDevice);
 resizeDevice();
-
-observeThumbnails();
