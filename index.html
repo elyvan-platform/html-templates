@@ -173,12 +173,16 @@ if (themeSelect) {
 }
 systemTheme.addEventListener('change', applyTheme);
 const cards = [...document.querySelectorAll('.template-card')];
+const pendingThumbnails = new Set(cards.filter(card => card.querySelector('.thumbnail').dataset.src));
 // Observe the card rather than the scaled iframe's 1440 × 900 layout box.
 function loadThumbnail(card) {
   const thumbnail = card.querySelector('.thumbnail');
   if (card.hidden || !thumbnail.dataset.src) return;
+  // Visibility is controlled here; avoid a second browser-specific lazy-load delay.
+  thumbnail.loading = 'eager';
   thumbnail.src = thumbnail.dataset.src;
   delete thumbnail.dataset.src;
+  pendingThumbnails.delete(card);
   thumbnailObserver?.unobserve(card);
 }
 const thumbnailObserver = typeof IntersectionObserver === 'function'
@@ -189,7 +193,7 @@ const thumbnailObserver = typeof IntersectionObserver === 'function'
   }, { rootMargin: '200px 0px' })
   : null;
 function observeThumbnails() {
-  for (const card of cards) {
+  for (const card of pendingThumbnails) {
     if (thumbnailObserver) {
       thumbnailObserver.unobserve(card);
       if (!card.hidden && card.querySelector('.thumbnail').dataset.src) thumbnailObserver.observe(card);
@@ -237,9 +241,12 @@ document.querySelector('#reset-filters')?.addEventListener('click', () => {
   document.querySelector('[data-filter="all"]').click();
 });
 function resizeThumbnails() {
-  for (const card of cards) {
-    if (!card.hidden) card.querySelector('.thumbnail').style.transform = `scale(${card.querySelector('.template-preview').clientWidth / 1440})`;
-  }
+  // Read all widths before writing transforms to avoid repeated layout work.
+  const sizes = cards.filter(card => !card.hidden).map(card => ({
+    thumbnail: card.querySelector('.thumbnail'),
+    scale: card.querySelector('.template-preview').clientWidth / 1440,
+  }));
+  for (const { thumbnail, scale } of sizes) thumbnail.style.transform = `scale(${scale})`;
 }
 const dialog = document.querySelector('#preview-dialog');
 const frame = document.querySelector('#device-frame');

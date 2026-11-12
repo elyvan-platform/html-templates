@@ -87,3 +87,27 @@ test('fallback loads only nearby cards on initial render, scroll and resize', ()
   app.events.resize();
   assert.equal(app.cards[2].thumbnail.src, '/template-2.html');
 });
+
+test('activated thumbnails load immediately and are never measured again by the fallback', () => {
+  const app = setup({ observer: false });
+  const loaded = app.cards[0];
+  assert.equal(loaded.thumbnail.loading, 'eager');
+  assert.equal(loaded.thumbnail.dataset.src, undefined);
+  loaded.getBoundingClientRect = () => { throw new Error('Loaded thumbnails must leave the pending queue'); };
+  app.events.scroll();
+  app.events.resize();
+  assert.equal(loaded.thumbnail.src, '/template-0.html');
+});
+
+test('fallback defers hidden search results until they are visible and near the viewport', () => {
+  const app = setup({ observer: false });
+  app.search.value = 'Template 0';
+  app.searchEvents.input();
+  app.cards[1].getBoundingClientRect = () => ({ top: 100, bottom: 400 });
+  app.events.scroll();
+  assert.equal(app.cards[1].thumbnail.src, undefined);
+  app.search.value = '';
+  app.searchEvents.input();
+  assert.equal(app.cards[1].thumbnail.src, '/template-1.html');
+  assert.equal(app.cards[2].thumbnail.src, undefined);
+});
