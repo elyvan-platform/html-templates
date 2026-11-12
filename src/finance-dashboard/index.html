@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balanço | Finance Dashboard</title>
+<meta name="description" content="Dashboard de finanças pessoais fictício em PT-PT: movimentos, evolução mensal, orçamento por categoria, pesquisa e exportação CSV local.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230b7461'/%3E%3Cpath d='M9 22V10m7 12V6m7 16v-8' stroke='%23ffffff' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css"><script src="assets/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+<header class="site-header">
+<a class="brand" href="#conteudo" aria-label="Balanço, início"><span class="brand-mark" aria-hidden="true">B</span>Balanço</a>
+<p class="demo-note"><span class="dot" aria-hidden="true"></span>Dados fictícios para demonstração</p>
+<button type="button" class="btn btn-primary" id="open-dialog" aria-haspopup="dialog">Adicionar movimento</button>
+</header>
+
+<main id="conteudo">
+<noscript><p class="notice">Esta demonstração precisa de JavaScript ativo para calcular os valores.</p></noscript>
+
+<section class="intro" aria-labelledby="page-title">
+<div>
+<p class="eyebrow">Finanças pessoais · Análise mensal</p>
+<h1 id="page-title">Quanto entrou, quanto saiu <span>e o que sobrou.</span></h1>
+</div>
+<nav class="months" id="months" aria-label="Escolher mês"></nav>
+</section>
+
+<section class="summary" aria-labelledby="summary-title">
+<h2 class="sr-only" id="summary-title">Resumo do mês</h2>
+<article class="hero">
+<p class="eyebrow" id="month-title"></p>
+<p class="hero-label">Saldo do mês</p>
+<p class="balance num" id="balance"></p>
+<p class="hero-note" id="balance-note"></p>
+<div class="split" aria-hidden="true"><span class="split-expense" id="split-expense"></span></div>
+<p class="split-legend" id="split-legend"></p>
+</article>
+<div class="kpis">
+<article class="kpi kpi-income"><p class="kpi-label">Receitas</p><p class="kpi-value num" id="kpi-income"></p><p class="kpi-note" id="kpi-income-note"></p></article>
+<article class="kpi kpi-expense"><p class="kpi-label">Despesas</p><p class="kpi-value num" id="kpi-expenses"></p><p class="kpi-note" id="kpi-expenses-note"></p></article>
+<article class="kpi"><p class="kpi-label">Taxa de poupança</p><p class="kpi-value num" id="kpi-rate"></p><p class="kpi-note" id="kpi-rate-note"></p></article>
+</div>
+</section>
+
+<div class="grid-2">
+<section class="panel chart-panel" aria-labelledby="evolution-title">
+<div class="panel-head">
+<div><h2 id="evolution-title">Evolução</h2><p class="muted">Receitas e despesas dos últimos seis meses</p></div>
+<ul class="legend" aria-label="Legenda"><li><span class="swatch income" aria-hidden="true"></span>Receitas</li><li><span class="swatch expense" aria-hidden="true"></span>Despesas</li></ul>
+</div>
+<div class="chart-scroll" id="chart-wrap"></div>
+<p class="chart-foot">Por baixo de cada mês está o saldo. Passe o cursor sobre uma coluna para ver o valor.</p>
+<details class="series-details">
+<summary>Ver valores em tabela</summary>
+<div class="table-scroll">
+<table class="series-table">
+<caption class="sr-only">Receitas, despesas e saldo por mês</caption>
+<thead><tr><th scope="col">Mês</th><th scope="col">Receitas</th><th scope="col">Despesas</th><th scope="col">Saldo</th></tr></thead>
+<tbody id="series-body"></tbody>
+</table>
+</div>
+</details>
+</section>
+
+<section class="panel budget-panel" aria-labelledby="budget-title">
+<div class="panel-head">
+<div><h2 id="budget-title">Orçamento por categoria</h2><p class="muted" id="budget-summary"></p></div>
+</div>
+<ul class="budgets" id="budgets"></ul>
+</section>
+</div>
+
+<section class="panel tx-panel" aria-labelledby="tx-title">
+<div class="panel-head">
+<div><h2 id="tx-title">Movimentos</h2><p class="muted" id="tx-count" role="status"></p></div>
+<button type="button" class="btn" id="export">Exportar CSV</button>
+</div>
+<p class="feedback" id="feedback" role="status"></p>
+<div class="toolbar">
+<label class="field search-field"><span class="field-label">Pesquisar</span><input type="search" id="search" placeholder="Descrição ou categoria" autocomplete="off"></label>
+<div class="field">
+<span class="field-label" id="type-label">Tipo</span>
+<div class="segmented" role="group" aria-labelledby="type-label">
+<button type="button" data-type="all" aria-pressed="true">Todos</button>
+<button type="button" data-type="receita" aria-pressed="false">Receitas</button>
+<button type="button" data-type="despesa" aria-pressed="false">Despesas</button>
+</div>
+</div>
+<label class="field"><span class="field-label">Categoria</span><select id="category"></select></label>
+<label class="field"><span class="field-label">Ordenar</span>
+<select id="sort">
+<option value="recent">Mais recentes</option>
+<option value="oldest">Mais antigos</option>
+<option value="amount">Maior valor</option>
+</select>
+</label>
+</div>
+<div class="tx-head" aria-hidden="true"><span>Data</span><span>Descrição</span><span>Categoria</span><span>Valor</span></div>
+<ul class="tx-list" id="tx-list"></ul>
+<div class="empty" id="tx-empty" hidden>
+<h3 id="empty-title"></h3>
+<p id="empty-text"></p>
+<button type="button" class="btn" id="empty-action"></button>
+</div>
+<div class="tx-foot">
+<p class="muted">Os movimentos adicionados ficam apenas nesta visita.</p>
+<button type="button" class="btn btn-ghost" id="reset-demo">Repor dados de demonstração</button>
+</div>
+</section>
+</main>
+
+<dialog id="movement-dialog" aria-labelledby="dialog-title">
+<form id="movement-form" novalidate>
+<div class="dialog-head">
+<h2 id="dialog-title">Novo movimento</h2>
+<button type="button" class="icon-btn" data-close aria-label="Fechar">×</button>
+</div>
+<p class="dialog-note">Movimento de demonstração: não é enviado nem guardado após recarregar.</p>
+<fieldset class="field">
+<legend class="field-label">Tipo</legend>
+<div class="type-options">
+<label><input type="radio" name="type" value="despesa" checked> Despesa</label>
+<label><input type="radio" name="type" value="receita"> Receita</label>
+</div>
+</fieldset>
+<div class="field">
+<label class="field-label" for="field-description">Descrição</label>
+<input id="field-description" name="description" maxlength="60" autocomplete="off" placeholder="Ex.: Supermercado">
+<p class="error" id="description-error"></p>
+</div>
+<div class="field-row">
+<div class="field">
+<label class="field-label" for="field-amount">Valor</label>
+<div class="amount-input"><input id="field-amount" name="amount" inputmode="decimal" autocomplete="off" placeholder="0,00"><span aria-hidden="true">€</span></div>
+<p class="error" id="amount-error"></p>
+</div>
+<div class="field">
+<label class="field-label" for="field-date">Data</label>
+<input id="field-date" name="date" type="date">
+<p class="error" id="date-error"></p>
+</div>
+</div>
+<div class="field">
+<label class="field-label" for="field-category">Categoria</label>
+<select id="field-category" name="categoryId"></select>
+<p class="error" id="categoryId-error"></p>
+</div>
+<div class="dialog-actions">
+<button type="button" class="btn" data-close>Cancelar</button>
+<button type="submit" class="btn btn-primary">Adicionar movimento</button>
+</div>
+</form>
+</dialog>
+</body>
+</html>
