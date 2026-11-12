@@ -26,6 +26,8 @@ document.querySelectorAll('.thumbnail').forEach(image => {
   if (image.complete && image.naturalWidth === 0) markMissing(image);
 });
 let area = 'all';
+let favoritesOnly = false;
+let favorites = new Set();
 const search = document.querySelector('#search');
 const sort = document.querySelector('#sort');
 function filterCards() {
@@ -33,7 +35,7 @@ function filterCards() {
   const query = normalize(search?.value.trim() || '');
   let count = 0;
   for (const card of cards) {
-    card.hidden = (area !== 'all' && card.dataset.area !== area) || !normalize(card.dataset.search).includes(query);
+    card.hidden = (favoritesOnly && !favorites.has(card.dataset.slug)) || (area !== 'all' && card.dataset.area !== area) || !normalize(card.dataset.search).includes(query);
     if (!card.hidden) count++;
   }
   document.querySelector('#result-count').textContent = `${count} de ${cards.length} templates`;
@@ -64,6 +66,75 @@ document.querySelector('#reset-filters')?.addEventListener('click', () => {
   search.value = '';
   setArea('all');
 });
+// Store only catalogue identifiers; unavailable storage leaves this session usable.
+if (document.querySelector('#favorites-view')) {
+  const valid = new Map(cards.map(card => [card.dataset.slug, card]));
+  const read = key => {
+    try { const value = JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(value) ? [...new Set(value.filter(id => typeof id === 'string' && valid.has(id)))] : []; } catch { return []; }
+  };
+  favorites = new Set(read('showcase-favorites'));
+  let selected = read('showcase-comparison').slice(0, 3);
+  const save = () => { try { localStorage.setItem('showcase-favorites', JSON.stringify([...favorites])); localStorage.setItem('showcase-comparison', JSON.stringify(selected)); } catch {} };
+  const favoriteView = document.querySelector('#favorites-view');
+  const open = document.querySelector('#open-comparison');
+  const status = document.querySelector('#selection-status');
+  const panel = document.querySelector('#comparison');
+  const items = document.querySelector('#comparison-items');
+  const controls = document.querySelector('#catalogue-controls');
+  function render() {
+    for (const card of cards) {
+      const fav = card.querySelector('[data-favorite]');
+      const compare = card.querySelector('[data-compare]');
+      const isFav = favorites.has(card.dataset.slug), isSelected = selected.includes(card.dataset.slug);
+      fav.setAttribute('aria-pressed', String(isFav));
+      fav.textContent = isFav ? '♥ Favorito' : '♡ Favorito';
+      fav.setAttribute('aria-label', `${isFav ? 'Remover dos' : 'Adicionar aos'} favoritos: ${card.dataset.name}`);
+      compare.setAttribute('aria-pressed', String(isSelected));
+      compare.textContent = isSelected ? '✓ Comparar' : 'Comparar';
+      compare.setAttribute('aria-label', `Comparar: ${card.dataset.name}`);
+    }
+    favoriteView.textContent = `Favoritos (${favorites.size})`;
+    favoriteView.setAttribute('aria-pressed', String(favoritesOnly));
+    open.textContent = `Comparar (${selected.length}/3)`;
+    open.disabled = selected.length < 2;
+    items.replaceChildren();
+    for (const id of selected) {
+      const card = valid.get(id), column = document.createElement('article');
+      column.className = 'comparison-item';
+      const heading = document.createElement('h3'); heading.textContent = card.dataset.name;
+      const area = document.createElement('p'); area.textContent = `Área: ${card.dataset.area}`;
+      const description = document.createElement('p'); description.textContent = card.querySelector('.template-copy').textContent;
+      const badge = card.querySelector('.featured-badge');
+      const label = document.createElement('p'); label.textContent = badge ? `Label: ${badge.textContent}` : 'Label: —';
+      const link = card.querySelector('.card-actions a').cloneNode(true);
+      const preview = card.querySelector('.preview-action').cloneNode(true);
+      const remove = document.createElement('button'); remove.type = 'button'; remove.textContent = 'Remover'; remove.setAttribute('aria-label', `Remover ${card.dataset.name} da comparação`);
+      remove.addEventListener('click', () => { selected = selected.filter(item => item !== id); save(); render(); document.querySelector('#comparison-title').focus(); });
+      column.append(heading, area, description, label, link, preview, remove); items.append(column);
+    }
+    if (!selected.length) { const empty = document.createElement('p'); empty.textContent = 'Ainda não há templates para comparar.'; items.append(empty); }
+    filterCards();
+    const emptyTitle = document.querySelector('#no-results h2');
+    const emptyCopy = document.querySelector('#no-results p');
+    emptyTitle.textContent = favoritesOnly && !favorites.size ? 'Ainda não tem favoritos' : 'Nenhum template encontrado';
+    emptyCopy.textContent = favoritesOnly && !favorites.size ? 'Marque templates com ♡ para os guardar aqui.' : 'Experimente outra pesquisa ou explore todas as áreas.';
+  }
+  for (const card of cards) {
+    const id = card.dataset.slug;
+    card.querySelector('[data-favorite]').addEventListener('click', () => { const removing = favorites.has(id); removing ? favorites.delete(id) : favorites.add(id); save(); render(); if (removing && favoritesOnly) favoriteView.focus(); });
+    card.querySelector('[data-compare]').addEventListener('click', () => {
+      if (selected.includes(id)) selected = selected.filter(item => item !== id);
+      else if (selected.length < 3) selected.push(id);
+      else { status.textContent = 'Limite de 3 templates. Remova um para adicionar outro.'; return; }
+      status.textContent = 'Selecione 2 ou 3 templates para comparar.'; save(); render();
+    });
+  }
+  favoriteView.addEventListener('click', () => { favoritesOnly = !favoritesOnly; render(); });
+  open.addEventListener('click', () => { controls.hidden = true; panel.hidden = false; render(); document.querySelector('#comparison-title').focus(); });
+  document.querySelector('#back-catalogue').addEventListener('click', () => { panel.hidden = true; controls.hidden = false; open.focus(); });
+  document.querySelector('#clear-comparison').addEventListener('click', () => { selected = []; save(); render(); status.textContent = 'Comparação limpa.'; });
+  save(); render();
+}
 const dialog = document.querySelector('#preview-dialog');
 const frame = document.querySelector('#device-frame');
 let device = 'desktop';
@@ -87,14 +158,16 @@ document.querySelectorAll('[data-device]').forEach(button => button.addEventList
   document.querySelectorAll('[data-device]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   resizeDevice();
 }));
-document.querySelectorAll('[data-preview]').forEach(button => button.addEventListener('click', () => {
+document.addEventListener?.('click', event => {
+  const button = event.target.closest('[data-preview]');
+  if (!button) return;
   frame.src = button.dataset.href;
   frame.title = `Preview de ${button.dataset.name}`;
   document.querySelector('#preview-title').textContent = button.dataset.name;
   document.querySelector('#preview-direct').href = button.dataset.href;
   dialog.showModal();
   resizeDevice();
-}));
+});
 document.querySelector('#close-preview')?.addEventListener('click', () => dialog.close());
 dialog?.addEventListener('close', () => { frame.src = 'about:blank'; });
 window.addEventListener('resize', resizeDevice);
