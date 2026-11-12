@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uma rede social para partilhar ideias, descobrir pessoas e encontrar inspiração no quotidiano.">
+  <title>Entrelinhas — Rede social</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#inicio" data-view="feed" aria-label="Entrelinhas, início"><span class="brand-mark">✳</span> entrelinhas<span class="brand-dot">.</span></a><div class="top-search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Procurar pessoas ou ideias" aria-label="Procurar pessoas ou ideias"><kbd>⌘ K</kbd></div><div class="top-actions"><button class="icon-button notification-button" type="button" data-view="notifications" aria-label="Notificações"><span aria-hidden="true">♧</span><i></i></button><button class="avatar avatar-me" type="button" data-view="profile" aria-label="O meu perfil">MC</button></div></header>
+<div class="layout">
+<aside class="sidebar" aria-label="Navegação principal"><p class="side-label">O TEU ESPAÇO</p><nav class="side-nav"><button class="nav-item active" data-view="feed"><span>⌂</span> Início</button><button class="nav-item" data-view="explore"><span>⌕</span> Explorar</button><button class="nav-item" data-view="saved"><span>◇</span> Guardados</button><button class="nav-item" data-view="notifications"><span>♧</span> Notificações <b>3</b></button><button class="nav-item" data-view="profile"><span>☺</span> O meu perfil</button></nav><div class="sidebar-note"><span>✳</span><h3>As melhores ideias começam aqui.</h3><p>Um espaço para partilhar o que te inspira.</p><button type="button" data-compose>Escrever publicação ↗</button></div><p class="side-footer">Feito para boas conversas.<br>© 2025 Entrelinhas</p></aside>
+<main id="main"><div id="content"></div></main>
+<aside class="rightbar"><div class="right-heading"><div><p class="eyebrow">A TUA COMUNIDADE</p><h2>Para descobrir</h2></div><span>✳</span></div><p class="muted right-intro">Pessoas interessantes, ideias ainda melhores.</p><div id="suggestions"></div><button class="text-button discover" data-view="explore">Explorar comunidade <span>↗</span></button><div class="topic-card"><p class="eyebrow">EM DESTAQUE</p><span class="topic-star">✺</span><h3>Pequenas coisas,<br>grandes ideias.</h3><p>Esta semana celebramos os detalhes que fazem a diferença.</p><button type="button" data-topic>Explorar #vidacriativa ↗</button></div><div class="right-footer">Sobre · Comunidade · Privacidade<br><span>Uma demo feita com imaginação ✳</span></div></aside>
+</div><nav class="mobile-nav" aria-label="Navegação móvel"><button data-view="feed" aria-label="Início">⌂<small>Início</small></button><button data-view="explore" aria-label="Explorar">⌕<small>Explorar</small></button><button data-compose aria-label="Criar publicação" class="mobile-compose">+</button><button data-view="notifications" aria-label="Notificações">♧<small>Alertas</small></button><button data-view="profile" aria-label="Perfil">☺<small>Perfil</small></button></nav><div id="toast" role="status" aria-live="polite"></div>
+</body></html>
