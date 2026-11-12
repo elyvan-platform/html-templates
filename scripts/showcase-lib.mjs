@@ -48,9 +48,20 @@ export async function extractTemplateMeta(slug, html) {
     name,
     description,
     previewHref,
+    thumbnailHref: await findThumbnailAsset(slug),
     href: `/src/${slug}/index.html`,
     viewerHref: `/templates/${slug}`,
   };
+}
+
+async function findThumbnailAsset(slug) {
+  try {
+    await fs.access(path.join(srcDir, 'showcase-thumbnails', `${slug}.webp`));
+    return `/src/showcase-thumbnails/${slug}.webp`;
+  } catch (error) {
+    if (error.code === 'ENOENT') return null;
+    throw error;
+  }
 }
 
 async function findPreviewAsset(slug) {
@@ -184,9 +195,12 @@ export function renderShowcasePage(templates) {
   const areas = [...new Set(templates.map(templateArea))].sort((a,b) => a.localeCompare(b,'pt'));
   const cards = templates.map(template => {
     const name = escapeHtml(template.name), href = escapeHtml(template.href), area = escapeHtml(templateArea(template));
+    const thumbnail = template.thumbnailHref
+      ? `<img class="thumbnail" data-src="${escapeHtml(template.thumbnailHref)}" alt="Miniatura do template ${name}" width="720" height="450" loading="lazy" decoding="async" onerror="this.hidden=true">`
+      : '';
     const preview = `data-preview data-href="${href}" data-name="${name}"`;
     return `<article class="template-card" data-area="${area}">
-<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><iframe class="thumbnail" data-src="${href}" title="Miniatura de ${name}" loading="lazy" tabindex="-1" sandbox></iframe><span class="preview-tag">Explorar template ↗</span></button>
+<button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}"><span class="thumbnail-placeholder" aria-hidden="true">Miniatura indisponível<br>${name}</span>${thumbnail}<span class="preview-tag">Explorar template ↗</span></button>
 <div class="template-body"><p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
 <div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Pré-visualizar ${name}">Preview →</button></div></div></article>`;
   }).join('');

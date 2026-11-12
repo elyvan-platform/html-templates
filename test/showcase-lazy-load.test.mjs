@@ -42,10 +42,10 @@ function setup({ observer = true } = {}) {
 }
 
 test('showcase thumbnails have deferred URLs and no initial template requests', () => {
-  const html = renderShowcasePage([{ slug: 'example', name: 'Example', href: '/src/example/index.html', description: '' }]);
-  const thumbnails = html.match(/<iframe class="thumbnail"[^>]*>/g);
+  const html = renderShowcasePage([{ slug: 'example', name: 'Example', href: '/src/example/index.html', thumbnailHref: '/src/example/preview.webp', description: '' }]);
+  const thumbnails = html.match(/<img class="thumbnail"[^>]*>/g);
   assert.equal(thumbnails.length, 1);
-  assert.match(thumbnails[0], /data-src="\/src\/example\/index.html"/);
+  assert.match(thumbnails[0], /data-src="\/src\/example\/preview.webp"/);
   assert.doesNotMatch(thumbnails[0], /\ssrc=/);
 });
 
@@ -110,4 +110,27 @@ test('fallback defers hidden search results until they are visible and near the 
   app.searchEvents.input();
   assert.equal(app.cards[1].thumbnail.src, '/template-1.html');
   assert.equal(app.cards[2].thumbnail.src, undefined);
+});
+
+test('every discovered template has a local static thumbnail and cards never embed documents', async () => {
+  const { listTemplateDirectories } = await import('../scripts/showcase-lib.mjs');
+  const templates = await listTemplateDirectories();
+  assert.ok(templates.length > 0);
+  for (const template of templates) {
+    assert.equal(template.thumbnailHref, `/src/showcase-thumbnails/${template.slug}.webp`);
+    const bytes = readFileSync(new URL(`..${template.thumbnailHref}`, import.meta.url));
+    assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
+    assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
+  }
+  const html = renderShowcasePage(templates);
+  const cards = [...html.matchAll(/<article class="template-card"[\s\S]*?<\/article>/g)];
+  assert.equal(cards.length, templates.length);
+  for (const [index, card] of cards.entries()) {
+    assert.doesNotMatch(card[0], /<iframe\b/);
+    assert.match(card[0], /<img class="thumbnail"[^>]*alt="Miniatura do template [^"]+"[^>]*width="720" height="450"/);
+    assert.match(card[0], /thumbnail-placeholder/);
+  }
+  const missing = renderShowcasePage([{ slug: 'missing', name: 'Missing', href: '/src/missing/index.html', description: '' }]);
+  assert.match(missing, /Miniatura indisponível<br>Missing/);
+  assert.doesNotMatch(missing, /<img class="thumbnail"/);
 });
