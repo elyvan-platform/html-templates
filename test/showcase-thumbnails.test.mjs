@@ -65,3 +65,27 @@ test('a failing thumbnail reveals the placeholder and filters keep working', () 
   listeners.error();
   assert.equal(frame.classList.added, 'is-missing');
 });
+
+test('three different template thumbnails are 16:10 JPEGs and embedded in their cards', async () => {
+  const templates = await listTemplateDirectories();
+  const html = renderShowcasePage(templates);
+  for (const slug of ['architecture-studio', 'cafe-aurora', 'admin-dashboard']) {
+    const card = cardsOf(html).find(value => value.includes(`data-slug="${slug}"`));
+    assert.ok(card.includes(`/src/_thumbnails/${slug}-960.jpg`), slug);
+    for (const width of THUMBNAIL_WIDTHS) {
+      const bytes = readFileSync(new URL(`../src/_thumbnails/${slug}-${width}.jpg`, import.meta.url));
+      let offset = 2, dimensions;
+      while (offset < bytes.length) {
+        assert.equal(bytes[offset], 0xff);
+        const marker = bytes[offset + 1];
+        const length = bytes.readUInt16BE(offset + 2);
+        if ([0xc0, 0xc1, 0xc2].includes(marker)) {
+          dimensions = [bytes.readUInt16BE(offset + 7), bytes.readUInt16BE(offset + 5)];
+          break;
+        }
+        offset += length + 2;
+      }
+      assert.deepEqual(dimensions, [width, width * 5 / 8], slug);
+    }
+  }
+});

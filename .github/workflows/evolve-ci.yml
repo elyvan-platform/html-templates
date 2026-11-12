@@ -22,5 +22,18 @@ jobs:
         run: "corepack enable"
       - name: "npm ci"
         run: "npm ci"
+      - name: Install screenshot dependencies
+        run: |
+          apt-get update -qq
+          apt-get install -y -qq imagemagick
+          npx playwright install --with-deps chromium
+      - name: Cache generated thumbnails
+        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.2.3
+        with:
+          path: src/_thumbnails
+          key: thumbnails-${{ runner.os }}-${{ hashFiles('src/**', 'scripts/capture-thumbnails.mjs', 'scripts/thumbnail-lib.mjs', 'package-lock.json') }}
+          restore-keys: thumbnails-${{ runner.os }}-
+      - name: Build catalogue and thumbnails
+        run: npm run build
       - name: "npm test"
         run: "npm test"
