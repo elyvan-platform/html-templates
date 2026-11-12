@@ -1,0 +1,41 @@
+const destinations = [
+  { id:'acores', name:'São Miguel', region:'Portugal', location:'Açores, Portugal', interests:['Natureza','Aventura'], image:'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=80', description:'Lagoas serenas, verde infinito e a força do Atlântico.', detail:'Uma ilha para explorar entre crateras, águas termais e estradas que se abrem para o mar.', activities:['Contemplar as Sete Cidades','Banho termal na Furnas','Caminhar junto à Lagoa do Fogo'] },
+  { id:'lisboa', name:'Lisboa', region:'Portugal', location:'Lisboa, Portugal', interests:['Cultura','Gastronomia'], image:'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=80', description:'Luz dourada, ruas antigas e mesas para partilhar.', detail:'Entre colinas e o Tejo, descubra bairros cheios de histórias, sabores e luz.', activities:['Passear por Alfama','Provar pastéis de nata','Visitar o Museu do Azulejo'] },
+  { id:'dolomitas', name:'Dolomitas', region:'Europa', location:'Itália, Europa', interests:['Natureza','Aventura'], image:'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80', description:'Montanhas imponentes e trilhos que pedem tempo.', detail:'Picos de pedra, lagos tranquilos e paisagens alpinas para respirar fundo.', activities:['Caminhar nas Tre Cime','Visitar o Lago di Braies','Ver o pôr do sol nas montanhas'] },
+  { id:'cinque-terre', name:'Cinque Terre', region:'Europa', location:'Itália, Europa', interests:['Cultura','Gastronomia','Natureza'], image:'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80', description:'Aldeias coloridas entre a terra e o mar da Ligúria.', detail:'Cinco aldeias à beira-mar, ligadas por caminhos, comboios e uma cozinha memorável.', activities:['Explorar as aldeias','Provar pesto da Ligúria','Percorrer um trilho costeiro'] }
+];
+const $ = selector => document.querySelector(selector);
+const storageKey = 'atlas-aberto-v1';
+let state = { favorites: [], days: [[]] };
+try { const saved = JSON.parse(localStorage.getItem(storageKey)); if (saved && Array.isArray(saved.favorites) && Array.isArray(saved.days) && saved.days.length && saved.days.every(Array.isArray)) state = saved; } catch (_) { /* A demo continua disponível sem armazenamento. */ }
+let favoritesOnly = false;
+let activeDestination = null;
+function save() { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (_) { /* O plano continua disponível durante esta visita. */ } }
+function normalize(value) { return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
+function renderCards() {
+  const query = normalize($('#search').value.trim());
+  const matches = destinations.filter(d => (!query || normalize([d.name,d.location,d.description,...d.interests].join(' ')).includes(query)) && (!$('#region').value || d.region === $('#region').value) && (!$('#interest').value || d.interests.includes($('#interest').value)) && (!favoritesOnly || state.favorites.includes(d.id)));
+  $('#results-count').textContent = `${matches.length} ${matches.length === 1 ? 'destino encontrado' : 'destinos encontrados'}`;
+  $('#empty').hidden = matches.length > 0;
+  $('#cards').innerHTML = matches.map(d => `<article class="card"><div class="card-image" style="background-image:url('${d.image}')"><button class="favorite" type="button" data-favorite="${d.id}" aria-label="${state.favorites.includes(d.id) ? 'Remover' : 'Adicionar'} ${d.name} ${state.favorites.includes(d.id) ? 'dos' : 'aos'} favoritos" aria-pressed="${state.favorites.includes(d.id)}">${state.favorites.includes(d.id) ? '♥' : '♡'}</button></div><div class="card-body"><div class="card-meta">${d.location}</div><h3>${d.name}</h3><p>${d.description}</p><div class="card-bottom"><span>${d.interests[0]} · ${d.interests[1]}</span><button type="button" data-detail="${d.id}">Explorar ↗</button></div></div></article>`).join('');
+}
+function renderDays() {
+  $('#nav-count').textContent = state.days.reduce((total,day) => total + day.length,0);
+  $('#days').innerHTML = state.days.map((day,index) => `<section class="day"><div class="day-head"><span>Dia ${index+1}</span>${state.days.length > 1 ? `<button type="button" data-remove-day="${index}" aria-label="Remover dia ${index+1}">Remover dia ×</button>` : ''}</div>${day.length ? day.map((item,itemIndex) => `<div class="item"><span>${escapeText(item)}</span><button type="button" data-remove-item="${index},${itemIndex}" aria-label="Remover ${escapeText(item)}">Remover ×</button></div>`).join('') : '<p>O seu dia está em branco. Explore um destino e adicione uma experiência.</p>'}</section>`).join('');
+}
+function escapeText(text) { const element = document.createElement('span'); element.textContent = String(text); return element.innerHTML.replace(/"/g,'&quot;'); }
+function showDetail(id) {
+  const d = destinations.find(item => item.id === id); if (!d) return;
+  activeDestination = d;
+  $('#detail-content').innerHTML = `<div class="detail-image" style="background-image:url('${d.image}')"><button class="close" type="button" aria-label="Fechar ficha">×</button></div><div class="detail-body"><p class="card-meta">${d.location} · ${d.interests.join(' · ')}</p><h2 id="detail-title">${d.name}</h2><p>${d.detail}</p><h3>Para viver por lá</h3><p class="notice" role="status" aria-live="polite"></p>${d.activities.map((activity,index) => `<div class="activity"><div><strong>${activity}</strong><span>${d.name}</span></div><div class="activity-controls"><label class="skip" for="day-${index}">Escolher dia para ${activity}</label><select id="day-${index}" aria-label="Dia para ${activity}">${state.days.map((_,day) => `<option value="${day}">Dia ${day+1}</option>`).join('')}</select><button type="button" data-add-activity="${index}">＋ Adicionar</button></div></div>`).join('')}<a class="text-link" href="#itinerario" id="view-plan">Ver o meu itinerário ↗</a></div>`;
+  if (!$('#detail').open) $('#detail').showModal();
+}
+function resetFilters() { $('#search').value=''; $('#region').value=''; $('#interest').value=''; favoritesOnly=false; $('#favorites-filter').setAttribute('aria-pressed','false'); renderCards(); }
+['search','region','interest'].forEach(id => $(`#${id}`).addEventListener(id === 'search' ? 'input' : 'change', renderCards));
+$('#favorites-filter').addEventListener('click', event => { favoritesOnly = !favoritesOnly; event.currentTarget.setAttribute('aria-pressed',String(favoritesOnly)); renderCards(); });
+$('#clear-filters').addEventListener('click',resetFilters); $('#empty-reset').addEventListener('click',resetFilters);
+$('#cards').addEventListener('click', event => { const favorite = event.target.closest('[data-favorite]'); const detail = event.target.closest('[data-detail]'); if (favorite) { const id=favorite.dataset.favorite; state.favorites = state.favorites.includes(id) ? state.favorites.filter(value => value !== id) : [...state.favorites,id]; save(); renderCards(); const replacement = document.querySelector(`[data-favorite="${id}"]`); if (replacement) replacement.focus(); else $('#favorites-filter').focus(); } if (detail) showDetail(detail.dataset.detail); });
+$('#detail').addEventListener('click', event => { if (event.target.closest('.close')) $('#detail').close(); if (event.target.closest('#view-plan')) $('#detail').close(); const button=event.target.closest('[data-add-activity]'); if (button) { const index=Number(button.dataset.addActivity); const day=Number($(`#day-${index}`).value); state.days[day].push(`${activeDestination.name} · ${activeDestination.activities[index]}`); save(); renderDays(); $('.notice').textContent=`Experiência adicionada ao dia ${day+1}.`; } });
+$('#add-day').addEventListener('click', () => { state.days.push([]); save(); renderDays(); });
+$('#days').addEventListener('click', event => { const dayButton=event.target.closest('[data-remove-day]'); const itemButton=event.target.closest('[data-remove-item]'); if (dayButton) state.days.splice(Number(dayButton.dataset.removeDay),1); if (itemButton) { const [day,item]=itemButton.dataset.removeItem.split(',').map(Number); state.days[day].splice(item,1); } if (dayButton || itemButton) { save(); renderDays(); $('#add-day').focus(); } });
+renderCards(); renderDays();
