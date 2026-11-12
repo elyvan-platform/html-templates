@@ -146,7 +146,7 @@ export function templateArea(template) {
     ['Branding e design', /agencia-criativa/],
     ['Imobiliário', /limiar-imobiliaria/],
     ['Design e decoração', /maison|albor/],
-    ['Mobilidade', /rota-norte/],
+    ['Mobilidade', /rota-norte|linha-zero/],
     ['Finanças', /finance-dashboard|balanço|balanco/],
     ['Emprego e carreiras', /oportuna/],
     ['Meteorologia', /weather-app/],
