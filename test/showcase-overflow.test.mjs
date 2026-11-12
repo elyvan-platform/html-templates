@@ -54,6 +54,34 @@ test('showcase fits critical viewports, including long names and the preview', {
         assert.ok(sizes.dialog <= sizes.dialogWidth, `${width}px ${label}: ${JSON.stringify(sizes)}`);
       };
       await check('catalogue');
+      if ([320, 390, 768].includes(width)) {
+        const state = await evaluate(`(() => {
+          const select = document.querySelector('#area-select');
+          const buttons = [...document.querySelectorAll('[data-filter]')];
+          const cards = [...document.querySelectorAll('.template-card')];
+          const mobile = ${width} <= 650;
+          const visible = element => getComputedStyle(element).display !== 'none';
+          const errors = [];
+          if (visible(select.parentElement) !== mobile || visible(document.querySelector('.filters')) === mobile) errors.push('wrong responsive control');
+          if (mobile && (select.getBoundingClientRect().height < 44 || select.scrollWidth > select.clientWidth)) errors.push('select size');
+          for (const button of buttons) {
+            if (mobile) { select.value = button.dataset.filter; select.dispatchEvent(new Event('change')); }
+            else button.click();
+            const expected = cards.filter(card => button.dataset.filter === 'all' || card.dataset.area === button.dataset.filter).length;
+            if (cards.filter(card => !card.hidden).length !== expected || button.getAttribute('aria-pressed') !== 'true' || select.value !== button.dataset.filter) errors.push(button.dataset.filter);
+          }
+          const chosen = buttons.find(button => button.dataset.filter !== 'all');
+          chosen.click();
+          const search = document.querySelector('#search');
+          search.value = 'xyznotfound'; search.dispatchEvent(new Event('input'));
+          if (document.querySelector('#no-results').hidden || !document.querySelector('#result-count').textContent.startsWith('0 de ')) errors.push('combined empty state');
+          document.querySelector('#reset-filters').click();
+          if (select.value !== 'all' || search.value || cards.some(card => card.hidden)) errors.push('reset');
+          if (mobile) { select.focus(); if (document.activeElement !== select) errors.push('focus'); }
+          return errors;
+        })()`);
+        assert.deepEqual(state, [], `${width}px filters`);
+      }
       await evaluate(`document.querySelector('[data-preview]').click(); document.querySelector('#preview-title').textContent = 'NomeDeTemplateMuitoLongo'.repeat(8)`);
       await check('preview');
       for (const device of ['mobile', 'tablet', 'desktop']) {

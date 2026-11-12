@@ -38,15 +38,19 @@ function filterCards() {
   document.querySelector('#result-count').textContent = `${count} de ${cards.length} templates`;
   document.querySelector('#no-results').hidden = count !== 0;
 }
-document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
-  area = button.dataset.filter;
-  document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+const areaSelect = document.querySelector('#area-select');
+function setArea(value) {
+  area = value;
+  if (areaSelect) areaSelect.value = value;
+  document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.filter === value)));
   filterCards();
-}));
+}
+document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => setArea(button.dataset.filter)));
+areaSelect?.addEventListener('change', () => setArea(areaSelect.value));
 search?.addEventListener('input', filterCards);
 document.querySelector('#reset-filters')?.addEventListener('click', () => {
   search.value = '';
-  document.querySelector('[data-filter="all"]').click();
+  setArea('all');
 });
 const dialog = document.querySelector('#preview-dialog');
 const frame = document.querySelector('#device-frame');

@@ -16,6 +16,10 @@
 .devices{flex-wrap:wrap}
 .preview-dialog{box-sizing:border-box}
 @media(max-width:1100px){.templates-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.shell{width:calc(100% - 32px)}.topbar{align-items:flex-start}.theme-control{gap:4px;flex-direction:column;align-items:flex-start}.theme-control select{padding:5px 8px}.hero{padding:44px 0 30px}.hero-bottom,.toolbar{align-items:flex-start;flex-direction:column}.search{width:100%;min-width:0}.templates-grid{grid-template-columns:1fr}.hero-bottom{gap:8px}.preview-dialog{width:100%;height:100dvh;border-radius:0;max-width:none}.preview-toolbar{padding:12px}.preview-stage{padding:14px 8px}.devices{order:3;width:100%;justify-content:center}.footer{flex-direction:column}.brand{font-size:18px}}@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* A native select keeps the complete single-choice filter compact on small screens. */
+.mobile-area-filter{display:none}
+@media(max-width:650px){.filters{display:none}.mobile-area-filter{display:grid;gap:4px;margin:0 0 24px}.mobile-area-filter label{font-size:13px;color:var(--muted)}.mobile-area-filter select{width:100%;min-width:0;min-height:44px}}
 </style>
 <script>try{const t=localStorage.getItem('showcase-theme');document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}</script>
 </head><body><a class="skip-link" href="#main">Saltar para o conteúdo</a><div class="shell">
@@ -23,6 +27,7 @@
 <label class="theme-control" for="theme">Aparência <select id="theme"><option value="system" selected>Sistema</option><option value="light">Claro</option><option value="dark">Escuro</option></select></label></header>
 <main id="main"><section class="hero"><p class="eyebrow">Uma nova perspetiva digital</p><h1>O próximo passo da sua marca começa <span>aqui.</span></h1><p class="hero-copy">Design com personalidade, para cada ideia. Descubra o seu template e experimente-o em qualquer ecrã.</p><div class="hero-bottom"><span class="collection-label">Coleção / 46 templates</span><span class="results"><span class="status-dot"></span>Prontos para explorar</span></div></section>
 <section class="catalogue" aria-label="Coleção de templates"><div class="toolbar"><label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Pesquisar templates…" aria-label="Pesquisar templates"></label><span class="results" id="result-count" role="status">46 de 46 templates</span></div>
+<div class="mobile-area-filter"><label for="area-select">Filtrar por área</label><select id="area-select"><option value="all">Todas as áreas</option><option value="Arquitetura">Arquitetura</option><option value="Automóvel">Automóvel</option><option value="Beleza">Beleza</option><option value="Branding e design">Branding e design</option><option value="Comércio">Comércio</option><option value="Cultura e revistas">Cultura e revistas</option><option value="Design e decoração">Design e decoração</option><option value="Desporto">Desporto</option><option value="Educação">Educação</option><option value="Emprego e carreiras">Emprego e carreiras</option><option value="Finanças">Finanças</option><option value="Gestão de projetos">Gestão de projetos</option><option value="Hotelaria">Hotelaria</option><option value="Imobiliário">Imobiliário</option><option value="Jogos e entretenimento">Jogos e entretenimento</option><option value="Meteorologia">Meteorologia</option><option value="Mobilidade">Mobilidade</option><option value="Restauração">Restauração</option><option value="Saúde">Saúde</option><option value="Serviços públicos">Serviços públicos</option><option value="Tecnologia">Tecnologia</option><option value="Viagens">Viagens</option></select></div>
 <div class="filters" role="group" aria-label="Filtrar por área"><button type="button" data-filter="all" aria-pressed="true">Todas as áreas</button><button type="button" data-filter="Arquitetura" aria-pressed="false">Arquitetura</button><button type="button" data-filter="Automóvel" aria-pressed="false">Automóvel</button><button type="button" data-filter="Beleza" aria-pressed="false">Beleza</button><button type="button" data-filter="Branding e design" aria-pressed="false">Branding e design</button><button type="button" data-filter="Comércio" aria-pressed="false">Comércio</button><button type="button" data-filter="Cultura e revistas" aria-pressed="false">Cultura e revistas</button><button type="button" data-filter="Design e decoração" aria-pressed="false">Design e decoração</button><button type="button" data-filter="Desporto" aria-pressed="false">Desporto</button><button type="button" data-filter="Educação" aria-pressed="false">Educação</button><button type="button" data-filter="Emprego e carreiras" aria-pressed="false">Emprego e carreiras</button><button type="button" data-filter="Finanças" aria-pressed="false">Finanças</button><button type="button" data-filter="Gestão de projetos" aria-pressed="false">Gestão de projetos</button><button type="button" data-filter="Hotelaria" aria-pressed="false">Hotelaria</button><button type="button" data-filter="Imobiliário" aria-pressed="false">Imobiliário</button><button type="button" data-filter="Jogos e entretenimento" aria-pressed="false">Jogos e entretenimento</button><button type="button" data-filter="Meteorologia" aria-pressed="false">Meteorologia</button><button type="button" data-filter="Mobilidade" aria-pressed="false">Mobilidade</button><button type="button" data-filter="Restauração" aria-pressed="false">Restauração</button><button type="button" data-filter="Saúde" aria-pressed="false">Saúde</button><button type="button" data-filter="Serviços públicos" aria-pressed="false">Serviços públicos</button><button type="button" data-filter="Tecnologia" aria-pressed="false">Tecnologia</button><button type="button" data-filter="Viagens" aria-pressed="false">Viagens</button></div>
 <div class="templates-grid"><article class="template-card" data-area="Branding e design">
 <button type="button" class="template-preview" data-preview data-href="./src/agencia-criativa/index.html" data-name="Agência Criativa" aria-label="Pré-visualizar Agência Criativa"><span class="thumb-frame"><span class="thumb-fallback" aria-hidden="true">Agência Criativa</span><picture><source type="image/avif" srcset="./src/_thumbnails/agencia-criativa-480.avif 480w, ./src/_thumbnails/agencia-criativa-960.avif 960w" sizes="(max-width: 650px) 100vw, (max-width: 1100px) 50vw, 460px"><source type="image/webp" srcset="./src/_thumbnails/agencia-criativa-480.webp 480w, ./src/_thumbnails/agencia-criativa-960.webp 960w" sizes="(max-width: 650px) 100vw, (max-width: 1100px) 50vw, 460px"><img class="thumbnail" src="./src/_thumbnails/agencia-criativa-480.jpg" srcset="./src/_thumbnails/agencia-criativa-480.jpg 480w, ./src/_thumbnails/agencia-criativa-960.jpg 960w" sizes="(max-width: 650px) 100vw, (max-width: 1100px) 50vw, 460px" width="960" height="600" alt="Pré-visualização da página inicial de Agência Criativa" loading="eager" fetchpriority="high" decoding="async"></picture></span><span class="preview-tag">Explorar template ↗</span></button>
@@ -206,15 +211,19 @@ function filterCards() {
   document.querySelector('#result-count').textContent = `${count} de ${cards.length} templates`;
   document.querySelector('#no-results').hidden = count !== 0;
 }
-document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
-  area = button.dataset.filter;
-  document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+const areaSelect = document.querySelector('#area-select');
+function setArea(value) {
+  area = value;
+  if (areaSelect) areaSelect.value = value;
+  document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item.dataset.filter === value)));
   filterCards();
-}));
+}
+document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => setArea(button.dataset.filter)));
+areaSelect?.addEventListener('change', () => setArea(areaSelect.value));
 search?.addEventListener('input', filterCards);
 document.querySelector('#reset-filters')?.addEventListener('click', () => {
   search.value = '';
-  document.querySelector('[data-filter="all"]').click();
+  setArea('all');
 });
 const dialog = document.querySelector('#preview-dialog');
 const frame = document.querySelector('#device-frame');

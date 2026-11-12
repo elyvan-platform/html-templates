@@ -13,3 +13,7 @@
 .devices{flex-wrap:wrap}
 .preview-dialog{box-sizing:border-box}
 @media(max-width:1100px){.templates-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.shell{width:calc(100% - 32px)}.topbar{align-items:flex-start}.theme-control{gap:4px;flex-direction:column;align-items:flex-start}.theme-control select{padding:5px 8px}.hero{padding:44px 0 30px}.hero-bottom,.toolbar{align-items:flex-start;flex-direction:column}.search{width:100%;min-width:0}.templates-grid{grid-template-columns:1fr}.hero-bottom{gap:8px}.preview-dialog{width:100%;height:100dvh;border-radius:0;max-width:none}.preview-toolbar{padding:12px}.preview-stage{padding:14px 8px}.devices{order:3;width:100%;justify-content:center}.footer{flex-direction:column}.brand{font-size:18px}}@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* A native select keeps the complete single-choice filter compact on small screens. */
+.mobile-area-filter{display:none}
+@media(max-width:650px){.filters{display:none}.mobile-area-filter{display:grid;gap:4px;margin:0 0 24px}.mobile-area-filter label{font-size:13px;color:var(--muted)}.mobile-area-filter select{width:100%;min-width:0;min-height:44px}}
