@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oportuna | Portal de vagas</title>
+<meta name="description" content="Encontre vagas em Portugal com pesquisa, filtros por área, local e trabalho remoto, favoritos e uma candidatura simulada. Demonstração local, sem envio de dados.">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/data.js" defer></script>
+<script src="assets/logic.js" defer></script>
+<script src="assets/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#vagas">Saltar para as vagas</a>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="index.html" aria-label="Oportuna, início"><span class="mark" aria-hidden="true"></span>oportuna</a>
+    <p class="demo-pill">Demonstração local · nada é enviado</p>
+  </div>
+</header>
+<main>
+  <section class="intro wrap" aria-labelledby="hero-title">
+    <p class="eyebrow">Vagas em Portugal</p>
+    <h1 id="hero-title">Encontre o trabalho que <span>faz sentido</span> para si.</h1>
+    <p class="lead">Pesquise por função, empresa ou competência, filtre por área, local e modalidade e guarde o que lhe interessa para depois.</p>
+    <div class="search" role="search" aria-label="Pesquisar vagas">
+      <div class="field field-query">
+        <label for="query">Função, empresa ou competência</label>
+        <div class="input-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+          <input id="query" type="search" placeholder="Ex.: designer, Python, enfermagem" autocomplete="off">
+        </div>
+      </div>
+      <div class="field">
+        <label for="area">Área</label>
+        <select id="area"><option value="">Todas as áreas</option></select>
+      </div>
+      <div class="field">
+        <label for="location">Local</label>
+        <select id="location"><option value="">Todo o país</option></select>
+      </div>
+      <fieldset class="field work-mode">
+        <legend>Trabalho</legend>
+        <div class="segmented">
+          <label><input type="radio" name="remote" value="all" checked><span>Todos</span></label>
+          <label><input type="radio" name="remote" value="remote"><span>Só remoto</span></label>
+          <label><input type="radio" name="remote" value="onsite"><span>Presencial ou híbrido</span></label>
+        </div>
+      </fieldset>
+    </div>
+  </section>
+
+  <section class="board wrap" id="vagas" aria-labelledby="board-title" data-view="list">
+    <div class="board-bar">
+      <div>
+        <h2 id="board-title" tabindex="-1">Vagas disponíveis</h2>
+        <p class="count" id="results-count" role="status"></p>
+      </div>
+      <div class="board-actions">
+        <label class="sort">Ordenar por
+          <select id="sort">
+            <option value="recent">Mais recentes</option>
+            <option value="salary">Salário mais alto</option>
+          </select>
+        </label>
+        <button type="button" class="btn ghost" id="saved-toggle" aria-pressed="false">Guardadas <span id="saved-count">0</span></button>
+        <button type="button" class="btn ghost" id="clear-filters">Limpar filtros</button>
+      </div>
+    </div>
+    <div class="board-grid">
+      <div class="list-pane">
+        <ol class="job-list" id="job-list"></ol>
+        <div class="state-panel" id="list-empty" hidden>
+          <h3 id="list-empty-title"></h3>
+          <p id="list-empty-copy"></p>
+          <button type="button" class="btn" id="list-reset">Limpar filtros</button>
+        </div>
+        <noscript><p class="state-panel">Ative o JavaScript para ver as vagas e explorar esta demonstração.</p></noscript>
+      </div>
+      <section class="detail-pane" aria-label="Detalhe da vaga">
+        <div class="detail-top"><button type="button" class="back" id="back-to-list">← Todas as vagas</button></div>
+        <div id="detail-body"></div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="footer wrap">
+  <span class="brand"><span class="mark" aria-hidden="true"></span>oportuna</span>
+  <p>Vagas fictícias para demonstração. As candidaturas são simuladas e não são enviadas.</p>
+  <span>© 2026 Oportuna · Template de demonstração</span>
+</footer>
+
+<dialog id="apply-dialog" class="apply" aria-labelledby="apply-title" aria-describedby="apply-job">
+  <div class="apply-head">
+    <div>
+      <p class="eyebrow" id="apply-job"></p>
+      <h2 id="apply-title">Candidatura</h2>
+    </div>
+    <button type="button" class="icon-btn" id="close-apply" aria-label="Fechar candidatura">×</button>
+  </div>
+  <div class="apply-body">
+    <div class="form-errors" id="form-errors" tabindex="-1" hidden>
+      <p><strong>Corrija os campos assinalados para continuar.</strong></p>
+      <ul id="form-errors-list"></ul>
+    </div>
+    <form id="apply-form" class="apply-form" novalidate>
+      <div class="field">
+        <label for="apply-name">Nome completo <span class="req">obrigatório</span></label>
+        <input id="apply-name" name="name" autocomplete="name" required aria-describedby="apply-name-error">
+        <p class="error" id="apply-name-error" hidden></p>
+      </div>
+      <div class="field">
+        <label for="apply-email">Email <span class="req">obrigatório</span></label>
+        <input id="apply-email" name="email" type="email" autocomplete="email" required aria-describedby="apply-email-error">
+        <p class="error" id="apply-email-error" hidden></p>
+      </div>
+      <div class="field">
+        <label for="apply-phone">Telemóvel</label>
+        <input id="apply-phone" name="phone" type="tel" autocomplete="tel" placeholder="912 345 678" aria-describedby="apply-phone-hint apply-phone-error">
+        <p class="hint" id="apply-phone-hint">Opcional. Números portugueses de telemóvel.</p>
+        <p class="error" id="apply-phone-error" hidden></p>
+      </div>
+      <div class="field">
+        <label for="apply-cv">Currículo <span class="req">obrigatório</span></label>
+        <input id="apply-cv" name="cv" type="file" accept="application/pdf,.pdf" aria-describedby="apply-cv-hint apply-cv-error">
+        <p class="hint" id="apply-cv-hint">PDF até 5 MB. <span id="cv-name">Nenhum ficheiro selecionado</span></p>
+        <p class="error" id="apply-cv-error" hidden></p>
+      </div>
+      <div class="field full">
+        <label for="apply-motivation">Porque se candidata? <span class="req">obrigatório</span></label>
+        <textarea id="apply-motivation" name="motivation" rows="5" aria-describedby="apply-motivation-hint apply-motivation-error"></textarea>
+        <p class="hint" id="apply-motivation-hint"><span id="motivation-count"></span></p>
+        <p class="error" id="apply-motivation-error" hidden></p>
+      </div>
+      <div class="field full">
+        <label class="check">
+          <input id="apply-consent" name="consent" type="checkbox" aria-describedby="apply-consent-error">
+          <span>Compreendo que esta é uma simulação e que nada será enviado a nenhuma empresa.</span>
+        </label>
+        <p class="error" id="apply-consent-error" hidden></p>
+      </div>
+      <div class="apply-actions full">
+        <button type="button" class="btn" id="cancel-apply">Cancelar</button>
+        <button type="submit" class="btn primary">Simular envio</button>
+      </div>
+    </form>
+    <div class="state-panel success" id="apply-success" tabindex="-1" hidden>
+      <h3>Candidatura simulada com sucesso</h3>
+      <p>Nada foi enviado nem guardado. Esta demonstração não transmite dados. Pode continuar a explorar as vagas.</p>
+      <button type="button" class="btn primary" id="success-close">Fechar</button>
+    </div>
+  </div>
+</dialog>
+<p class="notice" id="notice" role="status" hidden></p>
+</body>
+</html>
