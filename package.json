@@ -6,9 +6,14 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "node --check scripts/showcase-lib.mjs && node --check scripts/showcase-server.mjs && node scripts/generate-showcase.mjs",
+    "build": "npm run thumbnails -- --changed && node scripts/generate-showcase.mjs",
     "dev": "HOST=127.0.0.1 PORT=4321 node scripts/showcase-server.mjs",
     "start": "node scripts/showcase-server.mjs",
-    "test": "node --test"
+    "test": "node --test",
+    "thumbnails": "node scripts/capture-thumbnails.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0",
+    "sharp": "^0.35.5"
   }
 }

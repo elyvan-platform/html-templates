@@ -65,3 +65,20 @@ test('a failing thumbnail reveals the placeholder and filters keep working', () 
   listeners.error();
   assert.equal(frame.classList.added, 'is-missing');
 });
+
+test('three different templates have correctly sized, decodable thumbnail assets in the catalogue', async () => {
+  const sharp = (await import('sharp')).default;
+  const templates = await listTemplateDirectories();
+  for (const slug of ['architecture-studio', 'agencia-criativa', 'admin-dashboard']) {
+    const template = templates.find(item => item.slug === slug);
+    assert.ok(template?.thumbnail, slug);
+    const card = cardsOf(renderShowcasePage([template]))[0];
+    for (const width of THUMBNAIL_WIDTHS) for (const ext of ['avif', 'webp', 'jpg']) {
+      const name = `${template.thumbnail}-${width}.${ext}`;
+      assert.ok(card.includes(name), name);
+      const metadata = await sharp(new URL(`..${name}`, import.meta.url).pathname).metadata();
+      assert.equal(metadata.width, width, name);
+      assert.equal(metadata.height, width * 5 / 8, name);
+    }
+  }
+});
