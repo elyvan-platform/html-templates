@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Developer | Tomás Valente</title>
+<meta name="description" content="Portefólio de developer sénior: projetos filtráveis, competências por área, percurso profissional e contacto.">
+<script>try{var t=localStorage.getItem('portfolio-theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Saltar para o conteúdo</a>
+<header class="top">
+  <a class="logo" href="#inicio" aria-label="Tomás Valente — início"><span aria-hidden="true">~/</span>tomas.valente</a>
+  <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Principal">
+    <a href="#projetos">Projetos</a>
+    <a href="#competencias">Competências</a>
+    <a href="#percurso">Percurso</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Alternar entre tema claro e escuro"><span aria-hidden="true">◐</span> <span id="theme-label">Tema</span></button>
+</header>
+
+<main id="main">
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <p class="prompt"><span aria-hidden="true">$</span> whoami</p>
+  <h1 id="hero-title">Tomás Valente.<br><em>Engenharia de software</em> com critério.</h1>
+  <p class="lead">Developer sénior com 12 anos de experiência a desenhar plataformas fiáveis, APIs claras e interfaces rápidas. Trabalho com equipas pequenas que querem entregar bem e manter o que construíram.</p>
+  <div class="cta">
+    <a class="btn primary" href="#projetos">Ver projetos</a>
+    <a class="btn" href="#contacto">Falar comigo</a>
+  </div>
+  <dl class="facts">
+    <div><dt>Base</dt><dd>Porto, Portugal</dd></div>
+    <div><dt>Foco</dt><dd>Backend, plataforma, web</dd></div>
+    <div><dt>Disponibilidade</dt><dd>Janeiro 2027</dd></div>
+  </dl>
+</section>
+
+<section id="projetos" aria-labelledby="projetos-title">
+  <div class="sec-head"><p class="kicker">01 / projetos</p><h2 id="projetos-title">Trabalho selecionado</h2></div>
+  <div class="filters" role="group" aria-label="Filtrar projetos por área">
+    <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+    <button type="button" data-filter="backend" aria-pressed="false">Backend</button>
+    <button type="button" data-filter="web" aria-pressed="false">Web</button>
+    <button type="button" data-filter="ferramentas" aria-pressed="false">Ferramentas</button>
+  </div>
+  <p class="count" id="count" role="status">4 de 4 projetos</p>
+  <ul class="projects" id="projects">
+    <li class="project" data-cat="backend">
+      <button type="button" class="project-btn" data-open>
+        <span class="ptag">backend · 2024</span>
+        <span class="ptitle">Malha — motor de faturação</span>
+        <span class="pdesc">Processamento de 2 milhões de eventos por dia com reconciliação idempotente.</span>
+      </button>
+      <div class="detail" hidden>
+        <p>Reescrita do motor de faturação de uma plataforma de mobilidade. Introduzi filas com chaves de idempotência, reprocessamento seguro e painéis de observabilidade.</p>
+        <ul><li>Erros de reconciliação reduzidos em 94%</li><li>Latência p95 de 1,8 s para 210 ms</li><li>Migração sem paragens, em 11 semanas</li></ul>
+        <p class="stack">Go · PostgreSQL · NATS · OpenTelemetry</p>
+      </div>
+    </li>
+    <li class="project" data-cat="web">
+      <button type="button" class="project-btn" data-open>
+        <span class="ptag">web · 2023</span>
+        <span class="ptitle">Balcão — portal de serviços</span>
+        <span class="pdesc">Portal acessível para municípios, com formulários guardados localmente e validação clara.</span>
+      </button>
+      <div class="detail" hidden>
+        <p>Design system e portal usados por 14 municípios. Foco em acessibilidade (WCAG 2.2 AA), navegação por teclado e desempenho em redes lentas.</p>
+        <ul><li>LCP abaixo de 1,6 s em 4G</li><li>Auditorias de acessibilidade sem falhas críticas</li><li>Biblioteca de 38 componentes documentados</li></ul>
+        <p class="stack">TypeScript · Astro · CSS moderno · Playwright</p>
+      </div>
+    </li>
+    <li class="project" data-cat="ferramentas">
+      <button type="button" class="project-btn" data-open>
+        <span class="ptag">ferramentas · 2022</span>
+        <span class="ptitle">cartografo — CLI de arquitetura</span>
+        <span class="pdesc">Gera diagramas de dependências a partir do código e falha o CI em ciclos.</span>
+      </button>
+      <div class="detail" hidden>
+        <p>Ferramenta de linha de comandos de código aberto que analisa módulos e produz mapas de dependências, com regras configuráveis por equipa.</p>
+        <ul><li>1,2 mil estrelas no repositório</li><li>Integra-se em qualquer pipeline de CI</li><li>Documentação em português e inglês</li></ul>
+        <p class="stack">Rust · tree-sitter · GitHub Actions</p>
+      </div>
+    </li>
+    <li class="project" data-cat="backend ferramentas">
+      <button type="button" class="project-btn" data-open>
+        <span class="ptag">backend · ferramentas · 2021</span>
+        <span class="ptitle">Pulso — plataforma de deploys</span>
+        <span class="pdesc">Self-service de deploys com rollback automático para 40 equipas.</span>
+      </button>
+      <div class="detail" hidden>
+        <p>Plataforma interna que normalizou o ciclo de entrega: ambientes efémeros, verificações de saúde e reversão automática.</p>
+        <ul><li>Deploys diários de 6 para 85</li><li>Tempo médio de recuperação em 7 minutos</li><li>Adotada por 40 equipas em 6 meses</li></ul>
+        <p class="stack">Kubernetes · Terraform · TypeScript · Grafana</p>
+      </div>
+    </li>
+  </ul>
+  <div class="empty" id="empty" hidden><p>Sem projetos nesta área por agora.</p><button type="button" class="btn" id="reset">Mostrar todos</button></div>
+</section>
+
+<section id="competencias" aria-labelledby="comp-title">
+  <div class="sec-head"><p class="kicker">02 / competências</p><h2 id="comp-title">Onde sou mais útil</h2></div>
+  <div class="skills">
+    <article><h3>Backend e dados</h3><p>Desenho de APIs, modelação relacional, filas e consistência.</p><p class="stack">Go · Node.js · PostgreSQL · Redis</p></article>
+    <article><h3>Web e interface</h3><p>Interfaces rápidas, acessíveis e fáceis de manter.</p><p class="stack">TypeScript · React · Astro · CSS</p></article>
+    <article><h3>Plataforma e cloud</h3><p>Entrega contínua, infraestrutura como código e observabilidade.</p><p class="stack">Kubernetes · Terraform · AWS · Grafana</p></article>
+    <article><h3>Liderança técnica</h3><p>Revisões de arquitetura, mentoria e decisões documentadas.</p><p class="stack">ADRs · Mentoria · Pair programming</p></article>
+  </div>
+</section>
+
+<section id="percurso" aria-labelledby="perc-title">
+  <div class="sec-head"><p class="kicker">03 / percurso</p><h2 id="perc-title">Experiência profissional</h2></div>
+  <ol class="timeline">
+    <li><span class="when">2022 — presente</span><h3>Staff Engineer · Vagalume Mobility</h3><p>Lidero a plataforma de faturação e pagamentos, com 3 equipas e 9 engenheiros.</p></li>
+    <li><span class="when">2018 — 2022</span><h3>Senior Engineer · Nordeste Digital</h3><p>Construí o portal de serviços públicos e a plataforma interna de deploys.</p></li>
+    <li><span class="when">2014 — 2018</span><h3>Software Engineer · Estúdio Ribeira</h3><p>Aplicações web para clientes de retalho e banca, do protótipo à produção.</p></li>
+    <li><span class="when">2010 — 2014</span><h3>Mestrado em Engenharia Informática · FEUP</h3><p>Especialização em sistemas distribuídos.</p></li>
+  </ol>
+</section>
+
+<section id="contacto" aria-labelledby="cont-title">
+  <div class="sec-head"><p class="kicker">04 / contacto</p><h2 id="cont-title">Vamos conversar</h2></div>
+  <div class="contact">
+    <div>
+      <p>Aberto a projetos de consultoria e a funções de liderança técnica. Respondo em dois dias úteis.</p>
+      <p class="mail"><code id="email">ola@tomasvalente.example</code> <button type="button" class="btn small" id="copy">Copiar email</button></p>
+      <p class="sr-only" id="copy-status" role="status"></p>
+      <ul class="social" aria-label="Redes sociais">
+        <li><a href="https://github.com/" rel="noopener" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a></li>
+        <li><a href="https://mastodon.social/" rel="noopener" target="_blank">Mastodon</a></li>
+      </ul>
+    </div>
+    <form id="form" novalidate>
+      <div class="field"><label for="name">Nome</label><input id="name" name="name" autocomplete="name" required aria-describedby="name-err"><p class="err" id="name-err" hidden></p></div>
+      <div class="field"><label for="mail">Email</label><input id="mail" name="mail" type="email" autocomplete="email" required aria-describedby="mail-err"><p class="err" id="mail-err" hidden></p></div>
+      <div class="field"><label for="msg">Mensagem</label><textarea id="msg" name="msg" rows="5" required minlength="20" aria-describedby="msg-err"></textarea><p class="err" id="msg-err" hidden></p></div>
+      <button type="submit" class="btn primary">Enviar mensagem</button>
+      <p class="ok" id="form-ok" role="status" hidden>Obrigado! Mensagem validada (demonstração: nada foi enviado).</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<dialog id="dialog" aria-labelledby="d-title">
+  <h2 id="d-title"></h2>
+  <div id="d-body"></div>
+  <button type="button" class="btn" id="d-close">Fechar</button>
+</dialog>
+
+<footer class="foot"><span>© 2026 Tomás Valente · dados fictícios de demonstração</span><a href="#inicio">Voltar ao topo ↑</a></footer>
+<script src="assets/main.js"></script>
+</body>
+</html>
