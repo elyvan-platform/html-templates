@@ -27,16 +27,27 @@ document.querySelectorAll('.thumbnail').forEach(image => {
 });
 let area = 'all';
 const search = document.querySelector('#search');
+const sort = document.querySelector('#sort');
 function filterCards() {
   const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const query = normalize(search?.value.trim() || '');
   let count = 0;
   for (const card of cards) {
-    card.hidden = (area !== 'all' && card.dataset.area !== area) || !normalize(card.textContent).includes(query);
+    card.hidden = (area !== 'all' && card.dataset.area !== area) || !normalize(card.dataset.search).includes(query);
     if (!card.hidden) count++;
   }
   document.querySelector('#result-count').textContent = `${count} de ${cards.length} templates`;
   document.querySelector('#no-results').hidden = count !== 0;
+  for (const id of ['featured', 'catalogue']) {
+    const section = document.querySelector(`#${id}-section`);
+    const grid = document.querySelector(`#${id}-grid`);
+    const sorted = [...grid.children].sort((a, b) => {
+      const byName = a.dataset.name.localeCompare(b.dataset.name, 'pt');
+      return (sort.value === 'za' ? -byName : byName) || a.dataset.slug.localeCompare(b.dataset.slug, 'en');
+    });
+    sorted.forEach(card => grid.appendChild(card));
+    section.hidden = !sorted.some(card => !card.hidden);
+  }
 }
 const areaSelect = document.querySelector('#area-select');
 function setArea(value) {
@@ -48,6 +59,7 @@ function setArea(value) {
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => setArea(button.dataset.filter)));
 areaSelect?.addEventListener('change', () => setArea(areaSelect.value));
 search?.addEventListener('input', filterCards);
+sort?.addEventListener('change', filterCards);
 document.querySelector('#reset-filters')?.addEventListener('click', () => {
   search.value = '';
   setArea('all');

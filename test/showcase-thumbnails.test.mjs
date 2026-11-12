@@ -14,7 +14,8 @@ test('catalogue cards contain no iframes and every template has responsive, acce
   const cards = cardsOf(html);
   assert.equal(cards.length, templates.length);
   for (const [index, card] of cards.entries()) {
-    const { slug, name, thumbnail } = templates[index];
+    const slug = card.match(/data-slug="([^"]+)"/)[1];
+    const { name, thumbnail } = templates.find(template => template.slug === slug);
     assert.doesNotMatch(card, /<iframe/i, slug);
     assert.ok(thumbnail, `missing thumbnail for ${slug}; run scripts/capture-thumbnails.mjs`);
     for (const width of THUMBNAIL_WIDTHS) {

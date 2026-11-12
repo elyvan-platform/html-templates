@@ -33,6 +33,9 @@ export async function listTemplateDirectories() {
   return templates.sort((left, right) => left.name.localeCompare(right.name, "pt"));
 }
 
+// Editorial selection is explicit; unlisted templates are never featured.
+const featuredSlugs = new Set(['architecture-studio', 'cafe-aurora', 'estrato-startup']);
+
 export async function extractTemplateMeta(slug, html) {
   const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
   const descriptionMatch = html.match(
@@ -47,6 +50,7 @@ export async function extractTemplateMeta(slug, html) {
 
   return {
     slug,
+    featured: featuredSlugs.has(slug),
     name,
     description,
     previewHref,
@@ -213,19 +217,22 @@ function stage(href = 'about:blank', name = '') {
 
 export function renderShowcasePage(templates) {
   const areas = [...new Set(templates.map(templateArea))].sort((a,b) => a.localeCompare(b,'pt'));
-  const cards = templates.map((template, index) => {
+  const ordered = [...templates].sort((a, b) => a.name.localeCompare(b.name, 'pt') || a.slug.localeCompare(b.slug, 'en'));
+  const renderCard = (template, index) => {
     const name = escapeHtml(template.name), href = escapeHtml(template.href), area = escapeHtml(templateArea(template));
     const preview = `data-preview data-href="${href}" data-name="${name}"`;
-    return `<article class="template-card" data-area="${area}">
+    return `<article class="template-card" data-area="${area}" data-name="${name}" data-slug="${escapeHtml(template.slug)}" data-search="${escapeHtml([template.name, templateArea(template), template.description || ''].join(' '))}">
 <button type="button" class="template-preview" ${preview} aria-label="Pré-visualizar ${name}">${renderThumbnail(template, index)}<span class="preview-tag">Explorar template ↗</span></button>
-<div class="template-body"><p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
+<div class="template-body">${template.featured === true ? '<span class="featured-badge">Em destaque</span>' : ''}<p class="template-kicker">${area}</p><h2>${name}</h2><p class="template-copy">${escapeHtml(template.description || 'Explore este template e descubra uma nova possibilidade para o seu projeto.')}</p>
 <div class="card-actions"><a href="${href}" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" class="preview-action" ${preview} aria-label="Pré-visualizar ${name}">Preview →</button></div></div></article>`;
-  }).join('');
+  };
+  const featured = ordered.filter(template => template.featured === true);
+  const regular = ordered.filter(template => template.featured !== true);
   return page('Montra de Templates', `<main id="main"><section class="hero"><p class="eyebrow">Uma nova perspetiva digital</p><h1>O próximo passo da sua marca começa <span>aqui.</span></h1><p class="hero-copy">Design com personalidade, para cada ideia. Descubra o seu template e experimente-o em qualquer ecrã.</p><div class="hero-bottom"><span class="collection-label">Coleção / ${String(templates.length).padStart(2,'0')} templates</span><span class="results"><span class="status-dot"></span>Prontos para explorar</span></div></section>
-<section class="catalogue" aria-label="Coleção de templates"><div class="toolbar"><label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Pesquisar templates…" aria-label="Pesquisar templates"></label><span class="results" id="result-count" role="status">${templates.length} de ${templates.length} templates</span></div>
+<section class="catalogue" aria-label="Coleção de templates"><div class="toolbar"><label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Pesquisar templates…" aria-label="Pesquisar templates"></label><label class="sort-control" for="sort">Ordenar por <select id="sort"><option value="az">Nome (A–Z)</option><option value="za">Nome (Z–A)</option></select></label><span class="results" id="result-count" role="status">${templates.length} de ${templates.length} templates</span></div>
 <div class="mobile-area-filter"><label for="area-select">Filtrar por área</label><select id="area-select"><option value="all">Todas as áreas</option>${areas.map(area => `<option value="${escapeHtml(area)}">${escapeHtml(area)}</option>`).join('')}</select></div>
 <div class="filters" role="group" aria-label="Filtrar por área"><button type="button" data-filter="all" aria-pressed="true">Todas as áreas</button>${areas.map(area => `<button type="button" data-filter="${escapeHtml(area)}" aria-pressed="false">${escapeHtml(area)}</button>`).join('')}</div>
-<div class="templates-grid">${cards}</div><div class="empty-state" id="no-results" ${templates.length ? 'hidden' : ''}><h2>Nenhum template encontrado</h2><p>Experimente outra pesquisa ou explore todas as áreas.</p><button type="button" id="reset-filters">Limpar filtros</button></div></section></main>
+<section id="featured-section" aria-labelledby="featured-title" ${featured.length ? '' : 'hidden'}><h2 id="featured-title" class="section-title">Em destaque</h2><div class="templates-grid" id="featured-grid">${featured.map(renderCard).join('')}</div></section><section id="catalogue-section" aria-labelledby="catalogue-title" ${regular.length ? '' : 'hidden'}><h2 id="catalogue-title" class="section-title">Todos os templates</h2><div class="templates-grid" id="catalogue-grid">${regular.map((template, index) => renderCard(template, index + featured.length)).join('')}</div></section><div class="empty-state" id="no-results" ${templates.length ? 'hidden' : ''}><h2>Nenhum template encontrado</h2><p>Experimente outra pesquisa ou explore todas as áreas.</p><button type="button" id="reset-filters">Limpar filtros</button></div></section></main>
 <dialog class="preview-dialog" id="preview-dialog" aria-labelledby="preview-title"><div class="preview-toolbar"><h2 class="preview-title" id="preview-title">Preview</h2>${previewStage()}<div class="preview-links"><a id="preview-direct" href="#" target="_blank" rel="noopener">Abrir site ↗</a><button type="button" id="close-preview" aria-label="Fechar preview">Fechar ×</button></div></div>${stage()}</dialog>`);
 }
 
