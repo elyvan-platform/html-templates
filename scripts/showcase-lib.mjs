@@ -137,7 +137,7 @@ export function templateArea(template) {
     ['Restauração', /cafe|café|pastelaria|casa-da-mesa/],
     ['Beleza', /hair|tesoura/],
     ['Comércio', /mercado|mercearia/],
-    ['Desporto', /training|atlantico|atlântico/],
+    ['Desporto', /training|fitness-dashboard|atlantico|atlântico/],
     ['Educação', /agrupamento/],
     ['Serviços públicos', /junta/],
     ['Hotelaria', /stay/],

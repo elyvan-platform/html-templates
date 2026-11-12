@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ritmo — Fitness Dashboard</title>
+<meta name="description" content="O teu espaço para ganhar ritmo: atividade semanal, objetivos e um plano de treino à tua medida. Dashboard demonstrativo em PT-PT.">
+<link rel="stylesheet" href="assets/style.css"><script src="assets/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar para o conteúdo</a>
+<aside class="sidebar">
+<a class="brand" href="#main" aria-label="Ritmo, início"><span aria-hidden="true">r/</span> ritmo<span class="brand-dot">®</span></a>
+<p class="nav-label">O TEU ESPAÇO</p>
+<nav aria-label="Navegação principal"><a href="#resumo" class="active"><span aria-hidden="true">◫</span> Visão geral</a><a href="#plano"><span aria-hidden="true">⊞</span> Plano de treino</a><a href="#objetivos"><span aria-hidden="true">◎</span> Objetivos</a><a href="#historico"><span aria-hidden="true">↗</span> Histórico</a></nav>
+<div class="sidebar-note"><span class="little-mark" aria-hidden="true">↗</span><strong>Um treino de cada vez.</strong><p>A consistência constrói o que a motivação começa.</p><a href="#plano">Vamos a isso <span aria-hidden="true">→</span></a></div>
+<div class="profile"><span class="avatar">MS</span><div><strong>Miguel Silva</strong><small>Perfil demonstrativo</small></div></div>
+</aside>
+<main id="main">
+<header class="topbar"><span>ÁREA PESSOAL <span class="slash">/</span> Visão geral</span><span class="demo"><i></i> Demo · dados de exemplo</span></header>
+<section id="resumo" aria-labelledby="welcome">
+<div class="page-heading"><div><p class="eyebrow">CADA MOVIMENTO CONTA</p><h1 id="welcome">Bom ritmo, Miguel<span>!</span></h1><p>Continua a aparecer. O teu próximo passo começa aqui.</p></div><label class="period-label">Período<select id="period"><option value="week">Esta semana</option><option value="previous">Semana anterior</option><option value="month">Este mês</option></select></label></div>
+<div class="hero"><div><span class="pill">O TEU PERCURSO</span><h2>Mais forte.<br>Ao teu ritmo.</h2><p>Pequenos passos. Progresso real.<br>Reserva um momento para ti hoje.</p><a class="button" href="#plano">Ver treino de hoje <span aria-hidden="true">↗</span></a></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="hero-number">GO</span><span class="art-caption">FOCO / FORÇA / EQUILÍBRIO</span></div><span class="hero-index">01 — MOVE-TE</span></div>
+<div class="section-heading"><h2>O teu resumo</h2><span id="date-range">9–15 novembro 2026</span></div>
+<div id="stats" class="stats" aria-live="polite"></div>
+<div class="middle-grid"><section class="panel activity" aria-labelledby="activity-title"><div class="section-heading"><div><p class="eyebrow">CONSISTÊNCIA EM MOVIMENTO</p><h2 id="activity-title">Minutos de atividade</h2></div><span class="legend"><i></i> Atividade</span></div><div class="chart-total"><strong id="activity-total">185</strong><span>minutos no período</span></div><figure><div id="chart" class="chart"></div><figcaption>Dados de exemplo · minutos por dia ou semana. Valores disponíveis em cada coluna.</figcaption></figure></section>
+<section class="panel goals" id="objetivos" aria-labelledby="goals-title"><div class="section-heading"><h2 id="goals-title">Objetivos</h2><span class="tag">NO TEU CAMINHO</span></div><p class="muted">Um pouco mais perto, todos os dias.</p><div id="goals"></div><p class="goal-note">As metas acompanham o período selecionado.</p></section></div>
+</section>
+<div class="bottom-grid"><section class="panel" id="plano" aria-labelledby="plan-title"><div class="section-heading"><div><p class="eyebrow">SEGUNDA-FEIRA · 9 NOV</p><h2 id="plan-title">O treino de hoje</h2></div><span class="workout-icon" aria-hidden="true">↗</span></div><div class="workout-summary"><div><strong>Força &amp; estabilidade</strong><p>Corpo inteiro <span>·</span> 35 min <span>·</span> Intermédio</p></div><span class="tag">4 EXERCÍCIOS</span></div><p class="muted plan-hint">Assinala cada exercício quando terminares.</p><div id="exercises"></div><div class="plan-footer"><span id="plan-progress" role="status">0 de 4 concluídos</span><button id="reset-plan" class="text-button" type="button">Repor treino</button></div><progress id="workout-progress" max="4" value="0" aria-label="Progresso do treino"></progress><p class="local-note">Demo local: o progresso é reposto ao recarregar.</p></section>
+<section class="panel history" id="historico" aria-labelledby="history-title"><div class="section-heading"><div><p class="eyebrow">PASSOS QUE JÁ DESTE</p><h2 id="history-title">Histórico de atividade</h2></div><label class="sr-only" for="history-filter">Tipo de atividade</label><select id="history-filter"><option value="all">Todas</option><option value="Força">Força</option><option value="Corrida">Corrida</option><option value="Mobilidade">Mobilidade</option></select></div><p class="muted">Atividades do período selecionado.</p><div class="table-wrap"><table><caption class="sr-only">Atividades demonstrativas</caption><thead><tr><th scope="col">Atividade</th><th scope="col">Data</th><th scope="col">Tempo</th></tr></thead><tbody id="history-rows"></tbody></table></div><div id="empty-history" hidden><p>Nenhuma atividade deste tipo neste período.</p><button class="text-button" id="clear-filter" type="button">Mostrar todas as atividades</button></div><p id="history-count" class="local-note" role="status"></p></section></div>
+<footer><a class="footer-brand" href="#main">ritmo /</a><span>O progresso é pessoal. O ritmo é teu.</span><span>Conceito demonstrativo · 2026</span></footer>
+<noscript><p class="noscript">Ativa o JavaScript para consultar os dados locais e assinalar os exercícios desta demonstração.</p></noscript>
+</main>
+</body></html>
