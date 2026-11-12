@@ -136,7 +136,7 @@ export function templateArea(template) {
     ['Saúde', /saude|saúde|clinica|clínica|farmacia|farmácia/],
     ['Restauração', /cafe|café|pastelaria|casa-da-mesa/],
     ['Beleza', /hair|tesoura/],
-    ['Comércio', /mercado|mercearia/],
+    ['Comércio', /mercado|mercearia|atelie-digital/],
     ['Desporto', /training|fitness-dashboard|atlantico|atlântico/],
     ['Educação', /agrupamento|learning-platform/],
     ['Serviços públicos', /junta/],

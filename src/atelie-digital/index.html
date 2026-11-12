@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uma seleção de templates e ferramentas digitais para dar forma às suas ideias.">
+  <title>Ateliê Digital — Marketplace criativo</title>
+  <link rel="stylesheet" href="assets/style.css"><script src="assets/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#catalogo">Saltar para o catálogo</a>
+<div class="announcement">Feito para ideias que merecem sair do papel <span>✳</span> Recursos digitais, possibilidades reais</div>
+<header class="header wrap">
+  <a class="brand" href="#inicio" aria-label="Ateliê Digital, início"><span class="brand-icon">a<span>.</span></span><span>ateliê<span class="brand-light">digital</span><small>O MERCADO DAS BOAS IDEIAS</small></span></a>
+  <nav aria-label="Navegação principal"><a href="#catalogo">Explorar</a><a href="#categorias">Categorias</a><a href="#sobre">A nossa curadoria</a></nav>
+  <div class="header-actions"><button class="icon-button" id="favorites-toggle" aria-pressed="false" aria-label="Mostrar favoritos">♡ <span id="favorites-count">0</span></button><button class="bag" id="cart-open">Carrinho <span id="cart-count">0</span></button></div>
+</header>
+<main id="inicio">
+  <section class="hero wrap"><div class="hero-copy"><p class="eyebrow"><span class="dot"></span> O SEU PRÓXIMO PROJETO COMEÇA AQUI</p><h1>Boas ideias merecem <em>ótimas ferramentas.</em></h1><p>Templates e microferramentas criados para simplificar o seu trabalho e dar mais espaço ao que importa: criar.</p><div class="hero-actions"><a class="button dark" href="#catalogo">Explorar a coleção <span>↗</span></a><a class="text-link" href="#sobre">Conheça o ateliê <span>↗</span></a></div><div class="hero-proof"><div class="avatars"><span>M</span><span>A</span><span>R</span></div><p><strong>Feito por criativos, para criativos.</strong><br>Pequenos recursos. Grandes ideias.</p></div></div><div class="hero-art" aria-label="Composição ilustrativa de recursos digitais"><div class="art-top"><span>THE CREATIVE<br>TOOLKIT</span><span>✳</span></div><div class="art-window"><div class="window-top"><span>● ● ●</span><span>o seu espaço criativo ↗</span></div><div class="window-body"><div class="window-circle">✳</div><div><small>IDEIAS EM MOVIMENTO</small><strong>Make<br>something<br><i>good.</i></strong></div></div></div><div class="art-bottom"><span>INDEPENDENTE POR NATUREZA</span><span>01 — 06</span></div><div class="art-sticker">MADE FOR<br><b>YOUR NEXT</b><br>BIG IDEA ↗</div></div></section>
+  <section class="benefits" aria-label="Vantagens"><div class="wrap benefits-inner"><span>✳ <b>Curadoria independente</b></span><span>↗ <b>Prontos a usar</b></span><span>♡ <b>Feitos com intenção</b></span><span>✦ <b>Para criar sem limites</b></span></div></section>
+  <section class="catalog wrap" id="catalogo"><div class="section-heading"><div><p class="eyebrow"><span class="dot"></span> A NOSSA SELEÇÃO</p><h2>Encontre o seu <em>próximo favorito.</em></h2><p>Peças digitais com propósito, escolhidas a dedo para si.</p></div><span class="section-note">BONS RECURSOS,<br>MELHORES IDEIAS ↘</span></div>
+  <div class="category-list" id="categorias" aria-label="Categorias"><button class="chip active" data-category="Todos" aria-pressed="true">Tudo <span>↗</span></button><button class="chip" data-category="Produtividade" aria-pressed="false">Produtividade</button><button class="chip" data-category="Negócios" aria-pressed="false">Negócios</button><button class="chip" data-category="Design" aria-pressed="false">Design</button><button class="chip" data-category="Marketing" aria-pressed="false">Marketing</button></div>
+  <div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Procurar recursos..." aria-label="Procurar recursos"></label><div class="selects"><label>Tipo <select id="type"><option value="">Todos</option><option>Template</option><option>Microferramenta</option></select></label><label>Preço <select id="price"><option value="">Todos</option><option value="free">Grátis</option><option value="paid">Pago</option></select></label><label>Ordenar <select id="sort"><option value="featured">Destaques</option><option value="low">Preço: crescente</option><option value="high">Preço: decrescente</option><option value="name">Nome: A–Z</option></select></label></div></div>
+  <div class="results-line"><p id="result-count" aria-live="polite"></p><button id="clear-filters" class="clear">Limpar filtros ↗</button></div><div class="grid" id="products"></div><div class="empty" id="empty" hidden><span>✳</span><h3>Nada por aqui, por enquanto.</h3><p>Experimente outra pesquisa ou limpe os filtros para descobrir toda a coleção.</p><button class="button dark" id="empty-reset">Ver todos os recursos ↗</button></div>
+  </section>
+  <section class="about wrap" id="sobre"><div><p class="eyebrow">UM ATELIÊ PARA AS SUAS IDEIAS</p><h2>Menos tempo a começar.<br><em>Mais tempo a criar.</em></h2></div><div><p>Acreditamos que as melhores ideias merecem boas ferramentas. Reunimos recursos úteis, bonitos e simples para ajudar projetos independentes a ganhar vida.</p><a href="#catalogo" class="text-link">Descobrir a coleção ↗</a></div><span class="about-star">✳</span></section>
+</main>
+<footer class="wrap footer"><a class="brand" href="#inicio"><span class="brand-icon">a<span>.</span></span><span>ateliê<span class="brand-light">digital</span></span></a><p>Uma pequena montra para grandes ideias. © 2026 Ateliê Digital</p><a href="#inicio">Voltar ao início ↑</a></footer>
+<dialog id="product-dialog" aria-labelledby="product-title"><div id="product-detail"></div></dialog>
+<dialog id="cart-dialog" aria-labelledby="cart-title"><div class="dialog-head"><div><p class="eyebrow">A SUA SELEÇÃO</p><h2 id="cart-title">O seu carrinho<span>.</span></h2></div><button class="close" data-close aria-label="Fechar carrinho">×</button></div><div id="cart-items"></div><div id="cart-footer"></div></dialog>
+</body></html>
