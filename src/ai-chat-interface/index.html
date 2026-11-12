@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-PT" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lume Chat | Interface de conversa com assistentes (demo)</title>
+<meta name="description" content="Interface de chat minimalista com vários assistentes e modelos fictícios, conversas locais e respostas simuladas. Demonstração sem backend.">
+<script>try{var t=localStorage.getItem('lume-theme');document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%236ee7d2' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%236ee7d2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css"><script src="assets/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#composer-input">Saltar para a escrita</a>
+<div class="app" id="app">
+<aside class="sidebar" id="sidebar" aria-label="Conversas">
+<div class="side-head">
+<a class="brand" href="#" aria-label="Lume Chat"><svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="16" cy="16" r="4" fill="currentColor"/></svg><span>Lume</span></a>
+<button type="button" class="icon-btn only-mobile" id="close-sidebar" aria-label="Fechar conversas">✕</button>
+</div>
+<button type="button" class="btn primary wide" id="new-chat">＋ Nova conversa <kbd>Alt N</kbd></button>
+<label class="search"><span class="sr-only">Pesquisar conversas</span><input type="search" id="search" placeholder="Pesquisar conversas…" autocomplete="off"></label>
+<nav aria-label="Lista de conversas"><ul class="chat-list" id="chat-list"></ul></nav>
+<p class="empty small" id="list-empty" hidden></p>
+<div class="side-foot">
+<button type="button" class="btn ghost" id="show-help">⌨ Atalhos</button>
+<button type="button" class="btn ghost" id="reset-data">Repor demo</button>
+</div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<div class="main">
+<header class="topbar">
+<button type="button" class="icon-btn only-mobile" id="open-sidebar" aria-label="Abrir conversas" aria-controls="sidebar" aria-expanded="false">☰</button>
+<h1 class="chat-title" id="chat-title">Lume Chat</h1>
+<div class="pickers">
+<label>Assistente <select id="assistant"></select></label>
+<label>Modelo <select id="model"></select></label>
+</div>
+<button type="button" class="icon-btn" id="theme" aria-label="Alternar tema claro/escuro" aria-pressed="true">◐</button>
+</header>
+<p class="demo-banner" role="note"><b>DEMO</b> Respostas simuladas localmente — nenhum modelo real é consultado e nada sai do seu navegador.</p>
+
+<main id="main">
+<div class="thread" id="thread" role="log" aria-live="polite" aria-label="Mensagens"></div>
+<div class="empty-state" id="empty" hidden>
+<svg width="44" height="44" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="currentColor"/></svg>
+<h2 id="empty-title">Por onde começamos?</h2>
+<p id="empty-text">Escolha um assistente, escreva abaixo ou experimente uma sugestão.</p>
+<ul class="suggestions" id="suggestions"></ul>
+</div>
+</main>
+
+<form class="composer" id="composer" autocomplete="off">
+<p class="error" id="error" role="alert" hidden></p>
+<div class="composer-box">
+<label class="sr-only" for="composer-input">Mensagem</label>
+<textarea id="composer-input" rows="1" maxlength="2000" placeholder="Escreva uma mensagem… (Enter envia, Shift+Enter nova linha)"></textarea>
+<button type="button" class="btn stop" id="stop" hidden>■ Parar</button>
+<button type="submit" class="btn primary" id="send">Enviar</button>
+</div>
+<p class="hint"><span id="counter">0/2000</span><span>Demo: escreva <code>/erro</code> para ver o estado de falha · <kbd>/</kbd> foca a escrita</span></p>
+</form>
+</div>
+</div>
+
+<dialog id="rename-dialog" aria-labelledby="rename-title"><form method="dialog" id="rename-form">
+<h2 id="rename-title">Renomear conversa</h2>
+<label>Novo nome <input id="rename-input" maxlength="60" required></label>
+<div class="dialog-actions"><button type="button" class="btn" data-close>Cancelar</button><button type="submit" class="btn primary">Guardar</button></div>
+</form></dialog>
+<dialog id="delete-dialog" aria-labelledby="delete-title"><form method="dialog" id="delete-form">
+<h2 id="delete-title">Apagar conversa?</h2>
+<p id="delete-text"></p>
+<div class="dialog-actions"><button type="button" class="btn" data-close>Cancelar</button><button type="submit" class="btn danger">Apagar</button></div>
+</form></dialog>
+<dialog id="help-dialog" aria-labelledby="help-title"><div>
+<h2 id="help-title">Atalhos de teclado</h2>
+<dl class="keys"><dt><kbd>Enter</kbd></dt><dd>Enviar mensagem</dd><dt><kbd>Shift</kbd>+<kbd>Enter</kbd></dt><dd>Nova linha</dd><dt><kbd>Alt</kbd>+<kbd>N</kbd></dt><dd>Nova conversa</dd><dt><kbd>Alt</kbd>+<kbd>B</kbd></dt><dd>Mostrar/ocultar conversas</dd><dt><kbd>/</kbd></dt><dd>Focar a escrita</dd><dt><kbd>Esc</kbd></dt><dd>Parar resposta / fechar</dd><dt><kbd>?</kbd></dt><dd>Esta ajuda</dd></dl>
+<div class="dialog-actions"><button type="button" class="btn primary" data-close>Fechar</button></div>
+</div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -153,7 +153,7 @@ export function templateArea(template) {
     ['Meteorologia', /weather-app/],
     ['Gestão de projetos', /project-management|compasso/],
     ['Jogos e entretenimento', /gaming-community/],
-    ['Tecnologia', /pulso-conference|saas|orbit|admin-dashboard|crypto-dashboard|nexo-ai|portfolio-developer|cyber|entrelinhas|estrato-startup/],
+    ['Tecnologia', /pulso-conference|saas|orbit|admin-dashboard|crypto-dashboard|nexo-ai|ai-chat-interface|portfolio-developer|cyber|entrelinhas|estrato-startup/],
   ];
   return groups.find(([, pattern]) => pattern.test(value))?.[0] || 'Outras áreas';
 }
